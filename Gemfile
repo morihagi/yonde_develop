@@ -48,9 +48,75 @@ gem "bootsnap", require: false
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
+# Bootstrap framework version 5.2.3.
+gem 'bootstrap', '5.2.3'
+
+# Faster Sass compilation and compatibility for Rails applications.
+gem "sassc-rails"
+
+# Fast JavaScript execution within Ruby for Rails applications.
+gem 'mini_racer'
+
+# Provides form builders compatible with Bootstrap.
+gem 'bootstrap_form'
+
+# Language support for internationalization in Rails.
+gem 'rails-i18n'
+
+# Slim templating engine integration for Rails.
+gem 'slim-rails'
+
+# Provides a simple way to handle configuration settings in Rails.
+gem 'config'
+
+# Adds helper methods for working with enumerations in Rails.
+gem 'enum_help'
+
+# Pagination library for Rails applications.
+gem 'kaminari'
+
+# Language support for Kaminari pagination.
+gem 'kaminari-i18n'
+
+# Search library for Ruby objects and ActiveRecord.
+gem 'ransack'
+
+# Loads environment variables from a .env file.
+gem 'dotenv-rails'
+
+# Web scraping library for Ruby.
+gem 'mechanize'
+
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+
+  # Improves error page display.
+  gem 'better_errors'
+
+  # Provides a web interface for viewing email messages during development.
+  gem 'letter_opener_web'
+
+  # Provides fixtures replacement and object generation for testing.
+  gem 'factory_bot_rails'
+
+  # Testing framework for Rails applications.
+  gem 'rspec-rails'
+
+  # Generates realistic fake data for testing.
+  gem 'faker'
+
+  # Ruby code formatter and style checker.
+  gem 'standard', ">= 1.0"
+
+  # Profiles the performance of a Rails application's endpoints.
+  gem 'rack-mini-profiler'
+
+  # Improves error page display.
+  gem 'better_errors'
+
+  # Retrieves the binding of a method's caller.
+  gem 'binding_of_caller'
 end
 
 group :development do
@@ -62,5 +128,50 @@ group :development do
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
   # gem "spring"
+
+  # Validates database constraints at the model level.
+  gem 'database_validations'
+
+  # Checks for database consistency.
+  gem 'database_consistency', require: false
+
+  # Performs security checks on Rails applications.
+  gem 'brakeman', require: false
+
+  # Detects security vulnerabilities in gem dependencies.
+  gem 'bundler-audit', require: false
+
+  # Detects N+1 queries and unnecessary queries to improve performance.
+  gem 'bullet'
+
+  # Adds database schema comments to models and tests.
+  gem 'annotate'
+
+  # Checks code style and quality.
+  gem 'rubocop', require: false
+
+  # Checks RSpec test code style and quality.
+  gem 'rubocop-rspec', require: false
+
+  # Checks Rails application code style and quality.
+  gem 'rubocop-rails', require: false
 end
 
+group :test do
+  # Provides a more readable test progress bar formatter for RSpec.
+  gem 'fuubar'
+
+  # Automatically installs and manages web driver binaries for Selenium.
+  gem 'webdrivers', require: false
+
+  # Provides RSpec matchers for common Rails functionality.
+  gem 'shoulda-matchers'
+
+  # Measures code coverage in Ruby applications.
+  gem 'simplecov', require: false
+end
+
+group :development do
+# database
+gem 'pg'
+end
