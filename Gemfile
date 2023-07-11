@@ -51,6 +51,9 @@ gem "bootsnap", require: false
 # Bootstrap framework version 5.2.3.
 gem 'bootstrap', '5.2.3'
 
+# Font-Awesome
+gem "font-awesome-rails"
+
 # Faster Sass compilation and compatibility for Rails applications.
 gem "sassc-rails"
 
