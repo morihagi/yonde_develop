@@ -63,9 +63,6 @@ gem 'rails-i18n'
 # Slim templating engine integration for Rails.
 gem 'slim-rails'
 
-# Provides a simple way to handle configuration settings in Rails.
-gem 'config'
-
 # Adds helper methods for working with enumerations in Rails.
 gem 'enum_help'
 
