@@ -1,4 +1,5 @@
-# Version
+# 開発環境の構築方法
+## Version
 * Ruby version
 3.2.2
 
@@ -8,7 +9,7 @@
 * Database
 SQlite3
 
-# Run
+## Run
 1. ターミナルを起動
 2. 好みの場所にリポジトリを作成し、移動
     ```
