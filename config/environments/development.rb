@@ -68,6 +68,9 @@ Rails.application.configure do
   # Uncomment if you wish to allow Action Cable access from any origin.
   # config.action_cable.disable_request_forgery_protection = true
 
+  # Allow the whole private network to use web_console
+  config.web_console.permissions = '192.168.0.0/16'
+
   # Devise mailer setting
   config.action_mailer.delivery_method = :letter_opener_web
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
