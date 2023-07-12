@@ -43,19 +43,13 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 gem "bootsnap", require: false
 
 # Use Sass to process CSS
-# gem "sassc-rails"
+gem "sassc-rails"
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
 # gem "image_processing", "~> 1.2"
 
 # Bootstrap framework version 5.2.3.
 gem 'bootstrap', '5.2.3'
-
-# Font-Awesome
-gem "font-awesome-rails"
-
-# Faster Sass compilation and compatibility for Rails applications.
-gem "sassc-rails"
 
 # Fast JavaScript execution within Ruby for Rails applications.
 gem 'mini_racer'
@@ -118,9 +112,6 @@ group :development, :test do
   # Profiles the performance of a Rails application's endpoints.
   gem 'rack-mini-profiler'
 
-  # Improves error page display.
-  gem 'better_errors'
-
   # Retrieves the binding of a method's caller.
   gem 'binding_of_caller'
 end
@@ -161,6 +152,9 @@ group :development do
 
   # Checks Rails application code style and quality.
   gem 'rubocop-rails', require: false
+
+  # for fly.io
+  gem "dockerfile-rails", ">= 1.5"
 end
 
 group :test do
@@ -177,7 +171,7 @@ group :test do
   gem 'simplecov', require: false
 end
 
-group :development do
+group :production do
 # database
 gem 'pg'
 end
