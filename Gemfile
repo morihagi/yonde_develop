@@ -75,13 +75,13 @@ gem 'kaminari-i18n'
 # Search library for Ruby objects and ActiveRecord.
 gem 'ransack'
 
-# Loads environment variables from a .env file.
-gem 'dotenv-rails'
-
 # Web scraping library for Ruby.
 gem 'mechanize'
 
 group :development, :test do
+  # Loads environment variables from a .env file.
+  gem 'dotenv-rails'
+
   # Use sqlite3 as the database for Active Record
   gem "sqlite3", "~> 1.4"
 
