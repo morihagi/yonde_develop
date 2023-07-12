@@ -169,6 +169,9 @@ group :test do
 
   # Measures code coverage in Ruby applications.
   gem 'simplecov', require: false
+
+  # integration testing tool
+  gem 'capybara'
 end
 
 group :production do
