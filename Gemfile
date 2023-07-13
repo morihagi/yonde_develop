@@ -144,9 +144,6 @@ group :development do
   # Checks code style and quality.
   gem "rubocop", require: false
 
-  # Checks RSpec test code style and quality.
-  gem "rubocop-rspec", require: false
-
   # Checks Rails application code style and quality.
   gem "rubocop-rails", require: false
 
