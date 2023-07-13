@@ -1,4 +1,4 @@
-require "active_support/core_ext/integer/time"
+require 'active_support/core_ext/integer/time'
 
 Rails.application.configure do
   config.after_initialize do
@@ -28,13 +28,13 @@ Rails.application.configure do
 
   # Enable/disable caching. By default caching is disabled.
   # Run rails dev:cache to toggle caching.
-  if Rails.root.join("tmp/caching-dev.txt").exist?
+  if Rails.root.join('tmp/caching-dev.txt').exist?
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 
     config.cache_store = :memory_store
     config.public_file_server.headers = {
-      "Cache-Control" => "public, max-age=#{2.days.to_i}"
+      'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
@@ -78,16 +78,16 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   # Allow the whole private network to use web_console
-  config.web_console.permissions = "192.168.0.0/16"
+  config.web_console.permissions = '192.168.0.0/16'
 
   # Devise mailer setting
   config.action_mailer.delivery_method = :letter_opener_web
-  config.action_mailer.default_url_options = {host: "localhost", port: 3000}
+  config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }
 
   # Don't care if the mailer can't send.
   config.action_mailer.raise_delivery_errors = false
 
-  config.factory_bot.definition_file_paths = ["spec/factories"]
+  config.factory_bot.definition_file_paths = ['spec/factories']
 
-  config.hosts << "yonde.fly.dev"
+  config.hosts << 'yonde.fly.dev'
 end
