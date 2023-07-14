@@ -4,16 +4,12 @@ header.p-3.bg-dark.text-white
       = link_to '#',
       class: 'd-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none'
         = image_tag "radio.png", alt: "radio-icon", size: '40x40'
-        'YONDE
+        'YONDE　
 
-      ul.nav.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
-        li.nav-link.px-2.text-white
-          = link_to 'top', '#', style: 'color: inherit; text-decoration: none;'
-        li.nav-link.px-2.text-white
-          =link_to 'About', '#', style: 'color: inherit; text-decoration: none;'
-        li.nav-link.px-2.text-white
-          =link_to 'How to use', '#', style: 'color: inherit; text-decoration: none;'
+      ul.nav.col-4.col-lg-auto.ms-auto.mb-2.justify-content-end.justify-content-lg-start.mb-md-0.me-2
+        = link_to '使い方', '#', style: 'color: inherit; text-decoration: none;'
 
       .text-end
-        button.btn.btn-outline-light.me-2 Login
-        button.btn.btn-warning Sign-up
+        button.btn.btn-success.me-2 投稿メールの作成
+        button.btn.btn-outline-light.me-2 ログイン
+        button.btn.btn-warning ユーザー登録
