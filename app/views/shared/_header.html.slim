@@ -1,0 +1,19 @@
+header.p-3.bg-dark.text-white
+  .container
+    .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
+      = link_to '#',
+      class: 'd-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none'
+        = image_tag "radio.png", alt: "radio-icon", size: '40x40'
+        'YONDE
+
+      ul.nav.col-12.col-lg-auto.me-lg-auto.mb-2.justify-content-center.mb-md-0
+        li.nav-link.px-2.text-white
+          = link_to 'top', '#', style: 'color: inherit; text-decoration: none;'
+        li.nav-link.px-2.text-white
+          =link_to 'About', '#', style: 'color: inherit; text-decoration: none;'
+        li.nav-link.px-2.text-white
+          =link_to 'How to use', '#', style: 'color: inherit; text-decoration: none;'
+
+      .text-end
+        button.btn.btn-outline-light.me-2 Login
+        button.btn.btn-warning Sign-up
