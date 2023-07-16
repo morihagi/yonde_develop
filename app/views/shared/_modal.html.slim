@@ -26,6 +26,20 @@
       .modal-footer
         button.btn.btn-secondary data-bs-dismiss="modal" 閉じる
 
+.modal.fade#developerModal tabindex="-1" aria-labelledby="developerModalLabel" aria-hidden="true"
+  .modal-dialog.modal-dialog-centered.modal-dialog-scrollable.modal-sm
+    .modal-content
+
+      .modal-header
+        h5.modal-title#developerModalLabel 開発者について
+        button.btn-close data-bs-dismiss="modal" aria-label="閉じる"
+
+      .modal-body
+        = render 'modals/developer'
+
+      .modal-footer
+        button.btn.btn-secondary data-bs-dismiss="modal" 閉じる
+
 .modal.fade#contactModal tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true"
   .modal-dialog.modal-dialog-centered.modal-dialog-scrollable.modal-sm
     .modal-content
