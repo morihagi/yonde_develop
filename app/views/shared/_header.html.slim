@@ -1,4 +1,4 @@
-header.sticky-top.p-3.text-white(style="background-color: #2b3d4f;")
+header.sticky-top.p-3.text-white(style="background-color: #354a5f;")
   .container
     .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
       = link_to '#',
@@ -6,10 +6,10 @@ header.sticky-top.p-3.text-white(style="background-color: #2b3d4f;")
         = image_tag "radio.png", alt: "radio-icon", size: '40x40'
         'YONDE
 
-      ul.nav.col-4.col-lg-auto.ms-auto.mb-2.justify-content-end.justify-content-lg-start.mb-md-0.me-2
-        = link_to '使い方', '#', style: 'color: inherit; text-decoration: none;'
+      ul.nav.col-4.col-lg-auto.ms-auto.mb-2.justify-content-end.justify-content-lg-start.mb-md-0.me-3
+        = link_to '使い方', '#', style: 'color: inherit; text-decoration: none; letter-spacing: 0.1em;'
 
       .text-end
-        button.btn.btn-success.me-2 投稿メールの作成
-        button.btn.btn-outline-light.me-2 ログイン
-        button.btn.btn-warning ユーザー登録
+        button.btn.btn-warning.rounded-pill.me-3 投稿メールの作成
+        button.btn.btn-outline-light.rounded-pill.me-3 ログイン
+        button.btn.btn-light.rounded-pill ユーザー登録

@@ -34,6 +34,11 @@ footer {
 }
 
 /* btnの設定 */
+.btn {
+  letter-spacing: 0.1em;
+  padding: 5px 20px;
+}
+
 .btn1 {
   display: inline-block;
   text-decoration: none;
@@ -44,6 +49,10 @@ footer {
   box-shadow: 1px 2px 3px rgba(0, 0, 0, 0.2);
   background: #ffffff;
   color: #444;
+}
+
+.btn-warning {
+  background: #f1c40e;
 }
 
 .radius {
