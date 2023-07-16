@@ -4,8 +4,21 @@ footer.p-3(style="background-color: #f1c40e;")
       '© YONDE 2023
     span.d-flex.justify-content-end.flex-grow-1
       span.me-5
-        = link_to '利用規約', '#', style: 'color: inherit; text-decoration: none;'
+        = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' }, style: 'color: inherit; text-decoration: none;' do
+          | 利用規約
+        = render 'shared/modal', modal_type: 'terms'
+
       span.me-5
-        = link_to 'プライバシーポリシー', '#', style: 'color: inherit; text-decoration: none;'
+        = link_to '#', data: { bs_toggle: 'modal', bs_target: '#privacyPolicyModal' }, style: 'color: inherit; text-decoration: none;' do
+          | プライバシーポリシー
+        = render 'shared/modal', modal_type: 'privacy_policy'
+
       span.me-5
-        = link_to 'お問い合わせ', '#', style: 'color: inherit; text-decoration: none;'
+        = link_to '#', data: { bs_toggle: 'modal', bs_target: '#developerModal' }, style: 'color: inherit; text-decoration: none;' do
+          | 開発者について
+        = render 'shared/modal', modal_type: 'developer'
+
+      span.me-5
+        = link_to '#', data: { bs_toggle: 'modal', bs_target: '#contactModal' }, style: 'color: inherit; text-decoration: none;' do
+          | お問い合わせ
+        = render 'shared/modal', modal_type: 'contact'
