@@ -6,8 +6,12 @@ header.sticky-top.p-3.text-white(style="background-color: #354a5f;")
         = image_tag "radio.png", alt: "radio-icon", size: '40x40'
         'YONDE
 
-      ul.nav.col-4.col-lg-auto.ms-auto.mb-2.justify-content-end.justify-content-lg-start.mb-md-0.me-3
-        = link_to '使い方', '#', style: 'color: inherit; text-decoration: none; letter-spacing: 0.1em;'
+      ul.nav.col-4.col-lg-auto.ms-auto.mb-2.justify-content-end.justify-content-lg-start.mb-md-0.me-5
+        = link_to 'YONDEとは', '#', style: 'color: inherit; text-decoration: none; letter-spacing: 0.1em;'
+      .me-3
+        = link_to '機能一覧', '#', style: 'color: inherit; text-decoration: none; letter-spacing: 0.1em;'
+      .me-3
+        '|
 
       .text-end
         button.btn.btn-warning.rounded-pill.me-3 投稿メールの作成

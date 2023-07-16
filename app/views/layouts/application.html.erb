@@ -1,19 +1,38 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>YONDE</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1">
-    <meta name="description"
-    content="誰でも簡単にオールナイトニッポンの
-    好きな番組の好きなコーナーに
-    投稿メールを作ることができます。">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
     <link rel="icon" href="https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fb.png">
+
+    <title>YONDE</title>
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="title" content="YONDE">
+    <meta name="description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーに、投稿メールを作って送れます。">
+    <meta name="keywords" content="オールナイトニッポン, ANN, ニッポン放送、">
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
     <%= stylesheet_link_tag "application", "data-turbo-track": "reload" %>
     <%= stylesheet_link_tag "style", "data-turbo-track": "reload" %>
     <%= javascript_importmap_tags %>
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://yonde.fly.dev/">
+    <meta property="og:title" content="YONDE">
+    <meta property="og:description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーに、投稿メールを作ることができます。">
+    <meta property="og:image" content="https://yonde.fly.dev/assets/radio_listening.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://yonde.fly.dev/">
+    <meta property="twitter:title" content="YONDE">
+    <meta property="twitter:description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーに、投稿メールを作ることができます。">
+    <meta property="twitter:image" content="https://yonde.fly.dev/assets/radio_listening.svg">
   </head>
 
   <body>
