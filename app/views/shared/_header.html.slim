@@ -1,19 +1,17 @@
 header.sticky-top.p-3.text-white(style="background-color: #354a5f;")
   .container
-    .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
-      = link_to '#',
-      class: 'd-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none'
-        = image_tag "radio.png", alt: "radio-icon", size: '40x40'
-        'YONDE
+    .row.align-items-center.justify-content-between
+      .col-auto
+        = link_to '#', class: 'd-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none' do
+          = image_tag "radio.png", alt: "radio-icon", size: '40x40'
+          'YONDE
 
-      ul.nav.col-4.col-lg-auto.ms-auto.mb-2.justify-content-end.justify-content-lg-start.mb-md-0.me-5
-        = link_to 'YONDEとは', '#', style: 'color: inherit; text-decoration: none; letter-spacing: 0.1em;'
-      .me-3
-        = link_to '機能一覧', '#', style: 'color: inherit; text-decoration: none; letter-spacing: 0.1em;'
-      .me-3
-        '|
+      .col-auto.ms-auto.mb-2.text-end
+        = link_to 'YONDEとは', '#', style: 'color: inherit; text-decoration: none; letter-spacing: 0.1em;', class: 'me-5'
+        = link_to '機能一覧', '#', style: 'color: inherit; text-decoration: none; letter-spacing: 0.1em;', class: 'me-5'
+        | |
 
-      .text-end
+      .col-auto.text-end
         button.btn.btn-warning.rounded-pill.me-3 投稿メールの作成
         button.btn.btn-outline-light.rounded-pill.me-3 ログイン
         button.btn.btn-light.rounded-pill ユーザー登録
