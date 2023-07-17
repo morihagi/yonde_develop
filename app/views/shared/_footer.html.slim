@@ -1,11 +1,11 @@
 footer.p-3(style="background-color: #f1c40e;")
   .container
     .d-flex.align-items-center
-      span.text-left
+      span.text-left.text-muted
         | © YONDE 2023
       span.d-flex.justify-content-end.flex-grow-1
         span.me-5
-          = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' }, style: 'color: inherit; text-decoration: none;', class: 'footer-link' do
+          = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' }, style: 'color: inherit; text-decoration: none;' do
             | 利用規約
           = render 'shared/modal', modal_type: 'terms'
 
