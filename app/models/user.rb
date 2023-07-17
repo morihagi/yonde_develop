@@ -11,4 +11,6 @@ class User < ApplicationRecord
                     length: { minimum: 8 },
                     format: { with: VALID_PASSWORD_REGEX },
                     allow_nil: true
+
+  validates_acceptance_of :agreement, allow_nil: false, on: :create
 end

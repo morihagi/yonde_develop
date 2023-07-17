@@ -11,27 +11,30 @@
 
 /* テンプレート専用cssファイルの読み込み */
 @import url("animation.css");
+@import url("top.css");
 
 /* 全体の設定 */
 html, body {
-  margin: 0;
-  padding: 0;
-  font-size: 14px; /* 基準となるフォントサイズ。下の方にある「画面幅900px以上」で基準を大きなサイズに再設定しています。 */
-  overflow-x: hidden;
+  font-size: 14px;
 }
 
 body {
   font-family: 'BIZ UDPGothic';
   -webkit-text-size-adjust: none;
-  letter-spacing: 0.05em;
+  letter-spacing: 0.05em; /* 文字間 */
   background: #fff; /* 背景色 */
   color: #555; /* 全体の文字色 */
   line-height: 2; /* 行間 */
-  padding-top: 60px;
 }
 
 footer {
   font-size: 0.9rem; /* 文字サイズ */
+}
+
+@media (max-width: 767px) {
+  footer {
+    font-size:  0.5rem; /* 中小画面のフォントサイズ */
+  }
 }
 
 /* btnの設定 */
@@ -63,15 +66,6 @@ footer {
 .btn1:hover {
   transform: scale(1.03);
   filter: brightness(1.1);
-}
-
-.oneArea {
-  background: linear-gradient(-40deg, #f1c40e 0%, #f1c40e 50%, #354a5f 50%, #354a5f 100%);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  width: 100%;
-  height: 600px;
 }
 
 .icon-link {
