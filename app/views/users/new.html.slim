@@ -4,33 +4,35 @@
         h3.mb-3.fw-normal
           ' ユーザー登録
 
-    = form_with model: @user, url: users_path, method: :post do |f|
+    = form_with model: @user do |f|
 
       .form-group.form-floating.mb-3.w-50.mx-auto
-        label for="floatingInput" メールアドレス
         = f.email_field :email, id: "floatingInput", placeholder: "メールアドレス", class: "form-control mb-3"
+        label for="floatingInput" メールアドレス
 
       .form-group.form-floating.mb-3.w-50.mx-auto
-        label for="floatingPassword" パスワード
         = f.password_field :password, id: "floatingPassword", placeholder: "パスワード", class: "form-control mb-3"
+        label for="floatingPassword" パスワード
 
       .form-group.form-floating.mb-3.w-50.mx-auto
-        label for="floatingPassword" パスワード確認
         = f.password_field :password_confirmation, id: "floatingPassword", placeholder: "パスワード確認", class: "form-control mb-3"
+        label for="floatingPassword" パスワード確認
 
-      .form-group.checkbox.mb-3
-        label
-          input type="checkbox" value="agree-term"
-          | &nbsp;
-          = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' } do
-            | 利用規約
-          = render 'shared/modal', modal_type: 'terms'
-          |に同意する
+      .form-check.mb-3
+        = f.check_box :agreement, :as => :boolean, checked:false
+        | &nbsp;
+        = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' } do
+          | 利用規約
+        = render 'shared/modal', modal_type: 'terms'
+        | と
+        = link_to '#', data: { bs_toggle: 'modal', bs_target: '#privacyPolicyModal' } do
+          | プライバシーポリシー
+        = render 'shared/modal', modal_type: 'privacy_policy'
+        |に同意する
 
-      .form-group.checkbox.mb-3
-        label
-          input type="checkbox" value="remember-me"
-          | &nbsp; ログインしたままにする
+      .form-check.mb-3
+        input type="checkbox" value="remember-me"
+        | &nbsp; ログインしたままにする
 
       = f.submit "登録", class: "btn btn-primary btn-lg w-50"
 
