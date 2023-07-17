@@ -1,0 +1,39 @@
+.container.text-center.mt-3
+  .row.form-signin
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+        h3.mb-3.fw-normal
+          ' ユーザー登録
+
+    = form_with model: @user, url: users_path, method: :post do |f|
+
+      .form-group.form-floating.mb-3.w-50.mx-auto
+        label for="floatingInput" メールアドレス
+        = f.email_field :email, id: "floatingInput", placeholder: "メールアドレス", class: "form-control mb-3"
+
+      .form-group.form-floating.mb-3.w-50.mx-auto
+        label for="floatingPassword" パスワード
+        = f.password_field :password, id: "floatingPassword", placeholder: "パスワード", class: "form-control mb-3"
+
+      .form-group.form-floating.mb-3.w-50.mx-auto
+        label for="floatingPassword" パスワード確認
+        = f.password_field :password_confirmation, id: "floatingPassword", placeholder: "パスワード確認", class: "form-control mb-3"
+
+      .form-group.checkbox.mb-3
+        label
+          input type="checkbox" value="agree-term"
+          | &nbsp;
+          = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' } do
+            | 利用規約
+          = render 'shared/modal', modal_type: 'terms'
+          |に同意する
+
+      .form-group.checkbox.mb-3
+        label
+          input type="checkbox" value="remember-me"
+          | &nbsp; ログインしたままにする
+
+      = f.submit "登録", class: "btn btn-primary btn-lg w-50"
+
+    = link_to 'ログインページはこちら', '#', class: 'mt-3'
+    br
+    br
