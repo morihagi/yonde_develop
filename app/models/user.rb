@@ -1,11 +1,11 @@
 class User < ApplicationRecord
-  has_secure_password
 
   before_save { self.email = email.downcase }
   validates :email, presence: true, 
                     format: { with: URI::MailTo::EMAIL_REGEXP }, 
-                    uniqueness: { case_sensitive: false }
+                    uniqueness: { case_ ensitive: false }
 
+  has_secure_password
   VALID_PASSWORD_REGEX = /\A[\w\-]{8,}\z/
   validates :password, presence: true,
                     length: { minimum: 8 },
