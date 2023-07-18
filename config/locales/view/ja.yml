@@ -1,4 +1,7 @@
 ja:
+  defaults:
+    register: 登録
+    login: ログイン
   helpers:
     page_entries_info:
       more_pages:
@@ -19,8 +22,9 @@ ja:
     top:
       title: トップページ
   users:
-    new:
-      title: ユーザー登録
-    create:
-      success: ユーザー登録が完了しました
-      fail: ユーザー登録に失敗しました
+    registrations:
+      new:
+        title: ユーザー登録
+      create:
+        success: ユーザー登録が完了しました
+        fail: ユーザー登録に失敗しました

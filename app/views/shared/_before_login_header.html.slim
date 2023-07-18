@@ -11,4 +11,5 @@ header.p-3.text-white(style="background-color: #354a5f;")
 
       .text-end
         = link_to '投稿メールの作成', '#', class: 'btn btn-warning rounded-pill me-3'
-        = link_to "ログアウト", destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: 'btn btn-outline-light rounded-pill'
+        = link_to 'ログイン', new_user_session_path, class: 'btn btn-outline-light rounded-pill me-3'
+        = link_to 'ユーザー登録', new_user_registration_path, class: 'btn btn-light rounded-pill'

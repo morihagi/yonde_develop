@@ -62,6 +62,8 @@ gem 'rails-i18n'
 
 # Slim templating engine integration for Rails.
 gem 'slim-rails'
+gem 'erb2slim'
+gem 'html2slim'
 
 # Adds helper methods for working with enumerations in Rails.
 gem 'enum_help'
@@ -77,6 +79,9 @@ gem 'ransack'
 
 # Web scraping library for Ruby.
 gem 'mechanize'
+
+# User Register and Login
+gem 'devise'
 
 group :development, :test do
   # Loads environment variables from a .env file.
