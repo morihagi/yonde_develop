@@ -18,3 +18,9 @@ ja:
   static_pages:
     top:
       title: トップページ
+  users:
+    new:
+      title: ユーザー登録
+    create:
+      success: ユーザー登録が完了しました
+      fail: ユーザー登録に失敗しました

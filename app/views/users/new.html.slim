@@ -4,7 +4,8 @@
         h3.mb-3.fw-normal
           ' ユーザー登録
 
-    = form_with model: @user do |f|
+    = form_with model: @user, local: true do |f|
+      = render 'shared/error_messages', object: f.object
 
       .form-group.form-floating.mb-3.w-50.mx-auto
         = f.email_field :email, id: "floatingInput", placeholder: "メールアドレス", class: "form-control mb-3"

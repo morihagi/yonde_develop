@@ -1,6 +1,14 @@
 ---
 ja:
   activerecord:
+    models:
+      user: ユーザー
+    attributes:
+      user:
+        email: メールアドレス
+        password: パスワード
+        password_confirmation: パスワード確認
+        agreement: 利用規約とプライバシーポリシー
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
@@ -85,7 +93,7 @@ ja:
   errors:
     format: "%{attribute}%{message}"
     messages:
-      accepted: を受諾してください
+      accepted: に同意してください
       blank: を入力してください
       confirmation: と%{attribute}の入力が一致しません
       empty: を入力してください
@@ -96,7 +104,7 @@ ja:
       greater_than_or_equal_to: は%{count}以上の値にしてください
       in: は%{count}の範囲に含めてください
       inclusion: は一覧にありません
-      invalid: は不正な値です
+      invalid: が不正な値です
       less_than: は%{count}より小さい値にしてください
       less_than_or_equal_to: は%{count}以下の値にしてください
       model_invalid: 'バリデーションに失敗しました: %{errors}'
