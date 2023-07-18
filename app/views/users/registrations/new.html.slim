@@ -1,0 +1,43 @@
+.container.text-center.mt-3
+  .row.form-signin
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+        h3.mb-3.fw-normal
+          = t('.title')
+
+        = form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+          / = render "users/shared/error_messages", resource: resource
+          = render "shared/error_messages", object: f.object
+
+          .form-floating.mb-3.w-50.mx-auto
+            = f.email_field :email, id: "floatingInput", autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control mb-3"
+            label for="floatingInput" email
+
+
+          .form-floating.mb-3.w-50.mx-auto
+            = f.password_field :password, id: "floatingInput", autocomplete: "new-password", placeholder: "password", class: "form-control mb-3"
+            - if @minimum_password_length
+              em
+                | (#{@minimum_password_length} characters minimum)
+            label for="floatingInput" password
+
+          .form-floating.mb-3.w-50.mx-auto
+            = f.password_field :password_confirmation, id: "floatingInput", autocomplete: "new-password", placeholder: "password_confirmation", class: "form-control mb-3"
+            label for="floatingInput" password_confirmation
+
+          .form-check.mb-3
+            = f.check_box :agreement, :as => :boolean, checked:false
+            | &nbsp;
+            = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' } do
+              | 利用規約
+            = render 'shared/modal', modal_type: 'terms'
+            | と
+            = link_to '#', data: { bs_toggle: 'modal', bs_target: '#privacyPolicyModal' } do
+              | プライバシーポリシー
+            = render 'shared/modal', modal_type: 'privacy_policy'
+            |に同意する
+
+          .actions
+            = f.submit t('defaults.register'), class: "btn btn-primary btn-lg w-50"
+        br
+        = render "users/shared/links"
+        br

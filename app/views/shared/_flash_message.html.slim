@@ -1,0 +1,7 @@
+- flash.each do |message_type, message|
+  - if message_type == 'notice'
+    div class="alert alert-success" role="alert" style='margin-bottom: 0px'
+      = message
+  - else
+    div class="alert alert-#{message_type}" role="alert"
+      = message
