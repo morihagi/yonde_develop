@@ -1,7 +1,7 @@
 header.p-3.text-white(style="background-color: #354a5f;")
   .container
     .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
-      = link_to '#', class: 'd-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none' do
+      = link_to root_path, class: 'd-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none' do
         = image_tag "radio.png", alt: "radio-icon", size: '40x40', class: "bi me-2"
         | YONDE
 
@@ -11,5 +11,5 @@ header.p-3.text-white(style="background-color: #354a5f;")
 
       .text-end
         = link_to '投稿メールの作成', '#', class: 'btn btn-warning rounded-pill me-3'
-        = link_to 'ログイン', new_user_session_path, class: 'btn btn-outline-light rounded-pill me-3'
-        = link_to 'ユーザー登録', new_user_registration_path, class: 'btn btn-light rounded-pill'
+        = link_to t('defaults.login'), new_user_session_path, class: 'btn btn-outline-light rounded-pill me-3'
+        = link_to t('defaults.register'), new_user_registration_path, class: 'btn btn-light rounded-pill'

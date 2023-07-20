@@ -1,6 +1,6 @@
 p
-  | Welcome <%= @email %>!
+  | YONDEへの登録ありがとうございます。
 p
-  | You can confirm your account email through the link below:
+  | 以下のリンクをクリックして、メールアドレスの認証を行ってください。
 p
-  | <%= link_to 'Confirm my account', confirmation_url(@resource, confirmation_token: @token) %>
+  = link_to 'メールアドレスの認証', confirmation_url(@resource, confirmation_token: @token)

@@ -29,7 +29,7 @@ ja:
       user: ユーザ
   devise:
     confirmations:
-      confirmed: メールアドレスが確認できました。
+      confirmed: メールアドレスが認証されました。
       new:
         resend_confirmation_instructions: アカウント確認メール再送
       send_instructions: アカウントの有効化について数分以内にメールでご連絡します。
@@ -43,13 +43,13 @@ ja:
       not_found_in_database: "%{authentication_keys}またはパスワードが違います。"
       timeout: セッションがタイムアウトしました。もう一度ログインしてください。
       unauthenticated: アカウント登録もしくはログインしてください。
-      unconfirmed: メールアドレスの本人確認が必要です。
+      unconfirmed: メールからメールアドレスの認証をしてください。
     mailer:
       confirmation_instructions:
         action: メールアドレスの確認
         greeting: "%{recipient}様"
         instruction: 以下のリンクをクリックし、メールアドレスの確認手続を完了させてください。
-        subject: メールアドレス確認メール
+        subject: 【YONDE】メールアドレスの認証を完了してください
       email_changed:
         greeting: こんにちは、%{recipient}様。
         message: あなたのメール変更（%{email}）のお知らせいたします。
