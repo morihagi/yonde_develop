@@ -7,20 +7,19 @@
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
 
           .form-floating.mb-3.w-50.mx-auto
-            = f.email_field :email, id: "floatingInput", autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control mb-3"
-            label for="floatingInput" email
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control mb-3"
+            = f.label :email
 
           .form-floating.mb-3.w-50.mx-auto
-            = f.password_field :password, id: "floatingInput", autocomplete: "new-password", placeholder: "password", class: "form-control mb-3"
-            label for="floatingInput" password
+            = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control mb-3"
+            = f.label :password
 
           - if devise_mapping.rememberable?
             .field
               = f.check_box :remember_me
               = f.label :remember_me
 
-          .actions
-            = f.submit t('defaults.login'), class: "btn btn-primary btn-lg w-50"
-        br
+          p.actions
+            = f.submit t('defaults.login'), class: 'btn btn-outline-dark rounded-pill w-50'
+
         = render "users/shared/links"
-        br

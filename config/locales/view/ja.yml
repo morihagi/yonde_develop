@@ -1,7 +1,10 @@
 ja:
   defaults:
-    register: 登録
+    register: ユーザー登録
     login: ログイン
+    forget_password_mail: パスワード再設定
+    authentication_mail: メールアドレス認証メールを再送
+    unlock_mail: ロック解除メールを送信
   helpers:
     page_entries_info:
       more_pages:
@@ -25,6 +28,6 @@ ja:
     registrations:
       new:
         title: ユーザー登録
-      create:
-        success: ユーザー登録が完了しました
-        fail: ユーザー登録に失敗しました
+    sessions:
+      new:
+        title: ログイン

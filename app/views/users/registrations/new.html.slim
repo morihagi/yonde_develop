@@ -7,21 +7,21 @@
         = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
           = render "shared/error_messages", object: f.object
 
-          .form-group.w-50.mx-auto.text-start
+          .form-floating.mb-3.w-50.mx-auto
+            = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "name", class: "form-control mb-3"
             = f.label :name
-            = f.text_field :name, autofocus: true, class: "form-control mb-3"
 
-          .form-group.w-50.mx-auto.text-start
+          .form-floating.mb-3.w-50.mx-auto
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control mb-3"
             = f.label :email
-            = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control mb-3"
 
-          .form-group.w-50.mx-auto.text-start
+          .form-floating.mb-3.w-50.mx-auto
+            = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control mb-3"
             = f.label :password
-            = f.password_field :password, autocomplete: "new-password", class: "form-control mb-3"
 
-          .form-group.w-50.mx-auto.text-start
+          .form-floating.mb-3.w-50.mx-auto
+            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password_confirmation", class: "form-control mb-3"
             = f.label :password_confirmation
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: "form-control mb-3"
 
           .form-check.mb-3
             = f.check_box :agreement, :as => :boolean, checked:false
@@ -35,6 +35,7 @@
             = render 'shared/modal', modal_type: 'privacy_policy'
             |に同意する
 
-          .actions
-            = f.submit t('defaults.register'), class: "btn btn-primary btn-lg w-50"
+          p.actions
+            = f.submit t('defaults.register'), class: 'btn btn-outline-light rounded-pill w-50', style: "background-color: #354a5f;"
+
         = render "users/shared/links"
