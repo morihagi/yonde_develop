@@ -1,25 +1,27 @@
 - if controller_name != 'sessions'
-  = link_to "Log in", new_session_path(resource_name)
-  br
+  ' ----- 登録済みですか？ -----
+  p = link_to "Log in", new_session_path(resource_name)
 
 - if devise_mapping.registerable? && controller_name != 'registrations'
-  = link_to "Sign up", new_registration_path(resource_name)
-  br
+  ' ----- 新しいユーザーですか？ -----
+  p = link_to "Sign up", new_registration_path(resource_name)
 
 - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
-  = link_to "Forgot your password?", new_password_path(resource_name)
-  br
+  ' ----- パスワードを忘れましたか？ -----
+  p = link_to "Forgot your password?", new_password_path(resource_name)
 
 - if devise_mapping.confirmable? && controller_name != 'confirmations'
-  = link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)
-  br
+  ' ----- 認証メールを再送しますか？ -----
+  p = link_to "Didn't receive confirmation instructions?", new_confirmation_path(resource_name)
 
 - if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
-  = link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name)
-  br
+  ' ----- ロック解除メールを再送しますか？ -----
+  p = link_to "Didn't receive unlock instructions?", new_unlock_path(resource_name)
 
 - if devise_mapping.omniauthable?
   - resource_class.omniauth_providers.each do |provider|
-    = button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false }
-    br
-
+    ' ----- Googleアカウントで登録・ログインしますか？ -----
+    p = button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false }
+    p 
+      #g_id_onload data-client_id=ENV["GOOGLE_CLIENT_ID"] data-login_uri="http://localhost:3000/google_login_api/callback" data-auto_prompt="false"
+      .g_id_signin data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"

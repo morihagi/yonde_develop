@@ -83,6 +83,10 @@ gem 'mechanize'
 # User Register and Login
 gem 'devise'
 
+# User Register with Google account
+gem 'omniauth-google-oauth2'
+gem 'omniauth-rails_csrf_protection'
+
 group :development, :test do
   # Loads environment variables from a .env file.
   gem 'dotenv-rails'
