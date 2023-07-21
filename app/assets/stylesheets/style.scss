@@ -37,7 +37,11 @@ footer {
   }
 }
 
-/* btnの設定 */
+img.img-fluid {
+  max-width: 100%;
+  height: auto;
+}
+
 .btn {
   letter-spacing: 0.1em;
   padding: 5px 20px;
