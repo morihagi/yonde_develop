@@ -54,19 +54,14 @@ gem 'bootstrap', '5.2.3'
 # Fast JavaScript execution within Ruby for Rails applications.
 gem 'mini_racer'
 
-# Provides form builders compatible with Bootstrap.
-gem 'bootstrap_form'
-
 # Language support for internationalization in Rails.
 gem 'rails-i18n'
 
 # Slim templating engine integration for Rails.
 gem 'slim-rails'
-gem 'erb2slim'
-gem 'html2slim'
 
-# Adds helper methods for working with enumerations in Rails.
-gem 'enum_help'
+# Enumerated attributes with I18n.
+gem 'enumerize'
 
 # Pagination library for Rails applications.
 gem 'kaminari'
