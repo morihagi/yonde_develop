@@ -9,7 +9,7 @@
 #  radio_name     :string
 #  zip1           :integer
 #  zip2           :integer
-#  other_addess   :string
+#  other_address   :string
 #  legal_name     :string
 #  user_id        :integer          not null
 #  created_at     :datetime         not null
@@ -25,7 +25,7 @@ FactoryBot.define do
     integer { "MyString" }
     zip2 { "MyString" }
     integer { "MyString" }
-    other_addess { "MyString" }
+    other_address { "MyString" }
     legal_name { "MyString" }
   end
 end

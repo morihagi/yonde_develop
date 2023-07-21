@@ -3,6 +3,8 @@ ja:
   activerecord:
     models:
       user: ユーザー
+      profile: デフォルト情報
+      program_segment: 番組・コーナー
     attributes:
       user:
         name: 名前
@@ -10,6 +12,28 @@ ja:
         password: パスワード
         password_confirmation: パスワード確認
         agreement: 利用規約とプライバシーポリシー
+      profile:
+        email_for_post: メールアドレス
+        prefecture: 都道府県
+        city: 市町村区
+        other_address: 以降の住所
+        radio_name: ラジオネーム
+        zip: 郵便番号
+        legal_name: 本名
+      program_segment:
+        email: メールアドレス
+        program: 番組
+        segment: コーナー
+        program_status: 番組継続状況
+        segment_status: コーナー継続状況
+  enumerize:
+    program_segment:
+      program_status:
+        ongoing: 継続
+        finished: 終了
+      segment_status:
+        ongoing: 継続
+        finished: 終了
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

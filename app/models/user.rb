@@ -34,6 +34,8 @@ class User < ApplicationRecord
           :confirmable, :trackable, :lockable,
           :omniauthable, omniauth_providers: %i[ google_oauth2 ]
 
+  has_one :profile, dependent: :destroy
+
   validates :name, presence: true
 
   before_save { self.email = email.downcase }
