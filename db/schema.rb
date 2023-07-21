@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_21_083130) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_21_162445) do
   create_table "profiles", force: :cascade do |t|
     t.string "email_for_post"
     t.string "prefecture"
@@ -18,12 +18,22 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_21_083130) do
     t.string "radio_name"
     t.integer "zip1"
     t.integer "zip2"
-    t.string "other_addess"
+    t.string "other_address"
     t.string "legal_name"
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["user_id"], name: "index_profiles_on_user_id"
+  end
+
+  create_table "program_segments", force: :cascade do |t|
+    t.string "email", null: false
+    t.string "segment", null: false
+    t.string "program", null: false
+    t.string "segment_status", default: "ongoing", null: false
+    t.string "program_status", default: "ongoing", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "users", force: :cascade do |t|

@@ -9,7 +9,7 @@
 #  radio_name     :string
 #  zip1           :integer
 #  zip2           :integer
-#  other_addess   :string
+#  other_address   :string
 #  legal_name     :string
 #  user_id        :integer          not null
 #  created_at     :datetime         not null
