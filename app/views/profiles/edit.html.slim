@@ -1,0 +1,28 @@
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1 = t('.title')
+      = form_with model: @user, url: profile_path, local: true do |f|
+        = render 'shared/error_messages', object: f.object
+
+        .form-group
+          = f.label :email
+          = f.text_field :email, class: 'form-control mb-3'
+
+        .form-group
+          = f.label :last_name
+          = f.text_field :last_name, class: 'form-control mb-3'
+
+        .form-group
+          = f.label :first_name
+          = f.text_field :first_name, class: 'form-control mb-3'
+
+        .form-group
+          = f.label :avatar
+          = f.file_field :avatar, class: 'form-control mb-3', accept: 'image/*', onchange: 'previewImage(preview)'
+          = f.hidden_field :avatar_cache
+
+        .mt-3.mb-3
+          = image_tag @user.avatar_url, class: 'rounded-circle', id: 'preview', size: '100x100'
+
+        = f.submit (t 'defaults.update'), class: 'btn btn-primary'
