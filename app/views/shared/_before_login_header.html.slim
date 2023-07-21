@@ -1,15 +1,21 @@
-header.p-3.text-white(style="background-color: #354a5f;")
+nav.navbar.navbar-expand-lg.navbar-dark.static-top(style="background-color: #354a5f;")
   .container
-    .d-flex.flex-wrap.align-items-center.justify-content-center.justify-content-lg-start
-      = link_to root_path, class: 'd-flex align-items-center mb-2 mb-lg-0 text-white text-decoration-none' do
-        = image_tag "radio.png", alt: "radio-icon", size: '40x40', class: "bi me-2"
-        | YONDE
+    = link_to root_path, class: 'text-white text-decoration-none' do
+      = image_tag "radio.png", alt: "radio-icon", size: '40x40', class: "bi me-2"
+      | YONDE
 
-      ul.nav.col-12.col-lg-auto.ms-lg-auto.mb-2.justify-content-center.justify-content-lg-end.mb-md-0
+    button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
+      span.navbar-toggler-icon
+
+    .collapse.navbar-collapse#navbarSupportedContent
+      ul.nav.col-12.col-lg-auto.ms-lg-auto.mb-2.justify-content-center.justify-content-lg-between.mb-md-0
         li = link_to 'YONDEとは', '#', style: 'letter-spacing: 0.1em;', class: 'nav-link px-2 me-3 text-white'
         li = link_to '機能一覧', '#', style: 'letter-spacing: 0.1em;', class: 'nav-link px-2 me-3 text-white'
 
-      .text-end
-        = link_to '投稿メールの作成', '#', class: 'btn btn-warning rounded-pill me-3'
-        = link_to t('defaults.login'), new_user_session_path, class: 'btn btn-outline-light rounded-pill me-3'
-        = link_to t('defaults.register'), new_user_registration_path, class: 'btn btn-light rounded-pill'
+      .d-flex.flex-column.flex-sm-row.align-items-center.justify-content-center
+        .d-flex.flex-sm-row.mb-2.mb-lg-0
+          = link_to '投稿メールの作成', '#', class: 'btn btn-warning rounded-pill me-2'
+        .d-flex.flex-sm-row.mb-2.mb-lg-0
+          = link_to t('defaults.login'), new_user_session_path, class: 'btn btn-outline-light rounded-pill me-2'
+        .d-flex.flex-sm-row.mb-2.mb-lg-0
+          = link_to t('defaults.register'), new_user_registration_path, class: 'btn btn-light rounded-pill me-2'

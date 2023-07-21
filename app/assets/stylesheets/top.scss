@@ -1,8 +1,33 @@
+/* for a laptop */
 .oneArea {
-  background: linear-gradient(-40deg, #f1c40e 0%, #f1c40e 50%, #354a5f 50%, #354a5f 100%);
+  background: linear-gradient(-43deg, #f1c40e 0%, #f1c40e 50%, #354a5f 50%, #354a5f 100%);
   display: flex;
   justify-content: center;
   align-items: center;
   width: 100%;
   height: 600px;
+}
+
+/* for a tablet */
+@media (max-width: 768px) {
+  .oneArea {
+    background: linear-gradient(-38deg, #f1c40e 0%, #f1c40e 50%, #354a5f 50%, #354a5f 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+  }
+}
+
+/* for a smartphone */
+@media (max-width: 480px) {
+  .oneArea {
+    background: linear-gradient(-30deg, #f1c40e 0%, #f1c40e 50%, #354a5f 50%, #354a5f 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 600px;
+  }
 }

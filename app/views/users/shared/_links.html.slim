@@ -1,9 +1,6 @@
 - if devise_mapping.omniauthable?
   - resource_class.omniauth_providers.each do |provider|
-    script src="https://accounts.google.com/gsi/client" async defer
-    .d-flex.justify-content-center
-      #g_id_onload data-client_id=ENV['GOOGLE_CLIENT_ID'] data-login_uri=omniauth_authorize_path(resource_name, provider) data-auto_prompt="false"
-      p.g_id_signin data-type="standard" data-size="large" data-theme="outline" data-text="sign_in_with" data-shape="rectangular" data-logo_alignment="left"
+      = button_to "Sign in with #{OmniAuth::Utils.camelize(provider)}", omniauth_authorize_path(resource_name, provider), data: { turbo: false }
 
 - if controller_name != 'sessions'
   p
