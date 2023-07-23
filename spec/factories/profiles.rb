@@ -3,17 +3,25 @@
 # Table name: profiles
 #
 #  id             :integer          not null, primary key
-#  email_for_post :string
-#  prefecture     :string
 #  city           :string
+#  email_for_post :string
+#  legal_name     :string
+#  other_address  :string
+#  prefecture     :string
 #  radio_name     :string
 #  zip1           :integer
 #  zip2           :integer
-#  other_address   :string
-#  legal_name     :string
-#  user_id        :integer          not null
 #  created_at     :datetime         not null
 #  updated_at     :datetime         not null
+#  user_id        :integer          not null
+#
+# Indexes
+#
+#  index_profiles_on_user_id  (user_id)
+#
+# Foreign Keys
+#
+#  user_id  (user_id => users.id)
 #
 FactoryBot.define do
   factory :profile do

@@ -2,14 +2,14 @@
 #
 # Table name: program_segments
 #
-#  id         :integer          not null, primary key
-#  email      :string           not null
-#  program    :string           not null
-#  segment    :string           not null
-#  program_status :string       default("ongoing"), not null
-#  segment_status :string       default("ongoing"), not null
-#  created_at :datetime         not null
-#  updated_at :datetime         not null
+#  id             :integer          not null, primary key
+#  email          :string           not null
+#  program        :string           not null
+#  program_status :string           default("ongoing"), not null
+#  segment        :string           not null
+#  segment_status :string           default("ongoing"), not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
 #
 class ProgramSegment < ApplicationRecord
   extend Enumerize

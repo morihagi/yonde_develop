@@ -10,7 +10,27 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_21_162445) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_23_183212) do
+  create_table "posts", force: :cascade do |t|
+    t.string "email_for_post"
+    t.string "prefecture"
+    t.string "city"
+    t.string "radio_name"
+    t.integer "zip1"
+    t.integer "zip2"
+    t.string "other_addess"
+    t.string "legal_name"
+    t.string "favorite_status", default: "unlike", null: false
+    t.string "post_status", default: "draft", null: false
+    t.string "body"
+    t.integer "user_id", null: false
+    t.integer "program_segment_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["program_segment_id"], name: "index_posts_on_program_segment_id"
+    t.index ["user_id"], name: "index_posts_on_user_id"
+  end
+
   create_table "profiles", force: :cascade do |t|
     t.string "email_for_post"
     t.string "prefecture"
@@ -66,5 +86,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_21_162445) do
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
 
+  add_foreign_key "posts", "program_segments"
+  add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
 end
