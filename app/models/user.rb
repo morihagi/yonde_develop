@@ -43,6 +43,7 @@ class User < ApplicationRecord
           :omniauthable, omniauth_providers: %i[ google_oauth2 ]
 
   has_one :profile, dependent: :destroy
+  has_many :posts, dependent: :destroy
 
   validates :name, presence: true
 

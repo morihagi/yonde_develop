@@ -34,6 +34,14 @@ ja:
       segment_status:
         ongoing: 継続
         finished: 終了
+    post:
+      favorite_status:
+        unlike: 非お気に入り
+        like: お気に入り
+      post_status:
+        draft: 下書き
+        sent: 送信済み
+        archived: アーカイブ
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'

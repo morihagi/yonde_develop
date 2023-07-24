@@ -153,6 +153,9 @@ group :development do
 
   # for fly.io
   gem 'dockerfile-rails', '>= 1.5'
+
+  # Generates an ER diagram.
+  gem "rails-mermaid_erd"
 end
 
 group :test do
