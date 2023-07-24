@@ -1,10 +1,15 @@
 ja:
   defaults:
+    title: YONDE
+    about: YONDEとは
+    functions: 機能一覧
     register: ユーザー登録
     login: ログイン
+    logout: ログアウト
     forget_password_mail: パスワード再設定
     authentication_mail: メールアドレス認証メールを再送
     unlock_mail: ロック解除メールを送信
+    copy_right: © YONDE 2023
   helpers:
     page_entries_info:
       more_pages:
@@ -24,6 +29,15 @@ ja:
   static_pages:
     top:
       title: トップページ
+  modals:
+    contact:
+      title: お問い合わせ
+    developer:
+      title: 開発者について
+    privacy_policy:
+      title: プライバシーポリシー
+    terms:
+      title: 利用規約
   users:
     registrations:
       new:
@@ -31,3 +45,8 @@ ja:
     sessions:
       new:
         title: ログイン
+  posts:
+    new:
+      title: 投稿メールの作成
+    index:
+      title: マイページ

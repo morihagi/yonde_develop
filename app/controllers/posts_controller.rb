@@ -1,11 +1,11 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[ new create ]
-  before_action :set_post, only: %i[edit update destroy]
+  # before_action :set_post, only: %i[edit update destroy]
 
-  def index
-    @q = Post.ransack(params[:q])
-    @posts = @q.result(distinct: true).includes([:user, :bookmarks]).order(created_at: :desc).page(params[:page])
-  end
+  # def index
+  #   @q = Post.ransack(params[:q])
+  #   @posts = @q.result(distinct: true).includes([:user, :bookmarks]).order(created_at: :desc).page(params[:page])
+  # end
 
   def new
     @post = Post.new
@@ -22,25 +22,25 @@ class PostsController < ApplicationController
     end
   end
 
-  def show
-    @post = Post.find(params[:id])
-  end
+  # def show
+  #   @post = Post.find(params[:id])
+  # end
 
-  def edit; end
+  # def edit; end
 
-  def update
-    if @post.update(post_params)
-      redirect_to @post, success: t('defaults.message.updated', item: Post.model_name.human)
-    else
-      flash.now['danger'] = t('defaults.message.not_updated', item: Post.model_name.human)
-      render :edit
-    end
-  end
+  # def update
+  #   if @post.update(post_params)
+  #     redirect_to @post, success: t('defaults.message.updated', item: Post.model_name.human)
+  #   else
+  #     flash.now['danger'] = t('defaults.message.not_updated', item: Post.model_name.human)
+  #     render :edit
+  #   end
+  # end
 
-  def destroy
-    @post.destroy!
-    redirect_to posts_path, succes: t('defaults.message.deleted', item: Post.model_name.human)
-  end
+  # def destroy
+  #   @post.destroy!
+  #   redirect_to posts_path, succes: t('defaults.message.deleted', item: Post.model_name.human)
+  # end
 
   # def bookmarks
   #   @q = current_user.bookmark_posts.ransack(params[:q])
@@ -53,7 +53,7 @@ class PostsController < ApplicationController
     params.require(:post).permit(:title, :body, :post_image, :post_image_cache)
   end
 
-  def set_post
-    @post = current_user.posts.find(params[:id])
-  end
+  # def set_post
+  #   @post = current_user.posts.find(params[:id])
+  # end
 end
