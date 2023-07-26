@@ -26,12 +26,12 @@ class Users::SessionsController < Devise::SessionsController
   # end
 
   # The path used after sign in.
-  def after_sign_in_path_for(resource)
-    root_path
-  end
+  # def after_sign_in_path_for(resource)
+  #   posts_path
+  # end
 
   # The path used after sign out.
-  def after_sign_out_path_for(resource)
-    root_path
-  end
+  # def after_sign_out_path_for(resource)
+  #   root_path
+  # end
 end

@@ -14,8 +14,14 @@
 class ProgramSegment < ApplicationRecord
   extend Enumerize
 
+  has_many :posts
+
   validates :email, :program, :segment, presence: true
 
   enumerize :program_status, in: %i[ ongoing finished ], default: :ongoing, scope: true
   enumerize :segment_status, in: %i[ ongoing finished ], default: :ongoing, scope: true
+
+  def self.ransackable_attributes(auth_object = nil)
+    ["created_at", "email", "id", "program", "program_status", "segment", "segment_status", "updated_at"]
+  end
 end

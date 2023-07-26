@@ -1,7 +1,9 @@
 - flash.each do |message_type, message|
   - if message_type == 'notice'
-    div class="alert alert-success" role="alert" style='margin-bottom: 0px'
+    div class="alert alert-success alert-dismissible" role="alert" style='margin-bottom: 0px'
+      button.btn-close data-bs-dismiss="alert" type="button"
       = message
   - else
-    div class="alert alert-#{bootstrap_alert(message_type)}" role="alert" style='margin-bottom: 0px'
+    div class="alert alert-#{bootstrap_alert(message_type)} alert-dismissible" role="alert" style='margin-bottom: 0px'
+      button.btn-close data-bs-dismiss="alert" type="button"
       = message

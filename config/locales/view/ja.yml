@@ -5,6 +5,7 @@ ja:
     functions: 機能一覧
     register: ユーザー登録
     login: ログイン
+    google_login: Googleを使用して登録・ログイン
     logout: ログアウト
     forget_password_mail: パスワード再設定
     authentication_mail: メールアドレス認証メールを再送
@@ -49,4 +50,7 @@ ja:
     new:
       title: 投稿メールの作成
     index:
-      title: マイページ
+      title: 投稿メール一覧
+  profiles:
+    show:
+      title: プロフィール

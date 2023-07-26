@@ -50,6 +50,7 @@ gem 'sassc-rails'
 
 # Bootstrap framework version 5.2.3.
 gem 'bootstrap', '5.2.3'
+gem 'bootstrap_form'
 
 # Fast JavaScript execution within Ruby for Rails applications.
 gem 'mini_racer'
