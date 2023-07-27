@@ -9,4 +9,9 @@ Rails.application.routes.draw do
               controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
                             registrations: 'users/registrations'
                             }
+
+  resources :posts
+  resource :profile, only: %i[ show edit update ]
+  get '/profile/edit_for_goods', to: 'profiles#edit_for_goods'
+  resource :user, only: %i[ show  edit update ]
 end

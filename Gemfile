@@ -50,6 +50,7 @@ gem 'sassc-rails'
 
 # Bootstrap framework version 5.2.3.
 gem 'bootstrap', '5.2.3'
+gem 'bootstrap_form'
 
 # Fast JavaScript execution within Ruby for Rails applications.
 gem 'mini_racer'
@@ -81,6 +82,9 @@ gem 'devise'
 # User Register with Google account
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+
+# Decorator
+gem 'draper'
 
 group :development, :test do
   # Loads environment variables from a .env file.
@@ -153,6 +157,9 @@ group :development do
 
   # for fly.io
   gem 'dockerfile-rails', '>= 1.5'
+
+  # Generates an ER diagram.
+  gem "rails-mermaid_erd"
 end
 
 group :test do

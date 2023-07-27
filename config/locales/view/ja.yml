@@ -1,10 +1,27 @@
 ja:
   defaults:
+    title: YONDE
+    about: YONDEとは
+    functions: 機能一覧
     register: ユーザー登録
     login: ログイン
+    google_login: Googleを使用して登録・ログイン
+    logout: ログアウト
     forget_password_mail: パスワード再設定
     authentication_mail: メールアドレス認証メールを再送
     unlock_mail: ロック解除メールを送信
+    copy_right: © YONDE 2023
+    edit: 変更
+    update: 更新
+    message:
+      require_login: ログインしてください
+      created: "%{item}を作成しました"
+      not_created: "%{item}を作成できませんでした"
+      updated: "%{item}を更新しました"
+      not_updated: "%{item}を更新できませんでした"
+      deleted: "%{item}を削除しました"
+      not_deleted: "%{item}を削除できませんでした"
+      delete_confirm: 削除しますか？
   helpers:
     page_entries_info:
       more_pages:
@@ -24,10 +41,31 @@ ja:
   static_pages:
     top:
       title: トップページ
+  modals:
+    contact:
+      title: お問い合わせ
+    developer:
+      title: 開発者について
+    privacy_policy:
+      title: プライバシーポリシー
+    terms:
+      title: 利用規約
   users:
+    show:
+      title: ログイン情報
     registrations:
       new:
         title: ユーザー登録
     sessions:
       new:
         title: ログイン
+  posts:
+    new:
+      title: 投稿メールの作成
+    index:
+      title: 投稿メール一覧
+  profiles:
+    show:
+      title: リスナー情報
+    edit:
+      title: リスナー情報の変更

@@ -1,0 +1,35 @@
+.container
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h1 = t('.title')
+
+      = form_with model: @profile, url: profile_path, local: true, method: :patch do |f|
+        .form-group
+          = f.label :zip1
+          = f.text_field :zip1, class: 'form-control mb-3'
+
+        .form-group
+          = f.label :zip2
+          = f.text_field :zip2, class: 'form-control mb-3'
+
+        .form-group
+          = f.label :prefecture
+          = f.text_field :prefecture, class: 'form-control mb-3'
+
+        .form-group
+          = f.label :city
+          = f.text_field :city, class: 'form-control mb-3'
+
+        .form-group
+          = f.label :other_address
+          = f.text_field :other_address, class: 'form-control mb-3'
+
+        .form-group
+          = f.label :phone
+          = f.text_field :phone, class: 'form-control mb-3'
+
+        .form-group
+          = f.label :legal_name
+          = f.text_field :legal_name, class: 'form-control mb-3'
+
+        = f.submit (t 'defaults.update'), class: 'btn btn-primary mb-3'

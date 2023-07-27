@@ -51,6 +51,10 @@ GEM
       globalid (>= 0.3.6)
     activemodel (7.0.6)
       activesupport (= 7.0.6)
+    activemodel-serializers-xml (1.0.2)
+      activemodel (> 5.x)
+      activesupport (> 5.x)
+      builder (~> 3.1)
     activerecord (7.0.6)
       activemodel (= 7.0.6)
       activesupport (= 7.0.6)
@@ -88,6 +92,9 @@ GEM
       autoprefixer-rails (>= 9.1.0)
       popper_js (>= 2.11.6, < 3)
       sassc-rails (>= 2.0.0)
+    bootstrap_form (5.2.3)
+      actionpack (>= 6.0)
+      activemodel (>= 6.0)
     brakeman (6.0.0)
     builder (3.2.4)
     bullet (7.0.7)
@@ -133,6 +140,13 @@ GEM
     dotenv-rails (2.8.1)
       dotenv (= 2.8.1)
       railties (>= 3.2)
+    draper (4.0.2)
+      actionpack (>= 5.0)
+      activemodel (>= 5.0)
+      activemodel-serializers-xml (>= 1.0)
+      activesupport (>= 5.0)
+      request_store (>= 1.0)
+      ruby2_keywords
     enumerize (2.7.0)
       activesupport (>= 3.2)
     erubi (1.12.0)
@@ -310,6 +324,8 @@ GEM
     rails-i18n (7.0.7)
       i18n (>= 0.7, < 2)
       railties (>= 6.0.0, < 8)
+    rails-mermaid_erd (0.4.2)
+      rails (>= 5.2)
     railties (7.0.6)
       actionpack (= 7.0.6)
       activesupport (= 7.0.6)
@@ -326,6 +342,8 @@ GEM
     regexp_parser (2.8.1)
     reline (0.3.6)
       io-console (~> 0.5)
+    request_store (1.5.1)
+      rack (>= 1.4)
     responders (3.1.0)
       actionpack (>= 5.2)
       railties (>= 5.2)
@@ -470,6 +488,7 @@ DEPENDENCIES
   binding_of_caller
   bootsnap
   bootstrap (= 5.2.3)
+  bootstrap_form
   brakeman
   bullet
   bundler-audit
@@ -480,6 +499,7 @@ DEPENDENCIES
   devise
   dockerfile-rails (>= 1.5)
   dotenv-rails
+  draper
   enumerize
   factory_bot_rails
   faker
@@ -498,6 +518,7 @@ DEPENDENCIES
   rack-mini-profiler
   rails (~> 7.0.6)
   rails-i18n
+  rails-mermaid_erd
   ransack
   rspec-rails
   rubocop

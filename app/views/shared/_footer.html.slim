@@ -1,29 +1,29 @@
 footer.p-3(style="background-color: #f1c40e;")
   .container
     .d-flex.flex-column.flex-md-row.justify-content-center.justify-content-md-between.align-items-md-center
-        span.text-muted.d-none.d-md-block
-          | © YONDE 2023
+      span.text-muted.d-none.d-md-block
+        | #{t('defaults.copy_right')}
 
-        span.d-flex.justify-content-end.flex-grow-1.mb-2.mb-md-0
-          span.me-5
-            = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' }, style: 'color: inherit; text-decoration: none;' do
-              | 利用規約
-            = render 'shared/modal', modal_type: 'terms'
+      span.d-flex.justify-content-end.flex-grow-1.mb-2.mb-md-0
+        span.me-5
+          = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' }, style: 'color: inherit; text-decoration: none;' do
+            | #{t('modals.terms.title')}
+          = render 'shared/modal', modal_type: 'terms'
 
-          span.me-5
-            = link_to '#', data: { bs_toggle: 'modal', bs_target: '#privacyPolicyModal' }, style: 'color: inherit; text-decoration: none;' do
-              | プライバシーポリシー
-            = render 'shared/modal', modal_type: 'privacy_policy'
+        span.me-5
+          = link_to '#', data: { bs_toggle: 'modal', bs_target: '#privacyPolicyModal' }, style: 'color: inherit; text-decoration: none;' do
+            | #{t('modals.privacy_policy.title')}
+          = render 'shared/modal', modal_type: 'privacy_policy'
 
-          span.me-5
-            = link_to '#', data: { bs_toggle: 'modal', bs_target: '#developerModal' }, style: 'color: inherit; text-decoration: none;' do
-              | 開発者について
-            = render 'shared/modal', modal_type: 'developer'
+        span.me-5
+          = link_to '#', data: { bs_toggle: 'modal', bs_target: '#developerModal' }, style: 'color: inherit; text-decoration: none;' do
+            | #{t('modals.developer.title')}
+          = render 'shared/modal', modal_type: 'developer'
 
-          span
-            = link_to '#', data: { bs_toggle: 'modal', bs_target: '#contactModal' }, style: 'color: inherit; text-decoration: none;' do
-              | お問い合わせ
-            = render 'shared/modal', modal_type: 'contact'
+        span
+          = link_to '#', data: { bs_toggle: 'modal', bs_target: '#contactModal' }, style: 'color: inherit; text-decoration: none;' do
+            | #{t('modals.contact.title')}
+          = render 'shared/modal', modal_type: 'contact'
 
-        span.text-center.text-muted.d-md-none
-          | © YONDE 2023
+      span.text-center.text-muted.d-md-none
+        | #{t('defaults.copy_right')}
