@@ -83,6 +83,9 @@ gem 'devise'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
 
+# Decorator
+gem 'draper'
+
 group :development, :test do
   # Loads environment variables from a .env file.
   gem 'dotenv-rails'

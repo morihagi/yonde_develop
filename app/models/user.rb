@@ -43,6 +43,8 @@ class User < ApplicationRecord
           :omniauthable, omniauth_providers: %i[ google_oauth2 ]
 
   has_one :profile, dependent: :destroy
+  before_create :build_default_profile
+
   has_many :posts, dependent: :destroy
 
   validates :name, presence: true
@@ -86,5 +88,10 @@ class User < ApplicationRecord
 
   def google_registration?
     provider == 'google_oauth2'
+  end
+
+  def build_default_profile
+    build_profile
+    true
   end
 end

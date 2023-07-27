@@ -36,15 +36,16 @@ ul.nav.nav-tabs.justify-content-end.mt-3
         = sort_link(@search, :body)
       .me-2
         = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning rounded-pill me-2'
+
   #card.tab-pane.active.mt-3
     .row
       - @posts.each do |post|
         .col-sm-12.col-lg-4.mb-3
           div id="post-id-#{post.id}"
             .card
-              = image_tag 'radio_listening.png', class: 'card-img-top', size: '300x200'
+              = image_tag "https://www.allnightnippon.com/wp/assets/uploads/2023/03/Ado_ANN_HP.jpg", alt: "", class: 'card-img-top'
               .card-body
-                h4.card-title
+                h5.card-title
                   = post.program_segment.segment
                 ul.list-inline
                   li.list-inline-item

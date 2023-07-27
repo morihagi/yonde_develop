@@ -1,12 +1,37 @@
+h4.fw-bold
+  span.me-1 📮
+  span = t('.title')
+
 .container.pt-3
   .row
-    .col-md-10.offset-md-1
-      h1.float-left.mb-5 = t('.title')
-      = link_to (t 'defaults.edit'), edit_profile_path, class: 'btn btn-success float-right'
-      table.table
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h5 = '投稿メール用情報'
+      table.table.table-striped
         tr
-          th(scope='row') = t(User.human_attribute_name(:email))
-          td = current_user.email
+          th(scope='row') = t(Profile.human_attribute_name(:email_for_post))
+          td = current_user.profile&.email_for_post
         tr
-          th(scope='row') = t(User.human_attribute_name(:full_name))
-          td = current_user.decorate.full_name
+          th(scope='row') = t(Profile.human_attribute_name(:full_address))
+          td = current_user.profile&.decorate.full_address_post
+        tr
+          th(scope='row') = t(Profile.human_attribute_name(:radio_name))
+          td = current_user.profile&.radio_name
+      = link_to (t 'defaults.edit'), edit_profile_path, class: 'btn btn-success mb-3', style: 'float: right'
+
+      br
+
+      h5 = 'ノベルティグッズ発送用情報'
+      table.table.table-striped
+        tr
+          th(scope='row') = t(Profile.human_attribute_name(:full_zip))
+          td = current_user.profile&.decorate.full_zip
+        tr
+          th(scope='row') = t(Profile.human_attribute_name(:full_address))
+          td = current_user.profile&.decorate.full_address
+        tr
+          th(scope='row') = t(Profile.human_attribute_name(:phone))
+          td = current_user.profile&.phone
+        tr
+          th(scope='row') = t(Profile.human_attribute_name(:legal_name))
+          td = current_user.profile&.legal_name
+      = link_to (t 'defaults.edit'), profile_edit_for_goods_path, class: 'btn btn-success mb-3', style: 'float: right'

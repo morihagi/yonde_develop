@@ -8,17 +8,19 @@ ja:
     attributes:
       user:
         name: 名前
-        email: メールアドレス
+        email: ログイン用メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
         agreement: 利用規約とプライバシーポリシー
       profile:
-        email_for_post: メールアドレス
+        email_for_post: 投稿用メールアドレス
         prefecture: 都道府県
         city: 市町村区
-        other_address: 以降の住所
+        full_address_post: 在住
+        full_address: 住所
         radio_name: ラジオネーム
-        zip: 郵便番号
+        full_zip: 郵便番号
+        phone: 電話番号
         legal_name: 本名
       program_segment:
         email: メールアドレス

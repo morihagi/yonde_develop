@@ -11,5 +11,7 @@ Rails.application.routes.draw do
                             }
 
   resources :posts
-  resource :profile, only: %i[show edit update]
+  resource :profile, only: %i[ show edit update ]
+  get '/profile/edit_for_goods', to: 'profiles#edit_for_goods'
+  resource :user, only: %i[ show  edit update ]
 end

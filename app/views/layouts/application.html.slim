@@ -36,12 +36,12 @@ html
 
     = render 'shared/flash_message'
 
-    - if controller_name == 'posts'
+    - if controller_name == 'posts' || controller_name == 'profiles' || controller_name == 'users'
       .container-fluid
         .row
           .ps-0.col-md-3(style="background-color: #354a5f;")
             .d-flex.flex-column.flex-shrink-0.py-3.px-3.text-white
-              = render 'sidebar'
+              = render 'shared/sidebar'
 
           .col-md-9
             .container.main-content(style="margin-top: 20px;")
