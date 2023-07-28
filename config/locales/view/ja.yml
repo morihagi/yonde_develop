@@ -4,6 +4,7 @@ ja:
     about: YONDEとは
     functions: 機能一覧
     register: ユーザー登録
+    mypage: マイページ
     login: ログイン
     google_login: Googleを使用して登録・ログイン
     logout: ログアウト
