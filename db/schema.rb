@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_27_183729) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_28_200622) do
   create_table "posts", force: :cascade do |t|
     t.string "email_for_post"
     t.string "prefecture"
@@ -22,7 +22,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_27_183729) do
     t.string "legal_name"
     t.string "favorite_status", default: "unlike", null: false
     t.string "post_status", default: "draft", null: false
-    t.string "body"
+    t.text "body"
     t.integer "user_id", null: false
     t.integer "program_segment_id", null: false
     t.datetime "created_at", null: false
@@ -55,6 +55,16 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_27_183729) do
     t.string "program_status", default: "ongoing", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "segment_for_email", null: false
+    t.string "personality", null: false
+    t.string "image_url", null: false
+    t.string "official_site", null: false
+    t.text "instruction"
+    t.text "official_site_instruction"
+    t.string "default_sentence"
+    t.string "novelty_goods", default: "none", null: false
+    t.string "day", null: false
+    t.string "starting_time", null: false
   end
 
   create_table "users", force: :cascade do |t|
