@@ -3,7 +3,7 @@
 # Table name: posts
 #
 #  id                 :integer          not null, primary key
-#  body               :string
+#  body               :text
 #  city               :string
 #  email_for_post     :string
 #  favorite_status    :string           default("unlike"), not null

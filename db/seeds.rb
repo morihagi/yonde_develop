@@ -43,7 +43,6 @@ ProgramSegment.create!(
 )
 
 User.create!(
-  name: 'ゲストユーザー',
   email: 'example@sample.com',
   password: 'password12',
   password_confirmation: 'password12',

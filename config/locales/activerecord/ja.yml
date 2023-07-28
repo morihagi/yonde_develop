@@ -7,7 +7,6 @@ ja:
       program_segment: 番組・コーナー
     attributes:
       user:
-        name: 名前
         email: ログイン用メールアドレス
         password: パスワード
         password_confirmation: パスワード確認

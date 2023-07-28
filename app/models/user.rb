@@ -8,13 +8,13 @@
 #  confirmed_at           :datetime
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string
+#  deleted_at             :datetime
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  failed_attempts        :integer          default(0), not null
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :string
 #  locked_at              :datetime
-#  name                   :string           default(""), not null
 #  provider               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -46,8 +46,6 @@ class User < ApplicationRecord
   before_create :build_default_profile
 
   has_many :posts, dependent: :destroy
-
-  validates :name, presence: true
 
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -96,7 +94,6 @@ class User < ApplicationRecord
       # Uncomment the section below if you want users to be created if they don't exist
       unless user
           user = User.create(
-              name: data['name'],
               email: data['email'],
               password: Devise.friendly_token[0,20],
               agreement: true
