@@ -22,6 +22,8 @@ ja:
       deleted: "%{item}を削除しました"
       not_deleted: "%{item}を削除できませんでした"
       delete_confirm: 削除しますか？
+      waiting_confirmation: の認証待ちです
+      are_you_sure: 本当に削除していいですか？
   helpers:
     page_entries_info:
       more_pages:
@@ -56,9 +58,17 @@ ja:
     registrations:
       new:
         title: ユーザー登録
+      edit:
+        title: ログイン情報の編集
     sessions:
       new:
         title: ログイン
+    confirmations:
+      new:
+        title: アカウント認証メールの再送
+    unlocks:
+      new:
+        title: アカウントロック解除メールの再送
   posts:
     new:
       title: 投稿メールの作成

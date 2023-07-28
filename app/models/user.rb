@@ -55,18 +55,36 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_EMAIL_REGEX }
 
-  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password, presence: true,
                     length: { minimum: 8 },
                     format: { with: VALID_PASSWORD_REGEX },
                     allow_nil: true,
-                    unless: :google_registration?
+                    unless: :google_registration?,
+                    if: :password_required?
 
   validates_acceptance_of :agreement, allow_nil: false, on: :create, unless: :google_registration?
   validates :uid, presence: true, uniqueness: { scope: :provider }, if: -> { uid.present? }
 
   def remember_me
     true
+  end
+
+  def active_for_authentication?
+    super && !deleted_at
+  end
+
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+
+    result = update(params, *options)
+    clean_up_passwords
+    result
   end
 
   protected

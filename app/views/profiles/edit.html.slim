@@ -1,8 +1,10 @@
+h4.fw-bold
+  span.me-1 🎧
+  span = t('.title')
+
 .container
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-      h1 = t('.title')
-
       = form_with model: @profile, url: profile_path, local: true, method: :patch do |f|
         .form-group 
           = f.label :email_for_post

@@ -36,7 +36,9 @@ html
 
     = render 'shared/flash_message'
 
-    - if controller_name == 'posts' || controller_name == 'profiles' || controller_name == 'users'
+    - if controller_name == 'static_pages'
+      = yield
+    - elsif user_signed_in?
       .container-fluid
         .row
           .ps-0.col-md-3(style="background-color: #354a5f;")

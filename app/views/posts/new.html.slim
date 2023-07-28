@@ -1,8 +1,10 @@
-h1 New hedgehog
+h4.fw-bold
+  span.me-1 📮
+  span = t('.title')
 
-= render "form", post: @post
+.container.pt-3
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      = render "form", post: @post
 
-br
-
-div
-  = link_to "Back to posts", posts_path
+      = link_to "Back to posts", posts_path
