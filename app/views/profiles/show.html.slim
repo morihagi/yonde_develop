@@ -23,8 +23,8 @@ h4.fw-bold
       h5 = 'ノベルティグッズ発送用情報'
       table.table.table-striped
         tr
-          th(scope='row') = t(Profile.human_attribute_name(:full_zip))
-          td = current_user.profile&.decorate.full_zip
+          th(scope='row') = t(Profile.human_attribute_name(:zip_code))
+          td = current_user.profile&.zip_code
         tr
           th(scope='row') = t(Profile.human_attribute_name(:full_address))
           td = current_user.profile&.decorate.full_address
