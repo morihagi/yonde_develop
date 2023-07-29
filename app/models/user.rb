@@ -8,13 +8,13 @@
 #  confirmed_at           :datetime
 #  current_sign_in_at     :datetime
 #  current_sign_in_ip     :string
+#  deleted_at             :datetime
 #  email                  :string           default(""), not null
 #  encrypted_password     :string           default(""), not null
 #  failed_attempts        :integer          default(0), not null
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :string
 #  locked_at              :datetime
-#  name                   :string           default(""), not null
 #  provider               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -47,26 +47,42 @@ class User < ApplicationRecord
 
   has_many :posts, dependent: :destroy
 
-  validates :name, presence: true
-
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
   validates :email, presence: true,
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_EMAIL_REGEX }
 
-  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   validates :password, presence: true,
                     length: { minimum: 8 },
                     format: { with: VALID_PASSWORD_REGEX },
                     allow_nil: true,
-                    unless: :google_registration?
+                    unless: :google_registration?,
+                    if: :password_required?
 
   validates_acceptance_of :agreement, allow_nil: false, on: :create, unless: :google_registration?
   validates :uid, presence: true, uniqueness: { scope: :provider }, if: -> { uid.present? }
 
   def remember_me
     true
+  end
+
+  def active_for_authentication?
+    super && !deleted_at
+  end
+
+  def update_without_current_password(params, *options)
+    params.delete(:current_password)
+
+    if params[:password].blank? && params[:password_confirmation].blank?
+      params.delete(:password)
+      params.delete(:password_confirmation)
+    end
+
+    result = update(params, *options)
+    clean_up_passwords
+    result
   end
 
   protected
@@ -77,7 +93,7 @@ class User < ApplicationRecord
 
       # Uncomment the section below if you want users to be created if they don't exist
       unless user
-          user = User.create(name: data['name'],
+          user = User.create(
               email: data['email'],
               password: Devise.friendly_token[0,20],
               agreement: true

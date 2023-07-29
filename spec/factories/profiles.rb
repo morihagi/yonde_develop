@@ -7,6 +7,7 @@
 #  email_for_post :string
 #  legal_name     :string
 #  other_address  :string
+#  phone          :string
 #  prefecture     :string
 #  radio_name     :string
 #  zip1           :integer

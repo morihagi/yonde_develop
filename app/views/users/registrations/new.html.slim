@@ -8,19 +8,15 @@
           = render "shared/error_messages", object: f.object
 
           .form-floating.mb-3.w-50.mx-auto
-            = f.text_field :name, autofocus: true, autocomplete: "name", placeholder: "name", class: "form-control mb-3"
-            = f.label :name
-
-          .form-floating.mb-3.w-50.mx-auto
             = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control mb-3"
             = f.label :email
 
           .form-floating.mb-3.w-50.mx-auto
-            = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control mb-3"
+            = f.password_field :password, autocomplete: "password", placeholder: "password", class: "form-control mb-3"
             = f.label :password
 
           .form-floating.mb-3.w-50.mx-auto
-            = f.password_field :password_confirmation, autocomplete: "new-password", placeholder: "password_confirmation", class: "form-control mb-3"
+            = f.password_field :password_confirmation, autocomplete: "password", placeholder: "password_confirmation", class: "form-control mb-3"
             = f.label :password_confirmation
 
           .form-check.mb-3

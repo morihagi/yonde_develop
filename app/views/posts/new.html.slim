@@ -1,8 +1,33 @@
-h1 New hedgehog
+h4.fw-bold
+  span.me-1 📮
+  span = t('.title')
 
-= render "form", post: @post
+.container.pt-3
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      = form_with(model: @post) do |f|
 
-br
+        .form-group
+          = f.label :program
+          = f.collection_select :program_id, Program.all, :id, :program, { prompt: "選択してください" }, data: { action: "change->select#getSegments", target: "select.program" }
 
-div
-  = link_to "Back to posts", posts_path
+
+        .form-group
+          = f.label :segment
+          = f.collection_select :segment_id, Segment.all, :id, :segment_title, { prompt: "選択してください" }, data: { target: "select.segment" }
+
+          .form-group
+            = f.label :personality
+            = f.collection_select :program_id, Program.all, :id, :personality, { prompt: "選択してください" }
+
+          .form-group
+            = f.label :day
+            = f.collection_select :program_id, Program.all, :id, :day, { prompt: "選択してください" }
+
+          .form-group
+            = f.label :starting_time
+            = f.collection_select :program_id, Program.all, :id, :starting_time, { prompt: "選択してください" }
+
+          = f.submit "Create Post", class: 'btn btn-primary'
+
+      = link_to "Back to posts", posts_path

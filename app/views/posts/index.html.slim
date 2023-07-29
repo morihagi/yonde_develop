@@ -10,8 +10,8 @@ div.card.shadow.mt-3
     = search_form_for @search, url: posts_path do |f|
       div.row.g-3.mb-3
         div.col-4.col-xl-2
-          = f.label :program_segment_segment_cont, "コーナー", class: "form-label"
-          / = f.search_field :program_segment_segment_cont, class: "form-control"
+          = f.label :segment_segment_cont, "コーナー", class: "form-label"
+          = f.search_field :segment_cont, class: "form-control"
 
         div.col-4.col-xl-2
           = f.label :body_cont, "本文", class: "form-label"
@@ -46,7 +46,7 @@ ul.nav.nav-tabs.justify-content-end.mt-3
               = image_tag "https://www.allnightnippon.com/wp/assets/uploads/2023/03/Ado_ANN_HP.jpg", alt: "", class: 'card-img-top'
               .card-body
                 h5.card-title
-                  = post.program_segment.segment
+                  = post.segment.segment_title
                 ul.list-inline
                   li.list-inline-item
                     i.fas.fa-calendar-alt.me-1
@@ -65,7 +65,7 @@ ul.nav.nav-tabs.justify-content-end.mt-3
       tbody
         - @posts.each do |post|
           tr
-            td = post.program_segment.segment
+            td = post.segment.segment_title
             td = post.body
 
 = paginate @posts

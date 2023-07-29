@@ -4,10 +4,10 @@ ja:
     models:
       user: ユーザー
       profile: デフォルト情報
-      program_segment: 番組・コーナー
+      program: 番組
+      segment: コーナー
     attributes:
       user:
-        name: 名前
         email: ログイン用メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
@@ -19,20 +19,30 @@ ja:
         full_address_post: 在住
         full_address: 住所
         radio_name: ラジオネーム
-        full_zip: 郵便番号
+        zip_code: 郵便番号
         phone: 電話番号
         legal_name: 本名
-      program_segment:
+      program:
         email: メールアドレス
         program: 番組
-        segment: コーナー
         program_status: 番組継続状況
+      segment:
+        segment: コーナー
         segment_status: コーナー継続状況
   enumerize:
-    program_segment:
+    program:
       program_status:
         ongoing: 継続
         finished: 終了
+      day:
+        mon: 月曜日
+        tue: 火曜日
+        wed: 水曜日
+        thu: 木曜日
+        fri: 金曜日
+        sat: 土曜日
+        sun: 日曜日
+    segment:
       segment_status:
         ongoing: 継続
         finished: 終了

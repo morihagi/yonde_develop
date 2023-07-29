@@ -7,6 +7,7 @@
 #  email_for_post :string
 #  legal_name     :string
 #  other_address  :string
+#  phone          :string
 #  prefecture     :string
 #  radio_name     :string
 #  zip1           :integer
@@ -28,7 +29,7 @@ class Profile < ApplicationRecord
 
   validates :email_for_post, presence: true, allow_blank: true
   validates :prefecture, :city, :radio_name, :other_address, :legal_name, allow_blank: true
-  validates :zip1, length: { is: 3 }, numericality: { only_integer: true }, allow_blank: true
-  validates :zip2, length: { is: 4 }, numericality: { only_integer: true }, allow_blank: true
+  VALID_ZIP_CODE_REGEX = /\A\d{3}[-]?\d{4}\z/
+  validates :zip_code, presence: true, allow_blank: true, format: { with: VALID_ZIP_CODE_REGEX }
   validates :user_id, presence: true
 end
