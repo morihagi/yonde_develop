@@ -20,10 +20,6 @@
     = f.collection_select :segment_id, Segment.all, :id, :segment_title, { prompt: "選択してください" }, { class: 'form-control mb-3', required: true }
 
   .form-group
-    = f.label :email_for_post
-    = f.email_field :email_for_post, placeholder: 'example@sample.com', class: 'form-control mb-3'
-
-  .form-group
     = f.label 'お住まい(未記入でもOK)'
     = f.text_field :prefecture, placeholder: '都道府県', class: 'form-control'
     = f.text_field :city, placeholder: '市町村', class: 'form-control mb-3'

@@ -12,7 +12,7 @@ class PostsController < ApplicationController
 
     if profile.present?
       @post = Post.new(
-        email_for_post: profile.email_for_post,
+        email_for_post: current_user.email,
         prefecture: profile.prefecture,
         city: profile.city,
         radio_name: profile.radio_name,

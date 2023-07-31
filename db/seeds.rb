@@ -58,8 +58,7 @@ User.create!(
 )
 
 Profile.create!(
-  user_id: 1,
-  email_for_post: 'example_for_post@sample.com',
+  user_id: 2,
   legal_name: 'はぎはら',
   prefecture: '東京都',
   city: '千代田区',
@@ -71,7 +70,7 @@ Profile.create!(
 
 30.times do
   Post.create!(
-    email_for_post: Faker::Internet.email,
+    email_for_post: 'example@sample.com',
     prefecture: Faker::Address.state,
     city: Faker::Address.city,
     radio_name: Faker::Name.name,

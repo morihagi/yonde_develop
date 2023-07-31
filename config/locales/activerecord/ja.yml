@@ -13,7 +13,6 @@ ja:
         password_confirmation: パスワード確認
         agreement: 利用規約とプライバシーポリシー
       profile:
-        email_for_post: 投稿用メールアドレス
         prefecture: 都道府県
         city: 市町村区
         full_address_post: 在住
