@@ -26,7 +26,6 @@
 #
 FactoryBot.define do
   factory :profile do
-    email { "MyString" }
     prefecture { "MyString" }
     city { "MyString" }
     radio_name { "MyString" }

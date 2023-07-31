@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_31_080124) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_31_173329) do
   create_table "posts", force: :cascade do |t|
     t.string "email_for_post"
     t.string "prefecture"
@@ -32,7 +32,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_31_080124) do
   end
 
   create_table "profiles", force: :cascade do |t|
-    t.string "email_for_post"
     t.string "prefecture"
     t.string "city"
     t.string "radio_name"

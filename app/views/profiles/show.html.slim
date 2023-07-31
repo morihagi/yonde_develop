@@ -8,9 +8,6 @@ h4.fw-bold
       h5 = '投稿メール用情報'
       table.table.table-striped
         tr
-          th(scope='row') = t(Profile.human_attribute_name(:email_for_post))
-          td = current_user.profile&.email_for_post
-        tr
           th(scope='row') = t(Profile.human_attribute_name(:full_address))
           td = current_user.profile&.decorate.full_address_post
         tr
