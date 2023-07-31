@@ -79,9 +79,13 @@ gem 'mechanize'
 # User Register and Login
 gem 'devise'
 
-# User Register with Google account
+# Draft and send a post by Gmail
+gem 'json'
 gem 'omniauth-google-oauth2'
 gem 'omniauth-rails_csrf_protection'
+
+# Gmail api
+gem 'google-apis-gmail_v1'
 
 # Decorator
 gem 'draper'

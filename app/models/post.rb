@@ -35,7 +35,7 @@ class Post < ApplicationRecord
 
   extend Enumerize
   enumerize :favorite_status, in: %i[ unlike like ], default: :unlike, scope: true
-  enumerize :post_status, in: %i[ draft sent archived ], default: :draft, scope: true
+  enumerize :post_status, in: %i[ draft gmail_draft sent archived ], default: :draft, scope: true
 
   def self.ransackable_attributes(auth_object = nil)
     ["segment_title", "body", "city", "created_at", "email_for_post", "favorite_status", "id", "legal_name", "other_address", "post_status", "prefecture", "segment_id", "radio_name", "updated_at", "user_id", "zip_code"]

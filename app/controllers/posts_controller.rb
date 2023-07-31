@@ -51,10 +51,6 @@ class PostsController < ApplicationController
     end
   end
 
-  def post_send
-    
-  end
-
   def destroy
     @post.destroy!
     redirect_to posts_path, succes: t('defaults.message.deleted', item: Post.model_name.human)

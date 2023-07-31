@@ -88,19 +88,19 @@ class User < ApplicationRecord
   protected
 
   def self.from_omniauth(access_token)
-      data = access_token.info
-      user = User.where(email: data['email']).first
+    data = access_token.info
+    user = User.where(email: data['email']).first
 
-      # Uncomment the section below if you want users to be created if they don't exist
-      unless user
-          user = User.create(
-              email: data['email'],
-              password: Devise.friendly_token[0,20],
-              agreement: true
-          )
-      end
-      user
+    # Uncomment the section below if you want users to be created if they don't exist
+    unless user
+        user = User.create(
+            email: data['email'],
+            password: Devise.friendly_token[0,20],
+            agreement: true
+        )
     end
+    user
+  end
 
   def google_registration?
     provider == 'google_oauth2'
@@ -109,5 +109,15 @@ class User < ApplicationRecord
   def build_default_profile
     build_profile
     true
+  end
+
+  def self.from_omniauth_for_gmail_api(auth)
+    where(provider: auth.provider, uid: auth.uid).first_or_initialize.tap do |user|
+      user.provider = auth.provider
+      user.uid = auth.uid
+      user.oauth_token = auth.credentials.token
+      user.oauth_expires_at = Time.at(auth.credentials.expires_at)
+      return user
+    end
   end
 end

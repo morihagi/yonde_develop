@@ -10,8 +10,12 @@ Rails.application.routes.draw do
     registrations: 'users/registrations'
   }
 
-  resources :posts
-  get '/posts/post_send', to: 'posts#post_send'
+  resources :posts do
+    get 'draft', to: 'gmails#post_draft'
+    get 'send', to: 'gmails#post_send'
+  end
+  get 'auth/:provider/callback', to: 'gmails#gmail_api'
+  get 'auth/failure', to: redirect('/')
   resource :profile, only: %i[ show edit update ]
   get '/profile/edit_for_goods', to: 'profiles#edit_for_goods'
   resource :user, only: %i[ show  edit update ]

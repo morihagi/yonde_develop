@@ -45,7 +45,9 @@ h4.fw-bold
 
     .col-lg-8.offset-lg-2.d-flex.justify-content-center
       .btn-group
-        = link_to "Edit this post", edit_post_path(@post), class: 'btn btn-success me-3 mb-3'
+        = link_to "Edit this post", edit_post_path(@post), class: 'btn btn-success mb-3 me-3'
       - if current_user.email.include?("@gmail.com")
         .btn-group
-          = link_to "Send this post", post_path(@post), data: { turbo_method: :post, turbo_confirm: t('defaults.message.post_confirm')}, class: 'btn btn-warning ms-3 mb-3'
+          = link_to "番組に送信", post_draft_path(@post), data: { turbo_method: :get, turbo_confirm: t('defaults.message.post_confirm')}, class: 'btn btn-warning mb-3 me-3'
+        .btn-group
+          = link_to "Gmailの下書きボックスに送信", post_send_path(@post), data: { turbo_method: :get, turbo_confirm: t('defaults.message.post_confirm')}, class: 'btn btn-primary mb-3'
