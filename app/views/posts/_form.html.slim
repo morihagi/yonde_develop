@@ -1,4 +1,61 @@
-= bootstrap_form_with(model: post) do |form|
-  = form.text_field :radio_name
-  = form.text_area :body
-  = form.primary
+/ div data-controller="select"
+/   = form_with model: post, local: true, method: :get do |f|
+/     .program-select
+/       = f.collection_select :program, Program.all.includes([:segments]), :id, :program, include_blank: "番組を選択してください"
+
+/     #segment
+/       = f.select :segment, [], include_blank: "---", class: "default-segment-select"
+
+/     = f.submit "検索", class: "btn btn-primary"
+
+/     - Program.all.each do |program|
+/       template id="sub-program-of-program#{program.id}"
+/         = f.collection_select :segment, program.segments, :id, :segment_title, include_blank: "コーナーを選択してください"
+
+= form_with(model: post, url: posts_path, method: :post) do |f|
+  = render "shared/error_messages", object: f.object
+
+  .form-group
+    = f.label :segment_title, Segment.human_attribute_name('segment_title')
+    = f.collection_select :segment_id, Segment.all, :id, :segment_title, { prompt: "選択してください" }, { class: 'form-control mb-3', required: true }
+
+  .form-group
+    = f.label :email_for_post
+    = f.email_field :email_for_post, placeholder: 'example@sample.com', class: 'form-control mb-3'
+
+  .form-group
+    = f.label 'お住まい(未記入でもOK)'
+    = f.text_field :prefecture, placeholder: '都道府県', class: 'form-control'
+    = f.text_field :city, placeholder: '市町村', class: 'form-control mb-3'
+
+  .form-group
+    = f.label :radio_name
+    = f.text_field :radio_name, class: 'form-control mb-3'
+
+  details
+    summary.fw-bold.text-primary
+      | 住所・本名・連絡先を記入したい場合はこちらをクリック
+    div data-controller="profile-form"
+      = check_box_tag :check, "", false, { data: { profile_form_target: 'check', action: 'change->profile-form#toggle' } }
+      = label_tag :check, "登録済みのデフォルト情報を追加"
+
+    div id="profile-form" data-target="profile-form.profileForm"
+      .form-group
+        = f.label :zip_code
+        = f.text_field :zip_code, placeholder: '000-0000', class: 'form-control mb-3'
+
+      .form-group
+        = f.label :other_address
+        = f.text_field :prefecture, placeholder: '都道府県', class: 'form-control'
+        = f.text_field :city, placeholder: '市町村', class: 'form-control'
+        = f.text_field :other_address, placeholder: '以降の住所', class: 'form-control mb-3'
+
+      .form-group
+        = f.label :phone
+        = f.text_field :phone, placeholder: '000-000-0000', class: 'form-control mb-3'
+
+  .form-group
+    = f.label :body
+    = f.text_area :body, class: 'form-control mb-3', rows: 10
+
+  = f.submit "Create Post", class: 'btn btn-primary'

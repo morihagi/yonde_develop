@@ -8,7 +8,7 @@
 #  email_for_post  :string
 #  favorite_status :string           default("unlike"), not null
 #  legal_name      :string
-#  other_addess    :string
+#  other_address    :string
 #  post_status     :string           default("draft"), not null
 #  prefecture      :string
 #  radio_name      :string
@@ -37,7 +37,7 @@ FactoryBot.define do
     radio_name { "MyString" }
     zip1 { 1 }
     zip2 { 1 }
-    other_addess { "MyString" }
+    other_address { "MyString" }
     legal_name { "MyString" }
     favorite_status { "MyString" }
     post_status { "MyString" }

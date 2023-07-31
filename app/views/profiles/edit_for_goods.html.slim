@@ -6,13 +6,11 @@ h4.fw-bold
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
       = form_with model: @profile, url: profile_path, local: true, method: :patch do |f|
-        .form-group
-          = f.label :zip1
-          = f.text_field :zip1, class: 'form-control mb-3'
+        = render "shared/error_messages", object: f.object
 
         .form-group
-          = f.label :zip2
-          = f.text_field :zip2, class: 'form-control mb-3'
+          = f.label :zip_code
+          = f.text_field :zip_code, class: 'form-control mb-3'
 
         .form-group
           = f.label :prefecture

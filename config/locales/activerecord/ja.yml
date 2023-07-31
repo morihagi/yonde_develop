@@ -22,12 +22,22 @@ ja:
         zip_code: 郵便番号
         phone: 電話番号
         legal_name: 本名
+      post:
+        email_for_post: 投稿用メールアドレス
+        prefecture: 都道府県
+        city: 市町村区
+        full_address_post: 在住
+        full_address: 住所
+        radio_name: ラジオネーム
+        zip_code: 郵便番号
+        phone: 電話番号
+        legal_name: 本名
       program:
         email: メールアドレス
         program: 番組
         program_status: 番組継続状況
       segment:
-        segment: コーナー
+        segment_title: コーナー
         segment_status: コーナー継続状況
   enumerize:
     program:

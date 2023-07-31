@@ -6,7 +6,9 @@ h4.fw-bold
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
       = form_with model: @profile, url: profile_path, local: true, method: :patch do |f|
-        .form-group 
+        = render "shared/error_messages", object: f.object
+
+        .form-group
           = f.label :email_for_post
           = f.text_field :email_for_post, class: 'form-control mb-3'
 

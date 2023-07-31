@@ -11,8 +11,10 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to profile_path, notice: t('defaults.message.updated', item: Profile.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_updated', item: Profile.model_name.human)
-      render :edit
+      flash.now['alert'] = t('defaults.message.not_updated', item: Profile.model_name.human)
+      render :edit_for_goods, status: :unprocessable_entity
+      # render :edit, status: :unprocessable_entity if controller_name == 'profiles#edit'
+      # render :edit_for_goods, status: :unprocessable_entity if controller_name == 'profiles#edit_for_goods'
     end
   end
 
@@ -23,6 +25,6 @@ class ProfilesController < ApplicationController
   end
 
   def profile_params
-    params.require(:profile).permit(:email_for_post, :zip1, :zip2, :prefecture, :city, :other_address, :radio_name, :phone, :legal_name)
+    params.require(:profile).permit(:email_for_post, :zip_code, :prefecture, :city, :other_address, :radio_name, :phone, :legal_name)
   end
 end

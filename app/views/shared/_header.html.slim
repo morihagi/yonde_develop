@@ -16,4 +16,4 @@ nav.navbar.navbar-expand-lg.navbar-dark.static-top(style="background-color: #354
         .d-flex.flex-sm-row.mb-2.mb-lg-0
           = link_to t('defaults.mypage'), posts_path, class: 'btn btn-warning rounded-pill me-3'
         .d-flex.flex-sm-row.mb-2.mb-lg-0
-          = link_to t('defaults.logout'), destroy_user_session_path, method: :delete, data: { turbo_method: :delete }, class: 'btn btn-outline-light rounded-pill me-3'
+          = link_to t('defaults.logout'), destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-outline-light rounded-pill me-3'

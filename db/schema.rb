@@ -10,14 +10,14 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_07_29_220847) do
+ActiveRecord::Schema[7.0].define(version: 2023_07_31_080124) do
   create_table "posts", force: :cascade do |t|
     t.string "email_for_post"
     t.string "prefecture"
     t.string "city"
     t.string "radio_name"
     t.string "zip_code"
-    t.string "other_addess"
+    t.string "other_address"
     t.string "legal_name"
     t.string "favorite_status", default: "unlike", null: false
     t.string "post_status", default: "draft", null: false
@@ -25,7 +25,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_07_29_220847) do
     t.integer "user_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "segment_id"
+    t.integer "segment_id", null: false
+    t.integer "phone"
     t.index ["segment_id"], name: "index_posts_on_segment_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end

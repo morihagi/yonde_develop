@@ -8,7 +8,7 @@
 #  email_for_post  :string
 #  favorite_status :string           default("unlike"), not null
 #  legal_name      :string
-#  other_addess    :string
+#  other_address    :string
 #  post_status     :string           default("draft"), not null
 #  prefecture      :string
 #  radio_name      :string
@@ -38,7 +38,7 @@ class Post < ApplicationRecord
   enumerize :post_status, in: %i[ draft sent archived ], default: :draft, scope: true
 
   def self.ransackable_attributes(auth_object = nil)
-    ["body", "city", "created_at", "email_for_post", "favorite_status", "id", "legal_name", "other_addess", "post_status", "prefecture", "segment_id", "radio_name", "updated_at", "user_id", "zip1", "zip2"]
+    ["segment_title", "body", "city", "created_at", "email_for_post", "favorite_status", "id", "legal_name", "other_address", "post_status", "prefecture", "segment_id", "radio_name", "updated_at", "user_id", "zip_code"]
   end
 
   def self.ransackable_associations(auth_object = nil)

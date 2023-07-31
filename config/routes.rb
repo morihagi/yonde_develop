@@ -5,15 +5,13 @@ Rails.application.routes.draw do
   get '/modals/terms', to: 'modals#terms'
   get '/modals/privacy_policy', to: 'modals#privacy_policy'
 
-  devise_for :users, 
-              controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
-                            registrations: 'users/registrations'
-                            }
+  devise_for :users,
+  controllers: { omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations'
+  }
 
   resources :posts
-  resources :segments do
-    get 'segments', on: :member
-  end
+  get '/posts/post_send', to: 'posts#post_send'
   resource :profile, only: %i[ show edit update ]
   get '/profile/edit_for_goods', to: 'profiles#edit_for_goods'
   resource :user, only: %i[ show  edit update ]

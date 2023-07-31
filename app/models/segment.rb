@@ -34,8 +34,12 @@ class Segment < ApplicationRecord
   extend Enumerize
   enumerize :segment_status, in: %i[ ongoing finished ], default: :ongoing, scope: true
 
+  def self.ransackable_associations(auth_object = nil)
+    ["posts", "program"]
+  end
+
   def self.ransackable_attributes(auth_object = nil)
-    ["id", "segment", "segment_status"]
+    ["id", "segment_title", "segment_status"]
   end
 end
 
