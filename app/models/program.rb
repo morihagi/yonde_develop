@@ -15,7 +15,7 @@
 #  updated_at     :datetime         not null
 #
 class Program < ApplicationRecord
-  has_many :segments
+  has_many :segments, dependent: :destroy
 
   validates :program, :personality, :email, :image_url, :official_site, :day, :starting_time, presence: true
 

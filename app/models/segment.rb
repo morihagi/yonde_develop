@@ -26,7 +26,7 @@
 #  program_id  (program_id => programs.id)
 #
 class Segment < ApplicationRecord
-  has_many :posts
+  has_many :posts, dependent: :destroy
   belongs_to :program
 
   validates :segment_title, :segment_status, :segment_title_for_email, presence: true

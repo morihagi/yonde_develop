@@ -1,4 +1,6 @@
 class Token < ApplicationRecord
+  belongs_to :user
+
   require 'net/http'
   require 'json'
 
