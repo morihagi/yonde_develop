@@ -1,10 +1,51 @@
-p style="color: green" = notice
+h4.fw-bold
+  span.me-1 📮
+  span = @post.segment.program.program
 
-= render @post
+.container.mt-5
+  .row
+    .col-lg-8.offset-lg-2
+      = link_to "Destroy this post", post_path(@post), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')}, class: 'btn btn-danger mb-3', style: 'float: right'
+    .col-lg-8.offset-lg-2
+      .card.mb-3
+        .card-header
+          | 下書き
+        ul class="list-group list-group-flush"
+          li class="list-group-item"
+            An 🎧 リスナー | From: #{current_user.email}
+          li class="list-group-item"
+            An 🎙 番組 | To: #{@post.segment.program.email}
+          li class="list-group-item"
+            An 📻 件名 | #{@post.segment.segment_title_for_email}
+        .card-body
+          = simple_format(@post.body)
+          br
+          - if @post.radio_name.present?
+            div
+              | (RN) 
+              = @post.radio_name
+            br
+          - if @post.zip_code.present?
+            div
+              | (住所) 〒
+              = @post.zip_code
+          - if @post.prefecture.present? || @post.city.present? || @post.other_address.present?
+            div
+              = @post.prefecture
+              = @post.city
+              = @post.other_address
+          - if @post.phone.present?
+            div
+              | (電話番号) 
+              = @post.phone
+          - if @post.legal_name.present?
+            div
+              | (名前) 
+              = @post.legal_name
 
-div
-  = link_to "Edit this post", edit_post_path(@post)
-  |
-  = link_to "Back to posts", posts_path
-
-  = button_to "Destroy this post", @post, method: :delete
+    .col-lg-8.offset-lg-2.d-flex.justify-content-center
+      .btn-group
+        = link_to "Edit this post", edit_post_path(@post), class: 'btn btn-success me-3 mb-3'
+      - if current_user.email.include?("@gmail.com")
+        .btn-group
+          = link_to "Send this post", post_path(@post), data: { turbo_method: :post, turbo_confirm: t('defaults.message.post_confirm')}, class: 'btn btn-warning ms-3 mb-3'

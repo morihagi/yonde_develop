@@ -1,5 +1,5 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[ new create ]
+  skip_before_action :authenticate_user!, only: %i[ new create show ]
   before_action :set_post, only: %i[edit update destroy]
 
   def index
@@ -26,21 +26,18 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = current_user.posts.new(post_params)
+      @post = current_user.posts.new(post_params) if user_signed_in?
+
     if @post.save
-      redirect_to posts_path, notice: t('defaults.message.created', item: Post.model_name.human)
+      redirect_to post_path(@post), notice: t('defaults.message.created', item: Post.model_name.human)
     else
       flash.now[:alert] = t('defaults.message.not_created', item: Post.model_name.human)
       render :new, status: :unprocessable_entity
     end
   end
 
-  def dtaft
-    
-  end
-
   def show
-    @post = current_user.postscurrent_user.posts.find(params[:id])
+    @post = current_user.posts.find(params[:id])
   end
 
   def edit; end
@@ -52,6 +49,10 @@ class PostsController < ApplicationController
       flash.now['danger'] = t('defaults.message.not_updated', item: Post.model_name.human)
       render :edit
     end
+  end
+
+  def post_send
+    
   end
 
   def destroy

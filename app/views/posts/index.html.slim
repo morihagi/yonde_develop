@@ -45,7 +45,7 @@ ul.nav.nav-tabs.justify-content-end.mt-3
             = image_tag(post.segment.program.image_url, alt: "", class: 'card-img-top')
             .card-body.flex-grow-1.
               h5.card-title
-                = post.segment.segment_title
+                = link_to post.segment.segment_title, post_path(post)
               ul.list-inline
                 li.list-inline-item
                   i.fas.fa-calendar-alt.me-1
