@@ -19,4 +19,15 @@ module ApplicationHelper
   def turbo_stream_flash
     turbo_stream.update "flashes", partial: "flash"
   end
+
+  def bootstrap_alert(key)
+    case key
+    when "notice"
+      "success"
+    when "alert"
+      "warning"
+    when "error"
+      "danger"
+    end
+  end
 end

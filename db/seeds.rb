@@ -76,7 +76,7 @@ Profile.create!(
     city: Faker::Address.city,
     radio_name: Faker::Name.name,
     zip_code: Faker::Number.between(from: 100, to: 999),
-    other_addess: Faker::Address.street_address,
+    other_address: Faker::Address.street_address,
     legal_name: Faker::Name.name,
     favorite_status: 'unlike',
     post_status: 'draft',

@@ -10,8 +10,8 @@ div.card.shadow.mt-3
     = search_form_for @search, url: posts_path do |f|
       div.row.g-3.mb-3
         div.col-4.col-xl-2
-          = f.label :segment_segment_cont, "コーナー", class: "form-label"
-          = f.search_field :segment_cont, class: "form-control"
+          = f.label :segment_cont, "コーナー", class: "form-label"
+          = f.search_field :segment_title_cont, class: "form-control"
 
         div.col-4.col-xl-2
           = f.label :body_cont, "本文", class: "form-label"
@@ -41,31 +41,32 @@ ul.nav.nav-tabs.justify-content-end.mt-3
     .row
       - @posts.each do |post|
         .col-sm-12.col-lg-4.mb-3
-          div id="post-id-#{post.id}"
-            .card
-              = image_tag "https://www.allnightnippon.com/wp/assets/uploads/2023/03/Ado_ANN_HP.jpg", alt: "", class: 'card-img-top'
-              .card-body
-                h5.card-title
-                  = post.segment.segment_title
-                ul.list-inline
-                  li.list-inline-item
-                    i.fas.fa-calendar-alt.me-1
-                    = l post.created_at, format: :long
-                  li.list-inline-item.text-right.ml-auto
-                    = render 'button', post: post
-                p.card-text
-                  = post.body
+          div id="post-id-#{post.id}" class="card d-flex flex-column h-100"
+            = image_tag(post.segment.program.image_url, alt: "", class: 'card-img-top')
+            .card-body.flex-grow-1.
+              h5.card-title
+                = post.segment.segment_title
+              ul.list-inline
+                li.list-inline-item
+                  i.fas.fa-calendar-alt.me-1
+                  = l post.created_at, format: :long
+                li.list-inline-item.text-right.ml-auto
+                  = render 'button', post: post
+              p.card-text. style="max-height: 4em; overflow: hidden;"
+                = post.body
 
   #table.tab-pane
     table(class="table table-striped table-hover")
       thead
         tr
-          th タイトル
-          th 内容
+          th.col-4  タイトル
+          th.col-6 内容
+          th.col-2.text-center アクション
       tbody
         - @posts.each do |post|
-          tr
-            td = post.segment.segment_title
-            td = post.body
+            tr id="post-id-#{post.id}"
+              td.col-4 = post.segment.segment_title
+              td.col-6 = post.body
+              td.col-2.text-center  = render 'button', post: post
 
 = paginate @posts
