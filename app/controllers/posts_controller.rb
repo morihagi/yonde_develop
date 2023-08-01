@@ -8,20 +8,19 @@ class PostsController < ApplicationController
   end
 
   def new
+    @post = Post.new
+    
     profile = Profile.find_by(user_id: current_user.id)
-
     if profile.present?
-      @post = Post.new(
-        email_for_post: current_user.email,
-        prefecture: profile.prefecture,
-        city: profile.city,
-        radio_name: profile.radio_name,
-        zip_code: profile.zip_code,
-        other_address: profile.other_address,
-        legal_name: profile.legal_name,
-        phone: profile.phone,
-        user_id: current_user.id
-      )
+      @post.email_for_post = current_user.email
+      @post.prefecture = profile.prefecture
+      @post.city = profile.city
+      @post.radio_name = profile.radio_name
+      @post.zip_code = profile.zip_code
+      @post.other_address = profile.other_address
+      @post.legal_name = profile.legal_name
+      @post.phone = profile.phone
+      @post.user_id = current_user.id
     end
   end
 
@@ -49,10 +48,6 @@ class PostsController < ApplicationController
       flash.now['danger'] = t('defaults.message.not_updated', item: Post.model_name.human)
       render :edit
     end
-  end
-
-  def post_send
-    
   end
 
   def destroy

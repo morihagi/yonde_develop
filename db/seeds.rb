@@ -58,7 +58,7 @@ User.create!(
 )
 
 Profile.create!(
-  user_id: 2,
+  user_id: 1,
   legal_name: 'はぎはら',
   prefecture: '東京都',
   city: '千代田区',
