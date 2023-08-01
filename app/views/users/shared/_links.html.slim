@@ -1,7 +1,7 @@
 - if devise_mapping.omniauthable?
   p
     - resource_class.omniauth_providers.each do |provider|
-      = button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: 'btn btn-danger rounded-pill w-50'
+      = button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: 'btn btn-danger  w-50'
         i.fab.fa-google(style="color: #ffffff;")&nbsp&nbsp
         | #{t('defaults.google_login')}
 
@@ -9,28 +9,28 @@
   p
   ' ログインする場合
   p
-    = link_to t('defaults.login'), new_session_path(resource_name), class: 'btn btn-outline-secondary rounded-pill w-50'
+    = link_to t('defaults.login'), new_session_path(resource_name), class: 'btn btn-outline-secondary  w-50'
 
 - if devise_mapping.registerable? && controller_name != 'registrations'
   p
   ' ユーザー登録をする場合
   p
-    = link_to t('defaults.register'), new_registration_path(resource_name), class: 'btn btn-outline-light rounded-pill w-50', style: "background-color: #354a5f;"
+    = link_to t('defaults.register'), new_registration_path(resource_name), class: 'btn btn-outline-light  w-50', style: "background-color: #354a5f;"
 
 - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
   p
   ' パスワードを忘れた場合
   p
-    = link_to t('defaults.forget_password_mail'), new_password_path(resource_name), class: 'btn btn-outline-secondary rounded-pill w-50'
+    = link_to t('defaults.forget_password_mail'), new_password_path(resource_name), class: 'btn btn-outline-secondary  w-50'
 
 - if devise_mapping.confirmable? && controller_name != 'confirmations'
   p
   ' ユーザー認証メールを再送する場合
   p
-    = link_to t('defaults.authentication_mail'), new_confirmation_path(resource_name), class: 'btn btn-outline-secondary rounded-pill w-50'
+    = link_to t('defaults.authentication_mail'), new_confirmation_path(resource_name), class: 'btn btn-outline-secondary  w-50'
 
 - if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
   p
   ' アカウントのロックを解除する場合
   p
-    = link_to t('defaults.unlock_mail'), new_unlock_path(resource_name), class: 'btn btn-outline-secondary rounded-pill w-50'
+    = link_to t('defaults.unlock_mail'), new_unlock_path(resource_name), class: 'btn btn-outline-secondary  w-50'

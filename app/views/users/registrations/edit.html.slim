@@ -26,7 +26,9 @@ h4.fw-bold
             = f.label :password_confirmation
             = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control mb-3'
 
-        p = f.submit (t 'defaults.update'), class: 'btn btn-primary mb-3'
+        p = f.submit (t 'defaults.update'), class: 'btn btn-warning mb-3'
 
-      p
-        = button_to "アカウント削除", user_registration_path, method: :delete, form: { data: { turbo_confirm: t('defaults.message.are_you_sure') } }, class: 'btn btn-danger mb-3'
+      .fw-bold
+        | アカウントの削除はこちらから
+      | アカウントを削除すると、投稿メールが全て削除されます。
+      p = button_to "アカウント削除", user_registration_path, method: :delete, form: { data: { turbo_confirm: t('defaults.message.are_you_sure') } }, class: 'btn btn-danger mb-3'
