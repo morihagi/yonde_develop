@@ -1,18 +1,14 @@
 class GmailsController < ApplicationController
   before_action :set_post
+  before_action :get_new_token
 
   require 'mail'
   require 'google/apis/gmail_v1'
-  require 'google/api_client/client_secrets.rb'
-  require 'googleauth'
 
   # Gmailの下書きボックスに投稿メールを送る
   def post_draft
     # Initialize the API
     gmail = Google::Apis::GmailV1::GmailService.new
-    gmail.authorization = google_secret.to_authorization
-    gmail.authorization.refresh!
-
     draft = Google::Apis::GmailV1::Draft.new
     message = Google::Apis::GmailV1::Message.new
 
@@ -25,7 +21,7 @@ class GmailsController < ApplicationController
     message.raw = mail.to_s
     draft.message = message
 
-    gmail.create_user_draft('me', draft, options: {authorization: current_user.tokens.last.access_token})
+    gmail.create_user_draft('me', draft, options: { authorization: current_user.tokens.last.access_token} )
     @post.update(post_status: 'gmail_draft')
     redirect_to posts_path, notice: '投稿メールをGmailの下書きボックスに保存しました'
   end
@@ -34,9 +30,6 @@ class GmailsController < ApplicationController
   def post_send
     # Initialize the API
     gmail = Google::Apis::GmailV1::GmailService.new
-    gmail.authorization = google_secret.to_authorization
-    gmail.authorization.refresh!
-
     draft = Google::Apis::GmailV1::Draft.new
     message = Google::Apis::GmailV1::Message.new
 
@@ -49,7 +42,7 @@ class GmailsController < ApplicationController
     message.raw = mail.to_s
     draft.message = message
 
-    gmail.send_user_message('me', message, options: { authorization: Token.last.access_token })
+    gmail.send_user_message('me', message, options: { authorization: current_user.tokens.last.access_token } )
     @post.update(post_status: 'gmail_sent')
     redirect_to posts_path, notice: '投稿メールを番組に送りました'
   end
@@ -60,18 +53,12 @@ class GmailsController < ApplicationController
     @post = current_user.posts.find(params[:post_id])
   end
 
-  def google_secret
-    scope = 'https://www.googleapis.com/auth/gmail.compose'
+  def token_params
+    params.require(:token).permit(:access_token, :expires_at)
+  end
 
-    Google::APIClient::ClientSecrets.new(
-      { "web" =>
-        { "access_token" => current_user.tokens.last.access_token,
-          "refresh_token" => current_user.tokens.last.refresh_token,
-          "client_id" => ENV['GOOGLE_CLIENT_ID'],
-          "client_secret" => ENV['GOOGLE_CLIENT_SECRET'],
-          "scope" => scope
-        }
-      }
-    )
+  def get_new_token
+    token = Token.find_by(user_id: current_user.id)
+    token.fresh_token
   end
 end
