@@ -46,11 +46,13 @@ ul.nav.nav-tabs.justify-content-end.mt-3
             .card-body.flex-grow-1.
               h5.card-title
                 = link_to post.segment.segment_title, post_path(post)
+
               - status_classes = {'draft' => 'badge rounded-pill text-bg-secondary',
                 'gmail_draft' => 'badge rounded-pill text-bg-success',
                 'gmail_sent' => 'badge rounded-pill text-bg-warning',
                 'archived' => 'badge bg-white text-red border rounded-pill'}
               - if status_class = status_classes[post.post_status]
+
               ul.list-inline
                 li.list-inline-item(class=status_class)
                   = post.post_status_text
