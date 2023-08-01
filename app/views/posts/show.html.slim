@@ -9,7 +9,7 @@ h4.fw-bold
   div(class=status_class)
     = @post.post_status_text
 
-.container.mt-5
+.container.mt-5.mb-3
   .row
     .col-lg-8.offset-lg-2
       = link_to "Destroy this post", post_path(@post), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')}, class: 'btn btn-danger  mb-3', style: 'float: right'
