@@ -61,8 +61,8 @@ ja:
         like: お気に入り
       post_status:
         draft: 投稿メール作成中
-        gmail_draft: Gmailの下書きボックス
-        sent: 番組に送信済み
+        gmail_draft: 下書き（Gmail）
+        gmail_sent: 番組に送信済み
         archived: アーカイブ
     errors:
       messages:
