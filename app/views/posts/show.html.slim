@@ -10,6 +10,15 @@ h4.fw-bold
       .card.mb-3
         .card-header
           | 下書き
+
+          - status_classes = {'draft' => 'badge rounded-pill text-bg-secondary',
+            'gmail_draft' => 'badge rounded-pill text-bg-success',
+            'gmail_sent' => 'badge rounded-pill text-bg-warning',
+            'archived' => 'badge bg-white text-red border rounded-pill'}
+          - if status_class = status_classes[@post.post_status]
+            .list-inline-item.ms-3(class=status_class)
+              = @post.post_status_text
+
         ul class="list-group list-group-flush"
           li class="list-group-item"
             An 🎧 リスナー | From: #{current_user.email}

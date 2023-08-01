@@ -46,7 +46,16 @@ ul.nav.nav-tabs.justify-content-end.mt-3
             .card-body.flex-grow-1.
               h5.card-title
                 = link_to post.segment.segment_title, post_path(post)
+
+              - status_classes = {'draft' => 'badge rounded-pill text-bg-secondary',
+                'gmail_draft' => 'badge rounded-pill text-bg-success',
+                'gmail_sent' => 'badge rounded-pill text-bg-warning',
+                'archived' => 'badge bg-white text-red border rounded-pill'}
+              - if status_class = status_classes[post.post_status]
+
               ul.list-inline
+                li.list-inline-item(class=status_class)
+                  = post.post_status_text
                 li.list-inline-item
                   i.fas.fa-calendar-alt.me-1
                   = l post.created_at, format: :long
@@ -59,14 +68,18 @@ ul.nav.nav-tabs.justify-content-end.mt-3
     table(class="table table-striped table-hover")
       thead
         tr
-          th.col-4  タイトル
-          th.col-6 内容
+          th.col-3  タイトル
+          th.col-5 内容
+          th.col-2.text-center ステイタス
           th.col-2.text-center アクション
       tbody
         - @posts.each do |post|
             tr id="post-id-#{post.id}"
-              td.col-4 = post.segment.segment_title
-              td.col-6 = post.body
-              td.col-2.text-center  = render 'button', post: post
+              td.col-3 = post.segment.segment_title
+              td.col-5 = post.body
+              td.col-2
+                span.badge.bg-secondary
+                  = post.post_status_text
+              td.col-2.text-center = render 'button', post: post
 
 = paginate @posts
