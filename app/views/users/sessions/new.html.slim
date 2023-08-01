@@ -1,7 +1,7 @@
-.container.text-center.mt-3
+.container.text-center.m-3.mx-auto
   .row.form-signin
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-        h3.mb-3.fw-normal
+        h3.m-3.fw-bold
           = t('.title')
 
         = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
