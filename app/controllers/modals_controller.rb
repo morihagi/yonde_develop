@@ -5,7 +5,7 @@ class ModalsController < ApplicationController
 
   def privacy_policy; end
 
-  def contact; end
-
   def developer; end
+
+  def contact; end
 end
