@@ -9,18 +9,20 @@ class PostsController < ApplicationController
 
   def new
     @post = Post.new
-    
-    profile = Profile.find_by(user_id: current_user.id)
-    if profile.present?
-      @post.email_for_post = current_user.email
-      @post.prefecture = profile.prefecture
-      @post.city = profile.city
-      @post.radio_name = profile.radio_name
-      @post.zip_code = profile.zip_code
-      @post.other_address = profile.other_address
-      @post.legal_name = profile.legal_name
-      @post.phone = profile.phone
-      @post.user_id = current_user.id
+
+    if user_signed_in?
+      profile = Profile.find_by(user_id: current_user.id)
+      if profile.present?
+        @post.email_for_post = current_user.email
+        @post.prefecture = profile.prefecture
+        @post.city = profile.city
+        @post.radio_name = profile.radio_name
+        @post.zip_code = profile.zip_code
+        @post.other_address = profile.other_address
+        @post.legal_name = profile.legal_name
+        @post.phone = profile.phone
+        @post.user_id = current_user.id
+      end
     end
   end
 
