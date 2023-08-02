@@ -1,29 +1,46 @@
 import { Controller } from "@hotwired/stimulus";
 
-// Connects to data-controller="select"
 export default class extends Controller {
+  static targets = ["categorySelect", "subCategorySelect"];
+
+  categories = ["Adoのオールナイトニッポン", "緑黄色社会・長屋晴子のオールナイトニッポンX"];
+
+  subCategories = [
+    { program: 'Adoのオールナイトニッポン', segment_title: 'Adoレナリン', segment_id: 1 },
+    { program: '緑黄色社会・長屋晴子のオールナイトニッポンX', segment_title: '永久不滅の作り方～長屋晴子の友達の壁～', segment_id: 2 },
+  ];
+
   connect() {
-    this.defaultSegmentSelect = `<select name="segment" id="segment">
-    <option value>---</option>
-    </select>`;
+    this.populateCategories();
+    this.categorySelectTarget.addEventListener('change', () => this.onChange());
+  }
 
-    // カテゴリーが変更された時の処理
-    this.programTarget.addEventListener('change', () => {
-      // カテゴリーが選ばれた場合
-      if (this.programTarget.value !== '') {
-        // 空のサブカテゴリーのセレクトボックスを削除
-        this.segmentTarget.remove();
+  populateCategories() {
+    // select program
+    this.categories.forEach(category => {
+      const option = document.createElement('option');
+      option.textContent = category;
+      this.categorySelectTarget.appendChild(option);
+    });
+  }
 
-        // 選択されたカテゴリーに応じたHTMLを挿入
-        let selectedTemplate = document.querySelector(`#sub-program-of-program${this.programTarget.value}`);
-        this.programTarget.insertAdjacentHTML('afterend', selectedTemplate.innerHTML);
-      } else {
-        // サブカテゴリー選択用のセレクトボックスを削除
-        this.segmentTarget.remove();
-
-        // ダミーのセレクトボックスを挿入
-        this.programTarget.insertAdjacentHTML('afterend', this.defaultSegmentSelect);
+  onChange() {
+    // generate the program's segments
+    const selectedCategory = this.categorySelectTarget.value;
+    // reset pulldown
+    this.subCategorySelectTarget.innerHTML = '<option value="">選択してください</option>';
+    this.subCategories.forEach(subCategory => {
+      if (subCategory.program === selectedCategory) {
+        const option = document.createElement('option');
+        option.textContent = subCategory.segment_title;
+        option.value = subCategory.segment_id;
+        this.subCategorySelectTarget.appendChild(option);
       }
     });
+
+    // Set the selected subCategory's segment_id to the post's segment_id
+    const selectedSegmentId = this.subCategorySelectTarget.value;
+    const postSegmentIdInput = document.querySelector('#post_segment_id'); // Replace 'post_segment_id' with the actual input field ID
+    postSegmentIdInput.value = selectedSegmentId;
   }
 }
