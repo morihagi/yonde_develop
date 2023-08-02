@@ -14,6 +14,7 @@ ja:
     copy_right: © YONDE 2023
     edit: 変更
     update: 更新
+    resend: 再送
     message:
       require_login: ログインしてください
       created: "%{item}を作成しました"

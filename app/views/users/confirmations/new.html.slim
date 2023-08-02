@@ -12,6 +12,6 @@
             = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control mb-3"
 
           p.actions
-            = f.submit "Resend confirmation instructions", class: 'btn btn-primary mb-3'
+            = f.submit t('defaults.resend'), class: 'btn btn-outline-light w-50', style: "background-color: #354a5f;"
 
         = render "users/shared/links"
