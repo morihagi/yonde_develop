@@ -7,7 +7,7 @@
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
 
 /* Google Fontsの読み込み */
-@import url('https://fonts.googleapis.com/css2?family=BIZ+UDGothic&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap');
 
 /* テンプレート専用cssファイルの読み込み */
 @import url("animation.css");
@@ -19,7 +19,7 @@ html, body {
 }
 
 body {
-  font-family: 'BIZ UDPGothic';
+  font-family: 'BIZ UDPGothic', sans-serif;
   -webkit-text-size-adjust: none;
   letter-spacing: 0.05em; /* 文字間 */
   background: #fff; /* 背景色 */
@@ -54,6 +54,9 @@ img.img-fluid {
   padding: 5px 20px;
 }
 
+.alert-dismissible .btn-close {
+  padding: 0.5rem 1rem;
+}
 .btn1 {
   display: inline-block;
   text-decoration: none;
