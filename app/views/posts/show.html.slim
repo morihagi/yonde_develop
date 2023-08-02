@@ -1,13 +1,8 @@
 h4.fw-bold
   span.me-1 📮
   span = @post.segment.program.program
-- status_classes = {'draft' => 'badge text-bg-secondary',
-  'gmail_draft' => 'badge text-bg-success',
-  'gmail_sent' => 'badge text-bg-warning',
-  'archived' => 'badge bg-white text-red border '}
-- if status_class = status_classes[@post.post_status]
-  div(class=status_class)
-    = @post.post_status_text
+
+div = post_status_badge(@post)
 
 .container.mt-5.mb-3
   .row

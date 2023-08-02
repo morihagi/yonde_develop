@@ -47,15 +47,9 @@ ul.nav.nav-tabs.justify-content-end.mt-3
               h5.card-title
                 = link_to post.segment.segment_title, post_path(post)
 
-              - status_classes = {'draft' => 'badge text-bg-secondary',
-                'gmail_draft' => 'badge text-bg-success',
-                'gmail_sent' => 'badge text-bg-warning',
-                'archived' => 'badge bg-white text-red border '}
-              - if status_class = status_classes[post.post_status]
-
               ul.list-inline
-                li.list-inline-item(class=status_class)
-                  = post.post_status_text
+                li.list-inline-item
+                  = post_status_badge(post)
                 li.list-inline-item
                   i.fas.fa-calendar-alt.me-1
                   = l post.created_at, format: :long
