@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[ new create show ]
-  before_action :set_post, only: %i[edit update destroy]
+  skip_before_action :authenticate_user!, only: %i[ new create show_for_unregistered_user]
+  before_action :set_post, only: %i[ show edit update destroy ]
 
   def index
     @search = current_user.posts.includes([segment: :program]).ransack(params[:q])
@@ -27,18 +27,33 @@ class PostsController < ApplicationController
   end
 
   def create
-      @post = current_user.posts.new(post_params) if user_signed_in?
+    if user_signed_in?
+      @post = current_user.posts.new(post_params)
 
-    if @post.save
-      redirect_to post_path(@post), notice: t('defaults.message.created', item: Post.model_name.human)
+      if @post.save
+        redirect_to post_path(@post), notice: t('defaults.message.created', item: Post.model_name.human)
+      else
+        flash.now[:alert] = t('defaults.message.not_created', item: Post.model_name.human)
+        render :new, status: :unprocessable_entity
+      end
+
     else
-      flash.now[:alert] = t('defaults.message.not_created', item: Post.model_name.human)
-      render :new, status: :unprocessable_entity
+      unregistered_user = User.find(1)
+      @post = unregistered_user.posts.new(post_params)
+
+      if @post.save
+        redirect_to show_for_guest_user_path, notice: t('defaults.message.created', item: Post.model_name.human)
+      else
+        flash.now[:alert] = t('defaults.message.not_created', item: Post.model_name.human)
+        render :new, status: :unprocessable_entity
+      end
     end
   end
 
-  def show
-    @post = current_user.posts.find(params[:id])
+  def show; end
+
+  def show_for_unregistered_user
+    @post = get_last_post_for_unregistered_user
   end
 
   def edit; end
@@ -70,5 +85,10 @@ class PostsController < ApplicationController
 
   def set_post
     @post = current_user.posts.find(params[:id])
+  end
+
+  def get_last_post_for_unregistered_user
+    unregistered_user = User.find(1)
+    unregistered_user.posts.last
   end
 end

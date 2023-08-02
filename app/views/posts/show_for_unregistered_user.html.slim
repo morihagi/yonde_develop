@@ -1,0 +1,44 @@
+.container.text-center.m-3.mx-auto
+  .row.form-signin
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+        h3.m-3.fw-bold
+          = @post.segment.program.program
+
+.container.mb-3
+  .row
+    .col-lg-8.offset-lg-2
+      .card.mb-3
+        .card-header
+          | 下書き
+        ul class="list-group list-group-flush"
+          li class="list-group-item"
+            An 🎧 リスナー | From: #{current_user&.email}
+          li class="list-group-item"
+            An 🎙 番組 | To: #{@post.segment.program.email}
+          li class="list-group-item"
+            An 📻 件名 | #{@post.segment.segment_title_for_email}
+        .card-body
+          = simple_format(@post.body)
+          br
+          - if @post.radio_name.present?
+            div
+              | (RN) 
+              = @post.radio_name
+            br
+          - if @post.zip_code.present?
+            div
+              | (住所) 〒
+              = @post.zip_code
+          - if @post.prefecture.present? || @post.city.present? || @post.other_address.present?
+            div
+              = @post.prefecture
+              = @post.city
+              = @post.other_address
+          - if @post.phone.present?
+            div
+              | (電話番号) 
+              = @post.phone
+          - if @post.legal_name.present?
+            div
+              | (名前) 
+              = @post.legal_name

@@ -4,15 +4,13 @@
     span = t('.title')
 
 - else
-  .container.text-center.mt-3.mx-auto
+  .container.text-center.m-3.mx-auto
     .row.form-signin
       .col-md-10.offset-md-1.col-lg-8.offset-lg-2
           h3.m-3.fw-bold
             = t('.title')
 
-.container.pt-3
-  .row
+.container
+  .row.m-4
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
       = render 'form', post: @post
-
-      = link_to "Back to posts", posts_path

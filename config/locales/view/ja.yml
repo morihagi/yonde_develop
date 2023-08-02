@@ -6,7 +6,7 @@ ja:
     register: ユーザー登録
     mypage: マイページ
     login: ログイン
-    google_login: Googleを使用して登録・ログイン
+    google_login: Googleを使用する
     logout: ログアウト
     forget_password_mail: パスワード再設定
     authentication_mail: メールアドレス認証メールを再送
