@@ -90,6 +90,10 @@ gem 'google-apis-gmail_v1'
 # Decorator
 gem 'draper'
 
+# admin page
+gem 'trestle'
+gem 'trestle-auth'
+
 group :development, :test do
   # Loads environment variables from a .env file.
   gem 'dotenv-rails'
