@@ -4,22 +4,22 @@
         h3.m-3.fw-bold
           = t('.title')
 
-        = form_with model: @user, url: user_registration_path, id: 'new_user', class: 'new_user', local: true do |f|
+        = form_with model: @user, url: user_registration_path do |f|
           = render "shared/error_messages", object: f.object
 
-          .form-floating.mb-3.w-50.mx-auto
-            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control mb-3"
-            = f.label :email
+          .form-group.m-3.w-50.mx-auto
+            = f.label :email, class: "float-start"
+            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control"
 
-          .form-floating.mb-3.w-50.mx-auto
-            = f.password_field :password, autocomplete: "password", placeholder: "password", class: "form-control mb-3"
-            = f.label :password
+          .form-group.m-3.w-50.mx-auto
+            = f.label :password, class: "float-start"
+            = f.password_field :password, autocomplete: "password", placeholder: "password", class: "form-control"
 
-          .form-floating.mb-3.w-50.mx-auto
-            = f.password_field :password_confirmation, autocomplete: "password", placeholder: "password_confirmation", class: "form-control mb-3"
-            = f.label :password_confirmation
+          .form-group.m-3.w-50.mx-auto
+            = f.label :password_confirmation, class: "float-start"
+            = f.password_field :password_confirmation, autocomplete: "password", placeholder: "password_confirmation", class: "form-control"
 
-          .form-check.mb-3
+          .form-check.m-3
             = f.check_box :agreement, :as => :boolean, checked:false
             | &nbsp;
             = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' } do
