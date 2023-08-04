@@ -17,7 +17,7 @@ h4.fw-bold
             | #{resource.unconfirmed_email}
             = t('defaults.message.waiting_confirmation')
 
-        - unless current_user.email.include?("@gmail.com")
+        - unless current_user&.provider == "google_oauth2"
           .form-group
             = f.label :password
             = f.password_field :password, autocomplete: "new-password", class: 'form-control mb-3'
