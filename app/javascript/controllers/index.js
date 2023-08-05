@@ -12,6 +12,9 @@ application.register('clipboard', Clipboard)
 import PasswordVisibility from 'stimulus-password-visibility'
 application.register('password-visibility', PasswordVisibility)
 
+import Notification from 'stimulus-notification'
+application.register('notification', Notification)
+
 // Lazy load controllers as they appear in the DOM (remember not to preload controllers in import map!)
 // import { lazyLoadControllersFrom } from "@hotwired/stimulus-loading"
 // lazyLoadControllersFrom("controllers", application)
