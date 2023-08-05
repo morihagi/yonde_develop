@@ -13,7 +13,6 @@
 /         = f.collection_select :segment, program.segments, :id, :segment_title, include_blank: "コーナーを選択してください"
 
 = form_with(model: post, url: posts_path, method: :post) do |f|
-  = render "shared/error_messages", object: f.object
 
   .form-group
     = f.label :segment_title, Segment.human_attribute_name('segment_title')

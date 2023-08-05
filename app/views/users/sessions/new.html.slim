@@ -1,17 +1,16 @@
 .container.text-center.m-3.mx-auto
-  .row.form-signin
+  .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
         h3.m-3.fw-bold
           = t('.title')
 
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-
+        = form_with url: user_session_path do |f|
           .form-group.mb-3.w-50.mx-auto
-            = f.label :email
+            = f.label :email, class: "float-start"
             = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control mb-3"
 
           .form-group.mb-3.w-50.mx-auto
-            = f.label :password
+            = f.label :password, class: "float-start"
 
             div[data-controller="password-visibility"]
               .input-group
