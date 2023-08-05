@@ -1,3 +1,5 @@
+- content_for(:title, @post.segment.segment_title_for_email)
+
 h4.fw-bold
   span.me-1 📮
   span = t('.title')

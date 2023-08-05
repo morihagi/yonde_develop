@@ -30,4 +30,10 @@ module ApplicationHelper
       "danger"
     end
   end
+
+  def page_title(page_title = '')
+    base_title = 'YONDE'
+
+    page_title.empty? ? base_title : page_title + ' | ' + base_title
+  end
 end
