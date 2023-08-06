@@ -36,4 +36,13 @@ module ApplicationHelper
 
     page_title.empty? ? base_title : page_title + ' | ' + base_title
   end
+
+  def modals
+    modals = [
+      { 'target' => '#termsModal', 'title' => t('modals.terms.title'), 'type' => 'terms' },
+      { 'target' => '#privacyPolicyModal', 'title' => t('modals.privacy_policy.title'), 'type' => 'privacy_policy' },
+      { 'target' => '#developerModal', 'title' => t('modals.developer.title'), 'type' => 'developer' },
+      { 'target' => '#contactModal', 'title' => t('modals.contact.title'), 'type' => 'contact' }
+    ]
+  end
 end
