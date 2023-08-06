@@ -1,12 +1,20 @@
 - content_for(:title, t('.title'))
 
-h2
-  | Forgot your password?
-|  <%= form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f| %> <%= render "users/shared/error_messages", resource: resource %> 
-.field
-  |  <%= f.label :email %>
-  br
-  |  <%= f.email_field :email, autofocus: true, autocomplete: "email" %> 
-.actions
-  |  <%= f.submit "Send me reset password instructions" %> 
-|  <% end %> <%= render "users/shared/links" %> 
+.container.text-center.m-3.mx-auto
+  .row
+    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+      h3.m-3.fw-bold
+        = t('.title')
+
+      = form_for(resource, as: resource_name, url: password_path(resource_name), html: { method: :post }) do |f|
+        = render "users/shared/error_messages", resource: resource
+
+        .form-group.m-3.w-50.mx-auto
+          = f.label :email, class: "float-start"
+          = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control mb-3"
+          = render "shared/error_messages", model: @user, attribute: :email
+
+        p.actions.p-2
+          = f.submit t('defaults.send'), class: 'btn btn-outline-light w-50', style: "background-color: #354a5f;"
+
+      = render "users/shared/links"

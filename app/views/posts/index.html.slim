@@ -44,7 +44,7 @@ ul.nav.nav-tabs.justify-content-end.mt-3
       - @posts.each do |post|
         .col-sm-12.col-lg-4.mb-3
           div id="post-id-#{post.id}" class="card d-flex flex-column h-100"
-            = image_tag(post.segment.program.image_url, alt: "", class: 'card-img-top')
+            = image_tag(post.segment.program.image_url, alt: "", class: 'card-img-top img-thumbnail')
             .card-body.flex-grow-1.
               h5.card-title
                 = link_to post.segment.segment_title, post_path(post)

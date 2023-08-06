@@ -1,17 +1,19 @@
-.container.text-center.mt-3.mx-auto
-  .row.form-signin
+- content_for(:title, t('.title'))
+
+.container.text-center.m-3.mx-auto
+  .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-        h3.mb-3.fw-normal
-          = t('.title')
+      h3.m-3.fw-bold
+        = t('.title')
 
-        = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
-          = render "shared/error_messages", object: f.object
+      = form_for(resource, as: resource_name, url: unlock_path(resource_name), html: { method: :post }) do |f|
 
-          .form-floating.mb-3.w-50.mx-auto
-            = f.label :email
-            = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control mb-3"
+        .form-group.m-3.w-50.mx-auto
+          = f.label :email, class: "float-start"
+          = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control mb-3"
+          = render "shared/error_messages", model: @user, attribute: :email
 
-          p.actions
-            = f.submit "Resend confirmation instructions", class: 'btn btn-warning mb-3'
+        p.actions.p-2
+          = f.submit t('defaults.send'), class: 'btn btn-outline-light w-50', style: "background-color: #354a5f;"
 
-        = render "users/shared/links"
+      = render "users/shared/links"

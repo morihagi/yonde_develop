@@ -5,18 +5,18 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  height: 600px;
+  min-height: 100vh;
 }
 
 /* for a tablet */
-@media (max-width: 768px) {
+@media (max-width: 767px) {
   .oneArea {
     background: linear-gradient(-38deg, #f1c40e 0%, #f1c40e 50%, #354a5f 50%, #354a5f 100%);
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 600px;
+    min-height: 100vh;
   }
 }
 
@@ -28,6 +28,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 600px;
+    min-height: 100vh;
   }
 }

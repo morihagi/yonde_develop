@@ -25,9 +25,10 @@
                   /   i.far.fa-eye-slash
 
           - if devise_mapping.rememberable?
-            .field
+            .form-group.m-3.w-50.mx-auto
               = f.check_box :remember_me
-              = f.label :remember_me
+              ' &nbsp;
+              = f.label :remember_me, t('defaults.remenber_me')
 
           p.actions
             = f.submit t('defaults.login'), class: 'btn btn-outline-dark  w-50'

@@ -40,8 +40,9 @@
                   / i.far.fa-eye-slash
 
           .form-group.m-3.w-50.mx-auto
-            .d-flex.align-items-center
+            .d-flex.justify-content-center
               = f.check_box :agreement, :as => :boolean, checked:false, class: 'float-start', style: 'vertical-align: middle;'
+              ' &nbsp;
               = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' }, style: 'vertical-align: middle;' do
                 | 利用規約
               = render 'shared/modal', modal_type: 'terms'
