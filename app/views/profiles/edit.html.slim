@@ -4,22 +4,24 @@ h4.fw-bold
   span.me-1 🎧
   span = t('.title')
 
-.container
+.container.m-3.mx-auto
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
       = form_with model: @profile, url: profile_path, local: true, method: :patch do |f|
-        = render "shared/error_messages", object: f.object
-
-        .form-group
+        .form-group.m-3
           = f.label :prefecture
-          = f.text_field :prefecture, class: 'form-control mb-3'
+          = f.text_field :prefecture, placeholder: '東京都', class: 'form-control'
+          = render "shared/error_messages", model: @profile, attribute: :prefecture
 
-        .form-group
+        .form-group.m-3
           = f.label :city
-          = f.text_field :city, class: 'form-control mb-3'
+          = f.text_field :city, placeholder: '千代田区', class: 'form-control'
+          = render "shared/error_messages", model: @profile, attribute: :city
 
-        .form-group
+        .form-group.m-3
           = f.label :radio_name
-          = f.text_field :radio_name, class: 'form-control mb-3'
+          = f.text_field :radio_name, placeholder: '匿名希望', class: 'form-control'
+          = render "shared/error_messages", model: @profile, attribute: :radio_name
 
-        = f.submit (t 'defaults.update'), class: 'btn btn-warning mb-3'
+        p.actions.text-center
+          = f.submit (t 'defaults.update'), class: 'btn btn-warning w-50 mb-3'

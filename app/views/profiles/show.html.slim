@@ -4,33 +4,50 @@ h4.fw-bold
   span.me-1 🎧
   span = t('.title')
 
-.container.pt-3
+.container.p-3
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
       h5 = '投稿メール用情報'
       table.table.table-striped
-        tr
-          th(scope='row') = t(Profile.human_attribute_name(:full_address))
-          td = current_user.profile&.decorate.full_address_post
-        tr
-          th(scope='row') = t(Profile.human_attribute_name(:radio_name))
-          td = current_user.profile&.radio_name
-      = link_to (t 'defaults.edit'), edit_profile_path, class: 'btn btn-warning mb-3', style: 'float: right'
+        tbody
+          tr
+            th.col-4
+              = t(Profile.human_attribute_name(:full_address))
+            td.col-8
+              = current_user.profile&.decorate.full_address_post
+          tr
+            th.col-4
+              = t(Profile.human_attribute_name(:radio_name))
+            td.col-8
+              = current_user.profile&.radio_name
+      p.text-center
+        = link_to (t 'defaults.edit'), edit_profile_path, class: 'btn btn-warning w-50'
 
       br
 
       h5 = 'ノベルティグッズ発送用情報'
       table.table.table-striped
-        tr
-          th(scope='row') = t(Profile.human_attribute_name(:zip_code))
-          td = current_user.profile&.zip_code
-        tr
-          th(scope='row') = t(Profile.human_attribute_name(:full_address))
-          td = current_user.profile&.decorate.full_address
-        tr
-          th(scope='row') = t(Profile.human_attribute_name(:phone))
-          td = current_user.profile&.phone
-        tr
-          th(scope='row') = t(Profile.human_attribute_name(:legal_name))
-          td = current_user.profile&.legal_name
-      = link_to (t 'defaults.edit'), profile_edit_for_goods_path, class: 'btn btn-warning mb-3', style: 'float: right'
+        tbody
+          tr
+            th.col-4
+              = t(Profile.human_attribute_name(:zip_code))
+            td.col-8
+              = current_user.profile&.zip_code
+          tr
+            th.col-4
+              = t(Profile.human_attribute_name(:full_address))
+            td.col-8
+              = current_user.profile&.decorate.full_address
+          tr
+            th.col-4
+              = t(Profile.human_attribute_name(:phone))
+            td.col-8
+              = current_user.profile&.phone
+          tr
+            th.col-4
+              = t(Profile.human_attribute_name(:legal_name))
+            td.col-8
+              = current_user.profile&.legal_name
+
+      p.text-center
+        = link_to (t 'defaults.edit'), profile_edit_for_goods_path, class: 'btn btn-warning w-50'

@@ -6,7 +6,7 @@
         h3.m-3.fw-bold
           = t('.title')
 
-        = form_with url: user_session_path do |f|
+        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
           .form-group.mb-3.w-50.mx-auto
             = f.label :email, class: "float-start"
             = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control mb-3"

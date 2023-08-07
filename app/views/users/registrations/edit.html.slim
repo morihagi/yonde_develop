@@ -4,33 +4,56 @@ h4.fw-bold
   span.me-1 ⚙️
   span = t('.title')
 
-.container
+.container.m-3.mx-auto
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
       = form_with model: @user, url: user_registration_path, local: true do |f|
-        = render "shared/error_messages", object: f.object
-
-        .form-group
+        .form-group.m-3
           = f.label :email
-          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control mb-3'
+          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
+          = render "shared/error_messages", model: @user, attribute: :email
 
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
-          p.mb-3
+          p.m-3
             | #{resource.unconfirmed_email}
             = t('defaults.message.waiting_confirmation')
 
         - unless current_user&.provider == "google_oauth2"
-          .form-group
+          .form-group.m-3
             = f.label :password
-            = f.password_field :password, autocomplete: "new-password", class: 'form-control mb-3'
 
-          .form-group
-            = f.label :password_confirmation
-            = f.password_field :password_confirmation, autocomplete: "new-password", class: 'form-control mb-3'
+            div[data-controller="password-visibility"]
+              .input-group
+                = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
 
-        p = f.submit (t 'defaults.update'), class: 'btn btn-warning mb-3'
+                button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
+                  span[data-password-visibility-target="icon"]
+                    i.far.fa-eye
+                / span[class="hidden" data-password-visibility-target="icon"]
+                  / i.far.fa-eye-slash
 
-      .fw-bold
-        | アカウントの削除はこちらから
-      | アカウントを削除すると、投稿メールが全て削除されます。
-      p = button_to "アカウント削除", user_registration_path, method: :delete, form: { data: { turbo_confirm: t('defaults.message.are_you_sure') } }, class: 'btn btn-danger mb-3'
+          = render "shared/error_messages", model: @user, attribute: :password
+
+          div[data-controller="password-visibility"]
+            .form-group.m-3
+              = f.label :password_confirmation
+              div[data-controller="password-visibility"]
+                .input-group
+                  = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
+
+                  button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
+                    span[data-password-visibility-target="icon"]
+                      i.far.fa-eye
+                  / span[class="hidden" data-password-visibility-target="icon"]
+                    / i.far.fa-eye-slash
+
+        p.actions.text-center
+          = f.submit (t 'defaults.update'), class: 'btn btn-warning w-50'
+
+      .p-3
+        h5.fw-bold
+          | アカウントの削除はこちらから
+        p
+          | アカウントを削除すると、投稿メールが全て削除されます。
+        span.text-center
+          = button_to "アカウント削除", user_registration_path, method: :delete, form: { data: { turbo_confirm: t('defaults.message.are_you_sure') } }, class: 'btn btn-danger mb-3 w-50'

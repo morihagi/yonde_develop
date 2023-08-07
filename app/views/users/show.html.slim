@@ -4,7 +4,7 @@ h4.fw-bold
   span.me-1 ⚙️
   span = t('.title')
 
-.container.pt-3
+.container.p-3
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
       table.table.table-striped
@@ -14,4 +14,5 @@ h4.fw-bold
         tr
           th(scope='row') = t(User.human_attribute_name(:password))
           td = 'セキュリティのため、表示しません'
-      = link_to (t 'defaults.edit'), edit_user_registration_path, class: 'btn btn-warning mb-3', style: 'float: right'
+      p.text-center
+        = link_to (t 'defaults.edit'), edit_user_registration_path, class: 'btn btn-warning w-50'

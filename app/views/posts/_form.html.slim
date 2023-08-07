@@ -12,45 +12,50 @@
 /       template id="sub-program-of-program#{program.id}"
 /         = f.collection_select :segment, program.segments, :id, :segment_title, include_blank: "コーナーを選択してください"
 
+
 = form_with(model: post, url: posts_path, method: :post) do |f|
 
-  .form-group
+  .form-group.m-3.w-50.mx-auto
     = f.label :segment_title, Segment.human_attribute_name('segment_title')
-    = f.collection_select :segment_id, Segment.all, :id, :segment_title, { prompt: "選択してください" }, { class: 'form-control mb-3', required: true }
+    = f.collection_select :segment_id, Segment.all, :id, :segment_title, { prompt: "選択してください" }, { class: 'form-control m-2', required: true }
 
-  .form-group
+  .form-group.m-3.w-50.mx-auto
     = f.label 'お住まい(未記入でもOK)'
-    = f.text_field :prefecture, placeholder: '都道府県', class: 'form-control'
-    = f.text_field :city, placeholder: '市町村', class: 'form-control mb-3'
+    = f.text_field :prefecture, placeholder: '都道府県', class: 'form-control m-2'
+    = f.text_field :city, placeholder: '市町村', class: 'form-control m-2'
 
-  .form-group
+  .form-group.m-3.w-50.mx-auto
     = f.label :radio_name
-    = f.text_field :radio_name, class: 'form-control mb-3'
+    = f.text_field :radio_name, class: 'form-control m-2'
 
-  details
-    summary.fw-bold.text-primary
-      | 住所・本名・連絡先を記入したい場合はこちらをクリック
-    div data-controller="profile-form"
-      = check_box_tag :check, "", false, { data: { profile_form_target: 'check', action: 'change->profile-form#toggle' } }
-      = label_tag :check, "登録済みのデフォルト情報を追加"
+  .form-group.m-3.w-50.mx-auto
+    details.text-center
+      summary.fw-bold.text-primary
+        | 住所・本名・連絡先を記入したい場合はこちらをクリック
+    
+      - if user_signed_in?
+        div data-controller="profile-form"
+          = check_box_tag :check, "", false, { data: { profile_form_target: 'check', action: 'change->profile-form#toggle' } }
+          = label_tag :check, "登録済みのデフォルト情報を追加"
 
-    div id="profile-form" data-target="profile-form.profileForm"
-      .form-group
-        = f.label :zip_code
-        = f.text_field :zip_code, placeholder: '000-0000', class: 'form-control mb-3'
+      div id="profile-form" data-target="profile-form.profileForm"
+        .form-group.m-3.mx-auto
+          = f.label :zip_code, class: "float-start"
+          = f.text_field :zip_code, placeholder: '000-0000', class: 'form-control m-2'
 
-      .form-group
-        = f.label :other_address
-        = f.text_field :prefecture, placeholder: '都道府県', class: 'form-control'
-        = f.text_field :city, placeholder: '市町村', class: 'form-control'
-        = f.text_field :other_address, placeholder: '以降の住所', class: 'form-control mb-3'
+        .form-group.m-3.mx-auto
+          = f.label :full_address, class: "float-start"
+          = f.text_field :prefecture, placeholder: '都道府県', class: 'form-control m-2'
+          = f.text_field :city, placeholder: '市町村', class: 'form-control m-2'
+          = f.text_field :other_address, placeholder: '以降の住所', class: 'form-control m-2'
 
-      .form-group
-        = f.label :phone
-        = f.text_field :phone, placeholder: '000-000-0000', class: 'form-control mb-3'
+        .form-group.m-3.mx-auto
+          = f.label :phone, class: "float-start"
+          = f.text_field :phone, placeholder: '000-000-0000', class: 'form-control m-2'
 
-  .form-group
+  .form-group.m-3.w-50.mx-auto
     = f.label :body
-    = f.text_area :body, class: 'form-control mb-3', rows: 10
+    = f.text_area :body, class: 'form-control m-2', rows: 10
 
-  = f.submit "Create Post", class: 'btn btn-warning'
+  p.actions.text-center.p-3
+    = f.submit "Create Post", class: 'btn btn-warning'

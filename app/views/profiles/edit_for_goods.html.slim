@@ -2,36 +2,42 @@
 
 h4.fw-bold
   span.me-1 🎧
-  span = 'ノベルティグッズ発送用情報'
+  span = t('.title')
 
 .container
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
       = form_with model: @profile, url: profile_path, local: true, method: :patch do |f|
-        = render "shared/error_messages", object: f.object
 
-        .form-group
+        .form-group.m-3.mx-auto
           = f.label :zip_code
-          = f.text_field :zip_code, class: 'form-control mb-3'
+          = f.text_field :zip_code, placeholder: '000-0000', class: 'form-control'
+          = render "shared/error_messages", model: @profile, attribute: :zip_code
 
-        .form-group
+        .form-group.m-3.mx-auto
           = f.label :prefecture
-          = f.text_field :prefecture, class: 'form-control mb-3'
+          = f.text_field :prefecture, placeholder: '東京都', class: 'form-control'
+          = render "shared/error_messages", model: @profile, attribute: :prefecture
 
-        .form-group
+        .form-group.m-3.mx-auto
           = f.label :city
-          = f.text_field :city, class: 'form-control mb-3'
+          = f.text_field :city, placeholder: '千代田区', class: 'form-control'
+          = render "shared/error_messages", model: @profile, attribute: :city
 
-        .form-group
+        .form-group.m-3.mx-auto
           = f.label :other_address
-          = f.text_field :other_address, class: 'form-control mb-3'
+          = f.text_field :other_address, placeholder: '有楽町1-9-3', class: 'form-control'
+          = render "shared/error_messages", model: @profile, attribute: :other_address
 
-        .form-group
+        .form-group.m-3.mx-auto
           = f.label :phone
-          = f.text_field :phone, class: 'form-control mb-3'
+          = f.text_field :phone, placeholder: '000-0000-0000', class: 'form-control'
+          = render "shared/error_messages", model: @profile, attribute: :phone
 
-        .form-group
+        .form-group.m-3.mx-auto
           = f.label :legal_name
-          = f.text_field :legal_name, class: 'form-control mb-3'
+          = f.text_field :legal_name, placeholder: '◯◯ ◯◯◯', class: 'form-control'
+          = render "shared/error_messages", model: @profile, attribute: :legal_name
 
-        = f.submit (t 'defaults.update'), class: 'btn btn-warning mb-3'
+        p.actions.text-center
+          = f.submit (t 'defaults.update'), class: 'btn btn-warning w-50 mb-3'

@@ -76,6 +76,8 @@ ja:
     passwords:
       new:
         title: パスワード再設定
+      edit:
+        title: パスワード変更
   posts:
     new:
       title: 投稿メールの作成
@@ -86,3 +88,6 @@ ja:
       title: リスナー情報
     edit:
       title: リスナー情報の変更
+    edit_for_goods:
+      title: ノベルティグッズ発送用情報
+

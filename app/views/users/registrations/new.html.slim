@@ -3,56 +3,50 @@
 .container.text-center.m-3.mx-auto
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-        h3.m-3.fw-bold
-          = t('.title')
+      h3.m-3.fw-bold
+        = t('.title')
 
-        = form_with model: @user, url: user_registration_path do |f|
-          .form-group.m-3.w-50.mx-auto
-            = f.label :email, class: "float-start"
-            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control"
-            = render "shared/error_messages", model: @user, attribute: :email
+      = form_with model: @user, url: user_registration_path do |f|
+        .form-group.m-3.w-50.mx-auto
+          = f.label :email, class: "float-start"
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control"
+          = render "shared/error_messages", model: @user, attribute: :email
 
-          .form-group.m-3.w-50.mx-auto
-            = f.label :password, class: "float-start"
+        .form-group.m-3.w-50.mx-auto
+          = f.label :password, class: "float-start"
 
-            div[data-controller="password-visibility"]
-              .input-group
-                = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
+          div[data-controller="password-visibility"]
+            .input-group
+              = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
 
-                button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
-                  span[data-password-visibility-target="icon"]
+              button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
+                span[data-password-visibility-target="icon"]
                   i.far.fa-eye
-                  / span[class="hidden" data-password-visibility-target="icon"]
-                  / i.far.fa-eye-slash
+                / span[class="hidden" data-password-visibility-target="icon"]
+                / i.far.fa-eye-slash
 
-            = render "shared/error_messages", model: @user, attribute: :password
+          = render "shared/error_messages", model: @user, attribute: :password
 
-          .form-group.m-3.w-50.mx-auto
-            = f.label :password_confirmation, class: "float-start"
-            div[data-controller="password-visibility"]
-              .input-group
-                = f.password_field :password_confirmation, autocomplete: "password", placeholder: "password_confirmation", class: "form-control", data: { password_visibility_target: "input"}
+        .form-group.m-3.w-50.mx-auto
+          = f.label :password_confirmation, class: "float-start"
+          div[data-controller="password-visibility"]
+            .input-group
+              = f.password_field :password_confirmation, autocomplete: "password", placeholder: "password_confirmation", class: "form-control", data: { password_visibility_target: "input"}
 
-                button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
-                  span[data-password-visibility-target="icon"]
+              button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
+                span[data-password-visibility-target="icon"]
                   i.far.fa-eye
-                  / span[class="hidden" data-password-visibility-target="icon"]
-                  / i.far.fa-eye-slash
+                / span[class="hidden" data-password-visibility-target="icon"]
+                / i.far.fa-eye-slash
 
-          .form-group.m-3.w-50.mx-auto
-            .d-flex.justify-content-center
-              = f.check_box :agreement, :as => :boolean, checked:false, class: 'float-start', style: 'vertical-align: middle;'
-              ' &nbsp;
-              = link_to '#', data: { bs_toggle: 'modal', bs_target: '#termsModal' }, style: 'vertical-align: middle;' do
-                | 利用規約
-              = render 'shared/modal', modal_type: 'terms'
-              | と
-              = link_to '#', data: { bs_toggle: 'modal', bs_target: '#privacyPolicyModal' }, style: 'vertical-align: middle;' do
-                | プライバシーポリシー
-              = render 'shared/modal', modal_type: 'privacy_policy'
-              | に同意する
+        .form-group.m-3.w-50.mx-auto
+          = f.check_box :agreement, :as => :boolean, checked:false, style: 'vertical-align: middle;'
+          = link_to '利用規約', terms_path, class: 'm-2', target: "_blank"
+          'と
+          = link_to 'プライバシーポリシー', privacy_policy_path, class: 'm-2', target: "_blank"
+          'に同意する
 
-          p.actions
-            = f.submit t('defaults.register'), class: 'btn btn-outline-light w-50', style: "background-color: #354a5f;"
+        p.actions
+          = f.submit t('defaults.register'), class: 'btn btn-outline-light w-50', style: "background-color: #354a5f;"
 
-        = render "users/shared/links"
+      = render "users/shared/links"

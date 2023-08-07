@@ -1,5 +1,5 @@
 doctype html
-html
+html[lang="ja" class="h-100"]
   head
     meta[charset="utf-8"]
     meta[http-equiv="X-UA-Compatible" content="IE=edge"]
@@ -30,7 +30,7 @@ html
 
     meta[name="google-site-verification" content="WNdAaz_sBLWGw1d67P2erCXqjfiNSfjbQGCoRgJoGB0"]
 
-  body
+  body.h-100
     - if user_signed_in?
       = render 'shared/header'
     - else
@@ -43,7 +43,7 @@ html
     - elsif user_signed_in?
       .container-fluid
         .row
-          .ps-0.col-md-3(style="background-color: #354a5f;")
+          .col-md-3.ps-0(style="background-color: #354a5f;")
             .d-flex.flex-column.flex-shrink-0.py-3.px-3.text-white
               = render 'shared/sidebar'
 
