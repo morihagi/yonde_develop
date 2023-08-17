@@ -1,40 +1,39 @@
 @charset "utf-8";
-
-/* リセットCSS（sanitize.css）の読み込み */
 @import url("https://unpkg.com/sanitize.css");
-
-/* Font Awesomeの読み込み */
 @import url("https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css");
-
-/* Google Fontsの読み込み */
 @import url('https://fonts.googleapis.com/css2?family=BIZ+UDPGothic&display=swap');
-
-/* テンプレート専用cssファイルの読み込み */
 @import url("animation.css");
 @import url("top.css");
 
-/* 全体の設定 */
 html, body {
   font-size: 14px;
+  height: 100%;
 }
 
 body {
   font-family: 'BIZ UDPGothic', sans-serif;
   -webkit-text-size-adjust: none;
-  letter-spacing: 0.05em; /* 文字間 */
+  letter-spacing: 0.05em;
   background: #ffff;
-  color: #555; /* 全体の文字色 */
-  line-height: 2; /* 行間 */
+  color: #555;
+  line-height: 2;
+  min-height: 100vh;
+}
+
+body > footer {
+  position: sticky;
+  top: 100vh;
 }
 
 footer {
-  font-size: 0.9rem; /* 文字サイズ */
-  margin-top: auto;
-}
+  font-size: 0.9rem;
+  width: 100%;
+  background-color: #312d2a;
+  }
 
 @media (max-width: 767px) {
   footer {
-    font-size:  0.5rem; /* 中小画面のフォントサイズ */
+    font-size:  0.5rem;
   }
 }
 

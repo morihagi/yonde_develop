@@ -1,8 +1,7 @@
 nav.navbar.navbar-expand-lg.navbar-dark.static-top(style="background-color: #354a5f;")
   .container
-    = link_to root_path, class: 'text-white text-decoration-none' do
-      = image_tag "radio.png", alt: "radio-icon", size: '40x40', class: "bi me-2"
-      | YONDE
+    = link_to root_path do
+      = image_tag "logo.svg", size: '100x50'
 
     button.navbar-toggler type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"
       span.navbar-toggler-icon
