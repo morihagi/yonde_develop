@@ -8,7 +8,7 @@ html[lang="ja" class="h-100"]
       = page_title(yield(:title))
     meta[name="viewport" content="width=device-width, initial-scale=1"]
     meta[name="title" content="YONDE"]
-    meta[name="description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーに、投稿メールを作れます。"]
+    meta[name="description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーの投稿メールを作れます。"]
     meta[name="keywords" content="オールナイトニッポン, ANN, ニッポン放送"]
 
     = csrf_meta_tags
@@ -20,12 +20,12 @@ html[lang="ja" class="h-100"]
     meta[property="og:type" content="website"]
     meta[property="og:url" content="https://yonde.fly.dev/"]
     meta[property="og:title" content="YONDE"]
-    meta[property="og:description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーに、投稿メールを作れます"]
+    meta[property="og:description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーの投稿メールを作ることができます。"]
     meta[property="og:image" content="https://yonde.fly.dev/assets/radio_listening.svg"]
     meta[property="twitter:card" content="summary_large_image"]
     meta[property="twitter:url" content="https://yonde.fly.dev/"]
     meta[property="twitter:title" content="YONDE"]
-    meta[property="twitter:description" content="誰誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーに、投稿メールを作れます。"]
+    meta[property="twitter:description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーの投稿メールを作ることができます。"]
     meta[property="twitter:image" content="https://yonde.fly.dev/assets/radio_listening.svg"]
 
     meta[name="google-site-verification" content="WNdAaz_sBLWGw1d67P2erCXqjfiNSfjbQGCoRgJoGB0"]
@@ -43,7 +43,7 @@ html[lang="ja" class="h-100"]
     - elsif user_signed_in?
       .container-fluid.h-100
         .row.h-100
-          .col-md-3(style="background-color: #354a5f;")
+          .col-md-3.d-none.d-md-block(style="background-color: #354a5f;")
             .d-flex.flex-column.flex-shrink-0.py-3.px-3.text-white
               = render 'shared/sidebar'
 
