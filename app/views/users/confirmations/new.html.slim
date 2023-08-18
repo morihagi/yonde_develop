@@ -9,7 +9,7 @@
       = form_for(resource, as: resource_name, url: confirmation_path(resource_name), html: { method: :post }) do |f|
         = render "users/shared/error_messages", resource: resource
 
-        .form-group.m-3.w-50.mx-auto
+        .m-3.w-50.mx-auto
           = f.label :email, class: "float-start"
           = f.email_field :email, autofocus: true, autocomplete: "email", value: (resource.pending_reconfirmation? ? resource.unconfirmed_email : resource.email), class: "form-control"
           = render "shared/error_messages", model: @user, attribute: :email

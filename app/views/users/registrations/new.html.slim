@@ -6,18 +6,19 @@
       h3.m-3.fw-bold
         = t('.title')
 
+    .col-lg-4.col-md-6.col-sm-10.mx-auto
       = form_with model: @user, url: user_registration_path do |f|
-        .form-group.m-3.w-50.mx-auto
+        .m-3
           = f.label :email, class: "float-start"
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control"
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@sample.com", class: "form-control"
           = render "shared/error_messages", model: @user, attribute: :email
 
-        .form-group.m-3.w-50.mx-auto
+        .m-3
           = f.label :password, class: "float-start"
 
           div[data-controller="password-visibility"]
             .input-group
-              = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
+              = f.password_field :password, autocomplete: "new-password", placeholder: "英数字8文字以上", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
 
               button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
                 span[data-password-visibility-target="icon"]
@@ -27,7 +28,7 @@
 
           = render "shared/error_messages", model: @user, attribute: :password
 
-        .form-group.m-3.w-50.mx-auto
+        .m-3
           = f.label :password_confirmation, class: "float-start"
           div[data-controller="password-visibility"]
             .input-group
@@ -39,7 +40,7 @@
                 / span[class="hidden" data-password-visibility-target="icon"]
                 / i.far.fa-eye-slash
 
-        .form-group.m-3.w-50.mx-auto
+        .m-3
           = f.check_box :agreement, :as => :boolean, checked:false, style: 'vertical-align: middle;'
           = link_to '利用規約', terms_path, class: 'm-2', target: "_blank"
           'と
@@ -47,6 +48,6 @@
           'に同意する
 
         p.actions
-          = f.submit t('defaults.register'), class: 'btn btn-outline-light w-50', style: "background-color: #354a5f;"
+          = f.submit t('defaults.register'), class: 'btn btn-outline-light w-75', style: "background-color: #354a5f;"
 
       = render "users/shared/links"

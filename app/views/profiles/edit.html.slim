@@ -8,17 +8,17 @@ h4.fw-bold
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
       = form_with model: @profile, url: profile_path, local: true, method: :patch do |f|
-        .form-group.m-3
+        .m-3
           = f.label :prefecture
           = f.text_field :prefecture, placeholder: '東京都', class: 'form-control'
           = render "shared/error_messages", model: @profile, attribute: :prefecture
 
-        .form-group.m-3
+        .m-3
           = f.label :city
           = f.text_field :city, placeholder: '千代田区', class: 'form-control'
           = render "shared/error_messages", model: @profile, attribute: :city
 
-        .form-group.m-3
+        .m-3
           = f.label :radio_name
           = f.text_field :radio_name, placeholder: '匿名希望', class: 'form-control'
           = render "shared/error_messages", model: @profile, attribute: :radio_name

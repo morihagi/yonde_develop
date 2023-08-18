@@ -1,5 +1,5 @@
 doctype html
-html[lang="ja" class="h-100"]
+html[lang="ja" class="vh-100"]
   head
     meta[charset="utf-8"]
     meta[http-equiv="X-UA-Compatible" content="IE=edge"]
@@ -30,7 +30,7 @@ html[lang="ja" class="h-100"]
 
     meta[name="google-site-verification" content="WNdAaz_sBLWGw1d67P2erCXqjfiNSfjbQGCoRgJoGB0"]
 
-  body.h-100
+  body.vh-100
     - if user_signed_in?
       = render 'shared/header'
     - else
@@ -41,14 +41,18 @@ html[lang="ja" class="h-100"]
     - if controller_name == 'static_pages'
       = yield
     - elsif user_signed_in?
-      .container-fluid.h-100
-        .row.h-100
-          .col-md-3.d-none.d-md-block(style="background-color: #354a5f;")
-            .d-flex.flex-column.flex-shrink-0.py-3.px-3.text-white
+      .container-fluid(style="overflow:hidden;")
+        .row
+          .col-md-3.d-none.d-md-block(style="background-color: #354a5f; height: 100%; padding: 0; position: fixed;")
+            .d-flex.flex-column.flex-shrink-0.py-3.px-3.text-white(style="margin-top: 55px;")
               = render 'shared/sidebar'
 
-          .col-md-9
-            .container.main-content(style="margin-top: 20px;")
+          .col-md-9.mt-5.offset-3.d-none.d-md-block
+            .container.main-content(style="margin-top: 50px;")
+              = yield
+
+          .col-12.mt-5.d-block.d-md-none
+            .container.main-content(style="margin-top: 50px;")
               = yield
     - else
       = yield

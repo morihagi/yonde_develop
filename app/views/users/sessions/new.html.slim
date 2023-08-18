@@ -3,34 +3,35 @@
 .container.text-center.m-3.mx-auto
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-        h3.m-3.fw-bold
-          = t('.title')
+      h3.m-3.fw-bold
+        = t('.title')
 
-        = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-          .form-group.mb-3.w-50.mx-auto
-            = f.label :email, class: "float-start"
-            = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "email", class: "form-control mb-3"
+    .col-lg-4.col-md-6.col-sm-10.mx-auto
+      = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+        .m-3
+          = f.label :email, class: "float-start"
+          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@sample.com", class: "form-control"
 
-          .form-group.mb-3.w-50.mx-auto
-            = f.label :password, class: "float-start"
+        .m-3
+          = f.label :password, class: "float-start"
 
-            div[data-controller="password-visibility"]
-              .input-group
-                = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
+          div[data-controller="password-visibility"]
+            .input-group
+              = f.password_field :password, autocomplete: "new-password", placeholder: "英数字8文字以上", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
 
-                button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
-                  span[data-password-visibility-target="icon"]
-                    i.far.fa-eye
-                  / span[class="hidden" data-password-visibility-target="icon"]
-                  /   i.far.fa-eye-slash
+              button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
+                span[data-password-visibility-target="icon"]
+                  i.far.fa-eye
+                / span[class="hidden" data-password-visibility-target="icon"]
+                /   i.far.fa-eye-slash
 
-          - if devise_mapping.rememberable?
-            .form-group.m-3.w-50.mx-auto
-              = f.check_box :remember_me
-              ' &nbsp;
-              = f.label :remember_me, t('defaults.remenber_me')
+        - if devise_mapping.rememberable?
+          .m-3
+            = f.check_box :remember_me
+            ' &nbsp;
+            = f.label :remember_me, t('defaults.remenber_me')
 
-          p.actions
-            = f.submit t('defaults.login'), class: 'btn btn-outline-dark  w-50'
+        p.actions
+          = f.submit t('defaults.login'), class: 'btn btn-outline-dark w-75'
 
-        = render "users/shared/links"
+      = render "users/shared/links"
