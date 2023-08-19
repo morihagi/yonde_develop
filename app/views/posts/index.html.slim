@@ -4,24 +4,30 @@ h4.fw-bold
   span.me-1 📮
   span = t('.title')
 
-div.card.shadow.mt-3
-  div.card-header
-    = icon_with_text("search", "検索条件")
+/ search field
+.accordion#accordionExample.mt-3
+  .accordion-item
+    h2.accordion-header
+    button.accordion-button.collapsed type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
+        | 🔎　検索条件
 
-  div.card-body
-    = search_form_for @search, url: posts_path do |f|
-      div.row.g-3.mb-3
-        div.col-4.col-xl-2
-          = f.label :segment_cont, "コーナー", class: "form-label"
-          = f.search_field :segment_title_cont, class: "form-control"
+    #collapseOne.accordion-collapse.collapse data-bs-parent="#accordionExample"
+      .accordion-body
+        strong
+          = search_form_for @search, url: posts_path do |f|
+            div.row.g-3.mb-3
+              div.col-md-6.col-xs-12
+                = f.label :segment_cont, "コーナー", class: "form-label"
+                = f.search_field :segment_title_cont, class: "form-control"
 
-        div.col-4.col-xl-2
-          = f.label :body_cont, "本文", class: "form-label"
-          = f.search_field :body_cont, class: "form-control"
+              div.col-md-6.col-xs-12
+                = f.label :body_cont, "本文", class: "form-label"
+                = f.search_field :body_cont, class: "form-control"
 
-        div.col-4.d-flex.align-items-end
-          = link_to "リセット", posts_path, class: "btn btn-outline-secondary"
+              div.col-12.d-flex.align-items-end.no-wrap
+                = link_to "リセット", posts_path, class: "btn btn-outline-secondary"
 
+/ posts field
 ul.nav.nav-tabs.justify-content-end.mt-3
   li.nav-item
     = link_to '#card', class: 'nav-link active', data: { bs_toggle: 'tab' } do
@@ -31,21 +37,23 @@ ul.nav.nav-tabs.justify-content-end.mt-3
       i.fas.fa-list-ul
 
 .tab-content.mt-3
-  .d-flex.justify-content-end
-      .me-2
-        = sort_link(@search, :segment)
-      .me-2
+  .d-flex.align-items-center.justify-content-end.flex-wrap
+      .mx-2
+        = sort_link(@search, :segment_id, 'コーナー名')
+      .mx-2
         = sort_link(@search, :body)
-      .me-2
-        = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning  me-2'
+      .mx-2
+        = sort_link(@search, :created_at)
+      .mx-2
+        = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning'
 
   #card.tab-pane.active.mt-3
     .row
       - @posts.each do |post|
         .col-sm-12.col-lg-4.mb-3
           div id="post-id-#{post.id}" class="card d-flex flex-column h-100"
-            = image_tag(post.segment.program.image_url, alt: "", class: 'card-img-top img-thumbnail')
-            .card-body.flex-grow-1.
+            = image_tag(post.segment.program.image_url, alt: "", class: 'card-img-top')
+            .card-body.flex-grow-1
               h5.card-title
                 = link_to post.segment.segment_title, post_path(post)
 

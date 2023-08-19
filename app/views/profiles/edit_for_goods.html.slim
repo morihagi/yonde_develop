@@ -6,7 +6,7 @@ h4.fw-bold
 
 .container
   .row
-    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+    .col-lg-6.col-md-10.mx-auto
       = form_with model: @profile, url: profile_path, local: true, method: :patch do |f|
 
         .m-3.mx-auto
@@ -40,4 +40,4 @@ h4.fw-bold
           = render "shared/error_messages", model: @profile, attribute: :legal_name
 
         p.actions.text-center
-          = f.submit (t 'defaults.update'), class: 'btn btn-warning w-50 mb-3'
+          = f.submit (t 'defaults.update'), class: 'btn btn-warning w-50 m-3'

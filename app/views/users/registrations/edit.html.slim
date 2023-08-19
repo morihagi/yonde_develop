@@ -6,7 +6,7 @@ h4.fw-bold
 
 .container.m-3.mx-auto
   .row
-    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
+    .col-lg-6.col-md-10.mx-auto
       = form_with model: @user, url: user_registration_path, local: true do |f|
         .form-group.m-3
           = f.label :email
@@ -48,7 +48,7 @@ h4.fw-bold
                     / i.far.fa-eye-slash
 
         p.actions.text-center
-          = f.submit (t 'defaults.update'), class: 'btn btn-warning w-50'
+          = f.submit (t 'defaults.update'), class: 'btn btn-warning m-3 w-50'
 
       .p-3
         h5.fw-bold
@@ -56,4 +56,4 @@ h4.fw-bold
         p
           | アカウントを削除すると、投稿メールが全て削除されます。
         span.text-center
-          = button_to "アカウント削除", user_registration_path, method: :delete, form: { data: { turbo_confirm: t('defaults.message.are_you_sure') } }, class: 'btn btn-danger mb-3 w-50'
+          = button_to "アカウント削除", user_registration_path, method: :delete, form: { data: { turbo_confirm: t('defaults.message.are_you_sure') } }, class: 'btn btn-danger m-3 w-50'

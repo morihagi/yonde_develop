@@ -33,6 +33,7 @@ ja:
         phone: 電話番号
         legal_name: 本名
         body: 本文
+        created_at: 作成日
       program:
         email: メールアドレス
         program: 番組
