@@ -17,7 +17,8 @@ ja:
     resend: 再送
     send: 送信
     create: 作成
-    remenber_me: 次回から自動ログイン
+    remember_me: 次回から自動ログイン
+    unspecified: 選択なし
     message:
       require_login: ログインしてください
       created: "%{item}を作成しました"

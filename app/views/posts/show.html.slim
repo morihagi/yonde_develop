@@ -54,7 +54,7 @@ div = post_status_badge(@post)
 
     .col-lg-8.offset-lg-2.d-flex.justify-content-center
       .btn-group
-        = link_to "作成に戻る", edit_post_path(@post), class: 'btn btn-warning  mb-3 me-3'
+        = link_to "編集する", edit_post_path(@post), class: 'btn btn-warning  mb-3 me-3'
       - if current_user&.provider == "google_oauth2"
         .btn-group
           = link_to "番組に送信", post_send_path(@post), data: { turbo_method: :get, turbo_confirm: t('defaults.message.post_confirm')}, class: 'btn btn-warning  mb-3 me-3'
