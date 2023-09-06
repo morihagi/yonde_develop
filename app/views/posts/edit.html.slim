@@ -4,10 +4,4 @@ h4.fw-bold
   span.me-1 📮
   span = t('.title')
 
-.container.pt-3
-  .row
-    .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-      = render 'form', post: @post
-
-      br
-      = link_to "Showに戻る", post_path(@post), class: 'btn btn-warning mb-3'
+= render 'form', post: @post
