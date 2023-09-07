@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_08_02_205814) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_07_173219) do
   create_table "administrators", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -83,16 +83,6 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_02_205814) do
     t.index ["program_id"], name: "index_segments_on_program_id"
   end
 
-  create_table "tokens", force: :cascade do |t|
-    t.string "access_token"
-    t.string "refresh_token"
-    t.datetime "expires_at"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.integer "user_id", null: false
-    t.index ["user_id"], name: "index_tokens_on_user_id"
-  end
-
   create_table "users", force: :cascade do |t|
     t.string "email", default: "", null: false
     t.string "encrypted_password", default: "", null: false
@@ -129,5 +119,4 @@ ActiveRecord::Schema[7.0].define(version: 2023_08_02_205814) do
   add_foreign_key "posts", "users"
   add_foreign_key "profiles", "users"
   add_foreign_key "segments", "programs"
-  add_foreign_key "tokens", "users"
 end

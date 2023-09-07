@@ -9,54 +9,12 @@ div = post_status_badge(@post)
 .container.mt-5.mb-3
   .row
     .col-lg-8.offset-lg-2
-      = link_to "Destroy this post", post_path(@post), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')}, class: 'btn btn-danger  mb-3', style: 'float: right'
+      = link_to "削除", post_path(@post), data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')}, class: 'btn btn-danger mb-3', style: 'float: right'
     .col-lg-8.offset-lg-2
-      .card.mb-3
-        .card-header
-          | 下書き
-        ul class="list-group list-group-flush"
-          li class="list-group-item"
-            An 🎧 リスナー | From: #{current_user.email}
-          li class="list-group-item"
-            An 🎙 番組 | To: #{@post.segment.program.email}
-          li class="list-group-item"
-            An 📻 件名 | #{@post.segment.segment_title_for_email}
-
-        div[data-controller="clipboard" data-clipboard-success-content-value="Copied!"]
-          .card-body
-            button[type="button" data-action="clipboard#copy" data-clipboard-target="button" class="btn btn-light float-end"]
-              i.far.fa-copy
-            div class="hidden" data-clipboard-target="source"
-              = simple_format(h(@post.body), {}, sanitize: false, wrapper_tag: 'div')
-              - if @post.radio_name.present?
-                div
-                  | (RN) 
-                  = @post.radio_name
-                br
-              - if @post.zip_code.present?
-                div
-                  | (住所) 〒
-                  = @post.zip_code
-              - if @post.prefecture.present? || @post.city.present? || @post.other_address.present?
-                div
-                  = @post.prefecture
-                  = @post.city
-                  = @post.other_address
-              - if @post.phone.present?
-                div
-                  | (電話番号) 
-                  = @post.phone
-              - if @post.legal_name.present?
-                div
-                  | (名前) 
-                  = @post.legal_name
-
-
+      = render 'show_form'
     .col-lg-8.offset-lg-2.d-flex.justify-content-center
       .btn-group
-        = link_to "編集する", edit_post_path(@post), class: 'btn btn-warning  mb-3 me-3'
-      - if current_user&.provider == "google_oauth2"
-        .btn-group
-          = link_to "番組に送信", post_send_path(@post), data: { turbo_method: :get, turbo_confirm: t('defaults.message.post_confirm')}, class: 'btn btn-warning  mb-3 me-3'
-        .btn-group
-          = link_to "下書き（Gmail）", post_draft_path(@post), data: { turbo_method: :get, turbo_confirm: t('defaults.message.post_confirm')}, class: 'btn btn-warning mb-3'
+        = link_to "編集する", edit_post_path(@post), class: 'btn btn-secondary m-3'
+      .btn-group
+        = mail_to @post.segment.program.email, 'メールアプリから送信', class: 'btn btn-warning m-3',
+          subject: @post.segment.segment_title_for_email, body: generate_email_body(@post)
