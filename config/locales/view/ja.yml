@@ -83,6 +83,8 @@ ja:
   posts:
     new:
       title: 投稿メールの作成
+    edit:
+      title: 投稿メールの編集
     index:
       title: 投稿メール一覧
   profiles:

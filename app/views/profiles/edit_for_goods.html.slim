@@ -30,13 +30,13 @@ h4.fw-bold
           = render "shared/error_messages", model: @profile, attribute: :other_address
 
         .m-3.mx-auto
-          = f.label :phone
+          = f.label :phone, '電話番号（ハイフンも入力ください）'
           = f.text_field :phone, placeholder: '000-0000-0000', class: 'form-control'
           = render "shared/error_messages", model: @profile, attribute: :phone
 
         .m-3.mx-auto
           = f.label :legal_name
-          = f.text_field :legal_name, placeholder: '◯◯ ◯◯◯', class: 'form-control'
+          = f.text_field :legal_name, placeholder: '有楽太郎', class: 'form-control'
           = render "shared/error_messages", model: @profile, attribute: :legal_name
 
         p.actions.text-center

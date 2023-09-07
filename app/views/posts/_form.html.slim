@@ -22,7 +22,7 @@
           = f.collection_select :segment_id, Segment.all, :id, :segment_title, { prompt: "選択してください" }, { class: 'form-control m-2', required: true }
 
         .m-3
-          = f.label 'お住まい(未記入でもOK)'
+          = f.label '在住(未記入でも可)'
           = f.text_field :prefecture, placeholder: '都道府県', class: 'form-control m-2'
           = f.text_field :city, placeholder: '市町村', class: 'form-control m-2'
 
@@ -36,24 +36,28 @@
               | 住所・本名・連絡先を記入したい場合はこちらをクリック
 
             - if user_signed_in?
-              div data-controller="profile-form"
-                = check_box_tag :check, "", false, { data: { profile_form_target: 'check', action: 'change->profile-form#toggle' } }
-                = label_tag :check, "登録済みのデフォルト情報を追加"
+              div data-controller="profile"
+                = check_box_tag :check, "", false, { data: { action: 'click->profile-form#toggleProfileForm' } }
+                = label_tag :check, "登録済みの情報を追加"
 
-            div id="profile-form" data-target="profile-form.profileForm"
-              .m-3
-                = f.label :zip_code, class: "float-start"
-                = f.text_field :zip_code, placeholder: '000-0000', class: 'form-control m-2'
+                div#profile-form[data-profile-form-target="profileForm"]
+                  .m-3
+                    = f.label :zip_code, class: "float-start"
+                    = f.text_field :zip_code, placeholder: '000-0000', class: 'form-control m-2'
 
-              .m-3
-                = f.label :full_address, class: "float-start"
-                = f.text_field :prefecture, placeholder: '都道府県', class: 'form-control m-2'
-                = f.text_field :city, placeholder: '市町村', class: 'form-control m-2'
-                = f.text_field :other_address, placeholder: '以降の住所', class: 'form-control m-2'
+                  .m-3
+                    = f.label :full_address, class: "float-start"
+                    = f.text_field :prefecture, placeholder: '都道府県', class: 'form-control m-2'
+                    = f.text_field :city, placeholder: '市町村', class: 'form-control m-2'
+                    = f.text_field :other_address, placeholder: '以降の住所', class: 'form-control m-2'
 
-              .m-3
-                = f.label :phone, class: "float-start"
-                = f.text_field :phone, placeholder: '000-000-0000', class: 'form-control m-2'
+                  .m-3
+                    = f.label :phone, class: "float-start"
+                    = f.text_field :phone, placeholder: '000-000-0000', class: 'form-control m-2'
+
+                  .m-3
+                    = f.label :legal_name, class: "float-start"
+                    = f.text_field :legal_name, placeholder: '有楽太郎', class: 'form-control m-2'
 
         .m-3
           = f.label :body
@@ -61,6 +65,6 @@
 
         p.actions.text-center.p-1
           = f.submit t("defaults.create"), class: 'btn btn-warning w-75'
-        - if user_signed_in?
-          p.actions.text-center.p-1
-            = link_to "投稿メールに戻る", post_path(@post), class: 'btn btn-outline-secondary w-75'
+        / - if user_signed_in?
+        /   p.actions.text-center.p-1
+        /     = link_to "投稿メールに戻る", post_path(@post), class: 'btn btn-outline-secondary w-75'
