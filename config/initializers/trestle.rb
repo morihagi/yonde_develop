@@ -3,21 +3,21 @@ Trestle.configure do |config|
   #
   # Set the page title shown in the main header within the admin.
   #
-  config.site_title = "YONDE"
+  config.site_title = 'YONDE'
 
   # Specify a custom image to be used in place of the site title for mobile and
   # expanded/desktop navigation. These images should be placed within your
   # asset paths, e.g. app/assets/images.
   #
-  config.site_logo = "https://yonde.fly.dev/assets/radio_listening.svg"
+  config.site_logo = 'https://yonde.fly.dev/assets/radio_listening.svg'
 
   # Specify a custom image to be used for the collapsed/tablet navigation.
   #
-  config.site_logo_small = "https://yonde.fly.dev/assets/radio_listening.svg"
+  config.site_logo_small = 'https://yonde.fly.dev/assets/radio_listening.svg'
 
   # Specify a favicon to be used within the admin.
   #
-  config.favicon = "https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fb.png"
+  config.favicon = 'https://cdn.jsdelivr.net/gh/twitter/twemoji@14.0.2/assets/72x72/1f4fb.png'
 
   # Set the text shown in the page footer within the admin.
   # Defaults to 'Powered by Trestle'.

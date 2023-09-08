@@ -1,7 +1,7 @@
 Trestle.resource(:administrators, model: Administrator, scope: Auth) do
   menu do
     group :configuration, priority: :last do
-      item :administrators, icon: "fas fa-users"
+      item :administrators, icon: 'fas fa-users'
     end
   end
 
@@ -17,7 +17,7 @@ Trestle.resource(:administrators, model: Administrator, scope: Auth) do
     end
   end
 
-  form do |administrator|
+  form do |_administrator|
     text_field :email
 
     row do

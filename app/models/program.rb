@@ -20,11 +20,11 @@ class Program < ApplicationRecord
   validates :program, :personality, :email, :image_url, :official_site, :day, :starting_time, presence: true
 
   extend Enumerize
-  enumerize :program_status, in: %i[ ongoing finished ], default: :ongoing, scope: true
-  enumerize :segment_status, in: %i[ ongoing finished ], default: :ongoing, scope: true
-  enumerize :day, in: %i[ mon tue wed thu fri sat sun ], scope: true
+  enumerize :program_status, in: %i[ongoing finished], default: :ongoing, scope: true
+  enumerize :segment_status, in: %i[ongoing finished], default: :ongoing, scope: true
+  enumerize :day, in: %i[mon tue wed thu fri sat sun], scope: true
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["created_at", "email", "id", "program", "program_status", "segment_title", "segment_status", "updated_at"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[created_at email id program program_status segment_title segment_status updated_at]
   end
 end

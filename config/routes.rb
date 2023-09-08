@@ -6,15 +6,15 @@ Rails.application.routes.draw do
   get 'privacy_policy', to: 'modals#privacy_policy'
 
   devise_for :users,
-  controllers: {
-    omniauth_callbacks: 'users/omniauth_callbacks',
-    registrations: 'users/registrations',
-    confirmations: 'users/confirmations'
-  }
+             controllers: {
+               omniauth_callbacks: 'users/omniauth_callbacks',
+               registrations: 'users/registrations',
+               confirmations: 'users/confirmations'
+             }
 
   resources :posts
   get 'show_for_guest_user', to: 'posts#show_for_unregistered_user', as: :show_for_guest_user
-  resource :profile, only: %i[ show edit update ]
+  resource :profile, only: %i[show edit update]
   get '/profile/edit_for_goods', to: 'profiles#edit_for_goods'
-  resource :user, only: %i[ show edit update ]
+  resource :user, only: %i[show edit update]
 end
