@@ -1,16 +1,14 @@
 nav.navbar.navbar-expand-lg.navbar-dark.static-top(style='background-color: #354a5f;')
-  .container
+  .container-fluid
     = link_to root_path do
-      = image_tag 'logo.svg', size: '100x50'
+      = image_tag 'logo.svg', size: '100x50', class: 'mx-2 mt-2'
 
-    button.navbar-toggler type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation'
+    button.navbar-toggler type='button' data-bs-toggle='collapse' data-bs-target='#navbarSupportedContent' aria-controls='navbarSupportedContent' aria-expanded='false' aria-label='Toggle navigation' style='margin-right:10px'
       span.navbar-toggler-icon
 
     .collapse.navbar-collapse#navbarSupportedContent
-      ul.nav.col-12.col-lg-auto.ms-lg-auto.mb-2.justify-content-center.justify-content-lg-between.mb-md-0
-        li = link_to t('defaults.about'), '#', style: 'letter-spacing: 0.1em;', class: 'nav-link px-2 me-3 text-white'
-
-      .d-flex.flex-sm-row.flex-column.align-items-center.justify-content-center
-        = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning m-2'
-        = link_to t('defaults.login'), new_user_session_path, class: 'btn btn-outline-light m-2'
-        = link_to t('defaults.register'), new_user_registration_path, class: 'btn btn-light m-2'
+      ul.nav.col-12.col-lg-auto.ms-lg-auto.justify-content-center.justify-content-lg-between.mb-md-0
+        li = link_to t('defaults.about'), '#',  class: 'nav-link text-white me-3'
+        li = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning mt-1 me-3'
+        li = link_to t('defaults.login'), new_user_session_path, class: 'btn btn-outline-light mt-1 me-3'
+        li= link_to t('defaults.register'), new_user_registration_path, class: 'btn btn-light mt-1 me-4'

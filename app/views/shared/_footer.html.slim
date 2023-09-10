@@ -1,4 +1,4 @@
-footer.p-3.sticky-bottom(style="background-color: #f1c40e;")
+footer.p-3.sticky-bottom(style='background-color: #f1c40e;')
   .container-fluid
     .d-flex.flex-column.flex-md-row.justify-content-center.justify-content-md-between.align-items-md-center
       span.text-muted.d-none.d-md-block
@@ -6,7 +6,7 @@ footer.p-3.sticky-bottom(style="background-color: #f1c40e;")
 
       span.d-flex.justify-content-between.d-block.d-md-block
         - modals.each do |modal|
-          span.p-1
+          span.px-2
             = link_to '#', data: { bs_toggle: 'modal', bs_target: modal['target'] }, style: 'color: inherit; text-decoration: none;' do
               | #{modal['title']}
 

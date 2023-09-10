@@ -2,7 +2,7 @@ ja:
   defaults:
     title: YONDE
     about: YONDEとは
-    register: 登録
+    register: ユーザー登録
     mypage: マイページ
     login: ログイン
     google_login: Googleを使用する

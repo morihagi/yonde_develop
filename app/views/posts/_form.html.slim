@@ -40,24 +40,24 @@
                 = check_box_tag :check, '', false
                 = label_tag :check, t('defaults.message.add_default_profile')
 
-                div#profile-form[data-profile-form-target='profileForm']
-                  .m-3
-                    = f.label :zip_code, class: 'float-start'
-                    = f.text_field :zip_code, placeholder: '000-0000', class: 'form-control m-2'
+            div#profile-form[data-profile-form-target='profileForm']
+              .m-3
+                = f.label :zip_code, class: 'float-start'
+                = f.text_field :zip_code, placeholder: '000-0000', class: 'form-control m-2'
 
-                  .m-3
-                    = f.label :full_address, class: 'float-start'
-                    = f.text_field :prefecture, placeholder: t('defaults.prefecture'), class: 'form-control m-2'
-                    = f.text_field :city, placeholder: t('defaults.city'), class: 'form-control m-2'
-                    = f.text_field :other_address, placeholder: t('defaults.other_address'), class: 'form-control m-2'
+              .m-3
+                = f.label :full_address, class: 'float-start'
+                = f.text_field :prefecture, placeholder: t('defaults.prefecture'), class: 'form-control m-2'
+                = f.text_field :city, placeholder: t('defaults.city'), class: 'form-control m-2'
+                = f.text_field :other_address, placeholder: t('defaults.other_address'), class: 'form-control m-2'
 
-                  .m-3
-                    = f.label :phone, class: 'float-start'
-                    = f.text_field :phone, placeholder: '000-000-0000', class: 'form-control m-2'
+              .m-3
+                = f.label :phone, class: 'float-start'
+                = f.text_field :phone, placeholder: '000-000-0000', class: 'form-control m-2'
 
-                  .m-3
-                    = f.label :legal_name, class: 'float-start'
-                    = f.text_field :legal_name, placeholder: '有楽太郎', class: 'form-control m-2'
+              .m-3
+                = f.label :legal_name, class: 'float-start'
+                = f.text_field :legal_name, placeholder: '有楽太郎', class: 'form-control m-2'
 
         .m-3
           = f.label :body
