@@ -1,6 +1,6 @@
 Trestle.resource(:programs) do
   menu do
-    item :programs, icon: "fa fa-star"
+    item :programs, icon: 'fa fa-star'
   end
 
   # Customize the table columns shown on the index view.

@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
-  skip_before_action :authenticate_user!, only: %i[ new create show_for_unregistered_user]
-  before_action :set_post, only: %i[ show edit update destroy ]
+  skip_before_action :authenticate_user!, only: %i[new create show_for_unregistered_user]
+  before_action :set_post, only: %i[show edit update destroy]
 
   def index
     @search = current_user.posts.includes([segment: :program]).ransack(params[:q])
@@ -10,20 +10,20 @@ class PostsController < ApplicationController
   def new
     @post = Post.new
 
-    if user_signed_in?
-      profile = Profile.find_by(user_id: current_user.id)
-      if profile.present?
-        @post.email_for_post = current_user.email
-        @post.prefecture = profile.prefecture
-        @post.city = profile.city
-        @post.radio_name = profile.radio_name
-        @post.zip_code = profile.zip_code
-        @post.other_address = profile.other_address
-        @post.legal_name = profile.legal_name
-        @post.phone = profile.phone
-        @post.user_id = current_user.id
-      end
-    end
+    return unless user_signed_in?
+
+    profile = Profile.find_by(user_id: current_user.id)
+    return unless profile.present?
+
+    @post.email_for_post = current_user.email
+    @post.prefecture = profile.prefecture
+    @post.city = profile.city
+    @post.radio_name = profile.radio_name
+    @post.zip_code = profile.zip_code
+    @post.other_address = profile.other_address
+    @post.legal_name = profile.legal_name
+    @post.phone = profile.phone
+    @post.user_id = current_user.id
   end
 
   def create

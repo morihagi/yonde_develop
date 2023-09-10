@@ -1,59 +1,65 @@
-.modal.fade#termsModal tabindex="-1" aria-labelledby="termsModalLabel" aria-hidden="true"
+.modal.fade#termsModal tabindex='-1' aria-labelledby='termsModalLabel' aria-hidden='true'
   .modal-dialog.modal-dialog-centered.modal-dialog-scrollable.modal-lg
     .modal-content
       .modal-header
         h5.modal-title#termsModalLabel
-          | 利用規約
-          = link_to terms_path, class: 'm-2', target: "_blank", style: 'color: inherit; text-decoration: none;' do
+          = t('modals.terms.title')
+          = link_to terms_path, class: 'm-2', target: '_blank', style: 'color: inherit; text-decoration: none;' do
             i.far.fa-share-square
-        button.btn-close data-bs-dismiss="modal" aria-label="close"
+        button.btn-close data-bs-dismiss='modal' aria-label=t('defaults.close')
 
-      .modal-body(style="font-size: 1rem; ")
+      .modal-body(style='font-size: 1rem;')
         = render 'modals/terms'
 
       .modal-footer
-        button.btn.btn-secondary data-bs-dismiss="modal" 閉じる
+        button.btn.btn-secondary data-bs-dismiss='modal'
+          = t('defaults.close')
 
-.modal.fade#privacyPolicyModal tabindex="-1" aria-labelledby="privacyPolicyModalLabel" aria-hidden="true"
+.modal.fade#privacyPolicyModal tabindex='-1' aria-labelledby='privacyPolicyModalLabel' aria-hidden='true'
   .modal-dialog.modal-dialog-centered.modal-dialog-scrollable.modal-lg
     .modal-content
       .modal-header
         h5.modal-title#privacyPolicyModalLabel
-          | プライバシーポリシー
-          = link_to privacy_policy_path, class: 'm-2', target: "_blank", style: 'color: inherit; text-decoration: none;' do
+          = t('modals.privacy_policy.title')
+          = link_to privacy_policy_path, class: 'm-2', target: '_blank', style: 'color: inherit; text-decoration: none;' do
             i.far.fa-share-square
-        button.btn-close data-bs-dismiss="modal" aria-label="close"
+        button.btn-close data-bs-dismiss='modal' aria-label=t('defaults.close')
 
-      .modal-body(style="font-size: 1rem; ")
+      .modal-body(style='font-size: 1rem;')
         = render 'modals/privacy_policy'
 
       .modal-footer
-        button.btn.btn-secondary data-bs-dismiss="modal" 閉じる
+        button.btn.btn-secondary data-bs-dismiss='modal'
+          = t('defaults.close')
 
-.modal.fade#developerModal tabindex="-1" aria-labelledby="developerModalLabel" aria-hidden="true"
+.modal.fade#developerModal tabindex='-1' aria-labelledby='developerModalLabel' aria-hidden='true'
   .modal-dialog.modal-dialog-centered.modal-dialog-scrollable.modal-sm
     .modal-content
 
       .modal-header
-        h5.modal-title#developerModalLabel 開発者について
-        button.btn-close data-bs-dismiss="modal" aria-label="閉じる"
+        h5.modal-title#developerModalLabel
+          = t('modals.developer.title')
+        button.btn-close data-bs-dismiss='modal' aria-label=t('defaults.close')
 
-      .modal-body(style="font-size: 1rem; ")
+      .modal-body(style='font-size: 1rem;')
         = render 'modals/developer'
 
       .modal-footer
-        button.btn.btn-secondary data-bs-dismiss="modal" 閉じる
+        button.btn.btn-secondary data-bs-dismiss='modal'
+          = t('defaults.close')
 
-.modal.fade#contactModal tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true"
+.modal.fade#contactModal tabindex='-1' aria-labelledby='contactModalLabel' aria-hidden='true'
   .modal-dialog.modal-dialog-centered.modal-dialog-scrollable.modal-sm
     .modal-content
 
       .modal-header
-        h5.modal-title#contactModalLabel 開発者へメッセージ
-        button.btn-close data-bs-dismiss="modal" aria-label="閉じる"
+        h5.modal-title#contactModalLabel
+          = t('defaults.message_to_developer')
+        button.btn-close data-bs-dismiss='modal' aria-label=t('defaults.close')
 
-      .modal-body(style="font-size: 1rem; ")
+      .modal-body(style='font-size: 1rem;')
         = render 'modals/contact'
 
       .modal-footer
-        button.btn.btn-secondary data-bs-dismiss="modal" 閉じる
+        button.btn.btn-secondary data-bs-dismiss='modal'
+          = t('defaults.close')

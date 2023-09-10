@@ -11,33 +11,33 @@ h4.fw-bold
 
         .m-3.mx-auto
           = f.label :zip_code
-          = f.text_field :zip_code, placeholder: '000-0000', class: 'form-control'
-          = render "shared/error_messages", model: @profile, attribute: :zip_code
+          = f.text_field :zip_code, placeholder: t('defaults.137-8686'), class: 'form-control'
+          = render 'shared/error_messages', model: @profile, attribute: :zip_code
 
         .m-3.mx-auto
           = f.label :prefecture
-          = f.text_field :prefecture, placeholder: '東京都', class: 'form-control'
-          = render "shared/error_messages", model: @profile, attribute: :prefecture
+          = f.text_field :prefecture, placeholder: t('defaults.tokyo-to'), class: 'form-control'
+          = render 'shared/error_messages', model: @profile, attribute: :prefecture
 
         .m-3.mx-auto
           = f.label :city
-          = f.text_field :city, placeholder: '千代田区', class: 'form-control'
-          = render "shared/error_messages", model: @profile, attribute: :city
+          = f.text_field :city, placeholder: t('defaults.chiyoda-ku'), class: 'form-control'
+          = render 'shared/error_messages', model: @profile, attribute: :city
 
         .m-3.mx-auto
           = f.label :other_address
-          = f.text_field :other_address, placeholder: '有楽町1-9-3', class: 'form-control'
-          = render "shared/error_messages", model: @profile, attribute: :other_address
+          = f.text_field :other_address, placeholder: t('defaults.yuraku-cho'), class: 'form-control'
+          = render 'shared/error_messages', model: @profile, attribute: :other_address
 
         .m-3.mx-auto
-          = f.label :phone, '電話番号（ハイフンも入力ください）'
-          = f.text_field :phone, placeholder: '000-0000-0000', class: 'form-control'
-          = render "shared/error_messages", model: @profile, attribute: :phone
+          = f.label :phone, t('defaults.message.add_phone_number')
+          = f.text_field :phone, placeholder: t('defaults.000-000-0000'), class: 'form-control'
+          = render 'shared/error_messages', model: @profile, attribute: :phone
 
         .m-3.mx-auto
           = f.label :legal_name
-          = f.text_field :legal_name, placeholder: '有楽太郎', class: 'form-control'
-          = render "shared/error_messages", model: @profile, attribute: :legal_name
+          = f.text_field :legal_name, placeholder: t('defaults.yuraku_taro'), class: 'form-control'
+          = render 'shared/error_messages', model: @profile, attribute: :legal_name
 
         p.actions.text-center
           = f.submit (t 'defaults.update'), class: 'btn btn-warning w-50 m-3'

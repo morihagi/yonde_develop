@@ -57,6 +57,7 @@ img.img-fluid {
 .alert-dismissible .btn-close {
   padding: 0.5rem 1rem;
 }
+
 .btn1 {
   display: inline-block;
   text-decoration: none;
@@ -98,3 +99,8 @@ img.img-fluid {
   --bs-accordion-active-bg: rgb(128, 141, 142, 0.3);
 }
 
+.pagination {
+  --bs-pagination-active-bg: rgb(43, 61, 79);
+  --bs-pagination-color: none;
+  --bs-pagination-active-border-color: rgb(43, 61, 79);
+}

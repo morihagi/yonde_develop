@@ -6,48 +6,51 @@
       h3.m-3.fw-bold
         = t('.title')
 
-    .col-lg-4.col-md-6.col-sm-10.mx-auto
       = form_with model: @user, url: user_registration_path do |f|
-        .m-3
-          = f.label :email, class: "float-start"
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@sample.com", class: "form-control"
-          = render "shared/error_messages", model: @user, attribute: :email
 
-        .m-3
-          = f.label :password, class: "float-start"
+        .m-3.w-75.mx-auto
+          = f.label :email, class: 'float-start'
+          = f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: t('defaults.email_address'), class: 'form-control'
+          = render 'shared/error_messages', model: @user, attribute: :email
 
-          div[data-controller="password-visibility"]
+        .m-3.w-75.mx-auto
+          = f.label :password, class: 'float-start'
+
+          div[data-controller='password-visibility']
             .input-group
-              = f.password_field :password, autocomplete: "new-password", placeholder: "英数字8文字以上", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
+              = f.password_field :password, autocomplete: 'new-password', placeholder: t('defaults.over_english_number_8'), class: 'form-control', spellcheck: 'false', data: { password_visibility_target: 'input'}
 
-              button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
-                span[data-password-visibility-target="icon"]
+              button[type='button' class='btn btn-outline-secondary rounded-2' data-action='password-visibility#toggle']
+                span[data-password-visibility-target='icon']
                   i.far.fa-eye
-                / span[class="hidden" data-password-visibility-target="icon"]
+                / span[class='hidden' data-password-visibility-target='icon']
                 / i.far.fa-eye-slash
 
-          = render "shared/error_messages", model: @user, attribute: :password
+          = render 'shared/error_messages', model: @user, attribute: :password
 
-        .m-3
-          = f.label :password_confirmation, class: "float-start"
-          div[data-controller="password-visibility"]
+        .m-3.w-75.mx-auto
+          = f.label :password_confirmation, class: 'float-start'
+          div[data-controller='password-visibility']
             .input-group
-              = f.password_field :password_confirmation, autocomplete: "password", placeholder: "password_confirmation", class: "form-control", data: { password_visibility_target: "input"}
+              = f.password_field :password_confirmation, autocomplete: 'password', placeholder: t('defaults.password_confirmation'), class: 'form-control', data: { password_visibility_target: 'input'}
 
-              button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
-                span[data-password-visibility-target="icon"]
+              button[type='button' class='btn btn-outline-secondary rounded-2' data-action='password-visibility#toggle']
+                span[data-password-visibility-target='icon']
                   i.far.fa-eye
-                / span[class="hidden" data-password-visibility-target="icon"]
+                / span[class='hidden' data-password-visibility-target='icon']
                 / i.far.fa-eye-slash
 
-        .m-3
+        .m-3.w-75.mx-auto
           = f.check_box :agreement, :as => :boolean, checked:false, style: 'vertical-align: middle;'
-          = link_to '利用規約', terms_path, class: 'm-2', target: "_blank"
+          = link_to t('modals.terms.title'), terms_path, class: 'm-2', target: '_blank'
           'と
-          = link_to 'プライバシーポリシー', privacy_policy_path, class: 'm-2', target: "_blank"
+          = link_to t('modals.privacy_policy.title'), privacy_policy_path, class: 'm-2', target: '_blank'
           'に同意する
 
-        p.actions
-          = f.submit t('defaults.register'), class: 'btn btn-outline-light w-75', style: "background-color: #354a5f;"
+        p.actions.p-2
+          = f.submit t('defaults.register'), class: 'btn btn-outline-light w-50', style: 'background-color: #354a5f;'
 
-      = render "users/shared/links"
+    .container.m-3.mx-auto
+      .row.mx-auto
+        .col-lg-6.col-md-10.mx-auto
+          = render 'users/shared/links'

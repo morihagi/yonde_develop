@@ -32,14 +32,13 @@ class Segment < ApplicationRecord
   validates :segment_title, :segment_status, :segment_title_for_email, presence: true
 
   extend Enumerize
-  enumerize :segment_status, in: %i[ ongoing finished ], default: :ongoing, scope: true
+  enumerize :segment_status, in: %i[ongoing finished], default: :ongoing, scope: true
 
-  def self.ransackable_associations(auth_object = nil)
-    ["posts", "program"]
+  def self.ransackable_associations(_auth_object = nil)
+    %w[posts program]
   end
 
-  def self.ransackable_attributes(auth_object = nil)
-    ["id", "segment_title", "segment_status"]
+  def self.ransackable_attributes(_auth_object = nil)
+    %w[id segment_title segment_status]
   end
 end
-

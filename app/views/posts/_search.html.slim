@@ -1,33 +1,33 @@
 .accordion#accordionExample.mt-3
   .accordion-item
     h2.accordion-header
-    button.accordion-button.collapsed type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne"
-        | 🔎　検索条件
+    button.accordion-button.collapsed type='button' data-bs-toggle='collapse' data-bs-target='#collapseOne' aria-expanded='false' aria-controls='collapseOne'
+        | 🔎 検索
 
-    #collapseOne.accordion-collapse.collapse data-bs-parent="#accordionExample"
+    #collapseOne.accordion-collapse.collapse data-bs-parent='#accordionExample'
       .accordion-body
         strong
           = search_form_for @search do |f|
             .row.g-3.mb-2
               .col-12
-                = f.label :segment_program_id_eq, "番組名", class: "form-label"
-                = f.select :segment_program_id_eq, Program.pluck(:program, :id), { include_blank: '番組名を選択してください' }, { class: 'form-control' }
+                = f.label :segment_program_id_eq, Program.human_attribute_name(:program), class: 'form-label'
+                = f.select :segment_program_id_eq, Program.pluck(:program, :id), { include_blank: t('defaults.message.select_program') }, { class: 'form-control' }
 
               .col-md-6.col-xs-12
-                = f.label :segment_id_eq, "コーナー", class: "form-label"
-                = f.select :segment_id_eq, Segment.pluck(:segment_title, :id), { include_blank: 'コーナー名を選択してください' }, { class: 'form-control' }
+                = f.label :segment_id_eq, Segment.human_attribute_name(:segment_title), class: 'form-label'
+                = f.select :segment_id_eq, Segment.pluck(:segment_title, :id), { include_blank: t('defaults.message.select_segment') }, { class: 'form-control' }
 
               .col-md-6.col-xs-12
-                = f.label :body_cont, "本文", class: "form-label"
-                = f.search_field :body_cont, class: "form-control", placeholder: '本文を入力してください'
+                = f.label :body_cont, Post.human_attribute_name(:body), class: 'form-label'
+                = f.search_field :body_cont, class: 'form-control', placeholder: t('defaults.message.input_word')
 
               .col-md-6.col-xs-12
-                = f.label :created_at_gteq, "作成日(〜から)", class: "form-label"
+                = f.label :created_at_gteq, t('defaults.message.from_created_at'), class: 'form-label'
                 = f.date_field :created_at_gteq, class: 'form-control'
               .col-md-6.col-xs-12
-                = f.label :created_at_lteq_end_of_day, "作成日(〜まで)", class: "form-label"
+                = f.label :created_at_lteq_end_of_day, t('defaults.message.until_created_at'), class: 'form-label'
                 = f.date_field :created_at_lteq_end_of_day, class: 'form-control'
 
               .col-md-6.col-xs-12
                 = f.submit class: 'btn btn-warning mt-2 mx-2'
-                = link_to "リセット", posts_path, class: "btn btn-outline-secondary mt-2 mx-2"
+                = link_to t('defaults.reset'), posts_path, class: 'btn btn-outline-secondary mt-2 mx-2'

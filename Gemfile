@@ -167,7 +167,7 @@ group :development do
   gem 'dockerfile-rails', '>= 1.5'
 
   # Generates an ER diagram.
-  gem "rails-mermaid_erd"
+  gem 'rails-mermaid_erd'
 end
 
 group :test do

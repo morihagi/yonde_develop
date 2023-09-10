@@ -10,41 +10,41 @@ h4.fw-bold
       = form_with model: @user, url: user_registration_path, local: true do |f|
         .form-group.m-3
           = f.label :email
-          = f.email_field :email, autofocus: true, autocomplete: "email", class: 'form-control'
-          = render "shared/error_messages", model: @user, attribute: :email
+          = f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: t('defaults.email_address'), class: 'form-control'
+          = render 'shared/error_messages', model: @user, attribute: :email
 
         - if devise_mapping.confirmable? && resource.pending_reconfirmation?
           p.m-3
             | #{resource.unconfirmed_email}
             = t('defaults.message.waiting_confirmation')
 
-        - unless current_user&.provider == "google_oauth2"
+        - unless current_user&.provider == 'google_oauth2'
           .form-group.m-3
             = f.label :password
 
-            div[data-controller="password-visibility"]
+            div[data-controller='password-visibility']
               .input-group
-                = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
+                = f.password_field :password, autocomplete: 'new-password', placeholder: t('defaults.over_english_number_8'), class: 'form-control', spellcheck: 'false', data: { password_visibility_target: 'input'}
 
-                button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
-                  span[data-password-visibility-target="icon"]
+                button[type='button' class='btn btn-outline-secondary rounded-2' data-action='password-visibility#toggle']
+                  span[data-password-visibility-target='icon']
                     i.far.fa-eye
-                / span[class="hidden" data-password-visibility-target="icon"]
+                / span[class='hidden' data-password-visibility-target='icon']
                   / i.far.fa-eye-slash
 
-          = render "shared/error_messages", model: @user, attribute: :password
+          = render 'shared/error_messages', model: @user, attribute: :password
 
-          div[data-controller="password-visibility"]
+          div[data-controller='password-visibility']
             .form-group.m-3
               = f.label :password_confirmation
-              div[data-controller="password-visibility"]
+              div[data-controller='password-visibility']
                 .input-group
-                  = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
+                  = f.password_field :password, autocomplete: 'new-password', placeholder: t('defaults.password_confirmation'), class: 'form-control', spellcheck: 'false', data: { password_visibility_target: 'input'}
 
-                  button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
-                    span[data-password-visibility-target="icon"]
+                  button[type='button' class='btn btn-outline-secondary rounded-2' data-action='password-visibility#toggle']
+                    span[data-password-visibility-target='icon']
                       i.far.fa-eye
-                  / span[class="hidden" data-password-visibility-target="icon"]
+                  / span[class='hidden' data-password-visibility-target='icon']
                     / i.far.fa-eye-slash
 
         p.actions.text-center
@@ -56,4 +56,4 @@ h4.fw-bold
         p
           | アカウントを削除すると、投稿メールが全て削除されます。
         span.text-center
-          = button_to "アカウント削除", user_registration_path, method: :delete, form: { data: { turbo_confirm: t('defaults.message.are_you_sure') } }, class: 'btn btn-danger m-3 w-50'
+          = button_to t('defaults.delete_account'), user_registration_path, method: :delete, form: { data: { turbo_confirm: t('defaults.message.are_you_sure') } }, class: 'btn btn-danger m-3 w-50'

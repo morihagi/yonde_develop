@@ -38,16 +38,14 @@ class User < ApplicationRecord
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
-          :recoverable, :rememberable, :validatable,
-          :confirmable, :trackable, :lockable,
-          :omniauthable, omniauth_providers: %i[ google_oauth2 ]
+         :recoverable, :rememberable, :validatable,
+         :confirmable, :trackable, :lockable,
+         :omniauthable, omniauth_providers: %i[google_oauth2]
 
   has_one :profile, dependent: :destroy
   before_create :build_default_profile
 
   has_many :posts, dependent: :destroy
-
-  has_many :tokens, dependent: :destroy
 
   before_save { self.email = email.downcase }
   VALID_EMAIL_REGEX = /\A[\w+\-.]+@[a-z\d\-.]+\.[a-z]+\z/i
@@ -55,13 +53,13 @@ class User < ApplicationRecord
                     uniqueness: { case_sensitive: false },
                     format: { with: VALID_EMAIL_REGEX }
 
-  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  VALID_PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i
   validates :password, presence: true,
-                    length: { minimum: 8 },
-                    format: { with: VALID_PASSWORD_REGEX },
-                    allow_nil: true,
-                    unless: :google_registration?,
-                    if: :password_required?
+                       length: { minimum: 8 },
+                       format: { with: VALID_PASSWORD_REGEX },
+                       allow_nil: true,
+                       unless: :google_registration?,
+                       if: :password_required?
 
   validates_acceptance_of :agreement, allow_nil: false, on: :create, unless: :google_registration?
   validates :uid, presence: true, uniqueness: { scope: :provider }, if: -> { uid.present? }
@@ -87,8 +85,6 @@ class User < ApplicationRecord
     result
   end
 
-  protected
-
   def self.from_omniauth(access_token)
     data = access_token.info
     user = User.where(email: data['email']).first
@@ -96,28 +92,20 @@ class User < ApplicationRecord
     uid = access_token.uid
     oauth_token = access_token.credentials.token
     oauth_expires_at = access_token.credentials.expires_at
-    refresh_token = access_token.credentials.refresh_token
 
-    unless user
-      user = User.create(
-        email: data['email'],
-        password: Devise.friendly_token[0, 20],
-        agreement: true,
-        provider: provider,
-        uid: uid,
-        oauth_token: oauth_token,
-        oauth_expires_at: Time.at(oauth_expires_at)
-      )
-
-      token = Token.create(
-        access_token: oauth_token,
-        refresh_token: refresh_token,
-        expires_at: Time.at(oauth_expires_at),
-        user_id: user.id
-      )
-    end
+    user ||= User.create(
+      email: data['email'],
+      password: Devise.friendly_token[0, 20],
+      agreement: true,
+      provider:,
+      uid:,
+      oauth_token:,
+      oauth_expires_at: Time.at(oauth_expires_at)
+    )
     user
   end
+
+  protected
 
   def google_registration?
     provider == 'google_oauth2'

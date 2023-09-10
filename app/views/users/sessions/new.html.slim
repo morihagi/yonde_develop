@@ -6,32 +6,35 @@
       h3.m-3.fw-bold
         = t('.title')
 
-    .col-lg-4.col-md-6.col-sm-10.mx-auto
       = form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
-        .m-3
-          = f.label :email, class: "float-start"
-          = f.email_field :email, autofocus: true, autocomplete: "email", placeholder: "example@sample.com", class: "form-control"
 
-        .m-3
-          = f.label :password, class: "float-start"
+        .m-3.w-75.mx-auto
+          = f.label :email, class: 'float-start'
+          = f.email_field :email, autofocus: true, autocomplete: 'email', placeholder: t('defaults.email_address'), class: 'form-control'
 
-          div[data-controller="password-visibility"]
+        .m-3.w-75.mx-auto
+          = f.label :password, class: 'float-start'
+
+          div[data-controller='password-visibility']
             .input-group
-              = f.password_field :password, autocomplete: "new-password", placeholder: "英数字8文字以上", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
+              = f.password_field :password, autocomplete: 'new-password', placeholder: t('defaults.over_english_number_8'), class: 'form-control', spellcheck: 'false', data: { password_visibility_target: 'input'}
 
-              button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
-                span[data-password-visibility-target="icon"]
+              button[type='button' class='btn btn-outline-secondary rounded-2' data-action='password-visibility#toggle']
+                span[data-password-visibility-target='icon']
                   i.far.fa-eye
-                / span[class="hidden" data-password-visibility-target="icon"]
+                / span[class='hidden' data-password-visibility-target='icon']
                 /   i.far.fa-eye-slash
 
         - if devise_mapping.rememberable?
-          .m-3
+          .m-3.w-75.mx-auto
             = f.check_box :remember_me
             ' &nbsp;
             = f.label :remember_me, t('defaults.remember_me')
 
-        p.actions
-          = f.submit t('defaults.login'), class: 'btn btn-outline-dark w-75'
+        p.actions.p-2
+          = f.submit t('defaults.login'), class: 'btn btn-outline-light w-50', style: 'background-color: #354a5f;'
 
-      = render "users/shared/links"
+    .container.m-3.mx-auto
+      .row.mx-auto
+        .col-lg-6.col-md-10.mx-auto
+          = render 'users/shared/links'

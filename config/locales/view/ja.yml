@@ -2,8 +2,7 @@ ja:
   defaults:
     title: YONDE
     about: YONDEとは
-    functions: 機能一覧
-    register: ユーザー登録
+    register: 登録
     mypage: マイページ
     login: ログイン
     google_login: Googleを使用する
@@ -12,13 +11,50 @@ ja:
     authentication_mail: 認証メールの再送
     unlock_mail: ロック解除メールの送信
     copy_right: © YONDE 2023
+    developer: 開発者：@morihagi
+    code: ソースコード
+    twitter: X(旧Twitter)
+    google_form: Googleフォーム
+    program: 番組
     edit: 変更
     update: 更新
     resend: 再送
     send: 送信
     create: 作成
+    delete: 削除
+    reset: リセット
+    close: 閉じる
+    delete_account: アカウント削除
     remember_me: 次回から自動ログイン
     unspecified: 選択なし
+    send_with_mail_app: メールアプリから送信
+    address_not_required: 在住(未記入でも可)
+    short_address: 在住
+    prefecture: 都道府県
+    city: 市町村
+    other_address: 以降の住所
+    rn: RN
+    action: アクション
+    default_information: デフォルト情報
+    default_information_for_goods: デフォルト情報(番組ノベルティグッズ発送用)
+    137-8686: 137-8686
+    tokyo-to: 東京都
+    chiyoda-ku: 千代田区
+    yuraku-cho: 有楽町1-9-3
+    000-000-0000: 000-000-0000
+    email_address: example@sample.com
+    yuraku_taro: 有楽太郎
+    anonymous: 匿名希望
+    message_to_developer: 開発者へメッセージ
+    try_to_make_message: 投稿メールを作ってみる
+    use_google_account: Googleアカウントを使用する場合
+    for_login: ログインする場合
+    for_sign_in: ユーザー登録をする場合
+    for_new_password: パスワードを忘れた場合
+    for_reconfirmation: ユーザー認証メールを再送する場合
+    for_unlock: アカウントのロックを解除する場合
+    over_english_number_8: 英数字8文字以上
+    password_confirmation: 上記パスワードを入力
     message:
       require_login: ログインしてください
       created: "%{item}を作成しました"
@@ -30,6 +66,16 @@ ja:
       delete_confirm: 削除しますか？
       waiting_confirmation: の認証待ちです
       are_you_sure: 本当に削除していいですか？
+      select_program: 番組名を選択してください
+      select_segment: コーナー名を選択してください
+      input_word: 本文を入力してください
+      from_created_at: 作成日（〜から）
+      until_created_at: 作成日（〜まで）
+      select: 選択してください
+      add_address_legal_name_phonne_number: 住所・本名・電話番号を記入したい場合はこちらをクリック
+      add_default_profile: 登録済みの情報を追加
+      add_phone_number: 電話番号（ハイフンも入力ください）
+      hidden_for_security: セキュリティのため、表示しません
   helpers:
     page_entries_info:
       more_pages:
@@ -94,4 +140,3 @@ ja:
       title: リスナー情報の変更
     edit_for_goods:
       title: ノベルティグッズ発送用情報
-

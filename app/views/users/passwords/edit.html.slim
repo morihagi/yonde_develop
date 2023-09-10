@@ -10,33 +10,33 @@
         = f.hidden_field :reset_password_token
 
         .form-group.m-3.w-50.mx-auto
-          = f.label :password, class: "float-start"
+          = f.label :password, class: 'float-start'
 
-          div[data-controller="password-visibility"]
+          div[data-controller='password-visibility']
             .input-group
-              = f.password_field :password, autocomplete: "new-password", placeholder: "password", class: "form-control", spellcheck: "false", data: { password_visibility_target: "input"}
+              = f.password_field :password, autocomplete: 'new-password', placeholder: t('defaults.over_english_number_8'), class: 'form-control', spellcheck: 'false', data: { password_visibility_target: 'input'}
 
-              button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
-                span[data-password-visibility-target="icon"]
+              button[type='button' class='btn btn-outline-secondary rounded-2' data-action='password-visibility#toggle']
+                span[data-password-visibility-target='icon']
                   i.far.fa-eye
-                / span[class="hidden" data-password-visibility-target="icon"]
+                / span[class='hidden' data-password-visibility-target='icon']
                   / i.far.fa-eye-slash
 
-          = render "shared/error_messages", model: @user, attribute: :password
+          = render 'shared/error_messages', model: @user, attribute: :password
 
         .form-group.m-3.w-50.mx-auto
-          = f.label :password_confirmation, class: "float-start"
-          div[data-controller="password-visibility"]
+          = f.label :password_confirmation, class: 'float-start'
+          div[data-controller='password-visibility']
             .input-group
-              = f.password_field :password_confirmation, autocomplete: "password", placeholder: "password_confirmation", class: "form-control", data: { password_visibility_target: "input"}
+              = f.password_field :password_confirmation, autocomplete: 'password', placeholder: placeholder: t('defaults.password_confirmation'), class: 'form-control', data: { password_visibility_target: 'input'}
 
-              button[type="button" class="btn btn-outline-secondary rounded-2" data-action="password-visibility#toggle"]
-                span[data-password-visibility-target="icon"]
+              button[type='button' class='btn btn-outline-secondary rounded-2' data-action='password-visibility#toggle']
+                span[data-password-visibility-target='icon']
                   i.far.fa-eye
-                / span[class="hidden" data-password-visibility-target="icon"]
+                / span[class='hidden' data-password-visibility-target='icon']
                 / i.far.fa-eye-slash
 
         p.actions
-          = f.submit t('defaults.edit'), class: 'btn btn-outline-light w-50', style: "background-color: #354a5f;"
+          = f.submit t('defaults.edit'), class: 'btn btn-outline-light w-50', style: 'background-color: #354a5f;'
 
-      = render "users/shared/links"
+      = render 'users/shared/links'

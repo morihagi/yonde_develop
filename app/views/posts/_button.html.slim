@@ -1,16 +1,16 @@
 ul.crud-menu-btn.list-inline.float-right
   li.list-inline-item
-    = link_to edit_post_path(post), id: "button-edit-#{post.id}" do
+    = link_to edit_post_path(post), id: 'button-edit-#{post.id}' do
       i.fas.fa-pen
   li.list-inline-item
-    = link_to post_path(post), id: "button-delete-#{post.id}", data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')} do
+    = link_to post_path(post), id: 'button-delete-#{post.id}', data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')} do
       i.fas.fa-trash
   / li.list-inline-item
   /   = link_to '#' do
   /     i.far.fa-star
 
 / = link_to bookmarks_path(post_id: post.id),
-/   id: "js-bookmark-button-for-post-#{post.id}",
+/   id: 'js-bookmark-button-for-post-#{post.id}',
 /   class: 'float-right',
 /   method: :post,
 /   remote: true do
