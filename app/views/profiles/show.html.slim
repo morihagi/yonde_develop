@@ -7,17 +7,17 @@ h4.fw-bold
 .container.p-3
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-      h5 = '投稿メール用情報'
+      h5 = t('defaults.default_information')
       table.table.table-striped
         tbody
           tr
             th.col-4
-              = t(Profile.human_attribute_name(:full_address))
+              = t('defaults.short_address')
             td.col-8
               = current_user.profile&.decorate.full_address_post
           tr
             th.col-4
-              = t(Profile.human_attribute_name(:radio_name))
+              = Profile.human_attribute_name(:radio_name)
             td.col-8
               = current_user.profile&.radio_name
       p.text-center
@@ -25,27 +25,27 @@ h4.fw-bold
 
       br
 
-      h5 = 'ノベルティグッズ発送用情報'
+      h5 = t('defaults.default_information_for_goods')
       table.table.table-striped
         tbody
           tr
             th.col-4
-              = t(Profile.human_attribute_name(:zip_code))
+              = Profile.human_attribute_name(:zip_code)
             td.col-8
-              = current_user.profile&.zip_code.to_s.insert(3, "-")
+              = current_user.profile&.zip_code.to_s.insert(3, '-')
           tr
             th.col-4
-              = t(Profile.human_attribute_name(:full_address))
+              = Profile.human_attribute_name(:full_address)
             td.col-8
               = current_user.profile&.decorate.full_address
           tr
             th.col-4
-              = t(Profile.human_attribute_name(:phone))
+              = Profile.human_attribute_name(:phone)
             td.col-8
               = current_user.profile&.phone
           tr
             th.col-4
-              = t(Profile.human_attribute_name(:legal_name))
+              = Profile.human_attribute_name(:legal_name)
             td.col-8
               = current_user.profile&.legal_name
 

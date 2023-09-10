@@ -13,6 +13,6 @@ h4.fw-bold
           td = current_user.email
         tr
           th(scope='row') = t(User.human_attribute_name(:password))
-          td = 'セキュリティのため、表示しません'
+          td = t('defaults.message.hidden_for_security')
       p.text-center
         = link_to (t 'defaults.edit'), edit_user_registration_path, class: 'btn btn-warning w-50'

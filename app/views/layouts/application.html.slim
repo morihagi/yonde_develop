@@ -8,7 +8,7 @@ html[lang="ja" class="vh-100"]
       = page_title(yield(:title))
     meta[name="viewport" content="width=device-width, initial-scale=1"]
     meta[name="title" content="YONDE"]
-    meta[name="description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーの投稿メールを作れます。"]
+    meta[name="description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーへ、投稿メールを作ることができます。"]
     meta[name="keywords" content="オールナイトニッポン, ANN, ニッポン放送"]
 
     = csrf_meta_tags
@@ -19,7 +19,7 @@ html[lang="ja" class="vh-100"]
 
     meta[property="og:site_title" content="YONDE"]
     meta[property="og:title" content="YONDE"]
-    meta[property="og:description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーの投稿メールを作ることができます。"]
+    meta[property="og:description" content="誰でも簡単に、オールナイトニッポンの好きな番組の好きなコーナーへ、投稿メールを作ることができます。"]
     meta[property="og:type" content="website"]
     meta[property="og:url" content="https://yonde.fly.dev/"]
     meta[property="og:image" content="https://yonde.fly.dev/assets/card.png"]
@@ -43,18 +43,18 @@ html[lang="ja" class="vh-100"]
     - if controller_name == 'static_pages'
       = yield
     - elsif user_signed_in?
-      .container-fluid(style="overflow:hidden;")
+      .container-fluid(style='overflow:hidden;')
         .row
-          .col-md-3.d-none.d-md-block(style="background-color: #354a5f; height: 100%; padding: 0; position: fixed;")
-            .d-flex.flex-column.flex-shrink-0.py-3.px-3.text-white(style="margin-top: 55px;")
+          .col-md-3.d-none.d-md-block(style='background-color: #354a5f; height: 100%; padding: 0; position: fixed;')
+            .d-flex.flex-column.flex-shrink-0.py-3.px-3.text-white(style='margin-top: 55px;')
               = render 'shared/sidebar'
 
           .col-md-9.mt-5.offset-3.d-none.d-md-block
-            .container.main-content(style="margin-top: 50px;")
+            .container.main-content(style='margin-top: 50px;')
               = yield
 
           .col-12.mt-5.d-block.d-md-none
-            .container.main-content(style="margin-top: 50px;")
+            .container.main-content(style='margin-top: 50px;')
               = yield
     - else
       = yield

@@ -1,37 +1,43 @@
 .card.mb-3
   .card-header
-    | 投稿メール
-  ul class="list-group list-group-flush"
-    li class="list-group-item"
+    = Post.model_name.human
+  ul class='list-group list-group-flush'
+    li class='list-group-item'
       An 🎙 番組 | To: #{@post.segment.program.email}
-    li class="list-group-item"
+    li class='list-group-item'
       An 📻 件名 | #{@post.segment.segment_title_for_email}
 
     .card-body
       - if @post.prefecture.present? || @post.city.present?
-        | 在住: 
+        = Profile.human_attribute_name(:full_address_post)
+        | : 
         = @post.prefecture
         = @post.city
       - if @post.radio_name.present?
         p
-          | RN: 
+          = t('defaults.rn')
+          | : 
           = @post.radio_name
       = simple_format(@post.body)
       - if @post.zip_code.present?
         div
-          | 郵便番号: 
-          = @post.zip_code.to_s.insert(3, "-")
+          = Profile.human_attribute_name(:zip_code)
+          | : 
+          = @post.zip_code.to_s.insert(3, '-')
       - if @post.prefecture.present? || @post.city.present? || @post.other_address.present?
         div
-          | 住所: 
+          = Profile.human_attribute_name(:full_address)
+          | : 
           = @post.prefecture
           = @post.city
           = @post.other_address
       - if @post.phone.present?
         div
-          | 電話番号: 
+          = Profile.human_attribute_name(:phone)
+          | : 
           = @post.phone
       - if @post.legal_name.present?
         div
-          | 名前: 
+          = Profile.human_attribute_name(:legal_name)
+          | : 
           = @post.legal_name

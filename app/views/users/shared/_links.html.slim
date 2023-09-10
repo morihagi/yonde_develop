@@ -1,33 +1,33 @@
 - if devise_mapping.omniauthable?
   .p-2
-    div Googleアカウントを使用する場合
+    div = t('defaults.use_google_account')
     - resource_class.omniauth_providers.each do |provider|
       div = button_to omniauth_authorize_path(resource_name, provider), data: { turbo: false }, class: 'btn btn-white'
-        = image_tag "btn_google_signin_light_normal_web@2x.png", class: 'w-50'
+        = image_tag 'btn_google_signin_light_normal_web@2x.png', class: 'w-50'
 
 '---------------------------------------------
 
 - if controller_name != 'sessions'
   .p-2
-    div ログインする場合
+    div = t('defaults.for_login')
     div = link_to t('defaults.login'), new_session_path(resource_name), class: 'btn btn-outline-secondary w-75'
 
 - if devise_mapping.registerable? && controller_name != 'registrations'
   .p-2
-    div ユーザー登録をする場合
-    div = link_to t('defaults.register'), new_registration_path(resource_name), class: 'btn btn-outline-light w-75', style: "background-color: #354a5f;"
+    div = t('defaults.for_sign_in')
+    div = link_to t('defaults.register'), new_registration_path(resource_name), class: 'btn btn-outline-secondary w-75'
 
 - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'
   .p-2
-    div パスワードを忘れた場合
+    div = t('defaults.for_new_password')
     div = link_to t('defaults.forget_password_mail'), new_password_path(resource_name), class: 'btn btn-outline-secondary w-75'
 
 - if devise_mapping.confirmable? && controller_name != 'confirmations'
   .p-2
-    div ユーザー認証メールを再送する場合
+    div = t('defaults.for_reconfirmation')
     div = link_to t('defaults.authentication_mail'), new_confirmation_path(resource_name), class: 'btn btn-outline-secondary w-75'
 
 - if devise_mapping.lockable? && resource_class.unlock_strategy_enabled?(:email) && controller_name != 'unlocks'
   .p-2
-    div アカウントのロックを解除する場合
+    div = t('defaults.for_unlock')
     div = link_to t('defaults.unlock_mail'), new_unlock_path(resource_name), class: 'btn btn-outline-secondary w-75'
