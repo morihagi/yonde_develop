@@ -40,14 +40,14 @@ ul.nav.nav-tabs.justify-content-end.mt-3
                 = link_to post.segment.segment_title, post_path(post)
 
               ul.list-inline
-                li.list-inline-item
+                li.list-inline-item.me-3(style='font-size: 0.8rem; letter-spacing: 0.05em')
                   = post_status_badge(post)
-                li.list-inline-item
-                  i.fas.fa-calendar-alt.me-1
+                li.list-inline-item.me-3(style='font-size: 0.8rem; letter-spacing: 0.05em')
+                  i.fas.fa-calendar-alt
                   = l post.created_at, format: :long
-                li.list-inline-item.text-right.ml-auto
+                li.list-inline-item
                   = render 'button', post: post
-              p.card-text. style='max-height: 4em; overflow: hidden;'
+              p.card-text(style='max-height: 4em; overflow: hidden;')
                 = post.body
 
   #table.tab-pane

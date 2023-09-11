@@ -1,6 +1,6 @@
 class PostsController < ApplicationController
   skip_before_action :authenticate_user!, only: %i[new create show_for_unregistered_user]
-  before_action :set_post, only: %i[show edit update destroy]
+  before_action :set_post, only: %i[show edit update destroy duplicate]
 
   def index
     @search = current_user.posts.includes([segment: :program]).ransack(params[:q])
@@ -75,6 +75,16 @@ class PostsController < ApplicationController
   def bookmarks
     @q = current_user.bookmark_posts.ransack(params[:q])
     @bookmark_posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
+  end
+
+  def duplicate
+    @duplicate_post = Post.new(@post.attributes.except("id", "created_at", "updated_at"))
+    if @duplicate_post.save
+      redirect_to posts_path, success: t('defaults.message.deleted', item: Post.model_name.human)
+    else
+      flash.now['danger'] = t('defaults.message.not_updated', item: Post.model_name.human)
+      render :index
+    end
   end
 
   private
