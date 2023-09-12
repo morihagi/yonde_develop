@@ -32,7 +32,7 @@ ul.nav.nav-tabs.justify-content-end.mt-3
   #card.tab-pane.active.mt-3
     .row
       - @posts.each do |post|
-        .col-sm-12.col-lg-4.mb-3
+        .col-md-4.col-sm-6.mb-3
           div id='post-id-#{post.id}' class='card d-flex flex-column h-100'
             = image_tag(post.segment.program.image_url, alt: '', class: 'card-img-top')
             .card-body.flex-grow-1
@@ -40,14 +40,14 @@ ul.nav.nav-tabs.justify-content-end.mt-3
                 = link_to post.segment.segment_title, post_path(post)
 
               ul.list-inline
-                li.list-inline-item
+                li.list-inline-item(style='font-size: 0.8rem; letter-spacing: 0.05em')
                   = post_status_badge(post)
-                li.list-inline-item
+                li.list-inline-item(style='font-size: 0.8rem; letter-spacing: 0.05em')
                   i.fas.fa-calendar-alt.me-1
                   = l post.created_at, format: :long
-                li.list-inline-item.text-right.ml-auto
+                li.list-inline-item
                   = render 'button', post: post
-              p.card-text. style='max-height: 4em; overflow: hidden;'
+              p.card-text(style='max-height: 4em; overflow: hidden;')
                 = post.body
 
   #table.tab-pane
