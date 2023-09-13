@@ -1,9 +1,18 @@
 - flash.each do |message_type, message|
   - if message_type == 'notice'
-    div class='alert alert-success alert-dismissible d-flex align-items-center justify-content-center' role='alert' style='margin-bottom: 0px; height: 30px;'
-      button.btn-close data-bs-dismiss='alert'
-      = message
+    .bg-success-subtle.toast.show.fade.position-fixed.top-0.end-0.border-0(role='alert' aria-live='assertive' aria-atomic='true' style='margin-top: 85px; margin-right: 10px; z-index:10000;')
+      .toast-header.text-success
+        strong.me-auto
+          | ✅ Success
+        button.btn-close.me-2[data-bs-dismiss="toast"]
+      .toast-body
+        = message
   - else
-    div class='alert alert-#{bootstrap_alert(message_type)} alert-dismissible d-flex align-items-center justify-content-center' role='alert' style='margin-bottom: 0px; height: 30px;'
-      button.btn-close data-bs-dismiss='alert'
-      = message
+    - alert_class = bootstrap_alert(message_type)
+    .toast.bg-#{alert_class}-subtle.show.fade.position-fixed.top-0.end-0.border-0(role='alert' aria-live='assertive' aria-atomic='true' style='margin-top: 85px; margin-right: 10px;')
+      .toast-header.text-#{alert_class}
+        strong.me-auto
+          | 🚨 Error
+        button.btn-close.me-2[data-bs-dismiss="toast"]
+      .toast-body
+        = message
