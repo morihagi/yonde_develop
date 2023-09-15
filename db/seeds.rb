@@ -606,12 +606,11 @@ Profile.create!(
   city: '千代田区',
   other_address: '有楽町1-9-3',
   phone: '03-3287-1111',
-  radio_name: 'サンプル',
+  radio_name: 'サンプル'
 )
 
 30.times do
   Post.create!(
-    email_for_post: 'example@sample.com',
     prefecture: Faker::Address.state,
     city: Faker::Address.city,
     radio_name: Faker::Name.name,
