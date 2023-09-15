@@ -37,7 +37,6 @@ ja:
     action: アクション
     default_information: デフォルト情報
     default_information_for_goods: デフォルト情報(番組ノベルティグッズ発送用)
-    137-8686: 137-8686
     tokyo-to: 東京都
     chiyoda-ku: 千代田区
     yuraku-cho: 有楽町1-9-3
@@ -55,6 +54,7 @@ ja:
     for_unlock: アカウントのロックを解除する場合
     over_english_number_8: 英数字8文字以上
     password_confirmation: 上記パスワードを入力
+    zip_cord_form: 郵便番号(数字7桁で入力ください)
     message:
       require_login: ログインしてください
       created: "%{item}を作成しました"

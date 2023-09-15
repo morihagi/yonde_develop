@@ -32,7 +32,8 @@ h4.fw-bold
             th.col-4
               = Profile.human_attribute_name(:zip_code)
             td.col-8
-              = current_user.profile&.zip_code.to_s.insert(3, '-')
+              - if current_user.profile.zip_code.present?
+                = current_user.profile&.zip_code.to_s.insert(3, '-')
           tr
             th.col-4
               = Profile.human_attribute_name(:full_address)

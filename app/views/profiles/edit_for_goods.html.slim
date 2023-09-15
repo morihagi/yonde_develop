@@ -10,8 +10,8 @@ h4.fw-bold
       = form_with model: @profile, url: profile_path, local: true, method: :patch do |f|
 
         .m-3.mx-auto
-          = f.label :zip_code
-          = f.text_field :zip_code, placeholder: t('defaults.137-8686'), class: 'form-control'
+          = f.label :zip_code, t('defaults.zip_cord_form')
+          = f.telephone_field :zip_code, placeholder: '0000006', class: 'form-control'
           = render 'shared/error_messages', model: @profile, attribute: :zip_code
 
         .m-3.mx-auto

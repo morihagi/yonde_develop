@@ -28,7 +28,6 @@ class Profile < ApplicationRecord
   belongs_to :user
 
   validates :prefecture, :city, :radio_name, :other_address, :legal_name, allow_blank: true
-  VALID_ZIP_CODE_REGEX = /\A\d{3}-?\d{4}\z/
-  validates :zip_code, presence: true, allow_blank: true, format: { with: VALID_ZIP_CODE_REGEX }
+  validates :zip_code, presence: true, allow_blank: true, length: { is: 7 }, numericality: { only_integer: true }
   validates :user_id, presence: true
 end
