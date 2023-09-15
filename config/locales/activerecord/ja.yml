@@ -24,7 +24,6 @@ ja:
         phone: 電話番号
         legal_name: 名前
       post:
-        email_for_post: 投稿用メールアドレス
         prefecture: 都道府県
         city: 市町村区
         full_address_post: 在住

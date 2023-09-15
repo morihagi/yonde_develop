@@ -7,12 +7,17 @@ h4.fw-bold
 .container.p-3
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
-      table.table.table-striped
-        tr
-          th(scope='row') = t(User.human_attribute_name(:email))
-          td = current_user.email
-        tr
-          th(scope='row') = t(User.human_attribute_name(:password))
-          td = t('defaults.message.hidden_for_security')
+      .mb-3
+        ul.list-group.list-group-horizontal.list-group-item-secondary
+          li.list-group-item.col-4.border-0.rounded-0
+            = t(User.human_attribute_name(:email))
+          li.list-group-item.col-8.border-0.rounded-0
+            = current_user.email
+        ul.list-group.list-group-horizontal
+          li.list-group-item.col-4.border-0.rounded-0.border-bottom
+            = t(User.human_attribute_name(:password))
+          li.list-group-item.col-8.border-0.rounded-0.border-bottom
+            = t('defaults.message.hidden_for_security')
+
       p.text-center
         = link_to (t 'defaults.edit'), edit_user_registration_path, class: 'btn btn-warning w-50'

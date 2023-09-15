@@ -15,7 +15,6 @@ class PostsController < ApplicationController
     profile = Profile.find_by(user_id: current_user.id)
     return unless profile.present?
 
-    @post.email_for_post = current_user.email
     @post.prefecture = profile.prefecture
     @post.city = profile.city
     @post.radio_name = profile.radio_name
@@ -90,7 +89,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:email_for_post, :prefecture, :city, :radio_name, :zip_code, :other_address, :legal_name, :phone, :body, :segment_id)
+    params.require(:post).permit(:prefecture, :city, :radio_name, :zip_code, :other_address, :legal_name, :phone, :body, :segment_id)
   end
 
   def set_post

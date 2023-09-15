@@ -592,42 +592,42 @@ programs.each do |program_data|
   end
 end
 
-User.create!(
-  email: 'example@sample.com',
-  password: 'password12',
-  password_confirmation: 'password12',
-  agreement: true
-)
-
-Profile.create!(
-  user_id: 1,
-  legal_name: 'はぎはら',
-  prefecture: '東京都',
-  city: '千代田区',
-  other_address: '有楽町1-9-3',
-  phone: '03-3287-1111',
-  radio_name: 'サンプル'
-)
-
-30.times do
-  Post.create!(
-    prefecture: Faker::Address.state,
-    city: Faker::Address.city,
-    radio_name: Faker::Name.name,
-    zip_code: Faker::Number.between(from: 100, to: 999),
-    other_address: Faker::Address.street_address,
-    legal_name: Faker::Name.name,
-    favorite_status: 'unlike',
-    post_status: 'draft',
-    body: Faker::Lorem.paragraph(sentence_count: 5),
-    user_id: 1,
-    segment_id: 1
-  )
-end
-
 Administrator.create!(
   email: ENV["ADMIN_E_MAIL"], 
   password: ENV["ADMIN_PASSWORD"], 
   first_name: 'morihagi', 
   last_name: 'YONDE'
 )
+
+  User.create!(
+    email: 'example@sample.com',
+    password: 'password12',
+    password_confirmation: 'password12',
+    agreement: true
+  )
+
+  Profile.create!(
+    user_id: 1,
+    legal_name: 'はぎはら',
+    prefecture: '東京都',
+    city: '千代田区',
+    other_address: '有楽町1-9-3',
+    phone: '03-3287-1111',
+    radio_name: 'サンプル'
+  )
+
+  30.times do
+    Post.create!(
+      prefecture: Faker::Address.state,
+      city: Faker::Address.city,
+      radio_name: Faker::Name.name,
+      zip_code: Faker::Number.between(from: 100, to: 999),
+      other_address: Faker::Address.street_address,
+      legal_name: Faker::Name.name,
+      favorite_status: 'unlike',
+      post_status: 'draft',
+      body: Faker::Lorem.paragraph(sentence_count: 5),
+      user_id: 1,
+      segment_id: 1
+    )
+  end

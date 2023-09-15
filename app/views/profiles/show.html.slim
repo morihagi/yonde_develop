@@ -8,47 +8,46 @@ h4.fw-bold
   .row
     .col-md-10.offset-md-1.col-lg-8.offset-lg-2
       h5 = t('defaults.default_information')
-      table.table.table-striped
-        tbody
-          tr
-            th.col-4
-              = t('defaults.short_address')
-            td.col-8
-              = current_user.profile&.decorate.full_address_post
-          tr
-            th.col-4
-              = Profile.human_attribute_name(:radio_name)
-            td.col-8
-              = current_user.profile&.radio_name
+      .mb-3
+        ul.list-group.list-group-horizontal.list-group-item-secondary
+          li.list-group-item.col-4.border-0.rounded-0
+            = t('defaults.short_address')
+          li.list-group-item.col-8.border-0.rounded-0
+            = current_user.profile&.decorate.full_address_post
+        ul.list-group.list-group-horizontal
+          li.list-group-item.col-4.border-0.rounded-0.border-bottom
+            = Profile.human_attribute_name(:radio_name)
+          li.list-group-item.col-8.border-0.rounded-0.border-bottom
+            = current_user.profile&.radio_name
+
       p.text-center
         = link_to (t 'defaults.edit'), edit_profile_path, class: 'btn btn-warning w-50'
 
       br
 
       h5 = t('defaults.default_information_for_goods')
-      table.table.table-striped
-        tbody
-          tr
-            th.col-4
-              = Profile.human_attribute_name(:zip_code)
-            td.col-8
-              - if current_user.profile.zip_code.present?
-                = current_user.profile&.zip_code.to_s.insert(3, '-')
-          tr
-            th.col-4
-              = Profile.human_attribute_name(:full_address)
-            td.col-8
-              = current_user.profile&.decorate.full_address
-          tr
-            th.col-4
-              = Profile.human_attribute_name(:phone)
-            td.col-8
-              = current_user.profile&.phone
-          tr
-            th.col-4
-              = Profile.human_attribute_name(:legal_name)
-            td.col-8
-              = current_user.profile&.legal_name
+      .mb-3
+        ul.list-group.list-group-horizontal.list-group-item-secondary
+          li.list-group-item.col-4.border-0.rounded-0
+            = Profile.human_attribute_name(:zip_code)
+          li.list-group-item.col-8.border-0.rounded-0
+            - if current_user.profile.zip_code.present?
+              = current_user.profile&.zip_code.to_s.insert(3, '-')
+        ul.list-group.list-group-horizontal
+          li.list-group-item.col-4.border-0.rounded-0
+            = Profile.human_attribute_name(:full_address)
+          li.list-group-item.col-4.border-0.rounded-0
+            = current_user.profile&.decorate.full_address
+        ul.list-group.list-group-horizontal.list-group-item-secondary
+          li.list-group-item.col-4.border-0.rounded-0
+            = Profile.human_attribute_name(:phone)
+          li.list-group-item.col-8.border-0.rounded-0
+            = current_user.profile&.phone
+        ul.list-group.list-group-horizontal
+          li.list-group-item.col-4.border-0.rounded-0.border-bottom
+            = Profile.human_attribute_name(:legal_name)
+          li.list-group-item.col-8.border-0.rounded-0.border-bottom
+            = current_user.profile&.legal_name
 
       p.text-center
         = link_to (t 'defaults.edit'), profile_edit_for_goods_path, class: 'btn btn-warning w-50'

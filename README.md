@@ -137,7 +137,6 @@ erDiagram
     %% table name: posts
     Post {
         integer id PK 
-        string email_for_post  
         string prefecture  
         string city  
         string radio_name  
