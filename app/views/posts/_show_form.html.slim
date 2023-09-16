@@ -8,11 +8,11 @@
       An 📻 件名 | #{@post.segment.segment_title_for_email}
 
     .card-body
-      - if @post.prefecture.present? || @post.city.present?
+      - if @post.residence_prefecture.present? || @post.residence_city.present?
         = Profile.human_attribute_name(:full_address_post)
         | : 
-        = @post.prefecture
-        = @post.city
+        = @post.residence_prefecture
+        = @post.residence_city
       - if @post.radio_name.present?
         p
           = t('defaults.rn')

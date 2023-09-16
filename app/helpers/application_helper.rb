@@ -27,9 +27,6 @@ module ApplicationHelper
     end
   end
 
-  def turbo_stream_flash
-    turbo_stream.append "flashes", partial: "flash"
-  end
 
   def page_title(page_title = '')
     base_title = 'YONDE'

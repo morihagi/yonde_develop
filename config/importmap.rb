@@ -13,3 +13,4 @@ pin 'stimulus-password-visibility', to: 'https://ga.jspm.io/npm:stimulus-passwor
 pin 'stimulus-notification', to: 'https://ga.jspm.io/npm:stimulus-notification@2.2.0/dist/stimulus-notification.mjs'
 pin 'hotkeys-js', to: 'https://ga.jspm.io/npm:hotkeys-js@3.11.2/dist/hotkeys.esm.js'
 pin 'stimulus-use', to: 'https://ga.jspm.io/npm:stimulus-use@0.51.3/dist/index.js'
+pin 'checkbox', to: 'checkbox.js'

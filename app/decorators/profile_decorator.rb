@@ -2,7 +2,7 @@ class ProfileDecorator < ApplicationDecorator
   delegate_all
 
   def full_address_post
-    "#{model.prefecture}#{model.city}"
+    "#{model.residence_prefecture}#{model.residence_city}"
   end
 
   def full_address

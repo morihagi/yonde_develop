@@ -23,6 +23,8 @@ class PostsController < ApplicationController
     @post.legal_name = profile.legal_name
     @post.phone = profile.phone
     @post.user_id = current_user.id
+    @post.residence_prefecture = profile.residence_prefecture
+    @post.residence_city = profile.residence_city
   end
 
   def create
@@ -89,7 +91,7 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:prefecture, :city, :radio_name, :zip_code, :other_address, :legal_name, :phone, :body, :segment_id)
+    params.require(:post).permit(:prefecture, :city, :radio_name, :zip_code, :other_address, :legal_name, :phone, :body, :segment_id, :residence_prefecture, :residence_city)
   end
 
   def set_post

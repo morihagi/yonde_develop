@@ -12,8 +12,8 @@ module PostsHelper
   def generate_email_body(post)
     email_body = ''
 
-    if post.prefecture.present? || post.city.present?
-      email_body += "在住: #{post.prefecture}#{post.city} \n"
+    if post.residence_city.present? || post.residence_city.present?
+      email_body += "在住: #{post.residence_city}#{post.residence_city} \n"
     end
 
     if post.radio_name.present?

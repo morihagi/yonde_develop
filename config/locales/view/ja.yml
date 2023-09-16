@@ -54,7 +54,7 @@ ja:
     for_unlock: アカウントのロックを解除する場合
     over_english_number_8: 英数字8文字以上
     password_confirmation: 上記パスワードを入力
-    zip_cord_form: 郵便番号(数字7桁で入力ください)
+    zip_cord_form: 郵便番号(数字7文字で入力ください)
     message:
       require_login: ログインしてください
       created: "%{item}を作成しました"
@@ -72,8 +72,8 @@ ja:
       from_created_at: 作成日（〜から）
       until_created_at: 作成日（〜まで）
       select: 選択してください
-      add_address_legal_name_phonne_number: 住所・本名・電話番号を記入したい場合はこちらをクリック
-      add_default_profile: 登録済みの情報を追加
+      add_address_legal_name_phonne_number: 番組ノベルティグッズ発送用など、住所・電話番号・本名を記入したい場合はこちらをクリック
+      add_default_profile: 登録済みのデフォルト情報を追加
       add_phone_number: 電話番号（ハイフンも入力ください）
       hidden_for_security: セキュリティのため、表示しません
   helpers:

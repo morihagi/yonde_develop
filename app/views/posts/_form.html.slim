@@ -22,12 +22,12 @@
 
         .m-3
           = f.label t('defaults.address_not_required')
-          = f.text_field :prefecture, placeholder: t('defaults.prefecture'), class: 'form-control m-2'
-          = f.text_field :city, placeholder: t('defaults.city'), class: 'form-control m-2'
+          = f.text_field :residence_prefecture, placeholder: t('defaults.prefecture'), class: 'form-control m-2'
+          = f.text_field :residence_city, placeholder: t('defaults.city'), class: 'form-control m-2'
 
         .m-3
           = f.label :radio_name
-          = f.text_field :radio_name, class: 'form-control m-2'
+          = f.text_field :radio_name, placeholder: t('defaults.anonymous'), class: 'form-control m-2'
 
         .m-3
           details
@@ -35,14 +35,33 @@
               = t('defaults.message.add_address_legal_name_phonne_number')
 
             - if user_signed_in?
-              div data-controller='profile'
-                = check_box_tag :check, '', false
-                = label_tag :check, t('defaults.message.add_default_profile')
+              = check_box_tag :check, 'check', false, id: 'check-dafault', class: 'mx-2'
+              = label_tag :check, t('defaults.message.add_default_profile')
 
-            div#profile-form[data-profile-form-target='profileForm']
               .m-3
-                = f.label :zip_code, class: 'float-start'
-                = f.text_field :zip_code, placeholder: '000-0000', class: 'form-control m-2'
+                = f.label :zip_code, t('defaults.zip_cord_form'), class: 'float-start'
+                = f.text_field :zip_code, placeholder: '1234567', class: 'form-control m-2', id: 'check-zip-code', disabled: true
+                = render 'shared/error_messages', model: @post, attribute: :zip_code
+
+              .m-3
+                = f.label :full_address, class: 'float-start'
+                = f.text_field :prefecture, placeholder: t('defaults.prefecture'), class: 'form-control m-2', id: 'check-prefecture', disabled: true
+                = f.text_field :city, placeholder: t('defaults.city'), class: 'form-control m-2', id: 'check-city', disabled: true
+                = f.text_field :other_address, placeholder: t('defaults.other_address'), class: 'form-control m-2', id: 'check-other-address', disabled: true
+
+              .m-3
+                = f.label :phone, class: 'float-start'
+                = f.text_field :phone, placeholder: '000-000-0000', class: 'form-control m-2', id: 'check-phone', disabled: true
+
+              .m-3
+                = f.label :legal_name, class: 'float-start'
+                = f.text_field :legal_name, placeholder: '有楽太郎', class: 'form-control m-2', id: 'check-legal-name', disabled: true
+
+            - else
+              .m-3
+                = f.label :zip_code, t('defaults.zip_cord_form'),class: 'float-start'
+                = f.text_field :zip_code, placeholder: '1234567', class: 'form-control m-2'
+                = render 'shared/error_messages', model: @post, attribute: :zip_code
 
               .m-3
                 = f.label :full_address, class: 'float-start'
@@ -63,7 +82,7 @@
           = f.text_area :body, class: 'form-control m-2', rows: 10
 
         p.actions.text-center.p-1
-          = f.submit t('defaults.create'), class: 'btn btn-warning w-75'
+          = f.submit t('defaults.create'), class: 'btn btn-warning w-75', id: 'submit_form'
         / - if user_signed_in?
         /   p.actions.text-center.p-1
         /     = link_to '投稿メールに戻る', post_path(@post), class: 'btn btn-outline-secondary w-75'

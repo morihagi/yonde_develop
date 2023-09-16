@@ -32,12 +32,16 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :segment
 
+  validates :prefecture, :city, :radio_name, :other_address, :legal_name, :residence_prefecture, :residence_city, allow_blank: true
+  validates :zip_code, presence: true, allow_blank: true, length: { is: 7 }, numericality: { only_integer: true }
+
   extend Enumerize
   enumerize :favorite_status, in: %i[unlike like], default: :unlike, scope: true
   enumerize :post_status, in: %i[draft sent], default: :draft, scope: true
 
+  
   def self.ransackable_attributes(_auth_object = nil)
-    %w[segment_title body city created_at favorite_status id legal_name other_address post_status prefecture segment_id radio_name updated_at user_id zip_code]
+    %w[segment_title body city created_at favorite_status id legal_name other_address post_status prefecture segment_id radio_name updated_at user_id zip_code residence_prefecture residence_city]
   end
 
   def self.ransackable_associations(_auth_object = nil)

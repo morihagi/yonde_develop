@@ -23,6 +23,8 @@ ja:
         zip_code: 郵便番号
         phone: 電話番号
         legal_name: 名前
+        residence_prefecture: 在住（都道府県）
+        residence_city: 在住（市町村）
       post:
         prefecture: 都道府県
         city: 市町村区
