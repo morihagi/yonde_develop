@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_09_15_055919) do
+ActiveRecord::Schema[7.0].define(version: 2023_09_16_095134) do
   create_table "administrators", force: :cascade do |t|
     t.string "email"
     t.string "password_digest"
@@ -37,6 +37,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_15_055919) do
     t.datetime "updated_at", null: false
     t.integer "segment_id", null: false
     t.integer "phone"
+    t.string "residence_prefecture"
+    t.string "residence_city"
     t.index ["segment_id"], name: "index_posts_on_segment_id"
     t.index ["user_id"], name: "index_posts_on_user_id"
   end
@@ -52,6 +54,8 @@ ActiveRecord::Schema[7.0].define(version: 2023_09_15_055919) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "phone"
+    t.string "residence_prefecture"
+    t.string "residence_city"
     t.index ["user_id"], name: "index_profiles_on_user_id"
   end
 
