@@ -3,7 +3,7 @@ class PostsController < ApplicationController
   before_action :set_post, only: %i[show edit update destroy duplicate]
 
   def index
-    @search = current_user.posts.includes([segment: :program]).ransack(params[:q])
+    @search = current_user.posts.includes([:segment]).ransack(params[:q])
     @posts = @search.result.order(created_at: :desc).page(params[:page])
   end
 

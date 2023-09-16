@@ -9,15 +9,15 @@
         strong
           = search_form_for @search do |f|
             .row.g-3.mb-2
-              .col-12
+              .col-md-6.col-xs-12
                 = f.label :segment_program_id_eq, Program.human_attribute_name(:program), class: 'form-label'
                 = f.select :segment_program_id_eq, Program.pluck(:program, :id), { include_blank: t('defaults.message.select_program') }, { class: 'form-control' }
 
               .col-md-6.col-xs-12
                 = f.label :segment_id_eq, Segment.human_attribute_name(:segment_title), class: 'form-label'
-                = f.select :segment_id_eq, Segment.pluck(:segment_title, :id), { include_blank: t('defaults.message.select_segment') }, { class: 'form-control' }
+                = f.grouped_collection_select :segment_id_eq, Program.all.includes([:segments]), :segments, :program, :id, :segment_title, { include_blank: t('defaults.message.select_segment') }, { class: 'form-control' }
 
-              .col-md-6.col-xs-12
+              .col-12
                 = f.label :body_cont, Post.human_attribute_name(:body), class: 'form-label'
                 = f.search_field :body_cont, class: 'form-control', placeholder: t('defaults.message.input_word')
 
