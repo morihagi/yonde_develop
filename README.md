@@ -1,4 +1,4 @@
-# 🎙 YONDE 📮
+## 🎙 YONDE 📮
 ![Ruby](https://img.shields.io/badge/ruby-3.3.3-blue?logo=ruby&)
 ![Ruby on Rails](https://img.shields.io/badge/rails-7.0.6-blue?logo=rubyonrails)
 ![Release date](https://img.shields.io/badge/release_date-September_2023-yellow?)
@@ -17,7 +17,7 @@
 <br>
 <br>
 
-# 🎙 URL 📮
+## 🎙 URL 📮
 https://yonde.fly.dev/
 <br>
 <!-- リリース後追加
@@ -27,7 +27,7 @@ https://yonde.fly.dev/
 <br>
 <br>
 
-# 🎙 アプリに込めた思い 📮
+## 🎙 アプリに込めた思い 📮
 ANNを含め、ラジオを聞き続けて20数年。
 
 古くより「ラジオの華はリスナーの投稿にあり」とはよく言いますが、  
@@ -46,7 +46,7 @@ ANNを含め、ラジオを聞き続けて20数年。
 <br>
 <br>
 
-# 🎙 ANNへの投稿に対する課題 📮
+## 🎙 ANNへの投稿に対する課題 📮
 ### ユーザーが抱える問題
 * 各番組のネタ投稿コーナーごとに、「メールにはこのように書いてください」といった指示がある
   * 例）読み上げられるコーナー名は「あたしゃぁ～」だが、メールの件名は「あたしゃ」にしなければならない
@@ -64,7 +64,7 @@ ANNを含め、ラジオを聞き続けて20数年。
 <br>
 <br>
 
-# 🎙 執筆記事 📮
+## 🎙 執筆記事 📮
 執筆中
 <br>
 
@@ -74,7 +74,7 @@ ANNを含め、ラジオを聞き続けて20数年。
 <br>
 <br>
 
-# 🎙 使用技術 📮
+## 🎙 使用技術 📮
 #### バックエンド
 * Ruby 3.0.3
 * Rails 7.0.6
@@ -91,7 +91,7 @@ ANNを含め、ラジオを聞き続けて20数年。
 * fly.io
 
 <!-- あとで修正する
-# 🎙 テスト 📮
+## 🎙 テスト 📮
 - RSpec
   - 単体テスト(model)
   - 機能テスト(request)
@@ -99,7 +99,7 @@ ANNを含め、ラジオを聞き続けて20数年。
 <br>
 <br>
 
-# 🎙 主なページと機能 📮
+## 🎙 主なページと機能 📮
 <!-- あとで書く
 - ユーザー登録、ログイン機能(devise)
 - 投稿機能
@@ -120,12 +120,12 @@ ANNを含め、ラジオを聞き続けて20数年。
 <br>
 <br>
 
-# 🎙 画面遷移図 📮
+## 🎙 画面遷移図 📮
 https://www.figma.com/file/EJ5mZWpMUNK245rYMpHpAL/ScreenFlowDiagram?type=design&node-id=509%3A2609&mode=design&t=EszcWVn95hzmmMAA-1
 <br>
 <br>
 
-# 🎙 ER図 📮
+## 🎙 ER図 📮
 ```mermaid
 erDiagram
     %% --------------------------------------------------------
@@ -235,7 +235,7 @@ erDiagram
 <br>
 <br>
 
-# 🎙 今後のアップデート（予定） 📮
+## 🎙 今後のアップデート（予定） 📮
 * 目的：ユーザーがより採用されやすくなる投稿メールを作れるようになること
 * 機能：投稿内容の壁打ちできる機能を実装
   * ChatGPTなどのLLMモデルサービスを用いて、投稿内容の相談相手になってもらう機能
