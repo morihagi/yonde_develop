@@ -1,6 +1,6 @@
 document.addEventListener('turbo:load', function() {
   // チェックボックス要素を取得
-  var checkBox = document.getElementById('check-dafault');
+  var checkBox = document.getElementById('check-default');
 
   // 各input要素を取得
   var zipCodeInput = document.getElementById('check-zip-code');

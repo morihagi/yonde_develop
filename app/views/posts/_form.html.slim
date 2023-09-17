@@ -35,13 +35,12 @@
               = t('defaults.message.add_address_legal_name_phonne_number')
 
             - if user_signed_in?
-              = check_box_tag :check, 'check', false, id: 'check-dafault', class: 'mx-2'
+              = check_box_tag :check, 'check', false, id: 'check-default', class: 'mx-2'
               = label_tag :check, t('defaults.message.add_default_profile')
 
               .m-3
                 = f.label :zip_code, t('defaults.zip_cord_form'), class: 'float-start'
                 = f.text_field :zip_code, placeholder: '1234567', class: 'form-control m-2', id: 'check-zip-code', disabled: true
-                = render 'shared/error_messages', model: @post, attribute: :zip_code
 
               .m-3
                 = f.label :full_address, class: 'float-start'

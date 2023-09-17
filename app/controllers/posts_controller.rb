@@ -15,16 +15,16 @@ class PostsController < ApplicationController
     profile = Profile.find_by(user_id: current_user.id)
     return unless profile.present?
 
-    @post.prefecture = profile.prefecture
-    @post.city = profile.city
+    @post.residence_prefecture = profile.residence_prefecture
+    @post.residence_city = profile.residence_city
     @post.radio_name = profile.radio_name
     @post.zip_code = profile.zip_code
+    @post.prefecture = profile.prefecture
+    @post.city = profile.city
     @post.other_address = profile.other_address
     @post.legal_name = profile.legal_name
     @post.phone = profile.phone
     @post.user_id = current_user.id
-    @post.residence_prefecture = profile.residence_prefecture
-    @post.residence_city = profile.residence_city
   end
 
   def create

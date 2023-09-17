@@ -32,7 +32,7 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :segment
 
-  validates :prefecture, :city, :radio_name, :other_address, :legal_name, :residence_prefecture, :residence_city, allow_blank: true
+  validates :residence_prefecture, :residence_city, :radio_name, :prefecture, :city, :other_address, :phone, :legal_name ,allow_blank: true
   validates :zip_code, presence: true, allow_blank: true, length: { is: 7 }, numericality: { only_integer: true }
 
   extend Enumerize
@@ -41,7 +41,7 @@ class Post < ApplicationRecord
 
   
   def self.ransackable_attributes(_auth_object = nil)
-    %w[segment_title body city created_at favorite_status id legal_name other_address post_status prefecture segment_id radio_name updated_at user_id zip_code residence_prefecture residence_city]
+    %w[id segment_title residence_prefecture residence_city radio_name body zip_code prefecture city other_address phone legal_name segment_id user_id post_status favorite_status created_at updated_at]
   end
 
   def self.ransackable_associations(_auth_object = nil)

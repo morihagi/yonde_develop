@@ -12,4 +12,5 @@
       = render 'show_form', post: @post
     .col-lg-8.offset-lg-2.d-flex.justify-content-center
       .btn-group
-        = mail_to @post.segment.program.email, t('defaults.send_with_mail_app'), subject: @post.segment.segment_title_for_email, body: @post.body , class: 'btn btn-warning m-3'
+        = mail_to @post.segment.program.email, t('defaults.send_with_mail_app'), class: 'btn btn-warning m-3',
+          subject: @post.segment.segment_title_for_email, body: generate_email_body(@post)
