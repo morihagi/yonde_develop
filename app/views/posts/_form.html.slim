@@ -17,16 +17,16 @@
     .col-lg-6.col-md-10.mx-auto
       = form_with(model: post, url: posts_path, method: :post) do |f|
         .m-3
-          = f.label :segment_title, Program.human_attribute_name('program') + ' ・ ' + Segment.human_attribute_name('segment_title')
+          = f.label :segment_id, Program.human_attribute_name('program') + ' ・ ' + Segment.human_attribute_name('segment_title')
           = f.grouped_collection_select :segment_id, Program.all.includes([:segments]), :segments, :program, :id, :segment_title, { prompt: t('defaults.message.select') }, { class: 'form-control m-2', required: true }
 
         .m-3
-          = f.label t('defaults.address_not_required')
+          = f.label 'address', t('defaults.address_not_required')
           .input-group.m-2
             = f.label :residence_prefecture, class: 'input-group-text', id: 'basic-addon1'
             = f.text_field :residence_prefecture, placeholder: t('defaults.tokyo-to'), class: 'form-control', aria_describedby: 'basic-addon1'
           .input-group.m-2
-            = f.label :residence_city, class: 'input-group-text', id: 'basic-addon1'
+            = f.label :residence_city, class: 'input-group-text', id: 'basic-addon2'
             = f.text_field :residence_city, placeholder: t('defaults.chiyoda-ku'), class: 'form-control', aria_describedby: 'basic-addon2'
 
         .m-3
@@ -40,33 +40,34 @@
 
             - if user_signed_in?
               .m-2
-                = check_box_tag :check, 'check', false, id: 'check-default', class: 'mx-2'
-                = label_tag :check, t('defaults.message.add_default_profile')
+                = check_box_tag 'check', 'check', false, id: 'check_default', class: 'mx-2'
+                = label_tag 'check_default', t('defaults.message.add_default_profile')
+
 
               .m-3
                 = f.label :zip_code, t('defaults.zip_cord_form'), class: 'float-start'
-                = f.text_field :zip_code, placeholder: '1234567', class: 'form-control m-2', id: 'check-zip-code', disabled: true
+                = f.text_field :zip_code, placeholder: '1234567', class: 'form-control m-2', id: 'post_zip_code', disabled: true
                 = render 'shared/error_messages', model: post, attribute: :zip_code
 
               .m-3
                 = f.label :full_address, class: 'float-start'
                 .input-group.m-2
                   = f.label :prefecture, class: 'input-group-text', id: 'basic-addon3'
-                  = f.text_field :prefecture, placeholder: t('defaults.prefecture'), class: 'form-control', id: 'check-prefecture', disabled: true, aria_describedby: 'basic-addon3'
+                  = f.text_field :prefecture, placeholder: t('defaults.prefecture'), class: 'form-control', id: 'post_prefecture', disabled: true, aria_describedby: 'basic-addon3'
                 .input-group.m-2
                   = f.label :city, class: 'input-group-text', id: 'basic-addon4'
-                  = f.text_field :city, placeholder: t('defaults.city'), class: 'form-control', id: 'check-city', disabled: true, aria_describedby: 'basic-addon4'
+                  = f.text_field :city, placeholder: t('defaults.city'), class: 'form-control', id: 'post_city', disabled: true, aria_describedby: 'basic-addon4'
                 .input-group.m-2
                     = f.label :other_address, class: 'input-group-text', id: 'basic-addon5'
-                    = f.text_field :other_address, placeholder: t('defaults.other_address'), class: 'form-control', id: 'check-other-address', disabled: true, aria_describedby: 'basic-addon5'
+                    = f.text_field :other_address, placeholder: t('defaults.other_address'), class: 'form-control', id: 'post_other_address', disabled: true, aria_describedby: 'basic-addon5'
 
               .m-3
                 = f.label :phone, class: 'float-start'
-                = f.text_field :phone, placeholder: '000-000-0000', class: 'form-control m-2', id: 'check-phone', disabled: true
+                = f.text_field :phone, placeholder: '000-000-0000', class: 'form-control m-2', id: 'post_phone', disabled: true
 
               .m-3
                 = f.label :legal_name, class: 'float-start'
-                = f.text_field :legal_name, placeholder: '有楽太郎', class: 'form-control m-2', id: 'check-legal-name', disabled: true
+                = f.text_field :legal_name, placeholder: '有楽太郎', class: 'form-control m-2', id: 'post_legal_name', disabled: true
 
             - else
               .m-3
@@ -75,7 +76,7 @@
                 = render 'shared/error_messages', model: post, attribute: :zip_code
 
               .m-3
-                = f.label :full_address, class: 'float-start'
+                = f.label t('activerecord.attribute.post.full_address'), class: 'float-start'
                 .input-group.m-2
                   = f.label :prefecture, class: 'input-group-text', id: 'basic-addon6'
                   = f.text_field :prefecture, placeholder: t('defaults.prefecture'), class: 'form-control', aria_describedby: 'basic-addon6'
@@ -99,7 +100,7 @@
           = f.text_area :body, class: 'form-control m-2', rows: 10
 
         p.actions.text-center.p-1
-          = f.submit class: 'btn btn-warning w-75', id: 'submit-form'
+          = f.submit class: 'btn btn-warning w-75', id: 'submit_form'
         / - if user_signed_in?
         /   p.actions.text-center.p-1
         /     = link_to '投稿メールに戻る', post_path(@post), class: 'btn btn-outline-secondary w-75'
