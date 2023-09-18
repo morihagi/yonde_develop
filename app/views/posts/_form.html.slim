@@ -15,7 +15,7 @@
 .container.m-3.mx-auto
   .row.mx-auto
     .col-lg-6.col-md-10.mx-auto
-      = form_with(model: post, url: posts_path, method: :post) do |f|
+      = form_with model: post do |f|
         .m-3
           = f.label :segment_id, Program.human_attribute_name('program') + ' ・ ' + Segment.human_attribute_name('segment_title')
           = f.grouped_collection_select :segment_id, Program.all.includes([:segments]), :segments, :program, :id, :segment_title, { prompt: t('defaults.message.select') }, { class: 'form-control m-2', required: true }

@@ -64,7 +64,7 @@ class PostsController < ApplicationController
       redirect_to @post, notice: t('defaults.message.updated', item: Post.model_name.human)
     else
       flash.now[:error] = t('defaults.message.not_updated', item: Post.model_name.human)
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 
