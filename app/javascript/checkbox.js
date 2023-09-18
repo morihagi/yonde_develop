@@ -25,7 +25,7 @@ document.addEventListener('turbo:load', function() {
   });
 
   // フォームがサブミットされるときの処理
-  var form = document.getElementById('submit_form');
+  var form = document.getElementById('submit-form');
   form.addEventListener('turbo:click', function(event) {
     // チェックボックスの状態をフォームデータに含めるかどうかを確認
     var isChecked = checkBox.checked;
