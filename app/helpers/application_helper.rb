@@ -29,8 +29,13 @@ module ApplicationHelper
 
   def page_title(page_title = '')
     base_title = 'YONDE'
+    explain = ' | ラジオ用投稿メール作成アプリ'
 
-    page_title.empty? ? base_title : "#{page_title} | #{base_title}"
+    if page_title.empty?
+      base_title + explain
+    else
+      "#{page_title} | #{base_title}"
+    end
   end
 
   def modals
