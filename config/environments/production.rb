@@ -62,19 +62,15 @@ Rails.application.configure do
   # config.active_job.queue_adapter     = :resque
   # config.active_job.queue_name_prefix = "myapp_production"
 
-  config.action_mailer.perform_caching = false
-  host = 'https://yonde.fly.dev/'
-  config.action_mailer.default_url_options = { host: }
-  config.action_mailer.perform_deliveries = true
+  config.action_mailer.default_url_options = { :host => ENV['HOST'] }
   config.action_mailer.delivery_method = :smtp
   config.action_mailer.smtp_settings = {
-    address: 'smtp.gmail.com',
-    port: 587,
+    address:"smtp.gmail.com",
     domain: 'gmail.com',
+    port:587,
     user_name: ENV['OFFICIAL_E_MAIL'],
     password: ENV['OFFICIAL_E_MAIL_PASSWORD'],
-    authentication: :plain,
-    enable_starttls_auto: true
+    authentication: :login
   }
 
   # Ignore bad email addresses and do not raise email delivery errors.

@@ -8,7 +8,7 @@
       .toast-body
         = message
   - else
-    .toast.bg-danger-subtle.show.fade.position-fixed.top-0.end-0.border-0(role='alert' aria-live='assertive' aria-atomic='true' style='margin-top: 85px; margin-right: 10px;')
+    .toast.bg-danger-subtle.show.fade.position-fixed.top-0.end-0.border-0(role='alert' aria-live='assertive' aria-atomic='true' style='margin-top: 85px; margin-right: 10px; z-index:10000;')
       .toast-header.text-danger
         strong.me-auto
           | 🚨 Error

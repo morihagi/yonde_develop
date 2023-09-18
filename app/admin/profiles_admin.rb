@@ -1,6 +1,6 @@
 Trestle.resource(:profiles) do
   menu do
-    item :profiles, icon: "fa fa-star"
+    item :profiles, icon: "fa fa-address-card"
   end
 
   # Customize the table columns shown on the index view.

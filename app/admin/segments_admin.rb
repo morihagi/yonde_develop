@@ -1,6 +1,6 @@
 Trestle.resource(:segments) do
   menu do
-    item :segments, icon: 'fa fa-star'
+    item :segments, icon: 'fa fa-bars'
   end
 
   # Customize the table columns shown on the index view.
