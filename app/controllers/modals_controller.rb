@@ -4,8 +4,4 @@ class ModalsController < ApplicationController
   def terms; end
 
   def privacy_policy; end
-
-  def developer; end
-
-  def contact; end
 end

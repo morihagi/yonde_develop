@@ -1,17 +1,10 @@
 - flash.each do |message_type, message|
-  - if message_type == 'notice'
-    .bg-success-subtle.toast.show.fade.position-fixed.top-0.end-0.border-0(role='alert' aria-live='assertive' aria-atomic='true' style='margin-top: 85px; margin-right: 10px; z-index:10000;')
-      .toast-header.text-success
-        strong.me-auto
-          | ✅ Success
-        button.btn-close.me-2[data-bs-dismiss="toast"]
-      .toast-body
-        = message
-  - else
-    .toast.bg-danger-subtle.show.fade.position-fixed.top-0.end-0.border-0(role='alert' aria-live='assertive' aria-atomic='true' style='margin-top: 85px; margin-right: 10px; z-index:10000;')
-      .toast-header.text-danger
-        strong.me-auto
-          | 🚨 Error
-        button.btn-close.me-2[data-bs-dismiss="toast"]
-      .toast-body
-        = message
+  - toast_class, text_class, icon, text = flash_message_details(message_type)
+
+  .toast[class="#{toast_class} show fade position-fixed top-0 end-0 border-0" role='alert' aria-live='assertive' aria-atomic='true' style='margin-top: 85px; margin-right: 10px; z-index:10000;']
+    .toast-header[class="#{text_class}"]
+      strong.me-auto
+        | #{icon} #{text}
+      button.btn-close.me-2[data-bs-dismiss="toast"]
+    .toast-body
+      = message

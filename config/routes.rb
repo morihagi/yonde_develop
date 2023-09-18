@@ -1,6 +1,4 @@
 Rails.application.routes.draw do
-  mount LetterOpenerWeb::Engine, at: '/letter_opener' if Rails.env.development?
-
   root 'static_pages#top'
   get 'terms', to: 'modals#terms'
   get 'privacy_policy', to: 'modals#privacy_policy'
@@ -15,7 +13,6 @@ Rails.application.routes.draw do
   resources :posts do
     post 'duplicate', on: :member
   end
-  post 'duplicate', to: 'posts#duplicate'
   get 'show_for_guest_user', to: 'posts#show_for_unregistered_user', as: :show_for_guest_user
   resource :profile, only: %i[show edit update]
   get '/profile/edit_for_goods', to: 'profiles#edit_for_goods'

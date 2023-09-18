@@ -34,7 +34,7 @@ class PostsController < ApplicationController
       if @post.save
         redirect_to post_path(@post), notice: t('defaults.message.created', item: Post.model_name.human)
       else
-        flash.now[:alert] = t('defaults.message.not_created', item: Post.model_name.human)
+        flash.now[:error] = t('defaults.message.not_created', item: Post.model_name.human)
         render :new, status: :unprocessable_entity
       end
 
@@ -45,7 +45,7 @@ class PostsController < ApplicationController
       if @post.save
         redirect_to show_for_guest_user_path, notice: t('defaults.message.created', item: Post.model_name.human)
       else
-        flash.now[:alert] = t('defaults.message.not_created', item: Post.model_name.human)
+        flash.now[:error] = t('defaults.message.not_created', item: Post.model_name.human)
         render :new, status: :unprocessable_entity
       end
     end
@@ -63,14 +63,14 @@ class PostsController < ApplicationController
     if @post.update(post_params)
       redirect_to @post, notice: t('defaults.message.updated', item: Post.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_updated', item: Post.model_name.human)
+      flash.now[:error] = t('defaults.message.not_updated', item: Post.model_name.human)
       render :edit
     end
   end
 
   def destroy
     @post.destroy!
-    redirect_to posts_path, succes: t('defaults.message.deleted', item: Post.model_name.human)
+    redirect_to posts_path, notice: t('defaults.message.deleted', item: Post.model_name.human)
   end
 
   def bookmarks
@@ -79,11 +79,11 @@ class PostsController < ApplicationController
   end
 
   def duplicate
-    @duplicate_post = Post.new(@post.attributes.except("id", "created_at", "updated_at"))
+    @duplicate_post = Post.new(@post.attributes.except('id', 'created_at', 'updated_at'))
     if @duplicate_post.save
-      redirect_to posts_path, success: t('defaults.message.deleted', item: Post.model_name.human)
+      redirect_to posts_path, notice: t('defaults.message.duplicated', item: Post.model_name.human)
     else
-      flash.now['danger'] = t('defaults.message.not_updated', item: Post.model_name.human)
+      flash.now[:error] = t('defaults.message.not_duplicated', item: Post.model_name.human)
       render :index
     end
   end

@@ -27,7 +27,6 @@ module ApplicationHelper
     end
   end
 
-
   def page_title(page_title = '')
     base_title = 'YONDE'
 
@@ -41,5 +40,16 @@ module ApplicationHelper
       { 'target' => '#developerModal', 'title' => t('modals.developer.title'), 'type' => 'developer' },
       { 'target' => '#contactModal', 'title' => t('modals.contact.title'), 'type' => 'contact' }
     ]
+  end
+
+  def flash_message_details(message_type)
+    case message_type
+    when 'notice'
+      ['bg-success-subtle', 'text-success', '✅', 'Success']
+    when 'error'
+      ['bg-danger-subtle', 'text-danger', '🚨', 'Error']
+    else
+      ['bg-warning-subtle', 'text-warning', '💡', 'Hint']
+    end
   end
 end

@@ -11,7 +11,7 @@ class ProfilesController < ApplicationController
     if @profile.update(profile_params)
       redirect_to profile_path, notice: t('defaults.message.updated', item: Profile.model_name.human)
     else
-      flash.now['alert'] = t('defaults.message.not_updated', item: Profile.model_name.human)
+      flash.now[:error] = t('defaults.message.not_updated', item: Profile.model_name.human)
       render :edit_for_goods, status: :unprocessable_entity
       # render :edit, status: :unprocessable_entity if controller_name == 'profiles#edit'
       # render :edit_for_goods, status: :unprocessable_entity if controller_name == 'profiles#edit_for_goods'
