@@ -57,14 +57,24 @@ class PostsController < ApplicationController
     @post = get_last_post_for_unregistered_user
   end
 
-  def edit; end
+  def edit
+    profile = Profile.find_by(user_id: current_user.id)
+    return unless profile.present?
+
+    @post.zip_code = profile.zip_code
+    @post.prefecture = profile.prefecture
+    @post.city = profile.city
+    @post.other_address = profile.other_address
+    @post.legal_name = profile.legal_name
+    @post.phone = profile.phone
+  end
 
   def update
     if @post.update(post_params)
       redirect_to @post, notice: t('defaults.message.updated', item: Post.model_name.human)
     else
       flash.now[:error] = t('defaults.message.not_updated', item: Post.model_name.human)
-      render :edit
+      render :edit, status: :unprocessable_entity
     end
   end
 

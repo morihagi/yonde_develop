@@ -91,11 +91,15 @@
     p 本ポリシーに関するお問い合わせは，下記の窓口までお願いいたします。
     | サービス名：YONDE
     br
-    | 開発者：
-    = link_to '@morihagi', 'https://twitter.com/yonde190707'
+    | サービスX（旧Twitter）：
+    = link_to '@yonde1242', 'https://twitter.com/yonde1242', class: 'text-decoration-none'
     br
-    | Eメールアドレス：yonde1242@gmail.com
+    | 開発者X（旧Twitter）：
+    = link_to '@morihagi', 'https://twitter.com/yonde190707', class: 'text-decoration-none'
+    br
+    | メールアドレス：
+    = mail_to ENV['OFFICIAL_E_MAIL'], ENV['OFFICIAL_E_MAIL'], subject: 'お問い合わせ', class: 'text-decoration-none'
     br
     | 問い合わせフォーム：
-    = link_to 'こちらから', 'https://docs.google.com/forms/d/125Ch5_GvUJbPQ6QLdkacufFLSUlvIda9pWAzT8QonZs/edit'
+    = link_to 'こちらから', 'https://docs.google.com/forms/d/125Ch5_GvUJbPQ6QLdkacufFLSUlvIda9pWAzT8QonZs/edit', class: 'text-decoration-none'
     p.tR 以上

@@ -24,6 +24,7 @@ ja:
     delete: 削除
     reset: リセット
     close: 閉じる
+    return: 戻る
     delete_account: アカウント削除
     remember_me: 次回から自動ログイン
     unspecified: 選択なし
