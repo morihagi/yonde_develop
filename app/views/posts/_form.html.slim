@@ -39,10 +39,9 @@
               = t('defaults.message.add_address_legal_name_phone_number')
 
             - if user_signed_in?
-              .m-2
+              .m-3
                 = check_box_tag 'check', 'check', false, id: 'check_default', class: 'mx-2'
                 = label_tag 'check_default', t('defaults.message.add_default_profile')
-
 
               .m-3
                 = f.label :zip_code, t('defaults.zip_cord_form'), class: 'float-start'
@@ -99,8 +98,8 @@
           = f.label :body
           = f.text_area :body, class: 'form-control m-2', rows: 10
 
-        p.actions.text-center.p-1
+        p.text-center
           = f.submit class: 'btn btn-warning w-75', id: 'submit_form'
-        / - if user_signed_in?
-        /   p.actions.text-center.p-1
-        /     = link_to '投稿メールに戻る', post_path(@post), class: 'btn btn-outline-secondary w-75'
+
+        p.text-center
+          = link_to t('defaults.return'), :back, class: 'text-decoration-none'
