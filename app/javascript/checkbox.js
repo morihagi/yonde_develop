@@ -1,4 +1,4 @@
-document.addEventListener('turbo:load', function() {
+document.addEventListener('turbo:render', function() {
   // チェックボックス要素を取得
   var checkBox = document.getElementById('check_default');
 
