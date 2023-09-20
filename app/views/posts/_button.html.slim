@@ -1,20 +1,20 @@
-ul.crud-menu-btn.list-inline
-  li.list-inline-item
+ul.list-inline.d-flex
+  li.list-inline-item.mt-3
     = link_to duplicate_post_path(post), id: 'button-dupricate-#{post.id}', data: { "turbo-method": :post } do
       i.fas.fa-copy
-  li.list-inline-item
+  li.list-inline-item.mt-3
     = link_to edit_post_path(post), id: 'button-edit-#{post.id}' do
       i.fas.fa-pen
-  li.list-inline-item
+  li.list-inline-item.mt-3
     = link_to post_path(post), id: 'button-delete-#{post.id}', data: { turbo_method: :delete, turbo_confirm: t('defaults.message.delete_confirm')} do
       i.fas.fa-trash
   / li.list-inline-item
   /   = link_to '#' do
   /     i.far.fa-star
 
-/ = link_to bookmarks_path(post_id: post.id),
-/   id: 'js-bookmark-button-for-post-#{post.id}',
-/   class: 'float-right',
-/   method: :post,
-/   remote: true do
-/   i.far.fa-star
+  / = link_to bookmarks_path(post_id: post.id),
+  /   id: 'js-bookmark-button-for-post-#{post.id}',
+  /   class: 'float-right',
+  /   method: :post,
+  /   remote: true do
+  /   i.far.fa-star

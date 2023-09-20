@@ -33,18 +33,22 @@ html[lang="ja" class="vh-100"]
     = render 'shared/modal'
 
   body.vh-100
+    / header
     - if user_signed_in?
       = render 'shared/header'
     - else
       = render 'shared/before_login_header'
 
+    / flash messages
     = render 'shared/flash_message'
 
+    / main content
     - if controller_name == 'static_pages'
       = yield
     - elsif user_signed_in?
       .container-fluid(style='overflow:hidden;')
         .row
+          / Dispalay the sideber only for PC monitor
           .col-md-3.d-none.d-md-block(style='background-color: #354a5f; height: 100%; padding: 0; position: fixed;')
             .d-flex.flex-column.flex-shrink-0.py-3.px-3.text-white(style='margin-top: 55px;')
               = render 'shared/sidebar'
@@ -53,10 +57,12 @@ html[lang="ja" class="vh-100"]
             .container.main-content(style='margin-top: 50px;')
               = yield
 
+          / Don't dispalay the sideber for tablets, and smartphones
           .col-12.mt-5.d-block.d-md-none
             .container.main-content(style='margin-top: 50px;')
               = yield
     - else
       = yield
 
+    / footer
     = render 'shared/footer'
