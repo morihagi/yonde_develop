@@ -1,0 +1,39 @@
+.d-flex.align-items-center.justify-content-end.flex-wrap.mb-3
+  .mx-2
+    | 並び替え
+  .mx-2.text-decoration-none
+    = sort_link(@search, :program_id, Program.model_name.human, class: 'text-decoration-none')
+  .mx-2
+    = sort_link(@search, :segment_id, Segment.model_name.human, class: 'text-decoration-none')
+  .mx-2
+    = sort_link(@search, :body, class: 'text-decoration-none')
+  .mx-2
+    = sort_link(@search, :created_at, class: 'text-decoration-none')
+  .mx-2
+    = link_to t('defaults.reset'), posts_path, class: 'text-decoration-none'
+  .mx-2
+    = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning'
+
+.row
+  - @posts.each do |post|
+    .col-md-4.col-sm-6.mb-3
+      div id='post-id-#{post.id}' class='card d-flex flex-column h-100'
+        = image_tag(post.segment.program.image_url, alt: '', class: 'card-img-top')
+        .card-body.flex-grow-1
+          .row.align-items-center
+            .col-8.d-flex.justify-content-start
+              h5
+                = link_to post.segment.segment_title_for_email, post_path(post), class: 'text-decoration-none'
+            .col-4.d-flex.justify-content-end
+              h6
+                = render 'button', post: post
+
+          ul.list-inline
+            li.list-inline-item(style='font-size: 0.8rem; letter-spacing: 0.05em')
+              = post_status_badge(post)
+            li.list-inline-item(style='font-size: 0.8rem; letter-spacing: 0.05em')
+              i.fas.fa-calendar-alt.me-1
+              = l post.created_at, format: :long
+
+          p.card-text(style='max-height: 4em; overflow: hidden;')
+            = post.body

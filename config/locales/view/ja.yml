@@ -23,6 +23,7 @@ ja:
     create: 作成
     delete: 削除
     reset: リセット
+    sort_reset: 並び替えリセット
     close: 閉じる
     return: 戻る
     delete_account: アカウント削除
@@ -90,10 +91,10 @@ ja:
           zero: "レコードが見つかりませんでした %{entry_name}"
   views:
     pagination:
-      first: "&laquo; 最初"
-      last: "最後 &raquo;"
-      next: "次 &rsaquo;"
-      previous: "&lsaquo; 前"
+      first: "&laquo;"
+      last: "&raquo;"
+      next: "&rsaquo;"
+      previous: "&lsaquo;"
       truncate: "&hellip;"
   static_pages:
     top:
