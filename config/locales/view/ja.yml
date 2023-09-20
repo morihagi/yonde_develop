@@ -23,6 +23,7 @@ ja:
     create: 作成
     delete: 削除
     reset: リセット
+    sort: 並び替え
     sort_reset: 並び替えリセット
     close: 閉じる
     return: 戻る

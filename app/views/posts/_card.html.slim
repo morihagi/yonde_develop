@@ -1,6 +1,6 @@
 .d-flex.align-items-center.justify-content-end.flex-wrap.mb-3
   .mx-2
-    | 並び替え
+    = t('defaults.sort')
   .mx-2.text-decoration-none
     = sort_link(@search, :program_id, Program.model_name.human, class: 'text-decoration-none')
   .mx-2
