@@ -1,0 +1,40 @@
+.d-flex.align-items-center.justify-content-end.mb-3
+  .mx-2
+    = link_to t('defaults.sort_reset'), posts_path, class: 'text-decoration-none'
+  .mx-2
+    = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning'
+
+.table-responsive
+  table(class='table table-striped table-hover')
+    thead
+      tr
+        th.col-2
+          = sort_link(@search, :program_id, Program.model_name.human, class: 'text-decoration-none')
+        th.col-2
+          = sort_link(@search, :segment_id, Segment.model_name.human, class: 'text-decoration-none')
+        th.col-4
+          = sort_link(@search, :body, class: 'text-decoration-none')
+        th.col-1
+          = sort_link(@search, :created_at, class: 'text-decoration-none')
+        th.col-1
+          = Post.human_attribute_name(:post_status)
+        th.col-2.text-center
+          = t('defaults.action')
+
+    tbody
+      - @posts.each do |post|
+        tr id='post-id-#{post.id}'
+          td.col-2
+            = post.segment.program.personality
+          td.col-2
+            = link_to post.segment.segment_title_for_email, post_path(post), class: 'text-decoration-none'
+          td.col-4
+            div(style='max-height: 4em; overflow: hidden;')
+              = post.body
+          td.col-1.align-middle(style='font-size: 0.8rem; letter-spacing: 0.05em')
+            = l post.created_at, format: :long
+          td.col-1.text-center.align-middle(style='font-size: 0.8rem; letter-spacing: 0.05em')
+              span.badge.bg-secondary
+                = post.post_status_text
+          td.col-2.text-center(style='font-size: 1.3rem;')
+            = render 'button', post: post

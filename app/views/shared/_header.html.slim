@@ -13,7 +13,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top(style='background-color: #354a
         li = link_to t('defaults.mypage'), posts_path, class: 'btn btn-outline-warning mt-1 me-3'
         li = link_to t('defaults.logout'), destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-outline-light mt-1 me-4'
 
-      ul.nav.nav-pills.flex-column.mb-auto.d-block.d-md-none
+      ul.nav.nav-pills.flex-column.mb-auto.d-block.d-lg-none
         li = sidebar_link_to(posts_path, '📮', t('posts.index.title'))
         li = sidebar_link_to(profile_path, '🎧', t('profiles.show.title'))
         li = sidebar_link_to(user_path, '⚙️', t('users.show.title'))

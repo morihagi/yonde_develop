@@ -43,6 +43,7 @@ ja:
       program:
         email: メールアドレス
         program: 番組名
+        personality: 番組担当
         program_status: 番組継続状況
       segment:
         segment_title: コーナー名
