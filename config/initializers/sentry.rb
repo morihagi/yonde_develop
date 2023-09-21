@@ -10,4 +10,6 @@ Sentry.init do |config|
   config.traces_sampler = lambda do |context|
     true
   end
+
+  config.send_default_pii = true
 end
