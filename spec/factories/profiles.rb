@@ -2,19 +2,19 @@
 #
 # Table name: profiles
 #
-#  id             :integer          not null, primary key
-#  city           :string
-#  email_for_post :string
-#  legal_name     :string
-#  other_address  :string
-#  phone          :string
-#  prefecture     :string
-#  radio_name     :string
-#  zip1           :integer
-#  zip2           :integer
-#  created_at     :datetime         not null
-#  updated_at     :datetime         not null
-#  user_id        :integer          not null
+#  id                   :integer          not null, primary key
+#  city                 :string
+#  legal_name           :string
+#  other_address        :string
+#  phone                :string
+#  prefecture           :string
+#  radio_name           :string
+#  residence_city       :string
+#  residence_prefecture :string
+#  zip_code             :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  user_id              :integer          not null
 #
 # Indexes
 #
@@ -26,14 +26,15 @@
 #
 FactoryBot.define do
   factory :profile do
-    prefecture { "MyString" }
-    city { "MyString" }
-    radio_name { "MyString" }
-    zip1 { "MyString" }
-    integer { "MyString" }
-    zip2 { "MyString" }
-    integer { "MyString" }
-    other_address { "MyString" }
-    legal_name { "MyString" }
+    user
+    prefecture { "Tokyo" }
+    city { "Chiyoda" }
+    radio_name { "RadioName" }
+    zip_code { "1234567" }
+    other_address { "OtherAddress" }
+    legal_name { "LegalName" }
+    phone { "090-0000-0000" }
+    residence_prefecture { "Kanagawa" }
+    residence_city { "Yokohama" }
   end
 end

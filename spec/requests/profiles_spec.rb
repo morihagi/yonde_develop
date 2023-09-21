@@ -1,39 +1,57 @@
 require 'rails_helper'
 
 RSpec.describe "Profiles", type: :request do
-  describe "GET /new" do
-    it "returns http success" do
-      get "/profiles/new"
-      expect(response).to have_http_status(:success)
-    end
-  end
+  let(:user) { create(:user) }
 
-  describe "GET /create" do
-    it "returns http success" do
-      get "/profiles/create"
-      expect(response).to have_http_status(:success)
-    end
+  before do
+    sign_in user
   end
 
   describe "GET /show" do
     it "returns http success" do
-      get "/profiles/show"
+      get profile_path
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /edit" do
     it "returns http success" do
-      get "/profiles/edit"
+      get edit_profile_path
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /update" do
+  describe "GET /edit_for_goods" do
     it "returns http success" do
-      get "/profiles/update"
+      get profile_edit_for_goods_path
       expect(response).to have_http_status(:success)
     end
   end
 
+  describe "PATCH #update" do
+    it "returns http success" do
+      patch profile_path, params: { profile: { zip_code: '1234567' } }
+      expect(response).to redirect_to(profile_path)
+    end
+
+    it "returns unprocessable_entity status when update fails" do
+      allow_any_instance_of(Profile).to receive(:update).and_return(false)
+      patch profile_path, params: { profile: { zip_code: '1234567' } }
+      expect(response).to have_http_status(:unprocessable_entity)
+    end
+  end
+
+  describe "PUT #update" do
+    it "returns http success" do
+      put profile_path, params: { profile: { zip_code: '1234567' } }
+      expect(response).to redirect_to(profile_path)
+    end
+
+    it "returns unprocessable_entity status when update fails" do
+      allow_any_instance_of(Profile).to receive(:update).and_return(false)
+      put profile_path, params: { profile: { zip_code: '1234567' } }
+      expect(response).to have_http_status(:unprocessable_entity)
+    end
+  end
 end
+

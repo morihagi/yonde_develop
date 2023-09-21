@@ -13,7 +13,7 @@ module PostsHelper
     email_body = ''
 
     if post.residence_prefecture.present? || post.residence_city.present?
-      email_body += "在住: #{post.residence_prefecture}#{post.residence_city} \n"
+      email_body += "在住: #{post.residence_prefecture}#{post.residence_city}\n"
     end
 
     if post.radio_name.present?

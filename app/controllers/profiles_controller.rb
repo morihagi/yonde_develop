@@ -13,8 +13,6 @@ class ProfilesController < ApplicationController
     else
       flash.now[:error] = t('defaults.message.not_updated', item: Profile.model_name.human)
       render :edit_for_goods, status: :unprocessable_entity
-      # render :edit, status: :unprocessable_entity if controller_name == 'profiles#edit'
-      # render :edit_for_goods, status: :unprocessable_entity if controller_name == 'profiles#edit_for_goods'
     end
   end
 

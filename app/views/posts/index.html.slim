@@ -18,10 +18,16 @@ ul.nav.nav-tabs.justify-content-end.mt-3#myTab
 
 .tab-content.mt-3
   #tab1.tab-pane.mt-3
-    = render 'card'
+    - if @posts.any?
+      = render 'card', posts: @posts
+    - else
+      = render 'zero_post'
 
   #tab2.tab-pane
-    = render 'table'
+    - if @posts.any?
+      = render 'table', posts: @posts
+    - else
+      = render 'zero_post'
 
   .d-flex.justify-content-center.m-3
     = paginate @posts

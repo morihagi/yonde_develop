@@ -25,6 +25,6 @@ class Program < ApplicationRecord
   enumerize :day, in: %i[mon tue wed thu fri sat sun], scope: true
 
   def self.ransackable_attributes(_auth_object = nil)
-    %w[created_at email id program program_status segment_title segment_status updated_at]
+    %w[ id email program program_status segment_title segment_status created_at updated_at ]
   end
 end

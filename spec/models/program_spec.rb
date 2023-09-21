@@ -17,5 +17,29 @@
 require 'rails_helper'
 
 RSpec.describe Program, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it { is_expected.to respond_to(:program) }
+  it { is_expected.to respond_to(:personality) }
+  it { is_expected.to respond_to(:email) }
+  it { is_expected.to respond_to(:image_url) }
+  it { is_expected.to respond_to(:official_site) }
+  it { is_expected.to respond_to(:day) }
+  it { is_expected.to respond_to(:starting_time) }
+
+  it { is_expected.to have_many(:segments).dependent(:destroy) }
+
+  it { is_expected.to validate_presence_of(:program) }
+  it { is_expected.to validate_presence_of(:personality) }
+  it { is_expected.to validate_presence_of(:email) }
+  it { is_expected.to validate_presence_of(:image_url) }
+  it { is_expected.to validate_presence_of(:official_site) }
+  it { is_expected.to validate_presence_of(:day) }
+  it { is_expected.to validate_presence_of(:starting_time) }
+
+  it { is_expected.to enumerize(:program_status).in(:ongoing, :finished).with_default(:ongoing) }
+
+  describe '.ransackable_attributes' do
+    it 'returns the list of ransackable attributes' do
+      expect(Program.ransackable_attributes).to eq(%w[ id email program program_status segment_title segment_status created_at updated_at ])
+    end
+  end
 end

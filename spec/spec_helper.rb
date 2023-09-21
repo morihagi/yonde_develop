@@ -89,4 +89,8 @@ RSpec.configure do |config|
   #   # test failures related to randomization by passing the same `--seed` value
   #   # as the one that triggered the failure.
   #   Kernel.srand config.seed
+
+  config.before(:each, type: :system) do
+    driven_by :rack_test
+  end
 end

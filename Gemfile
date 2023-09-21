@@ -185,9 +185,15 @@ group :test do
 
   # integration testing tool
   gem 'capybara'
+
+  gem 'rails-controller-testing'
 end
 
 group :production do
   # database
   gem 'pg'
 end
+
+gem "sentry-ruby", "~> 5.11"
+
+gem "sentry-rails", "~> 5.11"

@@ -2,21 +2,23 @@
 #
 # Table name: posts
 #
-#  id              :integer          not null, primary key
-#  body            :text
-#  city            :string
-#  favorite_status :string           default("unlike"), not null
-#  legal_name      :string
-#  other_address    :string
-#  post_status     :string           default("draft"), not null
-#  prefecture      :string
-#  radio_name      :string
-#  zip1            :integer
-#  zip2            :integer
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  segment_id      :integer
-#  user_id         :integer          not null
+#  id                   :integer          not null, primary key
+#  body                 :text
+#  city                 :string
+#  favorite_status      :string           default("unlike"), not null
+#  legal_name           :string
+#  other_address        :string
+#  phone                :string
+#  post_status          :string           default("draft"), not null
+#  prefecture           :string
+#  radio_name           :string
+#  residence_city       :string
+#  residence_prefecture :string
+#  zip_code             :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  segment_id           :integer          not null
+#  user_id              :integer          not null
 #
 # Indexes
 #
@@ -39,7 +41,6 @@ class Post < ApplicationRecord
   enumerize :favorite_status, in: %i[unlike like], default: :unlike, scope: true
   enumerize :post_status, in: %i[draft sent], default: :draft, scope: true
 
-  
   def self.ransackable_attributes(_auth_object = nil)
     %w[id segment_title residence_prefecture residence_city radio_name body zip_code prefecture city other_address phone legal_name segment_id user_id post_status favorite_status created_at updated_at]
   end

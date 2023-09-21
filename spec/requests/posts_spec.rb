@@ -1,53 +1,68 @@
 require 'rails_helper'
 
 RSpec.describe "Posts", type: :request do
+  let(:program) { create(:program) }
+  let(:segment) { create(:segment) }
+  let(:user) { create(:user) }
+  let(:test_post) { create(:post, user: user, segment: segment) }
+
+  before do
+    sign_in user
+  end
+
   describe "GET /index" do
     it "returns http success" do
-      get "/posts/index"
+      get posts_path
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /new" do
     it "returns http success" do
-      get "/posts/new"
+      get new_post_path
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /create" do
+  describe "POST /create" do
     it "returns http success" do
-      get "/posts/create"
-      expect(response).to have_http_status(:success)
-    end
+      post posts_path, params: { post: { body: 'Test Title', segment_id: segment.id, user_id: user.id } }
+      expect(response).to have_http_status(:redirect)
+      end
   end
 
   describe "GET /show" do
     it "returns http success" do
-      get "/posts/show"
+      get post_path(test_post)
       expect(response).to have_http_status(:success)
     end
   end
 
   describe "GET /edit" do
     it "returns http success" do
-      get "/posts/edit"
+      get edit_post_path(test_post)
       expect(response).to have_http_status(:success)
     end
   end
 
-  describe "GET /update" do
+  describe "PATCH /update" do
     it "returns http success" do
-      get "/posts/update"
-      expect(response).to have_http_status(:success)
+      patch post_path(test_post), params: { post: { body: 'Updated Title', segment_id: segment.id, user_id: user.id } }
+      expect(response).to have_http_status(:redirect)
     end
   end
 
-  describe "GET /delete" do
+  describe "DELETE /destroy" do
     it "returns http success" do
-      get "/posts/delete"
-      expect(response).to have_http_status(:success)
+      delete post_path(test_post)
+      expect(response).to have_http_status(:redirect)
     end
   end
 
+  describe "POST /duplicate" do
+    it "returns http success" do
+      post duplicate_post_path(test_post), params: { post: { body: 'Dupricated Title', segment_id: segment.id, user_id: user.id } }
+      expect(response).to have_http_status(:redirect)
+    end
+  end
 end

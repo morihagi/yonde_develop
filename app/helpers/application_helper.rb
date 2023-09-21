@@ -8,14 +8,6 @@ module ApplicationHelper
     end
   end
 
-  def icon(icon_name)
-    tag.i(class: ['bi', "bi-#{icon_name}"])
-  end
-
-  def turbo_stream_flash
-    turbo_stream.update 'flashes', partial: 'flash'
-  end
-
   def bootstrap_alert(key)
     case key
     when 'notice'

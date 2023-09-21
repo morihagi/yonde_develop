@@ -15,7 +15,7 @@
     = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning'
 
 .row
-  - @posts.each do |post|
+  - posts.each do |post|
     .col-md-4.col-sm-6.mb-3
       div id='post-id-#{post.id}' class='card d-flex flex-column h-100'
         = image_tag(post.segment.program.image_url, alt: '', class: 'card-img-top')
