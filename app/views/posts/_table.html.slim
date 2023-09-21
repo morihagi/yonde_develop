@@ -22,7 +22,7 @@
           = t('defaults.action')
 
     tbody
-      - @posts.each do |post|
+      - posts.each do |post|
         tr id='post-id-#{post.id}'
           td.col-2
             = post.segment.program.personality

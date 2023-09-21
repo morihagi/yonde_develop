@@ -16,7 +16,12 @@ document.addEventListener('turbo:load', () => {
         pane.classList.remove('active');
       });
 
-      document.querySelector(tabId).classList.add('active');
+      const targetPane = document.querySelector(tabId);
+      if (targetPane) {
+        targetPane.classList.add('active');
+      } else {
+        console.error(`No element found for selector ${tabId}`);
+      }
     });
   });
 
