@@ -42,11 +42,13 @@
                 / i.far.fa-eye-slash
 
         .m-3.w-75.mx-auto
-          = f.check_box :agreement, :as => :boolean, checked:false, style: 'vertical-align: middle;'
-          = link_to t('modals.terms.title'), terms_path, class: 'm-2', target: '_blank'
-          'と
-          = link_to t('modals.privacy_policy.title'), privacy_policy_path, class: 'm-2', target: '_blank'
-          'に同意する
+          = f.check_box :agreement, :as => :boolean, class: 'agreement', checked:false, style: 'vertical-align: middle;'
+          = f.label :agreement
+            = link_to t('modals.terms.title'), terms_path, class: 'm-2', target: '_blank'
+            'と
+            = link_to t('modals.privacy_policy.title'), privacy_policy_path, class: 'm-2', target: '_blank'
+            'に同意する
+          = render 'shared/error_messages', model: @user, attribute: :agreement
 
         p.actions.p-2
           = f.submit t('defaults.register'), class: 'btn btn-outline-light w-50', style: 'background-color: #354a5f;'
