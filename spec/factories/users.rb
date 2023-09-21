@@ -15,6 +15,8 @@
 #  last_sign_in_at        :datetime
 #  last_sign_in_ip        :string
 #  locked_at              :datetime
+#  oauth_expires_at       :datetime
+#  oauth_token            :string
 #  provider               :string
 #  remember_created_at    :datetime
 #  reset_password_sent_at :datetime
@@ -36,6 +38,10 @@
 #
 FactoryBot.define do
   factory :user do
-    
+    email { "test@exmple.com" }
+    password { 'password12' }
+    password_confirmation { 'password12' }
+    agreement { true }
+    confirmed_at { Time.now }
   end
 end

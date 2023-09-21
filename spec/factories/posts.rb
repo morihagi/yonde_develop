@@ -2,22 +2,23 @@
 #
 # Table name: posts
 #
-#  id              :integer          not null, primary key
-#  body            :text
-#  city            :string
-#  email_for_post  :string
-#  favorite_status :string           default("unlike"), not null
-#  legal_name      :string
-#  other_address    :string
-#  post_status     :string           default("draft"), not null
-#  prefecture      :string
-#  radio_name      :string
-#  zip1            :integer
-#  zip2            :integer
-#  created_at      :datetime         not null
-#  updated_at      :datetime         not null
-#  segment_id      :integer
-#  user_id         :integer          not null
+#  id                   :integer          not null, primary key
+#  body                 :text
+#  city                 :string
+#  favorite_status      :string           default("unlike"), not null
+#  legal_name           :string
+#  other_address        :string
+#  phone                :string
+#  post_status          :string           default("draft"), not null
+#  prefecture           :string
+#  radio_name           :string
+#  residence_city       :string
+#  residence_prefecture :string
+#  zip_code             :string
+#  created_at           :datetime         not null
+#  updated_at           :datetime         not null
+#  segment_id           :integer          not null
+#  user_id              :integer          not null
 #
 # Indexes
 #
@@ -31,18 +32,17 @@
 #
 FactoryBot.define do
   factory :post do
-    email_for_post { "MyString" }
-    prefecture { "MyString" }
-    city { "MyString" }
-    radio_name { "MyString" }
-    zip1 { 1 }
-    zip2 { 1 }
-    other_address { "MyString" }
-    legal_name { "MyString" }
-    favorite_status { "MyString" }
-    post_status { "MyString" }
-    body { "MyString" }
-    user { nil }
-    segment { 1 }
+    body { "MyText" }
+    city { "MyCity" }
+    legal_name { "MyLegalName" }
+    other_address { "MyOtherAddress" }
+    phone { "MyPhone" }
+    prefecture { "MyPrefecture" }
+    radio_name { "MyRadioName" }
+    residence_city { "MyResidenceCity" }
+    residence_prefecture { "MyResidencePrefecture" }
+    zip_code { "1234567" }
+    association :user
+    association :segment
   end
 end
