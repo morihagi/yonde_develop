@@ -3,7 +3,7 @@ ja:
   activerecord:
     models:
       user: ユーザー
-      profile: デフォルト情報
+      profile: リスナー情報
       post: 投稿メール
       program: 番組
       segment: コーナー
@@ -71,7 +71,7 @@ ja:
         like: お気に入り
       post_status:
         draft: 下書き
-        sent: 送信済み
+        sent: メールアプリに転送済み
     errors:
       messages:
         record_invalid: 'バリデーションに失敗しました: %{errors}'
