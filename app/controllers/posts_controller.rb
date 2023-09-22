@@ -70,7 +70,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    if @post.update(post_params)
+    if @post.update(post_params.merge(post_status: :draft))
       redirect_to @post, notice: t('defaults.message.updated', item: Post.model_name.human)
     else
       flash.now[:error] = t('defaults.message.not_updated', item: Post.model_name.human)
@@ -83,10 +83,10 @@ class PostsController < ApplicationController
     redirect_to posts_path, notice: t('defaults.message.deleted', item: Post.model_name.human)
   end
 
-  def bookmarks
-    @q = current_user.bookmark_posts.ransack(params[:q])
-    @bookmark_posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
-  end
+  # def bookmarks
+  #   @q = current_user.bookmark_posts.ransack(params[:q])
+  #   @bookmark_posts = @q.result(distinct: true).includes(:user).order(created_at: :desc).page(params[:page])
+  # end
 
   def duplicate
     @duplicate_post = Post.new(@post.attributes.except('id', 'created_at', 'updated_at'))
@@ -98,10 +98,16 @@ class PostsController < ApplicationController
     end
   end
 
+  def update_status
+    @post = Post.find(params[:id])
+    @post.update(post_status: 'sent')
+    render json: { status: 'success' }
+  end
+
   private
 
   def post_params
-    params.require(:post).permit(:prefecture, :city, :radio_name, :zip_code, :other_address, :legal_name, :phone, :body, :segment_id, :residence_prefecture, :residence_city)
+    params.require(:post).permit(:prefecture, :city, :radio_name, :zip_code, :other_address, :legal_name, :phone, :body, :segment_id, :residence_prefecture, :residence_city, :post_status)
   end
 
   def set_post

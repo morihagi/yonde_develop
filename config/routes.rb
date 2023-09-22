@@ -12,6 +12,7 @@ Rails.application.routes.draw do
 
   resources :posts do
     post 'duplicate', on: :member
+    post 'update_status', on: :member
   end
   get 'show_for_guest_user', to: 'posts#show_for_unregistered_user', as: :show_for_guest_user
   resource :profile, only: %i[show edit update]

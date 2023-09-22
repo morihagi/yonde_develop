@@ -2,7 +2,7 @@ module PostsHelper
   def post_status_badge(post)
     status_classes = {
       'draft' => 'badge text-bg-secondary',
-      'sent' => 'badge bg-white text-red border'
+      'sent' => 'badge text-bg-light border'
     }
 
     status_class = status_classes[post.post_status]
