@@ -15,15 +15,22 @@ class PostsController < ApplicationController
     profile = Profile.find_by(user_id: current_user.id)
     return unless profile.present?
 
-    @post.residence_prefecture = profile.residence_prefecture
-    @post.residence_city = profile.residence_city
-    @post.radio_name = profile.radio_name
-    @post.zip_code = profile.zip_code
-    @post.prefecture = profile.prefecture
-    @post.city = profile.city
-    @post.other_address = profile.other_address
-    @post.legal_name = profile.legal_name
-    @post.phone = profile.phone
+    attributes_to_copy = %i[
+      residence_prefecture
+      residence_city
+      radio_name
+      zip_code
+      prefecture
+      city
+      other_address
+      legal_name
+      phone
+    ]
+
+    attributes_to_copy.each do |attribute|
+      @post[attribute] = profile[attribute]
+    end
+
     @post.user_id = current_user.id
   end
 
@@ -60,13 +67,19 @@ class PostsController < ApplicationController
   def edit
     profile = Profile.find_by(user_id: current_user.id)
     return unless profile.present?
+  
+    attributes_to_copy = %i[
+      zip_code
+      prefecture
+      city
+      other_address
+      legal_name
+      phone
+    ]
 
-    @post.zip_code = profile.zip_code
-    @post.prefecture = profile.prefecture
-    @post.city = profile.city
-    @post.other_address = profile.other_address
-    @post.legal_name = profile.legal_name
-    @post.phone = profile.phone
+    attributes_to_copy.each do |attribute|
+      @post[attribute] = profile[attribute]
+    end
   end
 
   def update
