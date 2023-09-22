@@ -53,12 +53,7 @@ html[lang="ja" class="vh-100"]
             .d-flex.flex-column.flex-shrink-0.py-3.px-3.text-white(style='margin-top: 55px;')
               = render 'shared/sidebar'
 
-          .col-md-9.mt-5.offset-3.d-none.d-md-block
-            .container.main-content(style='margin-top: 50px;')
-              = yield
-
-          / Don't dispalay the sideber for tablets, and smartphones
-          .col-12.mt-5.d-block.d-md-none
+          .col-sm-9.mt-5.offset-md-3
             .container.main-content(style='margin-top: 50px;')
               = yield
     - else
