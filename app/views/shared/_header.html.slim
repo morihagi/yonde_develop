@@ -8,12 +8,13 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top(style='background-color: #354a
 
     .collapse.navbar-collapse#navbarSupportedContent
       ul.nav.col-12.col-lg-auto.ms-lg-auto.justify-content-center.justify-content-lg-between.mb-md-0
-        li = link_to t('defaults.about'), '#', class: 'nav-link text-white me-3'
-        li = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning mt-1 me-3'
+        li = link_to t('defaults.about'), about_path, class: 'nav-link text-white me-3'
+        li = link_to t('defaults.info'), info_path, class: 'nav-link text-white me-3'
+        li = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning mt-1 me-3 '
         li = link_to t('defaults.mypage'), posts_path, class: 'btn btn-outline-warning mt-1 me-3'
         li = link_to t('defaults.logout'), destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-outline-light mt-1 me-4'
 
-      ul.nav.nav-pills.flex-column.mb-auto.d-block.d-lg-none
+      ul.nav.nav-pills.flex-column.mb-auto.d-block.d-md-none
         li = sidebar_link_to(posts_path, '📮', t('posts.index.title'))
         li = sidebar_link_to(profile_path, '🎧', t('profiles.show.title'))
         li = sidebar_link_to(user_path, '⚙️', t('users.show.title'))

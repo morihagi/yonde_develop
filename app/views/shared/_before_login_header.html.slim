@@ -8,7 +8,8 @@ nav.navbar.navbar-expand-lg.navbar-dark.static-top(style='background-color: #354
 
     .collapse.navbar-collapse#navbarSupportedContent
       ul.nav.col-12.col-lg-auto.ms-lg-auto.justify-content-center.justify-content-lg-between.mb-md-0
-        li = link_to t('defaults.about'), '#',  class: 'nav-link text-white me-3'
+        li = link_to t('defaults.about'), about_path,  class: 'nav-link text-white me-3'
+        li = link_to t('defaults.info'), info_path, class: 'nav-link text-white me-3'
         li = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning mt-1 me-3'
         li = link_to t('defaults.login'), new_user_session_path, class: 'btn btn-outline-light mt-1 me-3'
         li= link_to t('defaults.register'), new_user_registration_path, class: 'btn btn-light mt-1 me-4'
