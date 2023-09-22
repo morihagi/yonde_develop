@@ -1,4 +1,6 @@
 .d-flex.align-items-center.justify-content-end.flex-wrap.mb-3
+  = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning'
+.d-flex.align-items-center.justify-content-start.flex-wrap.mb-3
   .mx-2
     = t('defaults.sort')
   .mx-2.text-decoration-none
@@ -10,9 +12,9 @@
   .mx-2
     = sort_link(@search, :created_at, class: 'text-decoration-none')
   .mx-2
-    = link_to t('defaults.reset'), posts_path, class: 'text-decoration-none'
+    = sort_link(@search, :post_status, class: 'text-decoration-none')
   .mx-2
-    = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning'
+    = link_to t('defaults.reset'), posts_path, class: 'text-decoration-none'
 
 .row
   - posts.each do |post|

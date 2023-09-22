@@ -17,7 +17,7 @@
         th.col-1
           = sort_link(@search, :created_at, class: 'text-decoration-none')
         th.col-1.text-center
-          = Post.human_attribute_name(:post_status)
+          = sort_link(@search, :post_status, class: 'text-decoration-none')
         th.col-2.text-center
           = t('defaults.action')
 
