@@ -1,5 +1,7 @@
 Rails.application.routes.draw do
   root 'static_pages#top'
+  get 'info', to: 'static_pages#info'
+  get 'about', to: 'static_pages#about'
   get 'terms', to: 'modals#terms'
   get 'privacy_policy', to: 'modals#privacy_policy'
 
