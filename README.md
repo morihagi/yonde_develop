@@ -5,6 +5,7 @@
 [![Maintenability](https://codeclimate.com/github/morihagi/yonde_develop/badges/gpa.svg)](https://codeclimate.com/github/morihagi/yonde_develop)
 [![Upload coverage reports to Codecov](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml)
 [![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg?branch=develop)](https://coveralls.io/github/morihagi/yonde_develop?branch=develop)
+[![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg)](https://coveralls.io/github/morihagi/yonde_develop)
 
 ![OGP](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/c89ed46b-414a-bd17-2523-20d90d70e882.png)
 
