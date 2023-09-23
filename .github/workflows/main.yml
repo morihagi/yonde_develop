@@ -3,10 +3,14 @@ name: Upload coverage reports to Codecov
 on: [push]
 jobs:
   steps:
-      uses: codecov/codecov-action@v2
+      uses: codecov/codecov-action@v3
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # 対象リポジトリがpublicリポジトリならばトークン不要
         files: ./coverage/coverage.xml
         flags: unittests
         name: ruby-sample-for-codecov
         fail_ci_if_error: true
+    # - name: Upload coverage reports to Codecov
+    #   uses: codecov/codecov-action@v3
+    #   env:
+    #     CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
