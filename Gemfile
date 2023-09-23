@@ -3,14 +3,14 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '3.2.2'
 
-# Bundle edge Rails instead: gem "rails", github: "rails/rails", branch: "main"
+# Bundle edge Rails instead: gem 'rails', github: 'rails/rails', branch: 'main'
 gem 'rails', '~> 7.0.6'
 
 # The original asset pipeline for Rails [https://github.com/rails/sprockets-rails]
 gem 'sprockets-rails'
 
 # Use sqlite3 as the database for Active Record
-# gem "sqlite3", "~> 1.4"
+# gem 'sqlite3', '~> 1.4'
 
 # Use the Puma web server [https://github.com/puma/puma]
 gem 'puma', '~> 5.0'
@@ -28,13 +28,13 @@ gem 'stimulus-rails'
 gem 'jbuilder'
 
 # Use Redis adapter to run Action Cable in production
-# gem "redis", "~> 4.0"
+# gem 'redis', '~> 4.0'
 
 # Use Kredis to get higher-level data types in Redis [https://github.com/rails/kredis]
-# gem "kredis"
+# gem 'kredis'
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
-# gem "bcrypt", "~> 3.1.7"
+# gem 'bcrypt', '~> 3.1.7'
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: %i[mingw mswin x64_mingw jruby]
@@ -46,7 +46,7 @@ gem 'bootsnap', require: false
 gem 'sassc-rails'
 
 # Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+# gem 'image_processing', '~> 1.2'
 
 # Bootstrap framework version 5.2.3.
 gem 'bootstrap', '~> 5.3', '>= 5.3.1'
@@ -94,6 +94,11 @@ gem 'draper'
 gem 'trestle'
 gem 'trestle-auth'
 
+gem 'coveralls_reborn', require: false
+
+gem 'sentry-ruby', '~> 5.11'
+gem 'sentry-rails', '~> 5.11'
+
 group :development, :test do
   # Loads environment variables from a .env file.
   gem 'dotenv-rails'
@@ -134,10 +139,10 @@ group :development do
   gem 'web-console'
 
   # Add speed badges [https://github.com/MiniProfiler/rack-mini-profiler]
-  # gem "rack-mini-profiler"
+  # gem 'rack-mini-profiler'
 
   # Speed up commands on slow machines / big apps [https://github.com/rails/spring]
-  # gem "spring"
+  # gem 'spring'
 
   # Validates database constraints at the model level.
   gem 'database_validations'
@@ -193,7 +198,3 @@ group :production do
   # database
   gem 'pg'
 end
-
-gem "sentry-ruby", "~> 5.11"
-
-gem "sentry-rails", "~> 5.11"

@@ -6,21 +6,26 @@ document.addEventListener('turbo:load', () => {
   tabs.forEach((tab) => {
     tab.addEventListener('click', (event) => {
       event.preventDefault();
-      const tabId = event.target.getAttribute('href');
+      const tabId = event.currentTarget.getAttribute('href');
 
-      // Save the ID of the selected tab to a Cookie
-      Cookies.set('selectedTab', tabId);
+      // Check if tabId is not null or empty
+      if (tabId) {
+        // Save the ID of the selected tab to a Cookie
+        Cookies.set('selectedTab', tabId);
 
-      // Toggle the display of tabs
-      document.querySelectorAll('.tab-pane').forEach((pane) => {
-        pane.classList.remove('active');
-      });
+        // Toggle the display of tabs
+        document.querySelectorAll('.tab-pane').forEach((pane) => {
+          pane.classList.remove('active');
+        });
 
-      const targetPane = document.querySelector(tabId);
-      if (targetPane) {
-        targetPane.classList.add('active');
+        const targetPane = document.querySelector(tabId);
+        if (targetPane) {
+          targetPane.classList.add('active');
+        } else {
+          console.error(`No element found for selector ${tabId}`);
+        }
       } else {
-        console.error(`No element found for selector ${tabId}`);
+        console.error(`Invalid href attribute for the clicked tab`);
       }
     });
   });

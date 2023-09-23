@@ -12,7 +12,7 @@ RSpec.describe PostsHelper, type: :helper do
     it 'returns a badge for "sent" post status' do
       post = double(post_status: 'sent', post_status_text: 'Sent')
       badge = helper.post_status_badge(post)
-      expect(badge).to include('badge bg-white text-red border')
+      expect(badge).to include('badge text-bg-light border')
       expect(badge).to include('Sent')
     end
 

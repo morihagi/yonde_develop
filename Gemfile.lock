@@ -114,6 +114,11 @@ GEM
       xpath (~> 3.2)
     concurrent-ruby (1.2.2)
     connection_pool (2.4.1)
+    coveralls_reborn (0.28.0)
+      simplecov (~> 0.22.0)
+      term-ansicolor (~> 1.7)
+      thor (~> 1.2)
+      tins (~> 1.32)
     crass (1.0.6)
     database_consistency (1.7.18)
       activerecord (>= 3.2)
@@ -484,10 +489,15 @@ GEM
       rubocop-performance (~> 1.18.0)
     stimulus-rails (1.2.1)
       railties (>= 6.0.0)
+    sync (0.5.0)
     temple (0.10.2)
+    term-ansicolor (1.7.1)
+      tins (~> 1.0)
     thor (1.2.2)
     tilt (2.2.0)
     timeout (0.4.0)
+    tins (1.32.1)
+      sync
     trailblazer-option (0.1.2)
     trestle (0.9.8)
       activemodel (>= 4.2.0)
@@ -546,6 +556,7 @@ DEPENDENCIES
   bullet
   bundler-audit
   capybara
+  coveralls_reborn
   database_consistency
   database_validations
   debug

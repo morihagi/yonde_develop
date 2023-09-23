@@ -17,7 +17,7 @@ ul.nav.nav-tabs.justify-content-end.mt-3#myTab
       i.fas.fa-list-ul
 
 .tab-content.mt-3
-  #tab1.tab-pane.mt-3
+  #tab1.tab-pane
     - if @posts.any?
       = render 'card', posts: @posts
     - else

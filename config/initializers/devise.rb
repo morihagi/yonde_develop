@@ -26,7 +26,7 @@ Devise.setup do |config|
   # with default "from" parameter.
 
   config.mailer_sender = "YONDE <#{ENV['OFFICIAL_E_MAIL']}>"
-  
+
   # Configure the class responsible to send e-mails.
   # config.mailer = 'Devise::Mailer'
 

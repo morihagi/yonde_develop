@@ -2,6 +2,7 @@ ja:
   defaults:
     title: YONDE
     about: YONDEとは
+    info: お知らせ
     register: ユーザー登録
     mypage: マイページ
     login: ログイン
@@ -100,6 +101,10 @@ ja:
   static_pages:
     top:
       title: トップページ
+    info:
+      title: お知らせ
+    about:
+      title: YONDEとは
   modals:
     contact:
       title: お問い合わせ

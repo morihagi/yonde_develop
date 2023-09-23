@@ -4,7 +4,7 @@ h4.fw-bold
   span.me-1 📮
   span = @post.segment.program.program
 
-div = post_status_badge(@post)
+div id="post-status-badge" = post_status_badge(@post)
 
 .container.mt-5.mb-3
   .row
@@ -16,5 +16,10 @@ div = post_status_badge(@post)
       .btn-group
         = link_to t('defaults.edit'), edit_post_path(@post), class: 'btn btn-secondary m-3'
       .btn-group
-        = mail_to @post.segment.program.email, t('defaults.send_with_mail_app'), class: 'btn btn-warning m-3',
-          subject: @post.segment.segment_title_for_email, body: generate_email_body(@post)
+        = mail_to @post.segment.program.email,
+        t('defaults.send_with_mail_app'),
+        id: 'mail-link',
+        data: { post_id: @post.id },
+        class: 'btn btn-warning m-3',
+        subject: @post.segment.segment_title_for_email,
+        body: generate_email_body(@post)

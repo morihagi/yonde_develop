@@ -34,7 +34,7 @@ class Post < ApplicationRecord
   belongs_to :user
   belongs_to :segment
 
-  validates :residence_prefecture, :residence_city, :radio_name, :prefecture, :city, :other_address, :phone, :legal_name ,allow_blank: true
+  validates :residence_prefecture, :residence_city, :radio_name, :prefecture, :city, :other_address, :phone, :legal_name, allow_blank: true
   validates :zip_code, presence: true, allow_blank: true, length: { is: 7 }, numericality: { only_integer: true }
 
   extend Enumerize

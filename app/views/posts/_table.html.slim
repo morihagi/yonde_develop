@@ -16,8 +16,8 @@
           = sort_link(@search, :body, class: 'text-decoration-none')
         th.col-1
           = sort_link(@search, :created_at, class: 'text-decoration-none')
-        th.col-1
-          = Post.human_attribute_name(:post_status)
+        th.col-1.text-center
+          = sort_link(@search, :post_status, class: 'text-decoration-none')
         th.col-2.text-center
           = t('defaults.action')
 
@@ -34,7 +34,6 @@
           td.col-1.align-middle(style='font-size: 0.8rem; letter-spacing: 0.05em')
             = l post.created_at, format: :long
           td.col-1.text-center.align-middle(style='font-size: 0.8rem; letter-spacing: 0.05em')
-              span.badge.bg-secondary
-                = post.post_status_text
+            = post_status_badge(post)
           td.col-2.text-center(style='font-size: 1.3rem;')
             = render 'button', post: post
