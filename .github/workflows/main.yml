@@ -3,7 +3,6 @@ name: Upload coverage reports to Codecov
 on: [push]
 jobs:
   steps:
-    - name: Upload coverage reports
       uses: codecov/codecov-action@v2
       with:
         token: ${{ secrets.CODECOV_TOKEN }} # 対象リポジトリがpublicリポジトリならばトークン不要
