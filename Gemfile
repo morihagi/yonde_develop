@@ -187,6 +187,7 @@ group :test do
 
   # Measures code coverage in Ruby applications.
   gem 'simplecov', require: false
+  gem 'simplecov-cobertura'
 
   # integration testing tool
   gem 'capybara'
