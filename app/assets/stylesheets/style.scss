@@ -21,16 +21,15 @@ body {
 }
 
 body > footer {
-  position: sticky;
+  // position: sticky;
+  position: fixed;
   top: 100vh;
+  bottom: 0;
+  width: 100%;
+  background-color: #f1c40e;
 }
 
-footer {
-  font-size: 0.9rem;
-  width: 100%;
-  background-color: #312d2a;
-  }
-
+// for a tablet
 @media (max-width: 767px) {
   footer {
     font-size:  0.5rem;

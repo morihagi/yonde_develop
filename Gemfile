@@ -94,6 +94,8 @@ gem 'draper'
 gem 'trestle'
 gem 'trestle-auth'
 
+gem 'coveralls_reborn', require: false
+
 group :development, :test do
   # Loads environment variables from a .env file.
   gem 'dotenv-rails'
