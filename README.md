@@ -1,13 +1,10 @@
-test commit
-
 ## 🎙 YONDE | ラジオ用投稿メール作成アプリ 📮
 ![Ruby](https://img.shields.io/badge/ruby-3.3.3-blue?logo=ruby&)
 ![Ruby on Rails](https://img.shields.io/badge/rails-7.0.6-blue?logo=rubyonrails)
 ![Release date](https://img.shields.io/badge/release_date-September_2023-yellow?)
 [![Maintenability](https://codeclimate.com/github/morihagi/yonde_develop/badges/gpa.svg)](https://codeclimate.com/github/morihagi/yonde_develop)
 
-<!-- テスト作成後、下記を追加
-[![Coveralls](https://coveralls.io/repos/ctran/annotate_models/badge.svg?branch=develop)](https://coveralls.io/r/ctran/annotate_models?branch=develop) -->
+[![Upload coverage reports to Codecov](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml/badge.svg)](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml)
 
 ![OGP](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/c89ed46b-414a-bd17-2523-20d90d70e882.png)
 
