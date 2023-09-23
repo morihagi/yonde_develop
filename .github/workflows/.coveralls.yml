@@ -1,2 +1,8 @@
-service_name: travis-pro
-repo_token: AollLm9NyCbGVYhXXdnennfeIFROwsKcJ
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+  service_name: travis-pro
+  repo_token: AollLm9NyCbGVYhXXdnennfeIFROwsKcJ
