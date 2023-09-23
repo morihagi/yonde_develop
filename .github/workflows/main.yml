@@ -1,13 +1,29 @@
-name: Upload coverage reports to Codecov
-
 on: [push]
 
 jobs:
-  build:
+  job:
     runs-on: ubuntu-latest
+    name: Run spec
     steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
 
-    - name: Upload coverage reports to Codecov
-      uses: codecov/codecov-action@v3
-      env:
-        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+      - name: Set up ruby
+        uses: ruby/setup-ruby@v1
+        with:
+          ruby-version: 2.7.4
+          bundler-cache: true
+
+      - name: Test with RSpec
+        run: |
+          bundle exec rspec
+
+      - name: Upload coverage reports
+        uses: codecov/codecov-action@v2
+        with:
+          token: ${{ secrets.CODECOV_TOKEN }}
+          files: ./coverage/coverage.xml
+          flags: unittests
+          name: ruby-sample-for-codecov
+          fail_ci_if_error: true
