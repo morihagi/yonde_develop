@@ -5,12 +5,11 @@ Rails.application.routes.draw do
   get 'terms', to: 'modals#terms'
   get 'privacy_policy', to: 'modals#privacy_policy'
 
-  devise_for :users,
-              controllers: {
-                omniauth_callbacks: 'users/omniauth_callbacks',
-                registrations: 'users/registrations',
-                confirmations: 'users/confirmations'
-              }
+  devise_for :users, controllers: {
+    omniauth_callbacks: 'users/omniauth_callbacks',
+    registrations: 'users/registrations',
+    confirmations: 'users/confirmations'
+  }
 
   resources :posts do
     post 'duplicate', on: :member

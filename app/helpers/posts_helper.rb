@@ -12,32 +12,56 @@ module PostsHelper
   def generate_email_body(post)
     email_body = ''
 
-    if post.residence_prefecture.present? || post.residence_city.present?
-      email_body += "在住: #{post.residence_prefecture}#{post.residence_city}\n"
-    end
-
-    if post.radio_name.present?
-      email_body += "RN: #{post.radio_name}\n\n"
-    end
-
+    email_body += generate_residence_info(post)
+    email_body += generate_radio_name(post)
     email_body += "#{post.body}\n\n"
+    email_body += generate_address_info(post)
+    email_body += generate_contact_info(post)
+
+    email_body
+  end
+
+  def generate_residence_info(post)
+    if post.residence_prefecture.present? || post.residence_city.present?
+      "在住: #{post.residence_prefecture}#{post.residence_city}\n"
+    else
+      ''
+    end
+  end
+
+  def generate_radio_name(post)
+    if post.radio_name.present?
+      "RN: #{post.radio_name}\n\n"
+    else
+      ''
+    end
+  end
+
+  def generate_address_info(post)
+    address_info = ''
 
     if post.zip_code.present?
-      email_body += "郵便番号: #{post.zip_code}\n"
+      address_info += "郵便番号: #{post.zip_code}\n"
     end
 
     if post.prefecture.present? || post.city.present? || post.other_address.present?
-      email_body += "住所: #{post.prefecture}#{post.city}#{post.other_address}\n"
+      address_info += "住所: #{post.prefecture}#{post.city}#{post.other_address}\n"
     end
 
+    address_info
+  end
+
+  def generate_contact_info(post)
+    contact_info = ''
+
     if post.phone.present?
-      email_body += "電話番号: #{post.phone}\n"
+      contact_info += "電話番号: #{post.phone}\n"
     end
 
     if post.legal_name.present?
-      email_body += "名前: #{post.legal_name}\n"
+      contact_info += "名前: #{post.legal_name}\n"
     end
 
-    email_body
+    contact_info
   end
 end

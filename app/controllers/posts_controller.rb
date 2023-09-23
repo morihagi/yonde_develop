@@ -35,26 +35,12 @@ class PostsController < ApplicationController
   end
 
   def create
-    if user_signed_in?
-      @post = current_user.posts.new(post_params)
+    @post = build_post
 
-      if @post.save
-        redirect_to post_path(@post), notice: t('defaults.message.created', item: Post.model_name.human)
-      else
-        flash.now[:error] = t('defaults.message.not_created', item: Post.model_name.human)
-        render :new, status: :unprocessable_entity
-      end
-
+    if @post.save
+      process_successful_save
     else
-      unregistered_user = User.find(1)
-      @post = unregistered_user.posts.new(post_params)
-
-      if @post.save
-        redirect_to show_for_guest_user_path, notice: t('defaults.message.created', item: Post.model_name.human)
-      else
-        flash.now[:error] = t('defaults.message.not_created', item: Post.model_name.human)
-        render :new, status: :unprocessable_entity
-      end
+      process_failed_save
     end
   end
 
@@ -67,7 +53,7 @@ class PostsController < ApplicationController
   def edit
     profile = Profile.find_by(user_id: current_user.id)
     return unless profile.present?
-  
+
     attributes_to_copy = %i[
       zip_code
       prefecture
@@ -130,5 +116,20 @@ class PostsController < ApplicationController
   def get_last_post_for_unregistered_user
     unregistered_user = User.find(1)
     unregistered_user.posts.last
+  end
+
+  def build_post
+    user = user_signed_in? ? current_user : User.find(1)
+    user.posts.new(post_params)
+  end
+
+  def process_successful_save
+    redirect_path = user_signed_in? ? post_path(@post) : show_for_guest_user_path
+    redirect_to redirect_path, notice: t('defaults.message.created', item: Post.model_name.human)
+  end
+
+  def process_failed_save
+    flash.now[:error] = t('defaults.message.not_created', item: Post.model_name.human)
+    render :new, status: :unprocessable_entity
   end
 end

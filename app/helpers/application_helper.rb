@@ -9,14 +9,11 @@ module ApplicationHelper
   end
 
   def bootstrap_alert(key)
-    case key
-    when 'notice'
-      'success'
-    when 'alert'
-      'warning'
-    when 'error'
-      'danger'
-    end
+    {
+      'notice' => 'success',
+      'alert' => 'warning',
+      'error' => 'danger'
+    }[key]
   end
 
   def page_title(page_title = '')
