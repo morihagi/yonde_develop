@@ -1,29 +1,64 @@
-on: [push]
+- name: テスト
+  run: |
+    npm run test
+    npm run coverage
+
+- name: Coveralls.ioに公開
+  uses: coverallsapp/github-action@v1.1.2
+  with:
+    github-token: ${{ github.token }}
+
+
+name: Rails CI
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
 
 jobs:
-  job:
+  rspec:
     runs-on: ubuntu-latest
-    name: Run spec
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 0
 
-      - name: Set up ruby
+    steps:
+    - uses: actions/checkout@v4
+
+    - name: Set up Ruby
+      uses: ruby/setup-ruby@v1
+
+    - name: Install dependencies
+      run: |
+        sudo apt-get -yqq install libpq-dev
+        gem install bundler
+        bundle install --jobs 4 --retry 3
+
+    - name: Run tests
+      env:
+        RAILS_ENV: test
+        DATABASE_URL: sqlite3:///db/test.sqlite3
+      run: |
+        bundle exec rake db:create
+        bundle exec rake db:schema:load
+        bundle exec rspec
+
+    - name: Upload coverage to Codecov
+      uses: codecov/codecov-action@v3
+      env:
+        CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
+
+
+  rubocop:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+
+      - name: Set up Ruby
         uses: ruby/setup-ruby@v1
         with:
-          ruby-version: 3.2.2
           bundler-cache: true
 
-      - name: Test with RSpec
-        run: |
-          bundle exec rspec
-
-      - name: Upload coverage reports
-        uses: codecov/codecov-action@v2
-        with:
-          token: ${{ secrets.CODECOV_TOKEN }}
-          files: ./coverage/coverage.xml
-          flags: unittests
-          name: ruby-sample-for-codecov
-          fail_ci_if_error: true
+      - name: Run rubocop
+        run: bundle exec rubocop
