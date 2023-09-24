@@ -3,12 +3,12 @@
 ![Ruby on Rails](https://img.shields.io/badge/rails-7.0.6-blue?logo=rubyonrails)
 ![Release date](https://img.shields.io/badge/release_date-September_2023-yellow?)
 [![Maintenability](https://codeclimate.com/github/morihagi/yonde_develop/badges/gpa.svg)](https://codeclimate.com/github/morihagi/yonde_develop)
-[![Upload coverage reports to Codecov](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml)
-[![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg?branch=develop)](https://coveralls.io/github/morihagi/yonde_develop?branch=develop)
-[![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg)](https://coveralls.io/github/morihagi/yonde_develop)
+[![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg?branch=161-ci%E3%81%AE%E4%BF%AE%E6%AD%A3)](https://coveralls.io/github/morihagi/yonde_develop?branch=161-ci%E3%81%AE%E4%BF%AE%E6%AD%A3)
+[![x](https://img.shields.io/twitter/url/https/twitter.com/yonde1242.svg?style=social&label=Follow%20%40yonde1242)](https://twitter.com/yonde1242)
+
+<!-- [![Github Actions](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml) --> 
 
 ![OGP](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/c89ed46b-414a-bd17-2523-20d90d70e882.png)
-
 ![Untitled Diagram.drawio.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/306d57af-153f-a7fb-4313-fd04444821b7.png)
 
 オールナイトニッポン（以下、ANN）の番組・コーナーを選びネタを書くだけで、  
