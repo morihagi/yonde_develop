@@ -180,7 +180,7 @@ group :test do
   gem 'fuubar'
 
   # Automatically installs and manages web driver binaries for Selenium.
-  gem 'webdrivers', require: false
+  gem 'webdrivers', require: !ENV['SELENIUM_REMOTE_URL']
 
   # Provides RSpec matchers for common Rails functionality.
   gem 'shoulda-matchers'
