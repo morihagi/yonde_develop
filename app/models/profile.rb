@@ -27,7 +27,7 @@
 class Profile < ApplicationRecord
   belongs_to :user
 
-  validates :prefecture, :city, :radio_name, :other_address, :legal_name, :residence_prefecture, :residence_city, allow_blank: true
+  validates :prefecture, :city, :radio_name, :other_address, :legal_name, :residence_prefecture, :residence_city, presence: true, allow_blank: true
   validates :zip_code, presence: true, allow_blank: true, length: { is: 7 }, numericality: { only_integer: true }
   validates :user_id, presence: true
 end
