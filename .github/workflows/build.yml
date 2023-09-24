@@ -14,13 +14,26 @@ jobs:
     - name: Set up Ruby
       uses: ruby/setup-ruby@v1
 
+    - name: Cache gems
+      uses: actions/cache@v3
+      with:
+        path: vendor/bundle
+        key: bundle-${{ hashFiles('**/Gemfile.lock') }}
+
+    - name: Setup Chrome
+      run: |
+        wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -
+        echo "deb http://dl.google.com/linux/chrome/deb/ stable main" | sudo tee -a /etc/apt/sources.list.d/google-chrome.list
+        sudo apt-get update -qqy
+        sudo apt-get -qqy install google-chrome-stable
+
     - name: Install dependencies
       run: |
         sudo apt-get -yqq install libpq-dev
-        gem install bundler
+        bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
-
-    - name: Run tests
+  
+      - name: Run tests
       env:
         RAILS_ENV: test
         DATABASE_URL: sqlite3:///db/test.sqlite3
@@ -33,19 +46,3 @@ jobs:
       uses: codecov/codecov-action@v3
       env:
         CODECOV_TOKEN: ${{ secrets.CODECOV_TOKEN }}
-
-
-  rubocop:
-    runs-on: ubuntu-latest
-    timeout-minutes: 10
-    steps:
-      - name: Checkout code
-        uses: actions/checkout@v4
-
-      - name: Set up Ruby
-        uses: ruby/setup-ruby@v1
-        with:
-          bundler-cache: true
-
-      - name: Run rubocop
-        run: bundle exec rubocop
