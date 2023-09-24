@@ -1,7 +1,7 @@
 ## 🎙 YONDE | ラジオ用投稿メール作成アプリ 📮
 ![Ruby](https://img.shields.io/badge/ruby-3.3.3-blue?logo=ruby&)
 ![Ruby on Rails](https://img.shields.io/badge/rails-7.0.6-blue?logo=rubyonrails)
-![Release date](https://img.shields.io/badge/release_date-September_2023-yellow?)
+![Release date](https://img.shields.io/badge/release_date-September_2023-important?)
 [![Maintenability](https://codeclimate.com/github/morihagi/yonde_develop/badges/gpa.svg)](https://codeclimate.com/github/morihagi/yonde_develop)
 [![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg?branch=161-ci%E3%81%AE%E4%BF%AE%E6%AD%A3)](https://coveralls.io/github/morihagi/yonde_develop?branch=161-ci%E3%81%AE%E4%BF%AE%E6%AD%A3)
 [![x](https://img.shields.io/twitter/url/https/twitter.com/yonde1242.svg?style=social&label=Follow%20%40yonde1242)](https://twitter.com/yonde1242)
