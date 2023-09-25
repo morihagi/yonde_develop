@@ -122,7 +122,7 @@ ANNを含め、ラジオを聞き続けて20数年。
 <br>
 
 ## 🎙 画面遷移図 📮
-https://www.figma.com/file/EJ5mZWpMUNK245rYMpHpAL/ScreenFlowDiagram?type=design&node-id=509%3A2609&mode=design&t=EszcWVn95hzmmMAA-1
+[Figmaに遷移します](https://www.figma.com/file/EJ5mZWpMUNK245rYMpHpAL/ScreenFlowDiagram?type=design&node-id=509%3A2609&mode=design&t=EszcWVn95hzmmMAA-1)
 <br>
 <br>
 
