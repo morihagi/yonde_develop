@@ -18,10 +18,9 @@ module ApplicationHelper
 
   def page_title(page_title = '')
     base_title = 'YONDE'
-    explain = ' | ラジオ用投稿メール作成アプリ'
 
     if page_title.empty?
-      base_title + explain
+      base_title
     else
       "#{page_title} | #{base_title}"
     end
