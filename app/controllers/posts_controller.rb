@@ -47,7 +47,7 @@ class PostsController < ApplicationController
   def show; end
 
   def show_for_unregistered_user
-    @post = get_last_post_for_unregistered_user
+    @post = last_post_for_unregistered_user
   end
 
   def edit
@@ -106,14 +106,16 @@ class PostsController < ApplicationController
   private
 
   def post_params
-    params.require(:post).permit(:prefecture, :city, :radio_name, :zip_code, :other_address, :legal_name, :phone, :body, :segment_id, :residence_prefecture, :residence_city, :post_status)
+    params.require(:post).permit(:prefecture, :city, :radio_name,
+                                 :zip_code, :other_address, :legal_name, :phone, :body,
+                                 :segment_id, :residence_prefecture, :residence_city, :post_status)
   end
 
   def set_post
     @post = current_user.posts.find(params[:id])
   end
 
-  def get_last_post_for_unregistered_user
+  def last_post_for_unregistered_user
     unregistered_user = User.find(1)
     unregistered_user.posts.last
   end

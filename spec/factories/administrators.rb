@@ -14,10 +14,10 @@
 #
 FactoryBot.define do
   factory :administrator do
-    email { "admin@example.com" }
+    email { 'admin@example.com' }
     password_digest { BCrypt::Password.create('password') }
-    first_name { "Admin" }
-    last_name { "User" }
+    first_name { 'Admin' }
+    last_name { 'User' }
     remember_token { SecureRandom.urlsafe_base64 }
     remember_token_expires_at { 1.year.from_now }
   end

@@ -1,7 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe ProfileDecorator, type: :decorator do
-  let(:profile) { Profile.new(prefecture: 'Tokyo', city: 'Shinjuku', other_address: '1-2-3', residence_prefecture: 'Osaka', residence_city: 'Namba') }
+  let(:profile) do
+    Profile.new(prefecture: 'Tokyo', city: 'Shinjuku', other_address: '1-2-3', residence_prefecture: 'Osaka',
+                residence_city: 'Namba')
+  end
 
   let(:decorator) { described_class.new(profile) }
 

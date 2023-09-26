@@ -42,11 +42,13 @@ RSpec.describe Post, type: :model do
 
   it { is_expected.to enumerize(:favorite_status).in(:unlike, :like).with_default(:unlike) }
   it { is_expected.to enumerize(:post_status).in(:draft, :sent).with_default(:draft) }
-  
+
   describe '.ransackable_attributes' do
     it 'returns the list of ransackable attributes' do
-      expect(Post.ransackable_attributes).to eq(%w[id segment_title residence_prefecture residence_city radio_name body zip_code prefecture city other_address phone legal_name segment_id user_id post_status favorite_status created_at updated_at]
-      )
+      expect(Post.ransackable_attributes).to
+      eq(%w[id segment_title residence_prefecture residence_city radio_name
+        body zip_code prefecture city other_address phone legal_name
+        segment_id user_id post_status favorite_status created_at updated_at])
     end
   end
   describe '.ransackable_associations' do

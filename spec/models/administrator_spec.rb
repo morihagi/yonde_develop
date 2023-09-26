@@ -22,11 +22,11 @@ RSpec.describe Administrator, type: :model do
   it { is_expected.to respond_to(:remember_token) }
   it { is_expected.to respond_to(:remember_token_expires_at) }
 
-  it "includes Trestle::Auth::ModelMethods" do
+  it 'includes Trestle::Auth::ModelMethods' do
     expect(Administrator.ancestors.include?(Trestle::Auth::ModelMethods)).to be_truthy
   end
 
-  it "includes Trestle::Auth::ModelMethods::Rememberable" do
+  it 'includes Trestle::Auth::ModelMethods::Rememberable' do
     expect(Administrator.ancestors.include?(Trestle::Auth::ModelMethods::Rememberable)).to be_truthy
   end
 end

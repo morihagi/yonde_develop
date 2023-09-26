@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe "Modals", type: :system do
+RSpec.describe 'Modals', type: :system do
   describe 'terms' do
     it 'displays the terms page' do
       visit '/terms'

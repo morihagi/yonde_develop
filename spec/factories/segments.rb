@@ -25,12 +25,12 @@
 FactoryBot.define do
   factory :segment do
     program
-    segment_title { "SegmentTitle" }
-    segment_status { "ongoing" }
-    segment_title_for_email { "SegmentTitleForEmail" }
-    instruction { "InstructionText" }
-    official_site_instruction { "OfficialSiteInstructionText" }
-    default_sentence { "DefaultSentence" }
-    novelty_goods { "none" }
+    segment_title { 'SegmentTitle' }
+    segment_status { 'ongoing' }
+    segment_title_for_email { 'SegmentTitleForEmail' }
+    instruction { 'InstructionText' }
+    official_site_instruction { 'OfficialSiteInstructionText' }
+    default_sentence { 'DefaultSentence' }
+    novelty_goods { 'none' }
   end
 end

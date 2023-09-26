@@ -39,7 +39,8 @@ RSpec.describe Program, type: :model do
 
   describe '.ransackable_attributes' do
     it 'returns the list of ransackable attributes' do
-      expect(Program.ransackable_attributes).to eq(%w[ id email program program_status segment_title segment_status created_at updated_at ])
+      expect(Program.ransackable_attributes).to eq(%w[id email program program_status segment_title segment_status
+                                                      created_at updated_at])
     end
   end
 end

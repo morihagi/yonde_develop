@@ -81,7 +81,9 @@ RSpec.describe User, type: :model do
     end
 
     context 'when the user already exists' do
-      let!(:user) { create(:user, provider: auth_response.provider, uid: auth_response.uid, email: auth_response.info.email) }
+      let!(:user) do
+        create(:user, provider: auth_response.provider, uid: auth_response.uid, email: auth_response.info.email)
+      end
 
       it 'returns the existing user' do
         expect(User.from_omniauth(auth_response)).to eq(user)
@@ -90,9 +92,9 @@ RSpec.describe User, type: :model do
 
     context 'when the user does not exist' do
       it 'creates a new user' do
-        expect {
+        expect do
           User.from_omniauth(auth_response)
-        }.to change(User, :count).by(1)
+        end.to change(User, :count).by(1)
       end
 
       it 'returns the created user' do

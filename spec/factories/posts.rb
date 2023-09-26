@@ -32,16 +32,16 @@
 #
 FactoryBot.define do
   factory :post do
-    body { "MyText" }
-    city { "MyCity" }
-    legal_name { "MyLegalName" }
-    other_address { "MyOtherAddress" }
-    phone { "MyPhone" }
-    prefecture { "MyPrefecture" }
-    radio_name { "MyRadioName" }
-    residence_city { "MyResidenceCity" }
-    residence_prefecture { "MyResidencePrefecture" }
-    zip_code { "1234567" }
+    body { 'MyText' }
+    city { 'MyCity' }
+    legal_name { 'MyLegalName' }
+    other_address { 'MyOtherAddress' }
+    phone { 'MyPhone' }
+    prefecture { 'MyPrefecture' }
+    radio_name { 'MyRadioName' }
+    residence_city { 'MyResidenceCity' }
+    residence_prefecture { 'MyResidencePrefecture' }
+    zip_code { '1234567' }
     association :user
     association :segment
   end

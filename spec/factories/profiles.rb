@@ -27,14 +27,14 @@
 FactoryBot.define do
   factory :profile do
     user
-    prefecture { "Tokyo" }
-    city { "Chiyoda" }
-    radio_name { "RadioName" }
-    zip_code { "1234567" }
-    other_address { "OtherAddress" }
-    legal_name { "LegalName" }
-    phone { "090-0000-0000" }
-    residence_prefecture { "Kanagawa" }
-    residence_city { "Yokohama" }
+    prefecture { 'Tokyo' }
+    city { 'Chiyoda' }
+    radio_name { 'RadioName' }
+    zip_code { '1234567' }
+    other_address { 'OtherAddress' }
+    legal_name { 'LegalName' }
+    phone { '090-0000-0000' }
+    residence_prefecture { 'Kanagawa' }
+    residence_city { 'Yokohama' }
   end
 end

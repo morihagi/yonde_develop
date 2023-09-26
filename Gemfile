@@ -96,8 +96,8 @@ gem 'trestle-auth'
 
 gem 'coveralls_reborn', require: false
 
-gem 'sentry-ruby', '~> 5.11'
 gem 'sentry-rails', '~> 5.11'
+gem 'sentry-ruby', '~> 5.11'
 
 group :development, :test do
   # Loads environment variables from a .env file.

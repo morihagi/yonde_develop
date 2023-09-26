@@ -1,15 +1,15 @@
 require 'rails_helper'
 
 RSpec.describe User, type: :request do
-  describe "GET /users/sign_up" do
-    it "renders the sign up page" do
+  describe 'GET /users/sign_up' do
+    it 'renders the sign up page' do
       get new_user_registration_path
       expect(response).to have_http_status(200)
     end
   end
 
-  describe "POST /users" do
-    context "with valid parameters" do
+  describe 'POST /users' do
+    context 'with valid parameters' do
       let(:valid_params) do
         {
           user: {
@@ -22,17 +22,17 @@ RSpec.describe User, type: :request do
         }
       end
 
-      xit "creates a new user" do
+      xit 'creates a new user' do
         expect { post user_registration_path, params: valid_params }.to change(User, :count).by(1)
       end
 
-      xit "redirects to the posts_path path" do
+      xit 'redirects to the posts_path path' do
         post user_registration_path, params: valid_params
         expect(response).to redirect_to posts_path
       end
     end
 
-    context "with invalid parameters" do
+    context 'with invalid parameters' do
       let(:invalid_params) do
         {
           user: {
@@ -44,13 +44,13 @@ RSpec.describe User, type: :request do
         }
       end
 
-      it "does not create a new user" do
-        expect {
+      it 'does not create a new user' do
+        expect do
           post user_registration_path, params: invalid_params
-        }.not_to change(User, :count)
+        end.not_to change(User, :count)
       end
 
-      it "renders the sign up page" do
+      it 'renders the sign up page' do
         post user_registration_path, params: invalid_params
         expect(response).to render_template(:new)
       end

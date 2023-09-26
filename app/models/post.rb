@@ -42,7 +42,8 @@ class Post < ApplicationRecord
   enumerize :post_status, in: %i[draft sent], default: :draft, scope: true
 
   def self.ransackable_attributes(_auth_object = nil)
-    %w[id segment_title residence_prefecture residence_city radio_name body zip_code prefecture city other_address phone legal_name segment_id user_id post_status favorite_status created_at updated_at]
+    %w[id segment_title residence_prefecture residence_city radio_name body zip_code prefecture city other_address phone legal_name segment_id user_id
+       post_status favorite_status created_at updated_at]
   end
 
   def self.ransackable_associations(_auth_object = nil)
