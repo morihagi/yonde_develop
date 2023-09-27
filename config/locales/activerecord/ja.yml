@@ -9,7 +9,7 @@ ja:
       segment: コーナー
     attributes:
       user:
-        email: ログイン用メールアドレス
+        email: メールアドレス
         password: パスワード
         password_confirmation: パスワード確認
         agreement: 利用規約とプライバシーポリシー

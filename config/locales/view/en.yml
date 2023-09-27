@@ -1,0 +1,150 @@
+en:
+  defaults:
+    title: YONDE
+    about: About
+    info: News
+    register: Sign up
+    mypage: My Page
+    login: Sign in
+    google_login: Use Google Account
+    logout: Sign out
+    forget_password_mail: Password Reset
+    authentication_mail: Resend Authentication Mail
+    unlock_mail: Send Unlock Mail
+    copy_right: © YONDE 2023
+    developer: 'Developer: Misato Hagihara'
+    code: Source Code
+    twitter: X(Former Twitter)
+    google_form: Google Form
+    program: Program
+    edit: Change
+    update: Update
+    resend: Resend
+    send: Send
+    create: Create
+    delete: Delete
+    reset: Reset
+    sort: Sort
+    sort_reset: Reset Sort Order
+    close: Close
+    return: Return
+    delete_account: Delete Account
+    remember_me: Auto-login next time
+    unspecified: No Selection
+    send_with_mail_app: Send from Mail App
+    address_not_required: Residence (Not required)
+    short_address: Residence Short Form
+    prefecture: Prefecture
+    city: City
+    other_address: Other Address
+    rn: RN
+    action: Action
+    default_information: Default Information
+    default_information_for_goods: Default Information (For Program Novelty Goods Delivery)
+    tokyo-to: Tokyo-to
+    chiyoda-ku: Chiyoda-ku
+    yuraku-cho: Yuraku-cho 1-9-3
+    000-000-0000: 000-000-0000
+    email_address: example@sample.com
+    yuraku_taro: Yuraku Taro
+    anonymous: Anonymous
+    message_to_developer: Message to Developer
+    try_to_make_message: Create Email
+    use_google_account: Use Google Account
+    for_login: Login?
+    for_sign_in: Sign in?
+    for_new_password: Forgot Your Password?
+    for_reconfirmation: Resend Authentication Email?
+    for_unlock: Unlock Account?
+    over_english_number_8: More than 8 Alphanumeric Characters
+    password_confirmation: Password Confirmation
+    zip_cord_form: Postal Code (Enter 7 Digits)
+    message:
+      require_login: Login first please
+      created: "%{item} has been created"
+      not_created: "Failed to create %{item}"
+      updated: "%{item} has been updated"
+      not_updated: "Failed to update %{item}"
+      deleted: "%{item} has been deleted"
+      not_deleted: "Failed to delete %{item}"
+      duplicated: "%{item} has been duplicated"
+      not_duplicated: "Failed to duplicate %{item}"
+      delete_confirm: Do you want to delete?
+      waiting_confirmation: Waiting for your confirmation
+      are_you_sure: Are you sure you want to delete?
+      select_program: Select a program
+      select_segment: Select a segment
+      input_word: Write the text
+      from_created_at: Created (From)
+      until_created_at: Created (Until)
+      select: Select
+      add_address_legal_name_phone_number: Click here if you want to add your shipping address, phone number, and legal name for a program's original gift
+      add_default_profile: Add your default information
+      add_phone_number: Phone Number (Enter with Hyphen)
+      hidden_for_security: Not displayed for security reasons
+  helpers:
+    page_entries_info:
+      more_pages:
+        display_entries: "Displaying <b>%{first} - %{last}</b> of <b>%{total}</b> %{entry_name}"
+      one_page:
+        display_entries:
+          one: "Displaying <b>%{count}</b> record of %{entry_name}"
+          other: "Displaying <b>%{count}</b> records of %{entry_name}"
+          zero: "No records found for %{entry_name}"
+  views:
+    pagination:
+      first: "«"
+      last: "»"
+      next: "›"
+      previous: "‹"
+      truncate: "…"
+  static_pages:
+    info:
+      title: Information
+    about:
+      title: About
+  modals:
+    contact:
+      title: Contact
+    developer:
+      title: Developer
+    privacy_policy:
+      title: Privacy Policy
+    terms:
+      title: Terms of Use
+  users:
+    show:
+      title: Login Information
+    registrations:
+      new:
+        title: Sign up
+      edit:
+        title: Edit Login Information
+    sessions:
+      new:
+        title: Sign in
+    confirmations:
+      new:
+        title: Resend Authentication Email
+    unlocks:
+      new:
+        title: Unlock Account
+    passwords:
+      new:
+        title: Reset Password
+      edit:
+        title: Change Password
+  posts:
+    new:
+      title: Create Email
+    edit:
+      title: Edit Email
+    index:
+      title: List of Emails
+  profiles:
+    show:
+      title: Default Information
+    edit:
+      title: Change Listener Information
+    edit_for_goods:
+      title: Change Listener Information for Shipping

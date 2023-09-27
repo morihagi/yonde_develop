@@ -12,7 +12,11 @@ nav.navbar.navbar-expand-lg.navbar-dark.fixed-top(style='background-color: #354a
         li = link_to t('defaults.info'), info_path, class: 'nav-link text-white me-3'
         li = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning mt-1 me-3 '
         li = link_to t('defaults.mypage'), posts_path, class: 'btn btn-outline-warning mt-1 me-3'
-        li = link_to t('defaults.logout'), destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-outline-light mt-1 me-4'
+        li = link_to t('defaults.logout'), destroy_user_session_path, data: { turbo_method: :delete }, class: 'btn btn-outline-light mt-1 me-3'
+        li = link_to 'JP', url_for(locale: :ja), class: 'nav-link text-white text-decoration-none px-0'
+        li.text-white.mt-2.mx-1
+          | /
+        li = link_to 'EN', url_for(locale: :en), class: 'nav-link text-white text-decoration-none px-0'
 
       ul.nav.nav-pills.flex-column.mb-auto.d-block.d-md-none
         li = sidebar_link_to(posts_path, '📮', t('posts.index.title'))

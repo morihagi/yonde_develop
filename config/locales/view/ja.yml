@@ -99,8 +99,6 @@ ja:
       previous: "&lsaquo;"
       truncate: "&hellip;"
   static_pages:
-    top:
-      title: トップページ
     info:
       title: お知らせ
     about:
