@@ -14,7 +14,7 @@
 
 - if devise_mapping.registerable? && controller_name != 'registrations'
   .p-2
-    div = t('defaults.for_sign_in')
+    div = t('defaults.for_sign_up')
     div = link_to t('defaults.register'), new_registration_path(resource_name), class: 'btn btn-outline-secondary w-75'
 
 - if devise_mapping.recoverable? && controller_name != 'passwords' && controller_name != 'registrations'

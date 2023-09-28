@@ -9,7 +9,7 @@ en:
       segment: Segment
     attributes:
       user:
-        email: Email Address
+        email: Email
         password: Password
         password_confirmation: Password Confirmation
         agreement: Terms of Service and Privacy Policy
@@ -41,7 +41,7 @@ en:
         body: Body
         created_at: Created
       program:
-        email: Email Address
+        email: Email
         program: Program
         personality: Personality
         program_status : Program Continuation Status

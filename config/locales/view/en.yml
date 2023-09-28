@@ -52,8 +52,8 @@ en:
     message_to_developer: Message to Developer
     try_to_make_message: Create Email
     use_google_account: Use Google Account
-    for_login: Login?
-    for_sign_in: Sign in?
+    for_login: Sign in?
+    for_sign_up: Sign up?
     for_new_password: Forgot Your Password?
     for_reconfirmation: Resend Authentication Email?
     for_unlock: Unlock Account?
@@ -67,6 +67,8 @@ en:
     create_your_first_email: Create Your First Email!
     register_your_default_profile_1: Register your default profile
     register_your_default_profile_2: to set in every post!
+    and: and
+    agree: agree with
     message:
       require_login: Login first please
       created: "%{item} has been created"

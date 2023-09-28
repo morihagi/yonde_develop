@@ -44,10 +44,13 @@
         .m-3.w-75.mx-auto
           = f.check_box :agreement, :as => :boolean, class: 'agreement', checked:false, style: 'vertical-align: middle;'
           = f.label :agreement
+            - if I18n.locale == :en
+              = t('defaults.agree')
             = link_to t('modals.terms.title'), terms_path, class: 'm-2', target: '_blank'
-            'と
+            = t('defaults.and')
             = link_to t('modals.privacy_policy.title'), privacy_policy_path, class: 'm-2', target: '_blank'
-            'に同意する
+            - if I18n.locale == :ja
+              = t('defaults.agree')
           = render 'shared/error_messages', model: @user, attribute: :agreement
 
         p.actions.p-2

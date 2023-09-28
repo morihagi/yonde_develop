@@ -53,7 +53,7 @@ ja:
     try_to_make_message: 投稿メールを作ってみる
     use_google_account: Googleアカウントを使用する場合
     for_login: ログインする場合
-    for_sign_in: ユーザー登録をする場合
+    for_sign_up: ユーザー登録をする場合
     for_new_password: パスワードを忘れた場合
     for_reconfirmation: ユーザー認証メールを再送する場合
     for_unlock: アカウントのロックを解除する場合
@@ -67,6 +67,8 @@ ja:
     create_your_first_email: 投稿メールを作ってみましょう！
     register_your_default_profile_1: ラジオネームなど、毎回投稿メールに
     register_your_default_profile_2: 記載したい内容はここから登録しましょう！
+    and: と
+    agree: 同意する
     message:
       require_login: ログインしてください
       created: "%{item}を作成しました"
