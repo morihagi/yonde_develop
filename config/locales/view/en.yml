@@ -12,7 +12,7 @@ en:
     authentication_mail: Resend Authentication Mail
     unlock_mail: Send Unlock Mail
     copy_right: © YONDE 2023
-    developer: 'Developer: Misato Hagihara'
+    developer: 'Misato Hagihara'
     code: Source Code
     twitter: X(Former Twitter)
     google_form: Google Form
@@ -27,20 +27,21 @@ en:
     sort: Sort
     sort_reset: Reset Sort Order
     close: Close
-    return: Return
+    return: Back
     delete_account: Delete Account
     remember_me: Auto-login next time
     unspecified: No Selection
-    send_with_mail_app: Send from Mail App
+    send_with_mail_app: Transfer to Mail App
     address_not_required: Residence (Not required)
-    short_address: Residence Short Form
+    short_address: Residence Address
     prefecture: Prefecture
     city: City
     other_address: Other Address
     rn: RN
     action: Action
-    default_information: Default Information
-    default_information_for_goods: Default Information (For Program Novelty Goods Delivery)
+    default_information: Profile for Sending a Email
+    default_information_for_goods: Profile for Shipping from a Program
+    shipping_address: Shipping Address
     tokyo-to: Tokyo-to
     chiyoda-ku: Chiyoda-ku
     yuraku-cho: Yuraku-cho 1-9-3
@@ -59,6 +60,13 @@ en:
     over_english_number_8: More than 8 Alphanumeric Characters
     password_confirmation: Password Confirmation
     zip_cord_form: Postal Code (Enter 7 Digits)
+    explanation_1: Create emails for your favorite segments
+    explanation_2: of programs from All Night Nippon
+    explanation_3: broadcasted by Nippon Broadcasting System
+    no_post: No Email
+    create_your_first_email: Create Your First Email!
+    register_your_default_profile_1: Register your default profile
+    register_your_default_profile_2: to set in every post!
     message:
       require_login: Login first please
       created: "%{item} has been created"
@@ -74,7 +82,7 @@ en:
       are_you_sure: Are you sure you want to delete?
       select_program: Select a program
       select_segment: Select a segment
-      input_word: Write the text
+      input_word: Enter a word
       from_created_at: Created (From)
       until_created_at: Created (Until)
       select: Select
@@ -114,12 +122,12 @@ en:
       title: Terms of Use
   users:
     show:
-      title: Login Information
+      title: Credentials
     registrations:
       new:
         title: Sign up
       edit:
-        title: Edit Login Information
+        title: Edit Credentials
     sessions:
       new:
         title: Sign in
@@ -143,8 +151,8 @@ en:
       title: List of Emails
   profiles:
     show:
-      title: Default Information
+      title: Default Profile
     edit:
-      title: Change Listener Information
+      title: Change Profile for Sending a Email
     edit_for_goods:
-      title: Change Listener Information for Shipping
+      title: Change Profile for Shipping from a Program

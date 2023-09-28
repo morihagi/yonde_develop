@@ -75,7 +75,7 @@
                 = render 'shared/error_messages', model: post, attribute: :zip_code
 
               .m-3
-                = f.label t('activerecord.attribute.post.full_address'), class: 'float-start'
+                = f.label t('defaults.shipping_address'), class: 'float-start'
                 .input-group.m-2
                   = f.label :prefecture, class: 'input-group-text', id: 'basic-addon6'
                   = f.text_field :prefecture, placeholder: t('defaults.prefecture'), class: 'form-control', aria_describedby: 'basic-addon6'
@@ -92,7 +92,7 @@
 
               .m-3
                 = f.label :legal_name, class: 'float-start'
-                = f.text_field :legal_name, placeholder: '有楽太郎', class: 'form-control m-2'
+                = f.text_field :legal_name, placeholder: t('defaults.yuraku_taro'), class: 'form-control m-2'
 
         .m-3
           = f.label :body

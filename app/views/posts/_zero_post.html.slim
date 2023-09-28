@@ -1,15 +1,15 @@
 h5.container.d-flex.flex-column.justify-content-center.align-items-center.p-3
   p
-    div --------------------------------------------
+    div ---------------------------------
     .text-center
-      | 投稿メールがありません
-    div --------------------------------------------
+      = t('defaults.no_post')
+    div ---------------------------------
   p
-    div 投稿メールを作ってみましょう！
+    div = t('defaults.create_your_first_email')
     .p-2
       = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning'
   p
-    div ラジオネームなど、毎回投稿メールに
-    div 記載したい内容はここから登録しましょう！
+    div = t('defaults.register_your_default_profile_1')
+    div = t('defaults.register_your_default_profile_2')
     .p-2
       = link_to t('profiles.show.title'), profile_path, class: 'btn btn-secondary'

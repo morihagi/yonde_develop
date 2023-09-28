@@ -11,8 +11,7 @@ nav.navbar.navbar-expand-lg.navbar-dark.static-top(style='background-color: #354
         li = link_to t('defaults.about'), about_path,  class: 'nav-link text-white me-3'
         li = link_to t('defaults.info'), info_path, class: 'nav-link text-white me-3'
         li = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning mt-1 me-3'
-        li = link_to t('defaults.login'), new_user_session_path, class: 'btn btn-outline-light mt-1 me-3'
-        li= link_to t('defaults.register'), new_user_registration_path, class: 'btn btn-light mt-1 me-4'
+        li = link_to t('defaults.login'), new_user_session_path, class: 'btn btn-light mt-1 me-3'
         li = link_to 'JP', url_for(locale: :ja), class: 'nav-link text-white text-decoration-none px-0'
         li.text-white.mt-2.mx-1
           | /

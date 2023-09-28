@@ -17,7 +17,6 @@ ja:
         prefecture: 都道府県
         city: 市町村区
         full_address_post: 在住
-        full_address: 住所
         other_address: 番地以降
         radio_name: ラジオネーム
         zip_code: 郵便番号
@@ -30,7 +29,6 @@ ja:
         city: 市区町村
         other_address: 番地以降
         full_address_post: 在住
-        full_address: 住所
         radio_name: ラジオネーム
         zip_code: 郵便番号
         phone: 電話番号
@@ -249,6 +247,6 @@ ja:
     am: 午前
     formats:
       default: "%Y年%m月%d日(%a) %H時%M分%S秒 %z"
-      long: "%Y/%m/%d %H:%M"
+      long: "%Y.%m.%d %H:%M"
       short: "%m/%d %H:%M"
     pm: 午後

@@ -17,28 +17,26 @@ en:
         prefecture: Prefecture
         city: City/Town/Ward
         full_address_post: Residential Address
-        full_address: Shipping Address
-        other_address: Apt / Suite / Other
+        other_address: Apt/Suite/Other
         radio_name: Radio Name
         zip_code: Postal Code
         phone: Phone Number
         legal_name: Name
-        residence_prefecture: Residence (Prefecture)
-        residence_city: Residence (City / Town / Ward)
+        residence_prefecture: Prefecture
+        residence_city: City/Town/Ward
       post:
         prefecture: Prefecture
         city: City/Town/Ward
         full_address_post: Residential Address
-        full_address: Shipping Address
-        prefecture: 都道府県
-        city: 市区町村
-        other_address: Apt / Suite / Other
+        prefecture: Prefecture
+        city: City/Town/Ward
+        other_address: Apt/Suite/Other
         radio_name: Radio Name
         zip_code: Postal Code
         phone: Phone Number
         legal_name: Name
-        residence_prefecture: Residence (Prefecture)
-        residence_city: Residence (City / Town / Ward)
+        residence_prefecture: Prefecture
+        residence_city: City/Town/Ward
         post_status: Status
         body: Body
         created_at: Created
@@ -48,11 +46,8 @@ en:
         personality: Personality
         program_status : Program Continuation Status
       segment:
-        segment_title: コーナー名
-        segment_status: コーナー継続状況
-        segment:
-          segment_title : Segment Name
-          segment_status : Segment Continuity Status
+        segment_title: Segment
+        segment_status: Segment Continuity Status
   enumerize:
     program:
       program_status:
@@ -288,6 +283,6 @@ en:
     am: am
     formats:
       default: "%a, %d %b %Y %H:%M:%S %z"
-      long: "%B %d, %Y %H:%M"
+      long: "%b.%d.%Y %H:%M"
       short: "%d %b %H:%M"
     pm: pm
