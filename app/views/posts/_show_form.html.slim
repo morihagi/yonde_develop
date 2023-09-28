@@ -3,9 +3,9 @@
     = Post.model_name.human
   ul class='list-group list-group-flush'
     li class='list-group-item'
-      An 🎙 番組 | To: #{@post.segment.program.email}
+      An 🎙 To | To: #{@post.segment.program.email}
     li class='list-group-item'
-      An 📻 件名 | #{@post.segment.segment_title_for_email}
+      An 📻 Title | #{@post.segment.segment_title_for_email}
 
     .card-body
       - if @post.residence_prefecture.present? || @post.residence_city.present?

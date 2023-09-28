@@ -90,14 +90,19 @@ gem 'google-apis-gmail_v1'
 # Decorator
 gem 'draper'
 
-# admin page
+# Admin page
 gem 'trestle'
 gem 'trestle-auth'
 
+# Admin page
 gem 'coveralls_reborn', require: false
 
+# Monitor the web page
 gem 'sentry-rails', '~> 5.11'
 gem 'sentry-ruby', '~> 5.11'
+
+# Cron job
+gem 'whenever', require: false
 
 group :development, :test do
   # Loads environment variables from a .env file.

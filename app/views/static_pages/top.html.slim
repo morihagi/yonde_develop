@@ -6,11 +6,14 @@
       .col-lg-6.text-center
         = image_tag 'top.svg', class: 'img-fluid', size: '250x50'
         p
-          | 誰でも簡単にオールナイトニッポンの
+          = t('defaults.explanation_1')
           br
-          | 好きな番組の好きなコーナーの
+          = t('defaults.explanation_2' )
           br
-          | 投稿メールを作ることができます。
+          = t('defaults.explanation_3')
+          br
+          - if I18n.locale == :en
+            p = link_to("What's All Night Nippon?", 'https://www.allnightnippon.com/', class: 'text-white text-decoration-none')
         p
           = link_to new_post_path, class: 'btn1 large', style: 'color: inherit; text-decoration: none;'
             = t('defaults.try_to_make_message')

@@ -1,0 +1,17 @@
+{
+  "name": "YONDE",
+  "short_name": "YONDE",
+  "theme_color": "#f1c40e",
+  "background_color": "#354a5f",
+  "display": "browser",
+  "scope": "/",
+  "start_url": "/",
+  "icons": [
+    {
+      "src": "",
+      "sizes": "",
+      "type": "",
+      "density": ""
+    }
+  ]
+}

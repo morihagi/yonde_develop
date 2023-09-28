@@ -41,6 +41,7 @@ ja:
     action: アクション
     default_information: デフォルト情報
     default_information_for_goods: デフォルト情報(番組ノベルティグッズ発送用)
+    shipping_address: 郵送先住所
     tokyo-to: 東京都
     chiyoda-ku: 千代田区
     yuraku-cho: 有楽町1-9-3
@@ -59,6 +60,13 @@ ja:
     over_english_number_8: 英数字8文字以上
     password_confirmation: 上記パスワードを入力
     zip_cord_form: 郵便番号(数字7文字で入力ください)
+    explanation_1: 誰でも簡単にオールナイトニッポンの
+    explanation_2: 好きな番組の好きなコーナーの
+    explanation_3: 投稿メールを作ることができます
+    no_post: 投稿メールがありません
+    create_your_first_email: 投稿メールを作ってみましょう！
+    register_your_default_profile_1: ラジオネームなど、毎回投稿メールに
+    register_your_default_profile_2: 記載したい内容はここから登録しましょう！
     message:
       require_login: ログインしてください
       created: "%{item}を作成しました"
@@ -99,8 +107,6 @@ ja:
       previous: "&lsaquo;"
       truncate: "&hellip;"
   static_pages:
-    top:
-      title: トップページ
     info:
       title: お知らせ
     about:
