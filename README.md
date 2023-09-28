@@ -8,7 +8,7 @@
 
 <!-- [![Github Actions](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml) --> 
 
-[Japanese]()
+[Japanese](https://github.com/morihagi/yonde_develop/blob/develop/README_JP.md)
 
 ![OGP](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/c89ed46b-414a-bd17-2523-20d90d70e882.png)
 ![Untitled Diagram.drawio.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/306d57af-153f-a7fb-4313-fd04444821b7.png)
@@ -30,17 +30,11 @@ https://yonde.fly.dev/
 <br>
 
 ## 🎙 Thoughts put into the app 📮
-I've been a dedicated radio listener, including ANN, for over two decades.
+I've been a dedicated radio listener, including ANN, for over two decades. It's often stated that "the essence of radio lies within the listener's emails." Every program has its loyal listeners whose emails are frequently read out on the show. When a program undergoes a revamp and a new host is introduced, these fans might send their "first email submission."
 
-It's often stated that "the essence of radio lies within the listener's emails." Every program has its loyal listeners whose emails are frequently read out on the show.
+For listeners who regularly contribute to programs, it would be beneficial to have a service akin to a file system where they can organize their draft submissions.For those submitting for the first time, a service that can guide them in taking the initial step toward submission would be advantageous.
 
-When a program undergoes a revamp and a new host is introduced, these fans might send their "first email submission."
-
-For listeners who regularly contribute to programs, it would be beneficial to have a service akin to a file system where they can organize their draft submissions.
-
-For those submitting for the first time, a service that can guide them in taking the initial step towards submission would be advantageous.
-
-If this app could increase the number of submissions to the program by even one, it would bring me great joy.
+It would bring me great joy if this app could increase the number of submissions to the program by even one.
 <br>
 <br>
 
@@ -50,6 +44,7 @@ If this app could increase the number of submissions to the program by even one,
 - There isn’t a form similar to Google Form available, so listeners need to manually create an email and send it to the program.
 - Listeners must copy and paste their name (or radio name) and subject into their email every time.
 - Despite taking the time to submit, if the submission deviates from the program’s instructions, it may not be selected.
+
 --> **These factors are expected to increase the difficulty of making submissions and getting them selected.**
 
 ### Proposed Solution
@@ -98,6 +93,7 @@ In progress
 <br>
 
 ## 🎙 Main pages and functions 📮
+In progress
 <!-- Write later
 - User registration, login function (devise)
 - Posting function
