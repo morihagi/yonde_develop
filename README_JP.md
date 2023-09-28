@@ -1,0 +1,254 @@
+## 🎙 YONDE | ラジオ用投稿メール作成アプリ 📮
+![Ruby](https://img.shields.io/badge/ruby-3.3.3-blue?logo=ruby&)
+![Ruby on Rails](https://img.shields.io/badge/rails-7.0.6-blue?logo=rubyonrails)
+![Release date](https://img.shields.io/badge/release_date-September_2023-important?)
+[![Maintenability](https://codeclimate.com/github/morihagi/yonde_develop/badges/gpa.svg)](https://codeclimate.com/github/morihagi/yonde_develop)
+[![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg?branch=161-ci%E3%81%AE%E4%BF%AE%E6%AD%A3)](https://coveralls.io/github/morihagi/yonde_develop?branch=161-ci%E3%81%AE%E4%BF%AE%E6%AD%A3)
+[![x](https://img.shields.io/twitter/url/https/twitter.com/yonde1242.svg?style=social&label=Follow%20%40yonde1242)](https://twitter.com/yonde1242)
+
+<!-- [![Github Actions](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml) --> 
+
+[English]()
+
+![OGP](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/c89ed46b-414a-bd17-2523-20d90d70e882.png)
+![Untitled Diagram.drawio.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/306d57af-153f-a7fb-4313-fd04444821b7.png)
+
+オールナイトニッポン（以下、ANN）の番組・コーナーを選びネタを書くだけで、
+番組指定の投稿方法通りの投稿メールが作れます。
+※本アプリはニッポン放送非公式です。
+<br>
+<br>
+
+## 🎙 URL 📮
+https://yonde.fly.dev/
+<br>
+<!-- リリース後追加
+🎧 PV数：0PV  
+🎧 ユーザー登録数：0人  
+(2023年10月1日現在) -->
+<br>
+<br>
+
+## 🎙 アプリに込めた思い 📮
+ANNを含め、ラジオを聞き続けて20数年。
+
+古くより「ラジオの華はリスナーの投稿にあり」とはよく言いますが  
+各番組に必ずいるのが番組内で何度も投稿を読み上げられる常連リスナー、  
+もとい、ハガキ職人です。
+
+また、番組が改変され新パーソナリティとなった場合  
+そのファンが「初めての投稿」を行うこともあるでしょう。
+
+番組への投稿を頻繁に行うリスナーにとっては  
+投稿の下書きをまとめておけるファイルのようなサービスとして。  
+  
+初めて投稿するリスナーにとっては、投稿への第一歩を踏み出す  
+手助けができるようなサービスとして。  
+
+このアプリを通して番組への投稿を1通でも増やせたら、幸いです。
+<br>
+<br>
+
+## 🎙 ANNへの投稿に対する課題 📮
+### ユーザーが抱える問題
+* 各番組のネタ投稿コーナーごとに、「メールにはこのように書いてください」といった指示がある
+  * 例）読み上げられるコーナー名は「あたしゃぁ～」だが、メールの件名は「あたしゃ」にしなければならない
+* Googleフォームのようなフォームがないので、メールを作成して、番組に送信する必要がある
+* メールに名前（or ラジオネーム）や件名を毎回コピペして送らないといけない
+* せっかく投稿しているのに、番組からの指示と異なっているため、採用されない場合がある
+
+-> **これらにより、投稿・採用へのハードルが高くなっていると予想**
+### 解決方法
+* 目的：ユーザーの投稿のハードルを下げること
+* 機能：フォームにしたがって内容を記載するだけで、番組の指示にしたがったメールが作れる機能を実装
+  * コーナー名は選択式にする（選択すると番組の指示にしたがった件名が入る）
+  * ラジオネームや都道府県などの毎回記載する内容を登録できる機能
+  * デフォルトを登録できる機能で、投稿内容作成時には自動入力されている
+<br>
+<br>
+
+## 🎙 執筆記事 📮
+執筆中
+<br>
+
+<!-- あとで修正する  
+🎧 View：0000PV  
+(2023年10月1日現在) -->
+<br>
+<br>
+
+## 🎙 使用技術 📮
+#### バックエンド
+* Ruby 3.0.3
+* Rails 7.0.6
+
+#### フロントエンド
+* HTML
+* CSS（SCSS）
+* Bootstrap 5.3.1（フレームワーク）
+* JavaScript（Stimulus）
+
+#### データベース
+* Postgres
+#### デプロイ先
+* fly.io
+
+<!-- あとで修正する
+## 🎙 テスト 📮
+- RSpec
+  - 単体テスト(model)
+  - 機能テスト(request)
+  - 統合テスト(feature) -->
+<br>
+<br>
+
+## 🎙 主なページと機能 📮
+<!-- あとで書く
+- ユーザー登録、ログイン機能(devise)
+- 投稿機能
+  - 画像投稿(refile)
+  - 位置情報検索機能(geocoder)
+- いいね機能(Ajax)
+  - ランキング機能
+- コメント機能(Ajax)
+- フォロー機能(Ajax)
+- ページネーション機能(kaminari)
+  - 無限スクロール(Ajax)
+- 検索機能(ransack)
+- * ユーザー特定機能(LINE API、fetch)
+* スケジュール作成、更新機能(LIFF、ajax)
+* ミッション通知機能(whenever、messaging API)
+* ミッション完了/未完了機能(ajax)
+* LINE応答機能(messaging API) -->
+<br>
+<br>
+
+## 🎙 画面遷移図 📮
+[Figmaに遷移します](https://www.figma.com/file/EJ5mZWpMUNK245rYMpHpAL/ScreenFlowDiagram?type=design&node-id=509%3A2609&mode=design&t=EszcWVn95hzmmMAA-1)
+<br>
+<br>
+
+## 🎙 ER図 📮
+```mermaid
+erDiagram
+    %% --------------------------------------------------------
+    %% Generated by "Rails Mermaid ERD"
+    %% https://github.com/koedame/rails-mermaid_erd
+    %% Restore Hash: #eyJzZWxlY3RNb2RlbHMiOlsiUG9zdCIsIlByb2ZpbGUiLCJQcm9ncmFtIiwiU2VnbWVudCIsIlVzZXIiXSwiaXNQcmV2aWV3UmVsYXRpb25zIjpmYWxzZSwiaXNTaG93UmVsYXRpb25Db21tZW50IjpmYWxzZSwiaXNTaG93S2V5IjpmYWxzZSwiaXNTaG93Q29tbWVudCI6ZmFsc2UsImlzSGlkZUNvbHVtbnMiOmZhbHNlfQ==
+    %% --------------------------------------------------------
+
+    %% table name: posts
+    Post {
+        integer id  
+        string prefecture  
+        string city  
+        string radio_name  
+        string zip_code  
+        string other_address  
+        string legal_name  
+        string favorite_status  
+        string post_status  
+        text body  
+        integer user_id  
+        datetime created_at  
+        datetime updated_at  
+        integer segment_id  
+        string phone  
+        string residence_prefecture  
+        string residence_city  
+    }
+
+    %% table name: profiles
+    Profile {
+        integer id  
+        string prefecture  
+        string city  
+        string radio_name  
+        string zip_code  
+        string other_address  
+        string legal_name  
+        integer user_id  
+        datetime created_at  
+        datetime updated_at  
+        string phone  
+        string residence_prefecture  
+        string residence_city  
+    }
+
+    %% table name: programs
+    Program {
+        integer id  
+        string program  
+        string personality  
+        string email  
+        string image_url  
+        string official_site  
+        string day  
+        string starting_time  
+        string program_status  
+        datetime created_at  
+        datetime updated_at  
+    }
+
+    %% table name: segments
+    Segment {
+        integer id  
+        string segment_title  
+        string segment_status  
+        string segment_title_for_email  
+        text instruction  
+        text official_site_instruction  
+        string default_sentence  
+        string novelty_goods  
+        integer program_id  
+        datetime created_at  
+        datetime updated_at  
+    }
+
+    %% table name: users
+    User {
+        integer id  
+        string email  
+        string encrypted_password  
+        string provider  
+        string uid  
+        string reset_password_token  
+        datetime reset_password_sent_at  
+        datetime remember_created_at  
+        integer sign_in_count  
+        datetime current_sign_in_at  
+        datetime last_sign_in_at  
+        string current_sign_in_ip  
+        string last_sign_in_ip  
+        string confirmation_token  
+        datetime confirmed_at  
+        datetime confirmation_sent_at  
+        string unconfirmed_email  
+        integer failed_attempts  
+        string unlock_token  
+        datetime locked_at  
+        datetime created_at  
+        datetime updated_at  
+        datetime deleted_at  
+        string oauth_token  
+        datetime oauth_expires_at  
+    }
+
+    Post }o--|| User : ""
+    Post }o--|| Segment : ""
+    Profile |o--|| User : ""
+    Program ||--o{ Segment : ""
+```
+
+<br>
+<br>
+
+## 🎙 今後のアップデート（予定） 📮
+* 目的：ユーザーがより採用されやすくなる投稿メールを作れるようになること
+* 機能：投稿内容の壁打ちできる機能を実装
+  * ChatGPTなどのLLMモデルサービスを用いて、投稿内容の相談相手になってもらう機能
+    * 暴力的な差別的な表現があれば、言い換え案を提案してくれる
+  * 下記のような採用されるコツが投稿作成時に表示される
+    * 「書き言葉」ではなく「話し言葉」であること
+    * トークが展開するような投稿であること
+    * 1メールにつき話題は1つまで

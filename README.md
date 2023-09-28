@@ -1,4 +1,4 @@
-## 🎙 YONDE | ラジオ用投稿メール作成アプリ 📮
+## 🎙 YONDE | Generate Emails for the Radio Program, All Night Nippon 📮
 ![Ruby](https://img.shields.io/badge/ruby-3.3.3-blue?logo=ruby&)
 ![Ruby on Rails](https://img.shields.io/badge/rails-7.0.6-blue?logo=rubyonrails)
 ![Release date](https://img.shields.io/badge/release_date-September_2023-important?)
@@ -8,125 +8,122 @@
 
 <!-- [![Github Actions](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml) --> 
 
+[Japanese]()
+
 ![OGP](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/c89ed46b-414a-bd17-2523-20d90d70e882.png)
 ![Untitled Diagram.drawio.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/306d57af-153f-a7fb-4313-fd04444821b7.png)
 
-オールナイトニッポン（以下、ANN）の番組・コーナーを選びネタを書くだけで、  
-番組指定の投稿方法通りの投稿メールが作れます。  
-※本アプリはニッポン放送非公式です。
+
+By choosing a program and segment of All Night Nippon (ANN), and composing a message, you can generate an email in accordance with the program’s specific guidelines. Please note, this app is not officially affiliated with the Nippon Broadcasting System.
+
 <br>
 <br>
 
 ## 🎙 URL 📮
 https://yonde.fly.dev/
 <br>
-<!-- リリース後追加
-🎧 PV数：0PV  
-🎧 ユーザー登録数：0人  
-(2023年10月1日現在) -->
+<!-- After release
+🎧 PV count：0PV  
+🎧 User registration count：0 people  
+(as of October 1, 2023) -->
 <br>
 <br>
 
-## 🎙 アプリに込めた思い 📮
-ANNを含め、ラジオを聞き続けて20数年。
+## 🎙 Thoughts put into the app 📮
+I've been a dedicated radio listener, including ANN, for over two decades.
 
-古くより「ラジオの華はリスナーの投稿にあり」とはよく言いますが  
-各番組に必ずいるのが番組内で何度も投稿を読み上げられる常連リスナー、  
-もとい、ハガキ職人です。
+It's often stated that "the essence of radio lies within the listener's emails." Every program has its loyal listeners whose emails are frequently read out on the show.
 
-また、番組が改変され新パーソナリティとなった場合  
-そのファンが「初めての投稿」を行うこともあるでしょう。
+When a program undergoes a revamp and a new host is introduced, these fans might send their "first email submission."
 
-番組への投稿を頻繁に行うリスナーにとっては  
-投稿の下書きをまとめておけるファイルのようなサービスとして。  
-  
-初めて投稿するリスナーにとっては、投稿への第一歩を踏み出す  
-手助けができるようなサービスとして。  
+For listeners who regularly contribute to programs, it would be beneficial to have a service akin to a file system where they can organize their draft submissions.
 
-このアプリを通して番組への投稿を1通でも増やせたら、幸いです。
+For those submitting for the first time, a service that can guide them in taking the initial step towards submission would be advantageous.
+
+If this app could increase the number of submissions to the program by even one, it would bring me great joy.
 <br>
 <br>
 
-## 🎙 ANNへの投稿に対する課題 📮
-### ユーザーが抱える問題
-* 各番組のネタ投稿コーナーごとに、「メールにはこのように書いてください」といった指示がある
-  * 例）読み上げられるコーナー名は「あたしゃぁ～」だが、メールの件名は「あたしゃ」にしなければならない
-* Googleフォームのようなフォームがないので、メールを作成して、番組に送信する必要がある
-* メールに名前（or ラジオネーム）や件名を毎回コピペして送らないといけない
-* せっかく投稿しているのに、番組からの指示と異なっているため、採用されない場合がある
+## 🎙 Challenges for a Listener Submitting an Email to ANN 📮
+- Each program’s story submission segment comes with specific instructions, such as “Please include this in your email.”
+  - For example, the segment name announced might be “Confession Room of Degradation! No Longer Human!” on the program, but the subject line of the email must read “No Longer Human.”
+- There isn’t a form similar to Google Form available, so listeners need to manually create an email and send it to the program.
+- Listeners must copy and paste their name (or radio name) and subject into their email every time.
+- Despite taking the time to submit, if the submission deviates from the program’s instructions, it may not be selected.
+--> **These factors are expected to increase the difficulty of making submissions and getting them selected.**
 
--> **これらにより、投稿・採用へのハードルが高くなっていると予想**
-### 解決方法
-* 目的：ユーザーの投稿のハードルを下げること  
-* 機能：フォームにしたがって内容を記載するだけで、番組の指示にしたがったメールが作れる機能を実装
-  * コーナー名は選択式にする（選択すると番組の指示にしたがった件名が入る）
-  * ラジオネームや都道府県などの毎回記載する内容を登録できる機能
-  * デフォルトを登録できる機能で、投稿内容作成時には自動入力されている
+### Proposed Solution
+- Objective: Streamline the submission process for listers.
+- Function: Develop a feature that empowers listers to compose an email in accordance with the program’s guidelines by simply completing a form.
+  - Facilitate listers to choose the segment name (this selection will auto-populate the subject line as dictated by the program’s guidelines).
+  - Integrate a feature that permits listers to record content that is required each time, such as radio names and prefectures.
+  - Embed a feature that enables listers to record default information, which will be automatically incorporated when crafting submission content.
+
 <br>
 <br>
 
-## 🎙 執筆記事 📮
-執筆中
+## 🎙 Blog 📮
+In progress
 <br>
 
-<!-- あとで修正する  
+<!-- Correct later  
 🎧 View：0000PV  
-(2023年10月1日現在) -->
+(as of October 1, 2023) -->
 <br>
 <br>
 
-## 🎙 使用技術 📮
-#### バックエンド
+## 🎙 Technologies used 📮
+#### Backend
 * Ruby 3.0.3
 * Rails 7.0.6
 
-#### フロントエンド
+#### Frontend
 * HTML
-* CSS（SCSS）
-* Bootstrap 5.3.1（フレームワーク）
-* JavaScript（Stimulus）
+* CSS (SCSS)
+* Bootstrap 5.3.1 (Framework)
+* JavaScript (Stimulus)
 
-#### データベース
+#### Database
 * Postgres
-#### デプロイ先
+#### Deployment destination
 * fly.io
 
-<!-- あとで修正する
-## 🎙 テスト 📮
+<!-- Correct later
+## 🎙 Testing 📮
 - RSpec
-  - 単体テスト(model)
-  - 機能テスト(request)
-  - 統合テスト(feature) -->
+  - Unit test (model)
+  - Function test (request)
+  - Integration test (feature) -->
 <br>
 <br>
 
-## 🎙 主なページと機能 📮
-<!-- あとで書く
-- ユーザー登録、ログイン機能(devise)
-- 投稿機能
-  - 画像投稿(refile)
-  - 位置情報検索機能(geocoder)
-- いいね機能(Ajax)
-  - ランキング機能
-- コメント機能(Ajax)
-- フォロー機能(Ajax)
-- ページネーション機能(kaminari)
-  - 無限スクロール(Ajax)
-- 検索機能(ransack)
-- * ユーザー特定機能(LINE API、fetch)
-* スケジュール作成、更新機能(LIFF、ajax)
-* ミッション通知機能(whenever、messaging API)
-* ミッション完了/未完了機能(ajax)
-* LINE応答機能(messaging API) -->
+## 🎙 Main pages and functions 📮
+<!-- Write later
+- User registration, login function (devise)
+- Posting function
+  - Image posting (refile)
+  - Location information search function (geocoder)
+- Like function (Ajax)
+  - Ranking function
+- Comment function (Ajax)
+- Follow function (Ajax)
+- Pagination function (kaminari)
+  - Infinite scroll (Ajax)
+- Search function (ransack)
+- * User identification function (LINE API, fetch)
+* Schedule creation, update function (LIFF, ajax)
+* Mission notification function (whenever, messaging API)
+* Mission completion/incompletion function (ajax)
+* LINE response function (messaging API) -->
 <br>
 <br>
 
-## 🎙 画面遷移図 📮
-[Figmaに遷移します](https://www.figma.com/file/EJ5mZWpMUNK245rYMpHpAL/ScreenFlowDiagram?type=design&node-id=509%3A2609&mode=design&t=EszcWVn95hzmmMAA-1)
+## 🎙 Screen transition diagram 📮
+[Go to Figma](https://www.figma.com/file/EJ5mZWpMUNK245rYMpHpAL/ScreenFlowDiagram?type=design&node-id=509%3A2609&mode=design&t=EszcWVn95hzmmMAA-1)
 <br>
 <br>
 
-## 🎙 ER図 📮
+## 🎙 ER diagram 📮
 ```mermaid
 erDiagram
     %% --------------------------------------------------------
@@ -241,12 +238,12 @@ erDiagram
 <br>
 <br>
 
-## 🎙 今後のアップデート（予定） 📮
-* 目的：ユーザーがより採用されやすくなる投稿メールを作れるようになること
-* 機能：投稿内容の壁打ちできる機能を実装
-  * ChatGPTなどのLLMモデルサービスを用いて、投稿内容の相談相手になってもらう機能
-    * 暴力的な差別的な表現があれば、言い換え案を提案してくれる
-  * 下記のような採用されるコツが投稿作成時に表示される
-    * 「書き言葉」ではなく「話し言葉」であること
-    * トークが展開するような投稿であること
-    * 1メールにつき話題は1つまで
+🎙 Planned Future Updates 📮
+- Objective: Enhance the ability of listers to craft submission emails that have a higher likelihood of acceptance.
+- Functionality: Develop a feature that enables listers to refine their submission content.
+  - Introduce a feature that leverages LLM model services, such as ChatGPT, to act as a consultation partner for refining submission content.
+    - If the content contains violent or discriminatory language, the system will suggest alternative phrasing.
+  - When creating a submission, tips for increasing the chances of acceptance are displayed, such as:
+    - Favor “conversational language” over “formal written language”.
+    - Ensure the submission encourages further discussion.
+    - Restrict the email to a single topic.
