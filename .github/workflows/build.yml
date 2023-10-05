@@ -34,7 +34,10 @@ jobs:
         bundle install --jobs 4 --retry 3
 
     - name: DB setup
-      run: bundle exec rails db:setup
+      run: |
+        cp config/database.yml.ci config/database.yml
+        bundle exec rails db:create
+        bundle exec rails db:migrate
     
     - name: Run rspec
       run: bundle exec rspec
