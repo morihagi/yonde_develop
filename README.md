@@ -2,11 +2,11 @@
 ![Ruby](https://img.shields.io/badge/ruby-3.3.3-blue?logo=ruby&)
 ![Ruby on Rails](https://img.shields.io/badge/rails-7.0.6-blue?logo=rubyonrails)
 ![Release date](https://img.shields.io/badge/release_date-September_2023-important?)
+[![Github Actions](https://github.com/morihagi/yonde_develop/actions/workflows/build.yml/badge.svg?branch=develop)](https://github.com/morihagi/yonde_develop/actions/workflows/build.yml)
 [![Maintenability](https://codeclimate.com/github/morihagi/yonde_develop/badges/gpa.svg)](https://codeclimate.com/github/morihagi/yonde_develop)
 [![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg)](https://coveralls.io/github/morihagi/yonde_develop)
 [![x](https://img.shields.io/twitter/url/https/twitter.com/yonde1242.svg?style=social&label=Follow%20%40yonde1242)](https://twitter.com/yonde1242)
 
-<!-- [![Github Actions](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml) --> 
 
 [Japanese](https://github.com/morihagi/yonde_develop/blob/develop/README_JP.md)
 
