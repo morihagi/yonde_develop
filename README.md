@@ -1,4 +1,4 @@
-## 🎙 YONDE | Generate Emails for the Radio Program, All Night Nippon 📮
+## 🎙 YONDE | Write and Submit Emails to the All Night Nippon Radio Program 📮
 ![Ruby](https://img.shields.io/badge/ruby-3.3.3-blue?logo=ruby&)
 ![Ruby on Rails](https://img.shields.io/badge/rails-7.0.6-blue?logo=rubyonrails)
 ![Release date](https://img.shields.io/badge/release_date-September_2023-important?)
@@ -7,14 +7,14 @@
 [![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg)](https://coveralls.io/github/morihagi/yonde_develop)
 [![x](https://img.shields.io/twitter/url/https/twitter.com/yonde1242.svg?style=social&label=Follow%20%40yonde1242)](https://twitter.com/yonde1242)
 
-
 [Japanese](https://github.com/morihagi/yonde_develop/blob/develop/README_JP.md)
 
 ![OGP](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/c89ed46b-414a-bd17-2523-20d90d70e882.png)
 ![Untitled Diagram.drawio.png](https://qiita-image-store.s3.ap-northeast-1.amazonaws.com/0/3348836/306d57af-153f-a7fb-4313-fd04444821b7.png)
 
 
-By choosing a program and segment of All Night Nippon (ANN), and composing a message, you can generate an email in accordance with the program’s specific guidelines. Please note, this app is not officially affiliated with the Nippon Broadcasting System.
+Welcome to YONDE! This app allows you to send messages to your favorite All Night Nippon radio programs and segments. It's a simple process—just select your preferred program and segment, compose your email, and submit it following the specific guidelines of the program. Please note that this app is not officially affiliated with the Nippon Broadcasting System.
+
 
 <br>
 <br>
@@ -29,30 +29,46 @@ https://yonde.fly.dev/
 <br>
 <br>
 
-## 🎙 Thoughts put into the app 📮
-I've been a dedicated radio listener, including ANN, for over two decades. It's often stated that "the essence of radio lies within the listener's emails." Every program has its loyal listeners whose emails are frequently read out on the show. When a program undergoes a revamp and a new host is introduced, these fans might send their "first email submission."
+## 🎙 Thoughts behind This App 📮
+Having been a dedicated radio listener for over two decades, I believe that the heart of radio programs often lies within the listener's emails. Every program has its loyal listeners, and their emails are frequently read out on air. However, when a program goes through changes or introduces a new host, fans might find themselves submitting their "first email."
 
-For listeners who regularly contribute to programs, it would be beneficial to have a service akin to a file system where they can organize their draft submissions.For those submitting for the first time, a service that can guide them in taking the initial step toward submission would be advantageous.
+For both seasoned contributors and first-time submitters, YONDE offers a solution. It serves as a filing system for organizing email drafts and provides guidance to newcomers. My hope is that this app can increase the number of listener email submissions, which in turn, brings in more engagement to these programs.
 
-It would bring me great joy if this app could increase the number of submissions to the program by even one.
 <br>
 <br>
 
-## 🎙 Challenges for a Listener Submitting an Email to ANN 📮
-- Each program’s story submission segment comes with specific instructions, such as “Please include this in your email.”
-  - For example, the segment name announced might be “Confession Room of Degradation! No Longer Human!” on the program, but the subject line of the email must read “No Longer Human.”
-- There isn’t a form similar to Google Form available, so listeners need to manually create an email and send it to the program.
-- Listeners must copy and paste their name (or radio name) and subject into their email every time.
-- Despite taking the time to submit, if the submission deviates from the program’s instructions, it may not be selected.
+## 🎙 Challenges for Listeners Submitting to ANN 📮
+Here are some of the challenges listeners face when submitting their emails to ANN:
 
---> **These factors are expected to increase the difficulty of making submissions and getting them selected.**
+- Specific program instructions:
+  - Each program's email submission segment comes with specific instructions, like "Please include XYZ in your email."
+  - For instance, the segment name announced might be "Confession Room of Degradation! No Longer Human!" on the program, but the subject line of the email must be "No Longer Human."
+<br>
+
+- Manual email creation:
+  - The radio station's website lacks an automated email submission system, so listeners must manually create and send emails.
+<br>
+
+- Repeated copying and pasting:
+  - Listeners must copy and paste their names (or nicknames) and the subject in their email every time.
+<br>
+
+- Risk of submission deviations:
+  - Any deviations from the program's submission instructions may result in rejection.
+
+**These challenges often make the submission process complex while increasing the risk of emails being rejected.**
 
 ### Proposed Solution
-- Objective: Streamline the submission process for listers.
-- Function: Develop a feature that empowers listers to compose an email in accordance with the program’s guidelines by simply completing a form.
-  - Facilitate listers to choose the segment name (this selection will auto-populate the subject line as dictated by the program’s guidelines).
-  - Integrate a feature that permits listers to record content that is required each time, such as radio names and prefectures.
-  - Embed a feature that enables listers to record default information, which will be automatically incorporated when crafting submission content.
+Objective: Simplify the email submission process for listeners.
+
+Functionality:
+  - Segment Selection: YONDE empowers users to compose emails in line with program guidelines by completing a simple form. It allows users to choose the segment name, which then automatically populates the subject line, thus ensuring compliance with program guidelines.
+
+  - Content Templates: The app enables users to save frequently used content, such as radio names and prefectures, hence streamlining the submission process and reducing repetition.
+
+  - Default Information: YONDE offers a feature to record default information that will be automatically included in every email submission. This ensures consistency and adherence to program instructions.
+
+**With these features, our aim is to make email submissions to All Night Nippon radio programs a breeze, whether you're a long-time contributor or a first-time sender.**
 
 <br>
 <br>
