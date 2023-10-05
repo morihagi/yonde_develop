@@ -45,10 +45,7 @@ RSpec.describe Post, type: :model do
 
   describe '.ransackable_attributes' do
     it 'returns the list of ransackable attributes' do
-      expect(Post.ransackable_attributes).to
-      eq(%w[id segment_title residence_prefecture residence_city radio_name
-        body zip_code prefecture city other_address phone legal_name
-        segment_id user_id post_status favorite_status created_at updated_at])
+      expect(Post.ransackable_attributes).to eq(%w[id segment_title residence_prefecture residence_city radio_name body zip_code prefecture city other_address phone legal_name segment_id user_id post_status favorite_status created_at updated_at])
     end
   end
   describe '.ransackable_associations' do

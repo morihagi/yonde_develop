@@ -46,7 +46,7 @@ html[lang="ja" class="vh-100"]
     = render 'shared/flash_message'
 
     / main content
-    - if controller_name == 'static_pages'
+    - if controller_name == 'static_pages' && action_name == 'top'
       = yield
     - elsif user_signed_in?
       .container-fluid(style='overflow:hidden;')

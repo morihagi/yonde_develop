@@ -10,14 +10,14 @@ RSpec.describe 'Profiles', type: :system do
 
   describe 'GET /show' do
     it 'returns http success' do
-      get profile_path(profile)
+      get profile_path(id: profile.id, locale: :ja)
       expect(response).to have_http_status(:success)
     end
   end
 
   describe 'GET /edit' do
     it 'returns http success' do
-      get edit_profile_path(profile)
+      get edit_profile_path(id: profile.id, locale: :ja)
       expect(response).to have_http_status(:success)
     end
   end

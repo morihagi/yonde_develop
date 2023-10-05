@@ -29,7 +29,7 @@ RSpec.describe ApplicationHelper, type: :helper do
     end
 
     it 'returns the base title with explanation if no page title is provided' do
-      expect(helper.page_title).to eq('YONDE | ラジオ用投稿メール作成アプリ')
+      expect(helper.page_title).to eq('YONDE')
     end
   end
 

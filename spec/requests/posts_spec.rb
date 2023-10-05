@@ -33,35 +33,35 @@ RSpec.describe 'Posts', type: :request do
 
   describe 'GET /show' do
     it 'returns http success' do
-      get post_path(test_post)
+      get post_path(id: test_post.id, locale: :ja)
       expect(response).to have_http_status(:success)
     end
   end
 
   describe 'GET /edit' do
     it 'returns http success' do
-      get edit_post_path(test_post)
+      get edit_post_path(id: test_post.id, locale: :ja)
       expect(response).to have_http_status(:success)
     end
   end
 
   describe 'PATCH /update' do
     it 'returns http success' do
-      patch post_path(test_post), params: { post: { body: 'Updated Title', segment_id: segment.id, user_id: user.id } }
+      patch post_path(id: test_post.id, locale: :ja), params: { post: { body: 'Updated Title', segment_id: segment.id, user_id: user.id } }
       expect(response).to have_http_status(:redirect)
     end
   end
 
   describe 'DELETE /destroy' do
     it 'returns http success' do
-      delete post_path(test_post)
+      delete post_path(id: test_post.id, locale: :ja)
       expect(response).to have_http_status(:redirect)
     end
   end
 
   describe 'POST /duplicate' do
     it 'returns http success' do
-      post duplicate_post_path(test_post),
+      post duplicate_post_path(id: test_post.id, locale: :ja),
            params: { post: { body: 'Dupricated Title', segment_id: segment.id, user_id: user.id } }
       expect(response).to have_http_status(:redirect)
     end

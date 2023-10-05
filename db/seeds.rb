@@ -600,6 +600,7 @@ Administrator.create!(
 )
 
 User.create!(
+  id: 1,
   email: 'example@sample.com',
   password: 'password12',
   password_confirmation: 'password12',
