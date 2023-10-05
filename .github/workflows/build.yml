@@ -33,14 +33,11 @@ jobs:
         bundle config path vendor/bundle
         bundle install --jobs 4 --retry 3
 
-    - name: Run tests
-      env:
-        RAILS_ENV: test
-        DATABASE_URL: sqlite3://db/test.sqlite3
-      run: |
-        bundle exec rake db:create
-        bundle exec rake db:schema:load
-        bundle exec rspec
+    - name: DB setup
+      run: bundle exec rails db:setup
+    
+    - name: Run rspec
+      run: bundle exec rspec
 
     - name: Upload coverage to Codecov
       uses: codecov/codecov-action@v3
