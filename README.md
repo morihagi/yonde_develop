@@ -26,6 +26,9 @@ https://yonde.fly.dev/
 🎧 PV count：0PV  
 🎧 User registration count：0 people  
 (as of October 1, 2023) -->
+Sign up for a guest user
+Email: example@sample.com
+Password: password12
 <br>
 <br>
 
@@ -89,8 +92,9 @@ In progress
 * Rails 7.0.6
 
 #### Frontend
-* HTML
+* HTML (Slim)
 * CSS (SCSS)
+* Node.js 15.14.0
 * Bootstrap 5.3.1 (Framework)
 * JavaScript (Stimulus)
 
@@ -98,13 +102,14 @@ In progress
 * Postgres
 #### Deployment destination
 * fly.io
+<br>
+<br>
 
-<!-- Correct later
 ## 🎙 Testing 📮
 - RSpec
-  - Unit test (model)
-  - Function test (request)
-  - Integration test (feature) -->
+  - Mdel test
+  - Request test
+  - System test
 <br>
 <br>
 

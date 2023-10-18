@@ -2,11 +2,10 @@
 ![Ruby](https://img.shields.io/badge/ruby-3.3.3-blue?logo=ruby&)
 ![Ruby on Rails](https://img.shields.io/badge/rails-7.0.6-blue?logo=rubyonrails)
 ![Release date](https://img.shields.io/badge/release_date-September_2023-important?)
+[![Github Actions](https://github.com/morihagi/yonde_develop/actions/workflows/build.yml/badge.svg?branch=develop)](https://github.com/morihagi/yonde_develop/actions/workflows/build.yml)
 [![Maintenability](https://codeclimate.com/github/morihagi/yonde_develop/badges/gpa.svg)](https://codeclimate.com/github/morihagi/yonde_develop)
-[![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg?branch=161-ci%E3%81%AE%E4%BF%AE%E6%AD%A3)](https://coveralls.io/github/morihagi/yonde_develop?branch=161-ci%E3%81%AE%E4%BF%AE%E6%AD%A3)
+[![Coverage Status](https://coveralls.io/repos/github/morihagi/yonde_develop/badge.svg)](https://coveralls.io/github/morihagi/yonde_develop)
 [![x](https://img.shields.io/twitter/url/https/twitter.com/yonde1242.svg?style=social&label=Follow%20%40yonde1242)](https://twitter.com/yonde1242)
-
-<!-- [![Github Actions](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml/badge.svg?branch=develop)](https://github.com/morihagi/yonde_develop/actions/workflows/main.yml) --> 
 
 [English](https://github.com/morihagi/yonde_develop/blob/develop/README.md)
 
@@ -26,6 +25,9 @@ https://yonde.fly.dev/
 🎧 PV数：0PV  
 🎧 ユーザー登録数：0人  
 (2023年10月1日現在) -->
+下記でゲストユーザーとしてログインができます。
+Email: example@sample.com
+Password: password12
 <br>
 <br>
 
@@ -83,22 +85,24 @@ ANNを含め、ラジオを聞き続けて20数年。
 * Rails 7.0.6
 
 #### フロントエンド
-* HTML
+* HTML（Slim）
 * CSS（SCSS）
-* Bootstrap 5.3.1（フレームワーク）
+* Node.js 15.14.0
+* Bootstrap 5.3.1
 * JavaScript（Stimulus）
 
 #### データベース
 * Postgres
 #### デプロイ先
 * fly.io
+<br>
+<br>
 
-<!-- あとで修正する
 ## 🎙 テスト 📮
 - RSpec
-  - 単体テスト(model)
-  - 機能テスト(request)
-  - 統合テスト(feature) -->
+  - Model test
+  - Request test
+  - System test
 <br>
 <br>
 
