@@ -3,15 +3,14 @@
   "short_name": "YONDE",
   "theme_color": "#f1c40e",
   "background_color": "#354a5f",
-  "display": "browser",
+  "display": "standalone",
   "scope": "/",
   "start_url": "/",
   "icons": [
     {
-      "src": "",
-      "sizes": "",
-      "type": "",
-      "density": ""
+      "src": "app/assets/images/apple-touch-icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png"
     }
   ]
 }
