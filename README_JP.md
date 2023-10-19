@@ -86,10 +86,9 @@ ANNを含め、ラジオを聞き続けて20数年。
 
 #### フロントエンド
 * HTML（Slim）
-* CSS（SCSS）
-* Node.js 15.14.0
+* CSS
 * Bootstrap 5.3.1
-* JavaScript（Stimulus）
+* JavaScript
 
 #### データベース
 * Postgres

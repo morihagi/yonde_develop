@@ -93,10 +93,9 @@ In progress
 
 #### Frontend
 * HTML (Slim)
-* CSS (SCSS)
-* Node.js 15.14.0
-* Bootstrap 5.3.1 (Framework)
-* JavaScript (Stimulus)
+* CSS
+* Bootstrap 5.3.1
+* JavaScript
 
 #### Database
 * Postgres
