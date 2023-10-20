@@ -27,8 +27,10 @@ https://yonde.fly.dev/
 🎧 User registration count：0 people  
 (as of October 1, 2023) -->
 Sign up for a guest user
+```
 Email: example@sample.com
 Password: password12
+```
 <br>
 <br>
 
