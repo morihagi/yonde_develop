@@ -12,7 +12,28 @@ nav.navbar.navbar-expand-lg.navbar-dark.static-top(style='background-color: #354
         li = link_to t('defaults.info'), info_path, class: 'nav-link text-white me-3'
         li = link_to t('posts.new.title'), new_post_path, class: 'btn btn-warning mt-1 me-3'
         li = link_to t('defaults.login'), new_user_session_path, class: 'btn btn-light mt-1 me-3'
-        li = link_to 'JP', url_for(locale: :ja), class: 'nav-link text-white text-decoration-none px-0'
-        li.text-white.mt-2.mx-1
-          | /
-        li = link_to 'EN', url_for(locale: :en), class: 'nav-link text-white text-decoration-none px-0'
+
+        / li = link_to 'JP', url_for(locale: :ja), class: 'nav-link text-white text-decoration-none px-0'
+        / li.text-white.mt-2.mx-1
+        /   | /
+        / li = link_to 'EN', url_for(locale: :en), class: 'nav-link text-white text-decoration-none px-0'
+
+        .dropdown.mt-1.me-3
+          button.btn.btn-secondary.dropdown-toggle type="button" data-bs-toggle="dropdown" aria-expanded="false"
+            i.fas.fa-globe.me-2
+            | Language
+          ul.dropdown-menu.dropdown-menu-dark
+            = link_to '日本語', url_for(locale: :ja), class: 'dropdown-item text-white text-decoration-none'
+            = link_to 'English', url_for(locale: :en), class: 'dropdown-item nav-link text-white text-decoration-none'
+
+        / li.form_control
+        /   select name="cars" id="cars"
+        /     option value="volvo"
+        /       | Volvo
+        /     option value="saab"
+        /       | Saab
+        /     option value="mercedes"
+        /       | Mercedes
+        /     option value="audi"
+        /       | Audi
+
